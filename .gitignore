@@ -1,0 +1,23 @@
+# Visual Studio & Compiler
+.vs/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.pdb
+*.obj
+*.gch
+
+# Unreal Engine Generated
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+Script/
+
+# Local User Configs
+Saved/
+.vscode/
+*.code-workspace
