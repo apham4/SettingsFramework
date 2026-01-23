@@ -1,0 +1,85 @@
+// Copyright 2026 Anh Pham. All Rights Reserved.
+
+#include "Core/SFSettingValue.h"
+
+#pragma region USFSettingValue
+USFSettingValue* USFSettingValue::Duplicate(USFSettingValue* Other) const
+{
+	// Unreal's built-in duplication function
+	return DuplicateObject<USFSettingValue>(this, Other); 
+}
+#pragma endregion
+
+#pragma region USFSettingValue_Scalar
+FString USFSettingValue_Scalar::SerializeToString() const
+{
+    // SanitizeFloat ensures consistent formatting regardless of locale
+    return FString::SanitizeFloat(Value);
+}
+
+void USFSettingValue_Scalar::DeserializeFromString(const FString& InString)
+{
+    Value = FCString::Atof(*InString);
+}
+
+bool USFSettingValue_Scalar::Equals(const USFSettingValue* Other) const
+{
+    const USFSettingValue_Scalar* asScalar = Cast<USFSettingValue_Scalar>(Other);
+    return asScalar && FMath::IsNearlyEqual(Value, asScalar->Value);
+}
+#pragma endregion  
+
+#pragma region USFSettingValue_Boolean
+FString USFSettingValue_Bool::SerializeToString() const
+{
+    return Value ? TEXT("1") : TEXT("0");
+}
+
+void USFSettingValue_Bool::DeserializeFromString(const FString& InString)
+{
+    Value = InString.ToBool();
+}
+
+bool USFSettingValue_Bool::Equals(const USFSettingValue* Other) const
+{
+    const USFSettingValue_Bool* asBool = Cast<USFSettingValue_Bool>(Other);
+    return asBool && (Value == asBool->Value);
+}
+#pragma endregion
+
+#pragma region USFSettingValue_Tag
+FString USFSettingValue_Tag::SerializeToString() const
+{
+    return Value.ToString();
+}
+
+void USFSettingValue_Tag::DeserializeFromString(const FString& InString)
+{
+    Value = FGameplayTag::RequestGameplayTag(FName(*InString));
+}
+
+bool USFSettingValue_Tag::Equals(const USFSettingValue* Other) const
+{
+    const USFSettingValue_Tag* asTag = Cast<USFSettingValue_Tag>(Other);
+    return asTag && (Value == asTag->Value);
+}
+#pragma endregion
+
+#pragma region USFSettingValue_Key
+FString USFSettingValue_Key::SerializeToString() const
+{
+    // FKey's default ToString
+    return Value.ToString();
+}
+
+void USFSettingValue_Key::DeserializeFromString(const FString& InString)
+{
+    Value = FKey(FName(*InString));
+}
+
+bool USFSettingValue_Key::Equals(const USFSettingValue* Other) const
+{
+    const USFSettingValue_Key* asKey = Cast<USFSettingValue_Key>(Other);
+    return asKey && (Value == asKey->Value);
+}
+#pragma endregion
