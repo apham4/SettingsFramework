@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "InputCoreTypes.h"
 #include "SFSettingValue.generated.h"
