@@ -29,19 +29,19 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Display", meta = (MultiLine = true))
 	FText Description;
 
-	// Should this setting apply on save (true) or apply on change (false).
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
-	bool bApplyOnSave = false;
-
 	// Conditions that determine whether this setting is visible
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
-	TArray<TObjectPtr<class USFSettingCondition>> VisibilitySettings;
+	TArray<TObjectPtr<class USFSettingCondition>> VisibilityConditions;
 
 	// Conditions that determine whether this setting is editable/active
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
-	TArray<TObjectPtr<class USFSettingCondition>> EditabilitySettings;
+	TArray<TObjectPtr<class USFSettingCondition>> EditabilityConditions;
 
 	// NOTE_TO_SELF: Instanced = can pick specific subclass in editor
+
+public:
+	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
+	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const { return DefaultValue; };
 
 	// Fallback default value.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value")
@@ -94,6 +94,18 @@ public:
 	// DYNAMIC: Logic class that generates the list (e.g. Resolutions, Monitors)
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Discrete", meta = (EditCondition = "bUseDynamicOptions"))
 	TSubclassOf<class USFSettingOptionSource> OptionSource;
+
+public:
+	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const override;
+
+	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
+	TArray<struct FSFSettingOption> GetSettingOptions(const UObject* WorldContextObject) const;
+
+protected:
+	virtual void PostLoad() override;
+
+	UPROPERTY(Transient)
+	TObjectPtr<class USFSettingOptionSource> CachedSettingOptionSource;
 };
 
 /**

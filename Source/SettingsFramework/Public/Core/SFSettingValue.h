@@ -30,7 +30,10 @@ public:
     virtual void DeserializeFromString(const FString& InString) PURE_VIRTUAL(USFSettingValue::DeserializeFromString, );
 
     // Creates a deep copy of this value
-    virtual USFSettingValue* Duplicate(USFSettingValue* Other) const;
+    virtual USFSettingValue* Duplicate(UObject* Outer) const
+    {
+        return DuplicateObject<USFSettingValue>(this, Outer);
+    };
 
     // Checks equality with another value object
     virtual bool Equals(const USFSettingValue* Other) const PURE_VIRTUAL(USFSettingValue::Equals, return false;);

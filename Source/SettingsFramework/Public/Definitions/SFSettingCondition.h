@@ -16,7 +16,7 @@ class SETTINGSFRAMEWORK_API USFSettingCondition : public UObject
 	GENERATED_BODY()
 	
 public:
-	// NOTE_TO_SELF: Pass in World/GameInstance/PlayerController for Context
+	// NOTE_TO_SELF: Pass in World/GameInstance/PlayerController for Context. Call GetWorld() on it.
 	UFUNCTION(BlueprintNativeEvent, Category = "SFSettingCondition")
 	bool IsConditionMet(const UObject* WorldContextObject) const;
 	virtual bool IsConditionMet_Implementation(const UObject* WorldContextObject) const { return true; }

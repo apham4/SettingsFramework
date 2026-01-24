@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "SFCoreTypes.generated.h"
 
-SETTINGSFRAMEWORK_API DECLARE_LOG_CATEGORY_EXTERN(LogSettingsFramework, Log, All);
-
 /**
  * Represents a single selectable option in a list (e.g. "High", "1920x1080").
  */

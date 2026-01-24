@@ -2,14 +2,6 @@
 
 #include "Core/SFSettingValue.h"
 
-#pragma region USFSettingValue
-USFSettingValue* USFSettingValue::Duplicate(USFSettingValue* Other) const
-{
-	// Unreal's built-in duplication function
-	return DuplicateObject<USFSettingValue>(this, Other); 
-}
-#pragma endregion
-
 #pragma region USFSettingValue_Scalar
 FString USFSettingValue_Scalar::SerializeToString() const
 {
