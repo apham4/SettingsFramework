@@ -19,4 +19,10 @@ public:
 	// The master registry asset containing setting hierarchy and definitions. Loaded asynchronously on SFSettingsSubsystem initialization.
 	UPROPERTY(Config, EditAnywhere, Category = "Settings Registry")
 	TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistry;
+
+public:
+	virtual FName GetCategoryName() const override
+	{
+		return FName("Plugins");
+	}
 };
