@@ -11,9 +11,9 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSFSettingSaved, const struct FGa
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSFSettingsInitialized);
 
 /**
- * Settings manager.
+ * Settings subsystem that manages settings states and serialization.
  */
-UCLASS(Config=Game)
+UCLASS(BlueprintType)
 class SETTINGSFRAMEWORK_API USFSettingsSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
@@ -28,7 +28,6 @@ public:
 protected:
 	void OnSettingsRegistryLoaded(TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistrySoftPtr);
 	void RegisterCategory(const class USFSettingCategory* Category);
-	void LoadSavedSettingValues();
 	
 public:
 	UPROPERTY(BlueprintAssignable, Category = "SFSettingsSubsystem|Initialization")
@@ -40,8 +39,6 @@ protected:
 
 #pragma region Settings State Management
 public:
-	// TODO: HasAnyDirtySettings?
-	// 
 	// Get the list of root categories
 	TArray<USFSettingCategory*> GetRootCategories() const;
 
@@ -60,6 +57,9 @@ public:
 	// Check if current value is different from saved value
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
 	bool IsSettingDirty(const struct FGameplayTag& SettingTag) const;
+
+	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
+	bool AreAnySettingsDirty() const;
 
 	// Save current setting values to disk
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
@@ -108,10 +108,19 @@ protected:
 	void UpdateSettingDependencies();
 
 	// Recursion guard
-	UPROPERTY(Config)
 	int32 MaxUpdateDepth = 10;
 
 	int32 UpdateDepth = 0;
+#pragma endregion
+
+#pragma region Serialization
+protected:
+	void LoadSettingsFromSaveGame();
+	void SaveSettingsToSaveGame();
+
+protected:
+	// Save game slot name.
+	FString SaveGameSlotName = TEXT("SF_SaveSlot");
 #pragma endregion
 
 #pragma region Helpers

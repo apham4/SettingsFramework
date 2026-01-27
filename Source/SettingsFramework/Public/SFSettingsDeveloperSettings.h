@@ -7,8 +7,7 @@
 #include "SFSettingsDeveloperSettings.generated.h"
 
 /**
- * Class for defining developer settings for the Settings Framework plugin.
- * These settings can be accessed and modified via the Unreal Editor's Project Settings.
+ * Developer settings for the SettingsFramework plugin.
  */
 UCLASS(Config = Game, DefaultConfig, meta = (DisplayName = "Settings Framework"))
 class SETTINGSFRAMEWORK_API USFSettingsDeveloperSettings : public UDeveloperSettings
@@ -17,8 +16,16 @@ class SETTINGSFRAMEWORK_API USFSettingsDeveloperSettings : public UDeveloperSett
 	
 public:
 	// The master registry asset containing setting hierarchy and definitions. Loaded asynchronously on SFSettingsSubsystem initialization.
-	UPROPERTY(Config, EditAnywhere, Category = "Settings Registry")
+	UPROPERTY(Config, EditAnywhere, Category = "Registry")
 	TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistry;
+
+	// Save slot name for saving and loading setting values.
+	UPROPERTY(Config, EditAnywhere, Category = "Serialization")
+	FString SaveGameSlotName = TEXT("SF_SaveSlot");
+
+	// Recursion guard: Maximum depth for updating setting dependencies to prevent infinite loops.
+	UPROPERTY(Config, EditAnywhere, Category = "Conditions")
+	int32 MaxUpdateDepth = 10;
 
 public:
 	virtual FName GetCategoryName() const override

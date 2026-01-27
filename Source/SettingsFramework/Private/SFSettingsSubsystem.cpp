@@ -3,31 +3,43 @@
 
 #include "SFSettingsSubsystem.h"
 #include "GameplayTagContainer.h"
-#include "SFSettingsDeveloperSettings.h"
+#include "Kismet/GameplayStatics.h"
 #include "Engine/StreamableManager.h"
 #include "Engine/AssetManager.h"
+#include "Core/SFLogs.h"
+#include "Core/SFSettingValue.h"
 #include "Definitions/SFSettingsRegistry.h"
 #include "Definitions/SFSettingCategory.h"
 #include "Definitions/SFSettingDefinition.h"
 #include "Definitions/SFSettingCondition.h"
-#include "Core/SFSettingValue.h"
-#include "Core/SFLogs.h"
+#include "SaveGame/SFSaveGame.h"
+#include "SFSettingsDeveloperSettings.h"
 
 #pragma region Initialization
 void USFSettingsSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
     Super::Initialize(Collection);
-
-	// Load Settings Registry asset from Developer Settings
-	const USFSettingsDeveloperSettings* devSettings = GetDefault<USFSettingsDeveloperSettings>();
-    if (!IsValid(devSettings) || devSettings->SettingsRegistry.IsNull())
+    
+    // Load config variables from Developer Settings
+    const USFSettingsDeveloperSettings* devSettings = GetDefault<USFSettingsDeveloperSettings>();
+    if (!IsValid(devSettings))
     {
-        UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] No Settings Registry assigned in Project Settings."));
+        UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] Plugin Developer Settings not found."));
         return;
     }
 
-	FStreamableManager& streamable = UAssetManager::GetStreamableManager();
-    streamable.RequestAsyncLoad(devSettings->SettingsRegistry.ToSoftObjectPath(), FStreamableDelegate::CreateUObject(this, &USFSettingsSubsystem::OnSettingsRegistryLoaded, devSettings->SettingsRegistry));
+	// Save game slot name
+	SaveGameSlotName = devSettings->SaveGameSlotName;
+
+	// Recursion guard
+	MaxUpdateDepth = devSettings->MaxUpdateDepth;
+
+    // SettingsRegistry
+    if (!devSettings->SettingsRegistry.IsNull())
+    {
+        FStreamableManager& streamable = UAssetManager::GetStreamableManager();
+        streamable.RequestAsyncLoad(devSettings->SettingsRegistry.ToSoftObjectPath(), FStreamableDelegate::CreateUObject(this, &USFSettingsSubsystem::OnSettingsRegistryLoaded, devSettings->SettingsRegistry));
+    }
 }
 
 void USFSettingsSubsystem::OnSettingsRegistryLoaded(TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistrySoftPtr)
@@ -45,7 +57,7 @@ void USFSettingsSubsystem::OnSettingsRegistryLoaded(TSoftObjectPtr<class USFSett
         RegisterCategory(category);
 	}
 
-    LoadSavedSettingValues();
+    LoadSettingsFromSaveGame();
 
     bIsInitialized = true;
 	OnSettingsInitialized.Broadcast();
@@ -79,12 +91,6 @@ void USFSettingsSubsystem::RegisterCategory(const USFSettingCategory* Category)
             }
         }
 	}
-}
-
-void USFSettingsSubsystem::LoadSavedSettingValues()
-{
-	// TODO: Load from USaveGame to both SavedValues and CurrentValues
-	// For each setting, fire both OnSettingValueChanged and OnSettingValueSaved
 }
 #pragma endregion
 
@@ -161,6 +167,19 @@ bool USFSettingsSubsystem::IsSettingDirty(const struct FGameplayTag& SettingTag)
     return !currentValue->Equals(savedValue);
 }
 
+bool USFSettingsSubsystem::AreAnySettingsDirty() const
+{
+    for (const auto& entry : RegisteredSettings)
+    {
+        const FGameplayTag& settingTag = entry.Key;
+        if (IsSettingDirty(settingTag))
+        {
+            return true;
+        }
+    }
+	return false;
+}
+
 void USFSettingsSubsystem::SaveSettings()
 {
     for (const auto& entry : CurrentValues)
@@ -175,7 +194,7 @@ void USFSettingsSubsystem::SaveSettings()
 		}
     }
 
-    // TODO: Write SavedValues to USaveGame and SaveToSlot
+    SaveSettingsToSaveGame();
 }
 
 void USFSettingsSubsystem::RevertSettings()
@@ -257,8 +276,67 @@ void USFSettingsSubsystem::UpdateSettingDependencies()
 }
 #pragma endregion
 
+#pragma region Serialization
+void USFSettingsSubsystem::LoadSettingsFromSaveGame()
+{
+    USFSaveGame* saveGame = UGameplayStatics::DoesSaveGameExist(SaveGameSlotName, 0) ? Cast<USFSaveGame>(UGameplayStatics::LoadGameFromSlot(SaveGameSlotName, 0)) : nullptr;
+    if (!IsValid(saveGame))
+    {
+        return;
+    }
+    UE_LOG(LogSettingsFramework, Log, TEXT("[SettingsFramework] Settings loaded from slot %s"), *SaveGameSlotName);
+    
+    for (const auto& entry : saveGame->SerializedSettings)
+    {
+        const FGameplayTag& settingTag = entry.Key;
+        const FString& serializedValue = entry.Value;
+        
+        USFSettingDefinition* settingDef = GetSettingDefinition(settingTag);
+        TSubclassOf<USFSettingValue> valueClass = IsValid(settingDef) ? settingDef->GetValueClass() : nullptr;
+        USFSettingValue* newValueInstance = IsValid(valueClass) ? NewObject<USFSettingValue>(this, valueClass) : nullptr;
+        if (!IsValid(newValueInstance))
+        {
+            continue;
+        }
+        
+        newValueInstance->DeserializeFromString(serializedValue);
+        
+        // Add to SavedValues and fire OnSettingValueSaved
+        SavedValues.Emplace(settingTag, newValueInstance);
+        OnSettingValueSaved.Broadcast(settingTag, newValueInstance);
+
+        // Add to CurrentValues and fire OnSettingValueChanged
+        USFSettingValue* duplicatedValue = newValueInstance->Duplicate(this);
+        CurrentValues.Emplace(settingTag, duplicatedValue);
+        OnSettingValueChanged.Broadcast(settingTag, duplicatedValue);
+    }
+}
+
+void USFSettingsSubsystem::SaveSettingsToSaveGame()
+{
+    USFSaveGame* saveGame = Cast<USFSaveGame>(UGameplayStatics::CreateSaveGameObject(USFSaveGame::StaticClass()));
+    if (!IsValid(saveGame))
+    {
+        return;
+    }
+
+    for (const auto& entry : SavedValues)
+    {
+        const FGameplayTag& settingTag = entry.Key;
+        USFSettingValue* savedValue = entry.Value;
+        if (IsValid(savedValue))
+        {
+            saveGame->SerializedSettings.Add(settingTag, savedValue->SerializeToString());
+        }
+    }
+
+    UGameplayStatics::SaveGameToSlot(saveGame, SaveGameSlotName, 0);
+    UE_LOG(LogSettingsFramework, Log, TEXT("[SettingsFramework] Settings saved to slot %s"), *SaveGameSlotName);
+}
+#pragma endregion
+
 #pragma region Helpers
-USFSettingDefinition* USFSettingsSubsystem::GetSettingDefinition(const struct FGameplayTag& SettingTag) const
+USFSettingDefinition* USFSettingsSubsystem::GetSettingDefinition(const FGameplayTag& SettingTag) const
 {
     if (const TObjectPtr<USFSettingDefinition>* found = RegisteredSettings.Find(SettingTag))
     {

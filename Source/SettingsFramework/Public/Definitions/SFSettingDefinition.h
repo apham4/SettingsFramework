@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "GameplayTagContainer.h"
+#include "Core/SFSettingValue.h"
 #include "SFSettingDefinition.generated.h"
 
 /**
@@ -40,6 +41,10 @@ public:
 	// NOTE_TO_SELF: Instanced = can pick specific subclass in editor
 
 public:
+	// Returns the class type of the value this setting uses.
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const { PURE_VIRTUAL(USFSettingDefinition::GetValueClass, return nullptr;); }
+
+	// Returns the default value for this setting.
 	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
 	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const { return DefaultValue; };
 
@@ -72,6 +77,12 @@ public:
 	// Use this to enforce discrete steps (e.g. 10, 20, 30) instead of smooth sliding
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Scalar")
 	bool bSnapToStep = true;
+
+public:
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
+	{
+		return USFSettingValue_Scalar::StaticClass();
+	}
 };
 
 /**
@@ -96,6 +107,11 @@ public:
 	TSubclassOf<class USFSettingOptionSource> OptionSource;
 
 public:
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
+	{
+		return USFSettingValue_Tag::StaticClass();
+	}
+
 	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const override;
 
 	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
@@ -129,4 +145,10 @@ public:
 	// use this index to target the specific slot.
 	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Keybind")
 	int32 MappingIndex = 0;
+
+public:
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
+	{
+		return USFSettingValue_Key::StaticClass();
+	}
 };
