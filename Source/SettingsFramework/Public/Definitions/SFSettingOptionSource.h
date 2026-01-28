@@ -22,6 +22,6 @@ public:
 
     // Optional: Calculate a dynamic default (e.g. "Best Resolution")
     UFUNCTION(BlueprintNativeEvent, Category = "SFSettingOptionSource")
-    class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const;
-    virtual class USFSettingValue* GetDefaultValue_Implementation(const UObject* WorldContextObject) const { return nullptr; }
+    struct FGameplayTag GetDefaultValue(const UObject* WorldContextObject) const;
+    virtual struct FGameplayTag GetDefaultValue_Implementation(const UObject* WorldContextObject) const { return FGameplayTag::EmptyTag; }
 };

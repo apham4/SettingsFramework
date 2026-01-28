@@ -34,7 +34,10 @@ USFSettingValue* USFSettingDefinition_Discrete::GetDefaultValue(const UObject* W
 	USFSettingValue* defaultValue = nullptr;
 	if (bUseDynamicOptions && IsValid(CachedSettingOptionSource))
 	{
-		defaultValue = CachedSettingOptionSource->GetDefaultValue(WorldContextObject);
+		const FGameplayTag& defaultValueTag = CachedSettingOptionSource->GetDefaultValue(WorldContextObject);
+		defaultValue = NewObject<USFSettingValue_Tag>();
+		USFSettingValue_Tag* defaultValueAsTag = Cast<USFSettingValue_Tag>(defaultValue);
+		defaultValueAsTag->Value = defaultValueTag;
 	}
 	else
 	{
