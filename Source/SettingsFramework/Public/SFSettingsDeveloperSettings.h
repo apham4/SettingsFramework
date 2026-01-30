@@ -19,6 +19,10 @@ public:
 	UPROPERTY(Config, EditAnywhere, Category = "Registry")
 	TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistry;
 
+	// Mapping of Definition Classes to Widget Classes (e.g. USFSettingDefinition_Scalar -> WBP_Setting_Slider)
+	UPROPERTY(Config, EditAnywhere, Category = "UI Mappings")
+	TMap<TSubclassOf<USFSettingDefinition>, TSubclassOf<class USFSettingEntryWidget>> WidgetClasses;
+
 	// Save slot name for saving and loading setting values.
 	UPROPERTY(Config, EditAnywhere, Category = "Serialization")
 	FString SaveGameSlotName = TEXT("SF_SaveSlot");

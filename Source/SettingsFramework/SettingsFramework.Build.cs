@@ -30,6 +30,8 @@ public class SettingsFramework : ModuleRules
 				"InputCore",
 				"EnhancedInput",
 				"DeveloperSettings",
+				"UMG",
+				"CommonUI",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
