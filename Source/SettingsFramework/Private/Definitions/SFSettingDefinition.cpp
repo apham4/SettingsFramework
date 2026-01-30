@@ -6,6 +6,18 @@
 #include "Definitions/SFSettingOptionSource.h"
 
 #pragma region Discrete Setting
+TSubclassOf<USFSettingValue> USFSettingDefinition_Discrete::GetValueClass() const
+{
+	if (ValueWrapperClass)
+	{
+		return ValueWrapperClass;
+	}
+	else
+	{
+		return USFSettingValue_Tag::StaticClass();
+	}
+}
+
 void USFSettingDefinition_Discrete::PostLoad()
 {
 	Super::PostLoad();
@@ -34,10 +46,7 @@ USFSettingValue* USFSettingDefinition_Discrete::GetDefaultValue(const UObject* W
 	USFSettingValue* defaultValue = nullptr;
 	if (bUseDynamicOptions && IsValid(CachedSettingOptionSource))
 	{
-		const FGameplayTag& defaultValueTag = CachedSettingOptionSource->GetDefaultValue(WorldContextObject);
-		defaultValue = NewObject<USFSettingValue_Tag>();
-		USFSettingValue_Tag* defaultValueAsTag = Cast<USFSettingValue_Tag>(defaultValue);
-		defaultValueAsTag->Value = defaultValueTag;
+		defaultValue = CachedSettingOptionSource->GetDefaultValue(WorldContextObject);
 	}
 	else
 	{

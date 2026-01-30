@@ -93,7 +93,16 @@ class SETTINGSFRAMEWORK_API USFSettingDefinition_Discrete : public USFSettingDef
 {
 	GENERATED_BODY()
 
+	// NOTE_TO_SELF: Discrete setting can have any type of underlying value. 
+	// If it's pre-defined, use GameplayTags.
+	// If it's dynamic, for example, resolutions, use string like "1920x1080" and have the listener parse it.
+	// Or if it's like a device selection, use string and put in device ID, something like that.
+
 public:
+	// The underlying value type for the options in this setting
+	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Discrete")
+	TSubclassOf<USFSettingValue> ValueWrapperClass;
+
 	// Should the options be generated dynamically at runtime
 	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Discrete")
 	bool bUseDynamicOptions = false;
@@ -107,10 +116,7 @@ public:
 	TSubclassOf<class USFSettingOptionSource> OptionSource;
 
 public:
-	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
-	{
-		return USFSettingValue_Tag::StaticClass();
-	}
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const override;
 
 	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const override;
 

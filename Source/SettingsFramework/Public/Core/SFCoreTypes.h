@@ -3,12 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "SFCoreTypes.generated.h"
 
 /**
- * Represents a single selectable option in a list (e.g. "High", "1920x1080"). 
- * Used for configuration and not runtime instance, specialized for GameplayTags to ensure struct data usage.
+ * Represents a single selectable option in a list (e.g. "High", "1920x1080", "Monitor 1"). 
  */
 USTRUCT(BlueprintType)
 struct FSFSettingOption
@@ -19,7 +17,8 @@ struct FSFSettingOption
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFSettingOption")
     FText DisplayName;
 
-    // The tag associated with this option
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFSettingOption")
-    FGameplayTag Value;
+	// The value associated with this option, can be of any type
+    // Instanced allows inline editing in Data Asset
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced, Category = "SFSettingOption")
+	TObjectPtr<class USFSettingValue> Value;
 };

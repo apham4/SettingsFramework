@@ -57,6 +57,24 @@ bool USFSettingValue_Tag::Equals(const USFSettingValue* Other) const
 }
 #pragma endregion
 
+#pragma region USFSettingValue_String
+FString USFSettingValue_String::SerializeToString() const
+{
+    return Value;
+}
+
+void USFSettingValue_String::DeserializeFromString(const FString& InString)
+{
+    Value = InString;
+}
+
+bool USFSettingValue_String::Equals(const USFSettingValue* Other) const
+{
+    const USFSettingValue_String* asString = Cast<USFSettingValue_String>(Other);
+    return asString && (Value.Equals(asString->Value, ESearchCase::IgnoreCase));
+}
+#pragma endregion
+
 #pragma region USFSettingValue_Key
 FString USFSettingValue_Key::SerializeToString() const
 {

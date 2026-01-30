@@ -77,9 +77,9 @@ public:
 };
 
 /**
-* Setting value representing an enum-type selection. Actual value used is GameplayTag.
+* Setting value representing an enum-type selection.
 */
-UCLASS(DisplayName = "Tag Value")
+UCLASS(DisplayName = "String Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_Tag : public USFSettingValue
 {
     GENERATED_BODY()
@@ -87,6 +87,23 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Tag : public USFSettingValue
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     FGameplayTag Value;
+
+    virtual FString SerializeToString() const override;
+    virtual void DeserializeFromString(const FString& InString) override;
+    virtual bool Equals(const USFSettingValue* Other) const override;
+};
+
+/**
+* Setting value with a string as the underlying value. Useful for IDs, names, resolutions, etc.
+*/
+UCLASS(DisplayName = "String Value")
+class SETTINGSFRAMEWORK_API USFSettingValue_String : public USFSettingValue
+{
+    GENERATED_BODY()
+
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
+    FString Value;
 
     virtual FString SerializeToString() const override;
     virtual void DeserializeFromString(const FString& InString) override;
