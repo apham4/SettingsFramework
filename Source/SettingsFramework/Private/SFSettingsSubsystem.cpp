@@ -128,6 +128,12 @@ USFSettingValue* USFSettingsSubsystem::GetSavedSettingValue(const FGameplayTag& 
     return valueToReturn;
 }
 
+USFSettingValue* USFSettingsSubsystem::GetDefaultSettingValue(const FGameplayTag& SettingTag) const
+{
+    USFSettingDefinition* settingDef = GetSettingDefinition(SettingTag);
+    return IsValid(settingDef) ? settingDef->GetDefaultValue(this) : nullptr;
+}
+
 void USFSettingsSubsystem::SetSettingValue(const FGameplayTag& SettingTag, USFSettingValue* NewValue)
 {
     if (!IsValid(NewValue))
@@ -180,6 +186,33 @@ bool USFSettingsSubsystem::AreAnySettingsDirty() const
 	return false;
 }
 
+void USFSettingsSubsystem::RevertSetting(const FGameplayTag& SettingTag)
+{
+    const USFSettingValue* valueToUse = GetSavedSettingValue(SettingTag);
+    valueToUse = IsValid(valueToUse) ? valueToUse : GetDefaultSettingValue(SettingTag);
+    const USFSettingValue* currentValue = GetSettingValue(SettingTag);
+    if (!IsValid(valueToUse) || valueToUse->Equals(currentValue))
+    {
+        return;
+    }
+    USFSettingValue* duplicatedValue = valueToUse->Duplicate(this);
+    CurrentValues[SettingTag] = duplicatedValue;
+    OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
+}
+
+void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag& SettingTag)
+{
+    const USFSettingValue* currentValue = GetSettingValue(SettingTag);
+    const USFSettingValue* defaultValue = GetDefaultSettingValue(SettingTag);
+    if (!IsValid(defaultValue) || defaultValue->Equals(currentValue))
+    {
+        return;
+    }
+    USFSettingValue* duplicatedValue = defaultValue->Duplicate(this);
+    CurrentValues[SettingTag] = duplicatedValue;
+    OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
+}
+
 void USFSettingsSubsystem::SaveSettings()
 {
     for (const auto& entry : CurrentValues)
@@ -199,16 +232,17 @@ void USFSettingsSubsystem::SaveSettings()
 
 void USFSettingsSubsystem::RevertSettings()
 {
-    for (const auto& entry : SavedValues)
+    for (const auto& entry : RegisteredSettings)
     {
-		const FGameplayTag& settingTag = entry.Key;
-		USFSettingValue* savedValue = entry.Value;
-        if (IsValid(savedValue) && (!CurrentValues.Contains(settingTag) || !CurrentValues[settingTag]->Equals(savedValue)))
-        {
-            USFSettingValue* duplicatedValue = savedValue->Duplicate(this);
-            CurrentValues[settingTag] = duplicatedValue;
-            OnSettingValueChanged.Broadcast(settingTag, duplicatedValue);
-        }
+        RevertSetting(entry.Key);
+    }
+}
+
+void USFSettingsSubsystem::ResetSettingsToDefault()
+{
+    for (const auto& entry : RegisteredSettings)
+    {
+        ResetSettingToDefault(entry.Key);
     }
 }
 #pragma endregion

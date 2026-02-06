@@ -50,6 +50,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
 	class USFSettingValue* GetSavedSettingValue(const struct FGameplayTag& SettingTag) const;
 
+	// Get default setting value from definition
+	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
+	class USFSettingValue* GetDefaultSettingValue(const struct FGameplayTag& SettingTag) const;
+
 	// Update current setting value (does not save to disk)
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
 	void SetSettingValue(const struct FGameplayTag& SettingTag, class USFSettingValue* NewValue);
@@ -61,14 +65,27 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
 	bool AreAnySettingsDirty() const;
 
+	// Discard current value and revert to saved value
+	// Fires OnSettingValueChanged if the value was reverted
+	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
+	void RevertSetting(const struct FGameplayTag& SettingTag);
+
+	// Reset current value to default value from definition. Does not change saved value.
+	// Fires OnSettingValueChanged if the value was reset
+	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
+	void ResetSettingToDefault(const struct FGameplayTag& SettingTag);
+
 	// Save current setting values to disk
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
 	void SaveSettings();
 
-	// Discard current values and revert to saved values
-	// Fires OnSettingValueChanged for each reverted setting
+	// Call RevertSetting for all dirty settings
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
 	void RevertSettings();
+
+	// Call ResetSettingToDefault for all settings. Does not change saved values.
+	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
+	void ResetSettingsToDefault();
 
 public:
 	UPROPERTY(BlueprintAssignable, Category = "SFSettingsSubsystem|State Management")
