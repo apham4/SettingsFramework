@@ -1,6 +1,7 @@
 // Copyright 2026 Anh Pham. All Rights Reserved.
 
 #include "Core/SFSettingValue.h"
+#include "Core/SFLogs.h"
 
 #pragma region USFSettingValue_Scalar
 FString USFSettingValue_Scalar::SerializeToString() const
@@ -78,13 +79,27 @@ bool USFSettingValue_String::Equals(const USFSettingValue* Other) const
 #pragma region USFSettingValue_Key
 FString USFSettingValue_Key::SerializeToString() const
 {
-    // FKey's default ToString
-    return Value.ToString();
+    FString OutString;
+    // NOTE_TO_SELF: First time using this. May or may not work as expected. Will need to test.
+	FSFKeybindValueData::StaticStruct()->ExportText(OutString, &Value, nullptr, nullptr, EPropertyPortFlags::PPF_None, nullptr);
+    return OutString;
 }
 
 void USFSettingValue_Key::DeserializeFromString(const FString& InString)
 {
-    Value = FKey(FName(*InString));
+    if (InString.IsEmpty())
+    {
+        return;
+    }
+    // NOTE_TO_SELF: First time using this as well
+    // String output device to capture error messages frin ExportText.
+    FStringOutputDevice errorLog;
+    FSFKeybindValueData::StaticStruct()->ImportText(*InString, &Value, nullptr, EPropertyPortFlags::PPF_None, &errorLog, TEXT("USFSettingValue_Key"));
+
+    if (!errorLog.IsEmpty())
+    {
+        UE_LOG(LogSettingsFramework, Warning, TEXT("[SettingsFramework] Failed to deserialize keybind value from string: %s. Error: %s"), *InString, *errorLog);
+    }
 }
 
 bool USFSettingValue_Key::Equals(const USFSettingValue* Other) const

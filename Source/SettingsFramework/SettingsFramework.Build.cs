@@ -32,6 +32,8 @@ public class SettingsFramework : ModuleRules
 				"DeveloperSettings",
 				"UMG",
 				"CommonUI",
+				"Slate",
+				"SlateCore"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -42,8 +44,6 @@ public class SettingsFramework : ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
-				"Slate",
-				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

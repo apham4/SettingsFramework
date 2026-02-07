@@ -6,6 +6,7 @@
 #include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "InputCoreTypes.h"
+#include "Core/SFCoreTypes.h"
 #include "SFSettingValue.generated.h"
 
 // NOTE_TO_SELF: EditInlineNew allows creating objects directly inside data asset editor properties.
@@ -120,7 +121,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Key : public USFSettingValue
 
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
-    FKey Value;
+    FSFKeybindValueData Value;
 
     virtual FString SerializeToString() const override;
     virtual void DeserializeFromString(const FString& InString) override;

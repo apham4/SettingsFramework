@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Framework/Commands/InputChord.h"
 #include "SFCoreTypes.generated.h"
 
 /**
@@ -21,4 +22,40 @@ struct FSFSettingOption
     // Instanced allows inline editing in Data Asset
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced, Category = "SFSettingOption")
 	TObjectPtr<class USFSettingValue> Value;
+};
+
+/**
+ * Holds the three standard binding slots for an action.
+ */
+USTRUCT(BlueprintType)
+struct FSFKeybindValueData
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
+    FInputChord KBMPrimary;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
+    FInputChord KBMSecondary;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
+    FInputChord Gamepad;
+
+    bool operator==(const FSFKeybindValueData& Other) const
+    {
+        return KBMPrimary == Other.KBMPrimary
+            && KBMSecondary == Other.KBMSecondary
+            && Gamepad == Other.Gamepad;
+    }
+};
+
+UENUM(BlueprintType)
+enum class ESFKeybindCollisionResolution : uint8
+{
+	// If collision found, allow the new binding to be added alongside the existing one, even if they are the same action or same input.
+	AllowDuplicate      UMETA(DisplayName = "Allow Duplicate Bindings"),
+	// If collision found, allow the new binding but remove the existing one(s) that conflict with it.
+	Overwrite           UMETA(DisplayName = "Overwrite Existing Binding"),
+    // If collision found, allow the new binding but also change the conflicting existing binding to the new binding's old value.
+	Swap                UMETA(DisplayName = "Swap Bindings"),
 };

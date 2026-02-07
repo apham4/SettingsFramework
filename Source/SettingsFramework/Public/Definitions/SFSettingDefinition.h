@@ -139,18 +139,19 @@ class SETTINGSFRAMEWORK_API USFSettingDefinition_Key : public USFSettingDefiniti
 	GENERATED_BODY()
 
 public:
-	// The Input Mapping Context where this key lives
-	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Keybind")
-	TSoftObjectPtr<class UInputMappingContext> MappingContext;
+	// Identifiers for the Player Mappable Key Options (in IMC)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Keybind")
+	FName KBMPrimaryName;
 
-	// The specific Action to rebind (e.g. IA_Jump)
-	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Keybind")
-	TSoftObjectPtr<class UInputAction> InputAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Keybind")
+	FName KBMSecondaryName;
 
-	// If an action has multiple bindings (e.g. Primary vs Secondary), 
-	// use this index to target the specific slot.
-	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Value|Keybind")
-	int32 MappingIndex = 0;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Keybind")
+	FName GamepadName;
+
+	// Only settings sharing a channel will trigger collision warnings (e.g. OnFoot vs Vehicle)
+	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Behavior")
+	FGameplayTagContainer CollisionChannels;
 
 public:
 	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
