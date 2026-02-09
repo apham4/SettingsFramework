@@ -373,7 +373,7 @@ void USFSettingsSubsystem::SaveSettingsToSaveGame()
 #pragma region Keybinding
 FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FInputChord& Chord, const FGameplayTagContainer& CollisionChannels, const FGameplayTag& SettingTagToIgnore) const
 {
-    if (!Chord.IsValidChord())
+    if (!Chord.IsValidChord() || CollisionChannels.IsEmpty())
     {
         return FGameplayTag::EmptyTag;
     }
@@ -383,7 +383,7 @@ FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FInputChord& Cho
     {
         const FGameplayTag& settingTag = entry.Key;
         const USFSettingDefinition_Key* keyDef = Cast<USFSettingDefinition_Key>(entry.Value);
-        if ((SettingTagToIgnore.IsValid() && settingTag == SettingTagToIgnore) || !IsValid(keyDef) || keyDef->CollisionChannels.HasAny(CollisionChannels))
+        if ((SettingTagToIgnore.IsValid() && settingTag == SettingTagToIgnore) || !IsValid(keyDef) || !keyDef->CollisionChannels.HasAny(CollisionChannels))
         {
             continue;
         }
@@ -407,7 +407,7 @@ FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FInputChord& Cho
 bool USFSettingsSubsystem::UpdateKeybinding(const FGameplayTag& SettingTag, FSFKeybindValueData& NewValue, const ESFKeybindCollisionResolution& ResolutionPolicy)
 {
     USFSettingDefinition_Key* keySettingDef = Cast<USFSettingDefinition_Key>(GetSettingDefinition(SettingTag));
-    if (!IsValid(keySettingDef) || keySettingDef->CollisionChannels.IsEmpty())
+    if (!IsValid(keySettingDef))
     {
         return false;
     }
@@ -418,15 +418,25 @@ bool USFSettingsSubsystem::UpdateKeybinding(const FGameplayTag& SettingTag, FSFK
     FSFKeybindValueData currentKeybindData = IsValid(currentValue) ? currentValue->Value : FSFKeybindValueData();
 
     // Check and resolve collisions for each slot
-    bool bResolved = false;
-    if (ResolveKeybindingCollision(SettingTag, NewValue.KBMPrimary, currentKeybindData.KBMPrimary, keySettingDef->CollisionChannels, ResolutionPolicy)
-        || ResolveKeybindingCollision(SettingTag, NewValue.KBMSecondary, currentKeybindData.KBMSecondary, keySettingDef->CollisionChannels, ResolutionPolicy)
-        || ResolveKeybindingCollision(SettingTag, NewValue.Gamepad, currentKeybindData.Gamepad, keySettingDef->CollisionChannels, ResolutionPolicy))
+    bool bResolved = true;
+    if (bResolved)
+    {
+        bResolved &= ResolveKeybindingCollision(SettingTag, NewValue.KBMPrimary, currentKeybindData.KBMPrimary, keySettingDef->CollisionChannels, ResolutionPolicy);
+    }
+    if (bResolved)
+    {
+        bResolved &= ResolveKeybindingCollision(SettingTag, NewValue.KBMSecondary, currentKeybindData.KBMSecondary, keySettingDef->CollisionChannels, ResolutionPolicy);
+    }
+    if (bResolved)
+    {
+        bResolved &= ResolveKeybindingCollision(SettingTag, NewValue.Gamepad, currentKeybindData.Gamepad, keySettingDef->CollisionChannels, ResolutionPolicy);
+    }
+
+    if (bResolved)
     {
         USFSettingValue_Key* newValueAsSettingValue = NewObject<USFSettingValue_Key>(this);
         newValueAsSettingValue->Value = NewValue;
         SetSettingValue(SettingTag, newValueAsSettingValue);
-        bResolved = true;
     }
 
     return bResolved;
