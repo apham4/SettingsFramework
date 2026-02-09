@@ -91,7 +91,20 @@ void USFSettingsSubsystem::RegisterCategory(const USFSettingCategory* Category)
                 RegisteredSettings.Emplace(settingDef->SettingTag, settingDef);
             }
         }
-	}
+
+        // If no groups are defined, register fallback setting list directly under the category.
+        if (Category->SettingGroups.Num() == 0)
+        {
+            for (USFSettingDefinition* settingDef : Category->Settings)
+            {
+                if (!IsValid(settingDef))
+                {
+                    continue;
+                }
+                RegisteredSettings.Emplace(settingDef->SettingTag, settingDef);
+            }
+        }
+    }
 }
 #pragma endregion
 

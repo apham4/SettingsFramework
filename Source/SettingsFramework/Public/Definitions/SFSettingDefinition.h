@@ -149,7 +149,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Keybind")
 	FName GamepadName;
 
-	// Only settings sharing a channel will trigger collision warnings (e.g. OnFoot vs Vehicle)
+	// Only settings sharing a channel will trigger collision warnings (e.g. Global, Combat, etc.)
 	UPROPERTY(EditDefaultsOnly, Category = "SFSettingDefinition|Behavior")
 	FGameplayTagContainer CollisionChannels;
 
