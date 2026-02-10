@@ -6,6 +6,7 @@
 #include "Framework/Commands/InputChord.h"
 #include "SFCoreTypes.generated.h"
 
+#pragma region Backend
 /**
  * Represents a single selectable option in a list (e.g. "High", "1920x1080", "Monitor 1"). 
  */
@@ -59,3 +60,8 @@ enum class ESFKeybindCollisionResolution : uint8
     // If collision found, allow the new binding but also change the conflicting existing binding to the new binding's old value.
 	Swap                UMETA(DisplayName = "Swap Bindings"),
 };
+#pragma endregion
+
+#pragma region UI
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSettingEntryFocused, const struct FGameplayTag&, SettingTag);
+#pragma endregion

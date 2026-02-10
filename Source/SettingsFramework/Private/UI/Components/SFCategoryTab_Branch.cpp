@@ -1,0 +1,88 @@
+// Copyright 2026 Anh Pham. All Rights Reserved.
+
+
+#include "UI/Components/SFCategoryTab_Branch.h"
+#include "Definitions/SFSettingCategory.h"
+#include "CommonButtonBase.h"
+#include "CommonTabListWidgetBase.h"
+#include "CommonAnimatedSwitcher.h"
+#include "Core/SFLogs.h"
+#include "SFSettingsDeveloperSettings.h"
+#include "UI/Components/SFCategoryTab_Leaf.h"
+
+#pragma region Initialization
+void USFCategoryTab_Branch::NativeOnActivated()
+{
+	Super::NativeOnActivated();
+
+	if (bInitialized || !IsValid(SettingCategory))
+	{
+		return;
+	}
+
+	const USFSettingsDeveloperSettings* developerSettings = GetDefault<USFSettingsDeveloperSettings>();
+	if (!IsValid(developerSettings))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Branch::NativeOnActivated - Failed to get Plugin Developer Settings."));
+		return;
+	}
+	if (!IsValid(developerSettings->TabButtonClass))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Branch::NativeOnActivated - Tab Button Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		return;
+	}
+	if (!IsValid(developerSettings->LeafTabContentClass))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Branch::NativeOnActivated - Leaf Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		return;
+	}
+	if (!IsValid(SubCategoryTabList) || !IsValid(TabContentSwitcher))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get instances of Tab List or TabContentSwitcher in widget."));
+		return;
+	}
+
+	SubCategoryTabList->SetLinkedSwitcher(TabContentSwitcher);
+	for (USFSettingCategory* category : SettingCategory->Subcategories)
+	{
+		if (!IsValid(category) || !category->CategoryTag.IsValid())
+		{
+			continue;
+		}
+
+		USFCategoryTabBase* tabContent = nullptr;
+		switch (category->CategoryType)
+		{
+		case ESFCategoryType::Branch:
+			UE_LOG(LogSettingsFramework, Warning, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Detected branch-type category %s inside branch-type category %s. SettingsFramework UI only supports up to 1 level of nested categories for usability. This category will not be initialized and populated."), *category->CategoryTag.ToString(), *SettingCategory->CategoryTag.ToString());
+			break;
+		case ESFCategoryType::Leaf:
+			tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->LeafTabContentClass));
+			break;
+		}
+
+		if (IsValid(tabContent))
+		{
+			tabContent->InitializeWithCategory(category);
+			tabContent->OnSettingFocused.AddDynamic(this, &USFCategoryTab_Branch::HandleSubCategorySettingFocused);
+			SubCategoryTabList->RegisterTab(FName(category->CategoryTag.ToString()), developerSettings->TabButtonClass, tabContent);
+		}
+	}
+
+	bInitialized = true;
+}
+
+void USFCategoryTab_Branch::HandleSubCategorySettingFocused(const struct FGameplayTag& SettingTag)
+{
+	// Bubble event up to screen so it can update the details panel
+	OnSettingFocused.Broadcast(SettingTag);
+}
+#pragma endregion
+
+#pragma region Navigation
+UWidget* USFCategoryTab_Branch::NativeGetDesiredFocusTarget() const
+{
+	UWidget* activeWidget = IsValid(TabContentSwitcher) ? TabContentSwitcher->GetActiveWidget() : nullptr;
+	return IsValid(activeWidget) ? activeWidget : Super::NativeGetDesiredFocusTarget();
+}
+#pragma endregion

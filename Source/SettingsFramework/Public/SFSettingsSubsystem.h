@@ -37,11 +37,19 @@ protected:
 	bool bIsInitialized = false;
 #pragma endregion
 
-#pragma region Settings State Management
+#pragma region Setting Data
 public:
 	// Get the list of root categories
+	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
 	TArray<USFSettingCategory*> GetRootCategories() const;
 
+	// Get the setting definition associated with the given setting gameplay tag
+	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
+	class USFSettingDefinition* GetSettingDefinition(const struct FGameplayTag& SettingTag) const;
+#pragma endregion
+
+#pragma region Settings State Management
+public:
 	// Get current setting value
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
 	class USFSettingValue* GetSettingValue(const struct FGameplayTag& SettingTag) const;
@@ -154,10 +162,5 @@ protected:
 	// If there is collision, resolve it according to the ResolutionPolicy.
 	// Returns true if resolved successfully.
 	bool ResolveKeybindingCollision(const struct FGameplayTag& SettingBeingUpdated, const struct FInputChord& NewChord, const struct FInputChord& OldChord, const struct FGameplayTagContainer& CollisionChannels, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
-#pragma endregion
-
-#pragma region Helpers
-protected:
-	class USFSettingDefinition* GetSettingDefinition(const struct FGameplayTag& SettingTag) const;
 #pragma endregion
 };

@@ -1,0 +1,136 @@
+// Copyright 2026 Anh Pham. All Rights Reserved.
+
+
+#include "UI/SFSettingsScreen.h"
+#include "CommonButtonBase.h"
+#include "CommonTabListWidgetBase.h"
+#include "CommonAnimatedSwitcher.h"
+#include "Core/SFLogs.h"
+#include "SFSettingsDeveloperSettings.h"
+#include "SFFunctionLibrary.h"
+#include "SFSettingsSubsystem.h"
+#include "Definitions/SFSettingCategory.h"
+#include "UI/Components/SFSettingInfoDisplay.h"
+#include "UI/Components/SFCategoryTab_Branch.h"
+#include "UI/Components/SFCategoryTab_Leaf.h"
+
+#pragma region Initialization
+void USFSettingsScreen::NativeOnActivated()
+{
+	Super::NativeOnActivated();
+
+	if (bTabsInitialized)
+	{
+		return;
+	}
+
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
+	const USFSettingsDeveloperSettings* developerSettings = GetDefault<USFSettingsDeveloperSettings>();
+	if (!IsValid(settingsSubsystem) || !IsValid(developerSettings))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get Settings Subsystem or Plugin Developer Settings."));
+		return;
+	}
+	if (!IsValid(developerSettings->TabButtonClass))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Tab Button Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		return;
+	}
+	if (!IsValid(developerSettings->BranchTabContentClass))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Branch Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		return;
+	}
+	if (!IsValid(developerSettings->LeafTabContentClass))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Leaf Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		return;
+	}
+	if (!IsValid(CategoryTabList) || !IsValid(TabContentSwitcher))
+	{
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get instances of Tab List or TabContentSwitcher in widget."));
+		return;
+	}
+
+	CategoryTabList->SetLinkedSwitcher(TabContentSwitcher);
+	
+	TArray<USFSettingCategory*> rootCategories = settingsSubsystem->GetRootCategories();
+	for (USFSettingCategory* category : rootCategories)
+	{
+		if (!IsValid(category) || !category->CategoryTag.IsValid())
+		{
+			continue;
+		}
+
+		USFCategoryTabBase* tabContent = nullptr;
+		switch (category->CategoryType)
+		{
+			case ESFCategoryType::Branch:
+				tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->BranchTabContentClass));
+				break;
+			case ESFCategoryType::Leaf:
+				tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->LeafTabContentClass));
+				break;
+		}
+		
+		if (IsValid(tabContent))
+		{
+			tabContent->InitializeWithCategory(category);
+			tabContent->OnSettingFocused.AddDynamic(this, &USFSettingsScreen::HandleSettingFocused);
+			CategoryTabList->RegisterTab(FName(category->CategoryTag.ToString()), developerSettings->TabButtonClass, tabContent);
+		}
+	}
+
+	bTabsInitialized = true;
+}
+#pragma endregion
+
+#pragma region Display
+void USFSettingsScreen::HandleSettingFocused(const FGameplayTag& SettingTag)
+{
+	if (IsValid(SettingInfoDisplay))
+	{
+		SettingInfoDisplay->DisplaySetting(SettingTag);
+	}
+}
+#pragma endregion
+
+#pragma region Setting Actions
+void USFSettingsScreen::SaveSettings()
+{
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
+	if (!IsValid(settingsSubsystem))
+	{
+		return;
+	}
+	settingsSubsystem->SaveSettings();
+}
+
+void USFSettingsScreen::RevertSettings()
+{
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
+	if (!IsValid(settingsSubsystem))
+	{
+		return;
+	}
+	settingsSubsystem->RevertSettings();
+}
+
+void USFSettingsScreen::ResetSettingsToDefault()
+{
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
+	if (!IsValid(settingsSubsystem))
+	{
+		return;
+	}
+	settingsSubsystem->ResetSettingsToDefault();
+}
+#pragma endregion
+
+#pragma region Navigation
+UWidget* USFSettingsScreen::NativeGetDesiredFocusTarget() const
+{
+	UWidget* activeWidget = IsValid(TabContentSwitcher) ? TabContentSwitcher->GetActiveWidget() : nullptr;
+	return IsValid(activeWidget) ? activeWidget : Super::NativeGetDesiredFocusTarget();
+}
+#pragma endregion

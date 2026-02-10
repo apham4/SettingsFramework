@@ -108,12 +108,23 @@ void USFSettingsSubsystem::RegisterCategory(const USFSettingCategory* Category)
 }
 #pragma endregion
 
-#pragma region Settings State Management
+#pragma region Setting Data
 TArray<USFSettingCategory*> USFSettingsSubsystem::GetRootCategories() const
 {
     return IsValid(SettingsRegistry) ? SettingsRegistry->RootCategories : TArray<USFSettingCategory*>();
 }
 
+USFSettingDefinition* USFSettingsSubsystem::GetSettingDefinition(const FGameplayTag& SettingTag) const
+{
+    if (const TObjectPtr<USFSettingDefinition>* found = RegisteredSettings.Find(SettingTag))
+    {
+        return *found;
+    }
+    return nullptr;
+}
+#pragma endregion
+
+#pragma region Settings State Management
 USFSettingValue* USFSettingsSubsystem::GetSettingValue(const FGameplayTag& SettingTag) const
 {
     USFSettingValue* valueToReturn = nullptr;
@@ -514,16 +525,5 @@ bool USFSettingsSubsystem::ResolveKeybindingCollision(const FGameplayTag& Settin
     }
 
     return true;
-}
-#pragma endregion
-
-#pragma region Helpers
-USFSettingDefinition* USFSettingsSubsystem::GetSettingDefinition(const FGameplayTag& SettingTag) const
-{
-    if (const TObjectPtr<USFSettingDefinition>* found = RegisteredSettings.Find(SettingTag))
-    {
-        return *found;
-    }
-    return nullptr;
 }
 #pragma endregion
