@@ -25,7 +25,6 @@ USFSettingDefinition* USFSettingEntryWidget::GetSettingDefinition() const
 void USFSettingEntryWidget::NativeOnAddedToFocusPath(const FFocusEvent& InFocusEvent)
 {
 	Super::NativeOnAddedToFocusPath(InFocusEvent);
-
 	if (SettingTag.IsValid())
 	{
 		OnSettingFocused.Broadcast(SettingTag);
@@ -35,9 +34,5 @@ void USFSettingEntryWidget::NativeOnAddedToFocusPath(const FFocusEvent& InFocusE
 void USFSettingEntryWidget::NativeOnMouseEnter(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent)
 {
 	Super::NativeOnMouseEnter(InGeometry, InMouseEvent);
-
-	if (SettingTag.IsValid())
-	{
-		OnSettingFocused.Broadcast(SettingTag);
-	}
+	SetFocus();
 }
