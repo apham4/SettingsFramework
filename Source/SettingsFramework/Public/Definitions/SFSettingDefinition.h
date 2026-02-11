@@ -86,6 +86,21 @@ public:
 };
 
 /**
+ * Setting definition for setting a binary value (true/false).
+ */
+UCLASS(DisplayName = "Bool Setting")
+class SETTINGSFRAMEWORK_API USFSettingDefinition_Bool : public USFSettingDefinition
+{
+	GENERATED_BODY()
+
+public:
+	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
+	{
+		return USFSettingValue_Bool::StaticClass();
+	}
+};
+
+/**
  * Setting definition for a dropdown/list.
  */
 UCLASS(DisplayName = "Discrete Setting")
