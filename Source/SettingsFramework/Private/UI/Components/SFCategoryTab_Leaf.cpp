@@ -78,7 +78,7 @@ void USFCategoryTab_Leaf::CreateSettingEntryAndAddToGroup(const USFSettingDefini
 		return;
 	}
 
-	const TSubclassOf<USFSettingEntryWidget>* entryWidgetClassPtr = developerSettings->WidgetClasses.Find(SettingDefinition->GetClass());
+	const TSubclassOf<USFSettingEntryWidget>* entryWidgetClassPtr = developerSettings->SettingEntryWidgetClasses.Find(SettingDefinition->GetClass());
 	USFSettingEntryWidget* entryWidget = (entryWidgetClassPtr != nullptr && IsValid(*entryWidgetClassPtr)) ? CreateWidget<USFSettingEntryWidget>(this, *entryWidgetClassPtr) : nullptr;
 	if (!IsValid(entryWidget))
 	{

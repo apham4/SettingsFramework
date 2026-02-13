@@ -45,7 +45,7 @@ public:
 
 	// Mapping of Definition Classes to Widget Classes (e.g. USFSettingDefinition_Scalar -> WBP_Setting_Slider)
 	UPROPERTY(Config, EditAnywhere, Category = "Settings UI")
-	TMap<TSubclassOf<class USFSettingDefinition>, TSubclassOf<class USFSettingEntryWidget>> WidgetClasses;
+	TMap<TSubclassOf<class USFSettingDefinition>, TSubclassOf<class USFSettingEntryWidget>> SettingEntryWidgetClasses;
 
 public:
 	virtual FName GetCategoryName() const override

@@ -389,8 +389,17 @@ void USFSettingsSubsystem::SaveSettingsToSaveGame()
         }
     }
 
-    UGameplayStatics::SaveGameToSlot(saveGame, SaveGameSlotName, 0);
-    UE_LOG(LogSettingsFramework, Log, TEXT("[SettingsFramework] Settings saved to slot %s"), *SaveGameSlotName);
+    UGameplayStatics::AsyncSaveGameToSlot(saveGame, SaveGameSlotName, 0, FAsyncSaveGameToSlotDelegate::CreateWeakLambda(this, [this](const FString& InSlotName, const int32 InUserIndex, bool bSuccess)
+        {
+            if (bSuccess)
+            {
+                UE_LOG(LogSettingsFramework, Log, TEXT("[SettingsFramework] Settings successfully saved to slot %s"), *SaveGameSlotName);
+            }
+            else
+            {
+                UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] Failed to save settings to slot %s"), *SaveGameSlotName);
+            }
+        }));
 }
 #pragma endregion
 
