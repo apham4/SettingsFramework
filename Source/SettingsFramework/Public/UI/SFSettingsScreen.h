@@ -19,6 +19,8 @@ protected:
 	// Lazy loading on activated
 	virtual void NativeOnActivated() override;
 
+	void InitializeSettingsScreen();
+
 	bool bTabsInitialized;
 #pragma endregion
 

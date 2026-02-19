@@ -18,42 +18,59 @@
 void USFSettingsScreen::NativeOnActivated()
 {
 	Super::NativeOnActivated();
-
-	if (bTabsInitialized)
+	
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
+	if (bTabsInitialized || !IsValid(settingsSubsystem))
 	{
+		if (!IsValid(settingsSubsystem))
+		{
+			UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get Settings Subsystem."));
+		}
 		return;
 	}
 
+	if (settingsSubsystem->IsInitialized())
+	{
+		InitializeSettingsScreen();
+	}
+	else
+	{
+		settingsSubsystem->OnSettingsInitialized.AddDynamic(this, &USFSettingsScreen::InitializeSettingsScreen);
+	}
+}
+
+void USFSettingsScreen::InitializeSettingsScreen()
+{
 	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
 	const USFSettingsDeveloperSettings* developerSettings = GetDefault<USFSettingsDeveloperSettings>();
 	if (!IsValid(settingsSubsystem) || !IsValid(developerSettings))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get Settings Subsystem or Plugin Developer Settings."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Failed to get Settings Subsystem or Plugin Developer Settings."));
 		return;
 	}
 	if (!IsValid(developerSettings->TabButtonClass))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Tab Button Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Tab Button Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
 		return;
 	}
 	if (!IsValid(developerSettings->BranchTabContentClass))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Branch Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Branch Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
 		return;
 	}
 	if (!IsValid(developerSettings->LeafTabContentClass))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Leaf Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Leaf Tab Content Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
 		return;
 	}
 	if (!IsValid(CategoryTabList) || !IsValid(TabContentSwitcher))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:NativeOnActivated - Failed to get instances of Tab List or TabContentSwitcher in widget."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Failed to get instances of Tab List or TabContentSwitcher in widget."));
 		return;
 	}
 
 	CategoryTabList->SetLinkedSwitcher(TabContentSwitcher);
-	
+
 	TArray<USFSettingCategory*> rootCategories = settingsSubsystem->GetRootCategories();
 	for (USFSettingCategory* category : rootCategories)
 	{
@@ -65,14 +82,14 @@ void USFSettingsScreen::NativeOnActivated()
 		USFCategoryTabBase* tabContent = nullptr;
 		switch (category->CategoryType)
 		{
-			case ESFCategoryType::Branch:
-				tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->BranchTabContentClass));
-				break;
-			case ESFCategoryType::Leaf:
-				tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->LeafTabContentClass));
-				break;
+		case ESFCategoryType::Branch:
+			tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->BranchTabContentClass));
+			break;
+		case ESFCategoryType::Leaf:
+			tabContent = Cast<USFCategoryTabBase>(CreateWidget(this, developerSettings->LeafTabContentClass));
+			break;
 		}
-		
+
 		if (IsValid(tabContent))
 		{
 			tabContent->InitializeWithCategory(category);
