@@ -161,7 +161,7 @@ USFSettingValue* USFSettingsSubsystem::GetDefaultSettingValue(const FGameplayTag
 
 void USFSettingsSubsystem::SetSettingValue(const FGameplayTag& SettingTag, USFSettingValue* NewValue)
 {
-    if (!IsValid(NewValue))
+    if (!IsValid(NewValue) || (CurrentValues.Contains(SettingTag) && CurrentValues[SettingTag]->Equals(NewValue)))
     {
         return;
     }

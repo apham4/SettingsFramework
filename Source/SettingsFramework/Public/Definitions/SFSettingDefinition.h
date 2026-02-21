@@ -74,10 +74,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Scalar")
 	float StepSize = 1.0f;
 
-	// Use this to enforce discrete steps (e.g. 10, 20, 30) instead of smooth sliding
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Scalar")
-	bool bSnapToStep = true;
-
 public:
 	virtual TSubclassOf<USFSettingValue> GetValueClass() const override
 	{

@@ -3,9 +3,11 @@
 
 #include "UI/SettingEntries/SFSettingEntryWidget.h"
 #include "Definitions/SFSettingDefinition.h"
+#include "Core/SFSettingValue.h"
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
 
+#pragma region Initialization
 void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
 {
 	if (!IsValid(InSettingDefinition))
@@ -14,14 +16,56 @@ void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinit
 	}
 	SettingTag = InSettingDefinition->SettingTag;
 	BP_InitializeSettingEntry(InSettingDefinition);
+
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(GetWorld());
+	if (IsValid(settingsSubsystem))
+	{
+		settingsSubsystem->OnSettingValueChanged.AddDynamic(this, &USFSettingEntryWidget::HandleOnSettingValueChanged);
+		HandleOnSettingValueChanged(SettingTag, settingsSubsystem->GetSettingValue(SettingTag));
+	}
 }
 
+void USFSettingEntryWidget::HandleOnSettingValueChanged(const FGameplayTag& ChangedSettingTag, USFSettingValue* NewValue)
+{
+	if (ChangedSettingTag == SettingTag)
+	{
+		UpdateVisualValue(NewValue);
+	}
+	UpdateWidgetState(); // Update state whenever any setting changes, in case there are inter-setting dependencies that affect enabled/disabled state of this setting entry
+}
+#pragma endregion
+
+#pragma region Setting Data
 USFSettingDefinition* USFSettingEntryWidget::GetSettingDefinition() const
 {
 	const USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(GetWorld());
 	return IsValid(settingsSubsystem) ? settingsSubsystem->GetSettingDefinition(SettingTag) : nullptr;
 }
+#pragma endregion
 
+#pragma region Setting Value & State
+void USFSettingEntryWidget::OnUserChangedValue(USFSettingValue* NewValue)
+{
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(GetWorld());
+	if (IsValid(settingsSubsystem))
+	{
+		settingsSubsystem->SetSettingValue(SettingTag, NewValue);
+	}
+}
+
+void USFSettingEntryWidget::UpdateWidgetState()
+{
+	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(GetWorld());
+	if (!IsValid(settingsSubsystem))
+	{
+		return;
+	}
+	SetVisibility(settingsSubsystem->IsSettingVisible(SettingTag) ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
+	SetIsEnabled(settingsSubsystem->IsSettingEditable(SettingTag));
+}
+#pragma endregion
+
+#pragma region Navigation
 void USFSettingEntryWidget::NativeOnAddedToFocusPath(const FFocusEvent& InFocusEvent)
 {
 	Super::NativeOnAddedToFocusPath(InFocusEvent);
@@ -36,3 +80,4 @@ void USFSettingEntryWidget::NativeOnMouseEnter(const FGeometry& InGeometry, cons
 	Super::NativeOnMouseEnter(InGeometry, InMouseEvent);
 	SetFocus();
 }
+#pragma endregion
