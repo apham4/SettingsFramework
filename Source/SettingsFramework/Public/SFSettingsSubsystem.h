@@ -148,19 +148,19 @@ protected:
 
 #pragma region Keybinding
 public:
-	// Returns a setting GamplayTag that have keybindings that would collide with the given input chord and collision channels, excluding the setting specified by SettingTagToIgnore.
+	// Returns a setting GamplayTag that have keybindings that would collide with the given input Key and collision channels, excluding the setting specified by SettingTagToIgnore.
 	// Returns empty tag if there are no collisions.
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Keybinding")
-	struct FGameplayTag GetKeybindingCollision(const struct FInputChord& Chord, const struct FGameplayTagContainer& CollisionChannels, const struct FGameplayTag& SettingTagToIgnore) const;
+	struct FGameplayTag GetKeybindingCollision(const struct FKey& Key, const struct FGameplayTagContainer& CollisionChannels, const struct FGameplayTag& SettingTagToIgnore) const;
 
 	// Update a keybinding with specific collision handling. Returns true if successful.
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|Keybinding")
 	bool UpdateKeybinding(const struct FGameplayTag& SettingTag, struct FSFKeybindValueData& NewValue, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
 
 protected:
-	// For SettingBeingUpdated, NewChord is being applied to one of its slots, with OldChord being its previous value. Check to see if this NewChord collides with any other setting's keybinding slots.
+	// For SettingBeingUpdated, NewKey is being applied to one of its slots, with OldKey being its previous value. Check to see if this NewKey collides with any other setting's keybinding slots.
 	// If there is collision, resolve it according to the ResolutionPolicy.
 	// Returns true if resolved successfully.
-	bool ResolveKeybindingCollision(const struct FGameplayTag& SettingBeingUpdated, const struct FInputChord& NewChord, const struct FInputChord& OldChord, const struct FGameplayTagContainer& CollisionChannels, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
+	bool ResolveKeybindingCollision(const struct FGameplayTag& SettingBeingUpdated, const struct FKey& NewKey, const struct FKey& OldKey, const struct FGameplayTagContainer& CollisionChannels, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
 #pragma endregion
 };

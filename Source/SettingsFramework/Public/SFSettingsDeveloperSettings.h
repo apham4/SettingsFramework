@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DeveloperSettings.h"
+#include "Core/SFCoreTypes.h"
 #include "SFSettingsDeveloperSettings.generated.h"
 
 /**
@@ -26,6 +27,10 @@ public:
 	// Recursion guard: Maximum depth for updating setting dependencies to prevent infinite loops.
 	UPROPERTY(Config, EditAnywhere, Category = "Settings Conditions")
 	int32 MaxUpdateDepth = 10;
+
+	// Default keybind collision resolution policy when adding a new keybind that conflicts with an existing one.
+	UPROPERTY(Config, EditAnywhere, Category = "Settings Logic")
+	ESFKeybindCollisionResolution DefaultKeybindCollisionResolution = ESFKeybindCollisionResolution::Overwrite;
 
 	// Widget class for settings UI's category tab buttons.
 	UPROPERTY(Config, EditAnywhere, Category = "Settings UI")

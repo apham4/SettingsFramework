@@ -404,9 +404,9 @@ void USFSettingsSubsystem::SaveSettingsToSaveGame()
 #pragma endregion
 
 #pragma region Keybinding
-FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FInputChord& Chord, const FGameplayTagContainer& CollisionChannels, const FGameplayTag& SettingTagToIgnore) const
+FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FKey& Key, const FGameplayTagContainer& CollisionChannels, const FGameplayTag& SettingTagToIgnore) const
 {
-    if (!Chord.IsValidChord() || CollisionChannels.IsEmpty())
+    if (!Key.IsValid() || CollisionChannels.IsEmpty())
     {
         return FGameplayTag::EmptyTag;
     }
@@ -424,9 +424,9 @@ FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FInputChord& Cho
         USFSettingValue_Key* currentValue = Cast<USFSettingValue_Key>(GetSettingValue(settingTag));
         if (IsValid(currentValue))
         {
-            if (currentValue->Value.KBMPrimary == Chord
-                || currentValue->Value.KBMSecondary == Chord
-                || currentValue->Value.Gamepad == Chord)
+            if (currentValue->Value.KBMPrimary == Key
+                || currentValue->Value.KBMSecondary == Key
+                || currentValue->Value.Gamepad == Key)
             {
                 retVal = settingTag;
                 break;
@@ -475,12 +475,12 @@ bool USFSettingsSubsystem::UpdateKeybinding(const FGameplayTag& SettingTag, FSFK
     return bResolved;
 }
 
-bool USFSettingsSubsystem::ResolveKeybindingCollision(const FGameplayTag& SettingBeingUpdated, const FInputChord& NewChord, const FInputChord& OldChord, const FGameplayTagContainer& CollisionChannels, const ESFKeybindCollisionResolution& ResolutionPolicy)
+bool USFSettingsSubsystem::ResolveKeybindingCollision(const FGameplayTag& SettingBeingUpdated, const FKey& NewKey, const FKey& OldKey, const FGameplayTagContainer& CollisionChannels, const ESFKeybindCollisionResolution& ResolutionPolicy)
 {
-    FGameplayTag collidingSetting = GetKeybindingCollision(NewChord, CollisionChannels, SettingBeingUpdated);
-    if (!NewChord.IsValidChord() || NewChord == OldChord || !collidingSetting.IsValid() || ResolutionPolicy == ESFKeybindCollisionResolution::AllowDuplicate)
+    FGameplayTag collidingSetting = GetKeybindingCollision(NewKey, CollisionChannels, SettingBeingUpdated);
+    if (!NewKey.IsValid() || NewKey == OldKey || !collidingSetting.IsValid() || ResolutionPolicy == ESFKeybindCollisionResolution::AllowDuplicate)
     {
-        // If new chord is empty, same as old chord, there is no collision, or duplicate is allowed, just update the setting with no further action.
+        // If new key is empty, same as old key, there is no collision, or duplicate is allowed, just update the setting with no further action.
         return true;
     }
 
@@ -496,38 +496,38 @@ bool USFSettingsSubsystem::ResolveKeybindingCollision(const FGameplayTag& Settin
     // Handle Resolution
     if (ResolutionPolicy == ESFKeybindCollisionResolution::Overwrite)
     {
-        // Clear the slots in collidingValue that match NewChord
+        // Clear the slots in collidingValue that match NewKey
         USFSettingValue_Key* newValue = Cast<USFSettingValue_Key>(collidingValue->Duplicate(this));
-        if (collidingValue->Value.KBMPrimary == NewChord)
+        if (collidingValue->Value.KBMPrimary == NewKey)
         {
-            newValue->Value.KBMPrimary = FInputChord();
+            newValue->Value.KBMPrimary = FKey();
         }
-        if (collidingValue->Value.KBMSecondary == NewChord)
+        if (collidingValue->Value.KBMSecondary == NewKey)
         {
-            newValue->Value.KBMSecondary = FInputChord();
+            newValue->Value.KBMSecondary = FKey();
         }
-        if (collidingValue->Value.Gamepad == NewChord)
+        if (collidingValue->Value.Gamepad == NewKey)
         {
-            newValue->Value.Gamepad = FInputChord();
+            newValue->Value.Gamepad = FKey();
         }
 
         SetSettingValue(collidingSetting, newValue);
     }
     else if (ResolutionPolicy == ESFKeybindCollisionResolution::Swap)
     {
-        // Set the colliding slot(s) in the colliding setting to OldChord
+        // Set the colliding slot(s) in the colliding setting to OldKey
         USFSettingValue_Key* newValue = Cast<USFSettingValue_Key>(collidingValue->Duplicate(this));
-        if (collidingValue->Value.KBMPrimary == NewChord)
+        if (collidingValue->Value.KBMPrimary == NewKey)
         {
-            newValue->Value.KBMPrimary = OldChord;
+            newValue->Value.KBMPrimary = OldKey;
         }
-        if (collidingValue->Value.KBMSecondary == NewChord)
+        if (collidingValue->Value.KBMSecondary == NewKey)
         {
-            newValue->Value.KBMSecondary = OldChord;
+            newValue->Value.KBMSecondary = OldKey;
         }
-        if (collidingValue->Value.Gamepad == NewChord)
+        if (collidingValue->Value.Gamepad == NewKey)
         {
-            newValue->Value.Gamepad = OldChord;
+            newValue->Value.Gamepad = OldKey;
         }
 
         SetSettingValue(collidingSetting, newValue);

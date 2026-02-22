@@ -34,13 +34,13 @@ struct FSFKeybindValueData
     GENERATED_BODY()
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
-    FInputChord KBMPrimary;
+    FKey KBMPrimary;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
-    FInputChord KBMSecondary;
+    FKey KBMSecondary;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFKeybindValueData")
-    FInputChord Gamepad;
+    FKey Gamepad;
 
     bool operator==(const FSFKeybindValueData& Other) const
     {
