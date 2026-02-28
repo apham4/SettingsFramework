@@ -5,7 +5,7 @@
 #include "Core/SFSettingValue.h"
 #include "Definitions/SFSettingDefinition.h"
 #include "CommonButtonBase.h"
-#include "Components/TextBlock.h"
+#include "CommonTextBlock.h"
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
 #include "SFSettingsDeveloperSettings.h"
@@ -148,37 +148,6 @@ void USFSettingEntryWidget_Keybind::ClearSlot(ESFKeybindSlot SlotToClear)
 	// NOTE_TO_SELF: currently not called
 	CurrentListeningSlot = SlotToClear;
 	ApplyNewKeybind(FKey());
-}
-
-void USFSettingEntryWidget_Keybind::SetSlotText(ESFKeybindSlot SlotToSet, FKey Key, bool bIsListening)
-{
-	UTextBlock* textBlock = nullptr;
-	switch (SlotToSet)
-	{
-		case ESFKeybindSlot::KBMPrimary:
-			textBlock = KBMPrimaryButtonText;
-			break;
-		case ESFKeybindSlot::KBMSecondary:
-			textBlock = KBMSecondaryButtonText;
-			break;
-		case ESFKeybindSlot::Gamepad:
-			textBlock = GamepadButtonText;
-			break;
-		default:
-			break;
-	}
-	if (!IsValid(textBlock))
-	{
-		return;
-	}
-	if (bIsListening)
-	{
-		textBlock->SetText(FText::FromString(TEXT("Press any Key...")));
-	}
-	else
-	{
-		textBlock->SetText(Key.IsValid() ? Key.GetDisplayName() : FText::FromString(TEXT("Unbound")));
-	}
 }
 #pragma endregion
 

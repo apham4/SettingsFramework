@@ -29,6 +29,12 @@ protected:
 	void HandleOnSettingValueChanged(const FGameplayTag& ChangedSettingTag, class USFSettingValue* NewValue);
 #pragma endregion
 
+#pragma region Widgets
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget|Widgets", meta = (BindWidgetOptional))
+	TObjectPtr<class UCommonTextBlock> SettingLabel;
+#pragma endregion
+
 #pragma region Setting Data
 public:
 	UFUNCTION(BlueprintPure, Category = "SFSettingEntryWidget|Setting Data")

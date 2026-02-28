@@ -17,6 +17,7 @@ void USFSettingEntryWidget_Slider::InitializeSettingEntry(const class USFSetting
 	SliderWidget->SetMinValue(scalarSettingDef->MinValue);
 	SliderWidget->SetMaxValue(scalarSettingDef->MaxValue);
 	SliderWidget->SetStepSize(scalarSettingDef->StepSize);
+	SliderWidget->MouseUsesStep = true;
 	SliderWidget->OnAnalogCapture.AddDynamic(this, &USFSettingEntryWidget_Slider::HandleSliderValueChanged);
 }
 

@@ -6,6 +6,7 @@
 #include "Core/SFSettingValue.h"
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
+#include "CommonTextBlock.h"
 
 #pragma region Initialization
 void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
@@ -14,15 +15,21 @@ void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinit
 	{
 		return;
 	}
-	SettingTag = InSettingDefinition->SettingTag;
-	BP_InitializeSettingEntry(InSettingDefinition);
 
+	SettingTag = InSettingDefinition->SettingTag;
 	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(GetWorld());
 	if (IsValid(settingsSubsystem))
 	{
 		settingsSubsystem->OnSettingValueChanged.AddDynamic(this, &USFSettingEntryWidget::HandleOnSettingValueChanged);
 		HandleOnSettingValueChanged(SettingTag, settingsSubsystem->GetSettingValue(SettingTag));
 	}
+
+	if (IsValid(SettingLabel))
+	{
+		SettingLabel->SetText(InSettingDefinition->DisplayName);
+	}
+
+	BP_InitializeSettingEntry(InSettingDefinition);
 }
 
 void USFSettingEntryWidget::HandleOnSettingValueChanged(const FGameplayTag& ChangedSettingTag, USFSettingValue* NewValue)

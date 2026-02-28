@@ -10,7 +10,7 @@
 /**
  * Enum to track which keybind slot is currently listening for input for rebinding.
  */
-UENUM()
+UENUM(BlueprintType)
 enum class ESFKeybindSlot : uint8
 {
 	None,
@@ -55,28 +55,21 @@ protected:
 	UFUNCTION()
 	void HandleGamepadButtonClicked();
 
+	UFUNCTION(BlueprintNativeEvent, Category = "SFSettingEntryWidget_Keybind | Keybind Widgets")
+	void SetSlotText(ESFKeybindSlot SlotToSet, FKey Key, bool bIsListening);
+	virtual void SetSlotText_Implementation(ESFKeybindSlot SlotToSet, FKey Key, bool bIsListening) {};
+
 	void CancelListening();
 	void ClearSlot(ESFKeybindSlot SlotToClear);
 
-	void SetSlotText(ESFKeybindSlot SlotToSet, FKey Key, bool bIsListening);
-
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|KBM Primary", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets", meta = (BindWidget))
 	TObjectPtr<class UCommonButtonBase> KBMPrimaryButton;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|KBM Primary", meta = (BindWidget))
-	TObjectPtr<class UTextBlock> KBMPrimaryButtonText;
-
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|KBM Secondary", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets", meta = (BindWidget))
 	TObjectPtr<class UCommonButtonBase> KBMSecondaryButton;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|KBM Secondary", meta = (BindWidget))
-	TObjectPtr<class UTextBlock> KBMSecondaryButtonText;
-
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|Gamepad", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets", meta = (BindWidget))
 	TObjectPtr<class UCommonButtonBase> GamepadButton;
-
-	UPROPERTY(BlueprintReadOnly, Category = "SFSettingEntryWidget_Keybind|Keybind Widgets|Gamepad", meta = (BindWidget))
-	TObjectPtr<class UTextBlock> GamepadButtonText;
 
 	ESFKeybindSlot CurrentListeningSlot = ESFKeybindSlot::None;
 #pragma endregion
