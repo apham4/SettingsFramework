@@ -9,6 +9,7 @@
 #include "Core/SFLogs.h"
 #include "SFSettingsDeveloperSettings.h"
 #include "UI/Components/SFCategoryTab_Leaf.h"
+#include "UI/Components/SFCategoryTabButtonBase.h"
 
 #pragma region Initialization
 void USFCategoryTab_Branch::NativeOnActivated()
@@ -26,7 +27,7 @@ void USFCategoryTab_Branch::NativeOnActivated()
 		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Branch::NativeOnActivated - Failed to get Plugin Developer Settings."));
 		return;
 	}
-	if (!IsValid(developerSettings->TabButtonClass))
+	if (!IsValid(developerSettings->BranchTabButtonClass))
 	{
 		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Branch::NativeOnActivated - Tab Button Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
 		return;
@@ -65,7 +66,12 @@ void USFCategoryTab_Branch::NativeOnActivated()
 		{
 			tabContent->InitializeWithCategory(category);
 			tabContent->OnSettingFocused.AddDynamic(this, &USFCategoryTab_Branch::HandleSubCategorySettingFocused);
-			SubCategoryTabList->RegisterTab(FName(category->CategoryTag.ToString()), developerSettings->TabButtonClass, tabContent);
+			SubCategoryTabList->RegisterTab(FName(category->CategoryTag.ToString()), developerSettings->BranchTabButtonClass, tabContent);
+			USFCategoryTabButtonBase* tabButton = Cast<USFCategoryTabButtonBase>(SubCategoryTabList->GetTabButtonBaseByID(FName(category->CategoryTag.ToString())));
+			if (IsValid(tabButton))
+			{
+				tabButton->SetCategoryData(category);
+			}
 		}
 	}
 

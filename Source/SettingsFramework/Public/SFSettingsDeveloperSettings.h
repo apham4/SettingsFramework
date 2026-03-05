@@ -32,9 +32,13 @@ public:
 	UPROPERTY(Config, EditAnywhere, Category = "Settings Logic")
 	ESFKeybindCollisionResolution DefaultKeybindCollisionResolution = ESFKeybindCollisionResolution::Overwrite;
 
-	// Widget class for settings UI's category tab buttons.
+	// Widget class for settings UI's root category tab buttons.
 	UPROPERTY(Config, EditAnywhere, Category = "Settings UI")
-	TSubclassOf<class UCommonButtonBase> TabButtonClass;
+	TSubclassOf<class USFCategoryTabButtonBase> RootTabButtonClass;
+
+	// Widget class for settings UI's branch category tab buttons.
+	UPROPERTY(Config, EditAnywhere, Category = "Settings UI")
+	TSubclassOf<class USFCategoryTabButtonBase> BranchTabButtonClass;
 
 	// Widget class for displaying a branch-type category (contains sub-categories).
 	UPROPERTY(Config, EditAnywhere, Category = "Settings UI")
