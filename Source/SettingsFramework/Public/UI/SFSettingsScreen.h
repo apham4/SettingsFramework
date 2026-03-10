@@ -19,6 +19,7 @@ protected:
 	// Lazy loading on activated
 	virtual void NativeOnActivated() override;
 
+	UFUNCTION()
 	void InitializeSettingsScreen();
 
 	bool bTabsInitialized;
