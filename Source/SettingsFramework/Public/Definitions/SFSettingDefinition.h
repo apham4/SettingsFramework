@@ -56,7 +56,7 @@ public:
 /**
  * Setting definition for setting a numeric value (int/float).
  */
-UCLASS(DisplayName = "Scalar Setting")
+UCLASS(DisplayName = "SF Scalar Setting")
 class SETTINGSFRAMEWORK_API USFSettingDefinition_Scalar : public USFSettingDefinition
 {
 	GENERATED_BODY()
@@ -84,7 +84,7 @@ public:
 /**
  * Setting definition for setting a binary value (true/false).
  */
-UCLASS(DisplayName = "Bool Setting")
+UCLASS(DisplayName = "SF Bool Setting")
 class SETTINGSFRAMEWORK_API USFSettingDefinition_Bool : public USFSettingDefinition
 {
 	GENERATED_BODY()
@@ -99,7 +99,7 @@ public:
 /**
  * Setting definition for a dropdown/list.
  */
-UCLASS(DisplayName = "Discrete Setting")
+UCLASS(DisplayName = "SF Discrete Setting")
 class SETTINGSFRAMEWORK_API USFSettingDefinition_Discrete : public USFSettingDefinition
 {
 	GENERATED_BODY()
@@ -144,7 +144,7 @@ protected:
 /**
  * Setting definition for a keybind.
  */
-UCLASS(DisplayName = "Keybind Setting")
+UCLASS(DisplayName = "SF Keybind Setting")
 class SETTINGSFRAMEWORK_API USFSettingDefinition_Key : public USFSettingDefinition
 {
 	GENERATED_BODY()

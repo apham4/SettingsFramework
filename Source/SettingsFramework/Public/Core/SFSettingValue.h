@@ -46,7 +46,7 @@ public:
 /**
  * Setting value representing a numeric value (int/float).
  */
-UCLASS(DisplayName = "Scalar Value")
+UCLASS(DisplayName = "SF Scalar Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_Scalar : public USFSettingValue
 {
     GENERATED_BODY()
@@ -63,7 +63,7 @@ public:
 /**
  * Setting value representing a boolean value.
  */
-UCLASS(DisplayName = "Bool Value")
+UCLASS(DisplayName = "SF Bool Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_Bool : public USFSettingValue
 {
     GENERATED_BODY()
@@ -80,7 +80,7 @@ public:
 /**
 * Setting value representing an enum-type selection.
 */
-UCLASS(DisplayName = "String Value")
+UCLASS(DisplayName = "SF Tag Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_Tag : public USFSettingValue
 {
     GENERATED_BODY()
@@ -97,7 +97,7 @@ public:
 /**
 * Setting value with a string as the underlying value. Useful for IDs, names, resolutions, etc.
 */
-UCLASS(DisplayName = "String Value")
+UCLASS(DisplayName = "SF String Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_String : public USFSettingValue
 {
     GENERATED_BODY()
@@ -114,7 +114,7 @@ public:
 /**
  * Setting value representing a key binding (key/input chord).
  */
-UCLASS(DisplayName = "Key Value")
+UCLASS(DisplayName = "SF Keybind Value")
 class SETTINGSFRAMEWORK_API USFSettingValue_Key : public USFSettingValue
 {
     GENERATED_BODY()
