@@ -20,7 +20,6 @@ void USFSettingEntryWidget_Rotator::InitializeSettingEntry(const USFSettingDefin
 	TArray<FText> optionDisplayTexts;
 	for (const FSFSettingOption& settingOption : Options)
 	{
-		Options.Emplace(settingOption);
 		optionDisplayTexts.Emplace(settingOption.DisplayName);
 	}
 	RotatorWidget->PopulateTextLabels(optionDisplayTexts);

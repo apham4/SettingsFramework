@@ -16,6 +16,8 @@ class SETTINGSFRAMEWORK_API USFSettingsScreen : public UCommonActivatableWidget
 	
 #pragma region Initialization
 protected:
+	virtual void NativeOnInitialized() override;
+
 	// Lazy loading on activated
 	virtual void NativeOnActivated() override;
 
@@ -32,6 +34,10 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "SFSettingsScreen|Tab Navigation", meta = (BindWidget))
 	TObjectPtr<class UCommonAnimatedSwitcher> TabContentSwitcher;
+
+protected:
+	UFUNCTION()
+	void HandleSwitcherActiveIndexChanged(UWidget* ContentWidget, int32 Index);
 #pragma endregion
 
 #pragma region Display

@@ -16,6 +16,15 @@
 #include "UI/Components/SFCategoryTabButtonBase.h"
 
 #pragma region Initialization
+void USFSettingsScreen::NativeOnInitialized()
+{
+	Super::NativeOnInitialized();
+	if (IsValid(TabContentSwitcher))
+	{
+		TabContentSwitcher->OnActiveWidgetIndexChanged.AddUObject(this, &USFSettingsScreen::HandleSwitcherActiveIndexChanged);
+	}
+}
+
 void USFSettingsScreen::NativeOnActivated()
 {
 	Super::NativeOnActivated();
@@ -94,7 +103,7 @@ void USFSettingsScreen::InitializeSettingsScreen()
 
 		if (IsValid(tabContent))
 		{
-			tabContent->InitializeWithCategory(category);
+			tabContent->SetCategory(category);
 			tabContent->OnSettingFocused.AddDynamic(this, &USFSettingsScreen::HandleSettingFocused);
 			CategoryTabList->RegisterTab(FName(category->CategoryTag.ToString()), developerSettings->RootTabButtonClass, tabContent);
 			USFCategoryTabButtonBase* tabButton = Cast<USFCategoryTabButtonBase>(CategoryTabList->GetTabButtonBaseByID(FName(category->CategoryTag.ToString())));
@@ -107,13 +116,27 @@ void USFSettingsScreen::InitializeSettingsScreen()
 	}
 
 	// Select first tab after initializing
-	if (rootCategories.Num() > 0)
+	/*if (rootCategories.Num() > 0 && TabContentSwitcher->GetChildrenCount() > 0)
 	{
 		FName FirstTabID = FName(rootCategories[0]->CategoryTag.ToString());
 		CategoryTabList->SelectTabByID(FirstTabID);
-	}
+		HandleSwitcherActiveIndexChanged(TabContentSwitcher->GetChildAt(0), 0);
+	}*/
+
+	HandleSwitcherActiveIndexChanged(TabContentSwitcher->GetChildAt(0), 0);
 
 	bTabsInitialized = true;
+}
+#pragma endregion
+
+#pragma region Tab Navigation
+void USFSettingsScreen::HandleSwitcherActiveIndexChanged(UWidget* ContentWidget, int32 Index)
+{
+	USFCategoryTabBase* categoryTab = Cast<USFCategoryTabBase>(ContentWidget);
+	if (IsValid(categoryTab))
+	{
+		categoryTab->InitializeCategoryDisplay();
+	}
 }
 #pragma endregion
 
@@ -162,7 +185,7 @@ void USFSettingsScreen::ResetSettingsToDefault()
 #pragma region Navigation
 UWidget* USFSettingsScreen::NativeGetDesiredFocusTarget() const
 {
-	UWidget* activeWidget = IsValid(TabContentSwitcher) ? TabContentSwitcher->GetActiveWidget() : nullptr;
-	return IsValid(activeWidget) ? activeWidget : Super::NativeGetDesiredFocusTarget();
+	USFCategoryTabBase* activeWidget = IsValid(TabContentSwitcher) ? Cast<USFCategoryTabBase>(TabContentSwitcher->GetActiveWidget()) : nullptr;
+	return IsValid(activeWidget) ? activeWidget->GetDesiredFocusTarget() : Super::NativeGetDesiredFocusTarget();
 }
 #pragma endregion

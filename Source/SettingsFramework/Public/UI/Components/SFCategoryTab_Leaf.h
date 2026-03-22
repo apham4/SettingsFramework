@@ -18,7 +18,7 @@ class SETTINGSFRAMEWORK_API USFCategoryTab_Leaf : public USFCategoryTabBase
 #pragma region Initialization
 public:
 	// Lazy loading on activated
-	virtual void NativeOnActivated() override;
+	virtual void InitializeCategoryDisplay() override;
 
 protected:
 	UFUNCTION()
@@ -41,6 +41,6 @@ protected:
 
 #pragma region CommonUI Navigation
 public:
-	virtual UWidget* NativeGetDesiredFocusTarget() const override;
+	virtual UWidget* GetDesiredFocusTarget() const override;
 #pragma endregion
 };

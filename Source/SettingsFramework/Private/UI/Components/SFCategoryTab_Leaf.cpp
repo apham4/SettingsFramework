@@ -11,10 +11,8 @@
 #include "Definitions/SFSettingDefinition.h"
 
 #pragma region Initialization
-void USFCategoryTab_Leaf::NativeOnActivated()
+void USFCategoryTab_Leaf::InitializeCategoryDisplay()
 {
-	Super::NativeOnActivated();
-
 	if (bInitialized || !IsValid(SettingCategory))
 	{
 		return;
@@ -23,12 +21,12 @@ void USFCategoryTab_Leaf::NativeOnActivated()
 	const USFSettingsDeveloperSettings* developerSettings = GetDefault<USFSettingsDeveloperSettings>();
 	if (!IsValid(developerSettings))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Leaf::NativeOnActivated - Failed to get Plugin Developer Settings."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Leaf::InitializeCategoryDisplay - Failed to get Plugin Developer Settings."));
 		return;
 	}
 	if (!IsValid(developerSettings->SettingGroupWidgetClass))
 	{
-		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Leaf::NativeOnActivated - Setting Group Widget Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
+		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFCategoryTab_Leaf::InitializeCategoryDisplay - Setting Group Widget Class is not set in Developer Settings. Set this in Project Settings > Plugins > Settings Framework."));
 		return;
 	}
 
@@ -99,9 +97,9 @@ void USFCategoryTab_Leaf::HandleSettingEntryFocused(const FGameplayTag& SettingT
 #pragma endregion
 
 #pragma region CommonUI Navigation
-UWidget* USFCategoryTab_Leaf::NativeGetDesiredFocusTarget() const
+UWidget* USFCategoryTab_Leaf::GetDesiredFocusTarget() const
 {
 	USFSettingGroupWidget* firstGroup = (IsValid(SettingGroupContainer) && SettingGroupContainer->GetChildrenCount() > 0) ? Cast<USFSettingGroupWidget>(SettingGroupContainer->GetChildAt(0)) : nullptr;
-	return IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : Super::NativeGetDesiredFocusTarget();
+	return IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : nullptr;
 }
 #pragma endregion

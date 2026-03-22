@@ -17,10 +17,14 @@ class SETTINGSFRAMEWORK_API USFCategoryTab_Branch : public USFCategoryTabBase
 
 #pragma region Initialization
 public:
-	// Lazy loading on activated
-	virtual void NativeOnActivated() override;
+	virtual void InitializeCategoryDisplay() override;
 
 protected:
+	virtual void NativeOnInitialized() override;
+
+	UFUNCTION()
+	void HandleSwitcherActiveIndexChanged(UWidget* ContentWidget, int32 Index);
+
 	UFUNCTION()
 	void HandleSubCategorySettingFocused(const struct FGameplayTag& SettingTag);
 
@@ -37,7 +41,7 @@ protected:
 #pragma endregion
 
 #pragma region CommonUI Navigation
-protected:
-	virtual UWidget* NativeGetDesiredFocusTarget() const override;
+public:
+	virtual UWidget* GetDesiredFocusTarget() const override;
 #pragma endregion
 };
