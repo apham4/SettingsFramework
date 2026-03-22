@@ -175,7 +175,7 @@ void USFSettingsSubsystem::SetSettingValue(const FGameplayTag& SettingTag, USFSe
     ++UpdateDepth;
 
 	USFSettingValue* duplicatedValue = NewValue->Duplicate(this);
-	CurrentValues[SettingTag] = duplicatedValue;
+    CurrentValues.Emplace(SettingTag, duplicatedValue);
 	OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
 
 	UpdateSettingDependencies();
@@ -221,7 +221,7 @@ void USFSettingsSubsystem::RevertSetting(const FGameplayTag& SettingTag)
         return;
     }
     USFSettingValue* duplicatedValue = valueToUse->Duplicate(this);
-    CurrentValues[SettingTag] = duplicatedValue;
+    CurrentValues.Emplace(SettingTag, duplicatedValue);
     OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
 }
 
@@ -234,7 +234,7 @@ void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag& SettingTag)
         return;
     }
     USFSettingValue* duplicatedValue = defaultValue->Duplicate(this);
-    CurrentValues[SettingTag] = duplicatedValue;
+    CurrentValues.Emplace(SettingTag, duplicatedValue);
     OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
 }
 
@@ -247,7 +247,7 @@ void USFSettingsSubsystem::SaveSettings()
         if (IsValid(currentValue) && (!SavedValues.Contains(settingTag) || !SavedValues[settingTag]->Equals(currentValue)))
         {
             USFSettingValue* duplicatedValue = currentValue->Duplicate(this);
-            SavedValues[settingTag] = duplicatedValue;
+            SavedValues.Emplace(settingTag, duplicatedValue);
             OnSettingValueSaved.Broadcast(settingTag, duplicatedValue);
 		}
     }
