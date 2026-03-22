@@ -69,7 +69,8 @@ void USFSettingsScreen::InitializeSettingsScreen()
 		UE_LOG(LogSettingsFramework, Error, TEXT("[SettingsFramework] USFSettingsScreen:InitializeSettingsScreen - Failed to get instances of Tab List or TabContentSwitcher in widget."));
 		return;
 	}
-
+	
+	TabContentSwitcher->ClearChildren();
 	CategoryTabList->SetLinkedSwitcher(TabContentSwitcher);
 
 	TArray<USFSettingCategory*> rootCategories = settingsSubsystem->GetRootCategories();
@@ -101,7 +102,15 @@ void USFSettingsScreen::InitializeSettingsScreen()
 			{
 				tabButton->SetCategoryData(category);
 			}
+			TabContentSwitcher->AddChild(tabContent);
 		}
+	}
+
+	// Select first tab after initializing
+	if (rootCategories.Num() > 0)
+	{
+		FName FirstTabID = FName(rootCategories[0]->CategoryTag.ToString());
+		CategoryTabList->SelectTabByID(FirstTabID);
 	}
 
 	bTabsInitialized = true;
