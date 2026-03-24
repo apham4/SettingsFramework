@@ -126,6 +126,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Discrete", meta = (EditCondition = "bUseDynamicOptions"))
 	TSubclassOf<class USFSettingOptionSource> OptionSource;
 
+	// DYNAMIC: List of settings that this setting should listen to to refresh its dynamic options. If the condition to refresh is something else, use SFSettingEntryWidget_Rotator::RefreshOptions with custom logic.
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value|Discrete", meta = (EditCondition = "bUseDynamicOptions"))
+	FGameplayTagContainer DeterminantSettingTags;
+
 public:
 	virtual TSubclassOf<USFSettingValue> GetValueClass() const override;
 
