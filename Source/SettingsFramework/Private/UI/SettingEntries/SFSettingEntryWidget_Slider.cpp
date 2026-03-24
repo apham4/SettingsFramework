@@ -8,7 +8,6 @@
 
 void USFSettingEntryWidget_Slider::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
 {
-	Super::InitializeSettingEntry(InSettingDefinition);
 	const USFSettingDefinition_Scalar* scalarSettingDef = Cast<USFSettingDefinition_Scalar>(InSettingDefinition);
 	if (!IsValid(scalarSettingDef) || !IsValid(SliderWidget))
 	{
@@ -18,6 +17,8 @@ void USFSettingEntryWidget_Slider::InitializeSettingEntry(const class USFSetting
 	SliderWidget->SetMaxValue(scalarSettingDef->MaxValue);
 	SliderWidget->SetStepSize(scalarSettingDef->StepSize);
 	SliderWidget->MouseUsesStep = true;
+
+	Super::InitializeSettingEntry(InSettingDefinition);
 	SliderWidget->OnValueChanged.AddDynamic(this, &USFSettingEntryWidget_Slider::HandleSliderValueChanged);
 }
 

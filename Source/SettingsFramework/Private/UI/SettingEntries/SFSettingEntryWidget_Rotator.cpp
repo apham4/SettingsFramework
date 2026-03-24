@@ -9,7 +9,6 @@
 
 void USFSettingEntryWidget_Rotator::InitializeSettingEntry(const USFSettingDefinition* InSettingDefinition)
 {
-	Super::InitializeSettingEntry(InSettingDefinition);
 	const USFSettingDefinition_Discrete* discreteSettingDef = Cast<USFSettingDefinition_Discrete>(InSettingDefinition);
 	if (!IsValid(discreteSettingDef) || !IsValid(RotatorWidget))
 	{
@@ -23,6 +22,8 @@ void USFSettingEntryWidget_Rotator::InitializeSettingEntry(const USFSettingDefin
 		optionDisplayTexts.Emplace(settingOption.DisplayName);
 	}
 	RotatorWidget->PopulateTextLabels(optionDisplayTexts);
+
+	Super::InitializeSettingEntry(InSettingDefinition);
 	RotatorWidget->OnRotatedWithDirection.AddDynamic(this, &USFSettingEntryWidget_Rotator::HandleRotatorRotated);
 }
 
@@ -37,10 +38,7 @@ void USFSettingEntryWidget_Rotator::UpdateVisualValue_Implementation(const class
 	{
 		if (Options[i].Value->Equals(NewValue))
 		{
-			if (RotatorWidget->GetSelectedIndex() != i)
-			{
-				RotatorWidget->SetSelectedItem(i);
-			}
+			RotatorWidget->SetSelectedItem(i);
 			break;
 		}
 	}
