@@ -5,7 +5,7 @@
 #include "Definitions/SFSettingCategory.h"
 #include "CommonButtonBase.h"
 #include "CommonTabListWidgetBase.h"
-#include "CommonAnimatedSwitcher.h"
+#include "CommonActivatableWidgetSwitcher.h"
 #include "Core/SFLogs.h"
 #include "SFSettingsDeveloperSettings.h"
 #include "UI/Components/SFCategoryTab_Leaf.h"
@@ -105,9 +105,9 @@ void USFCategoryTab_Branch::HandleSubCategorySettingFocused(const struct FGamepl
 #pragma endregion
 
 #pragma region Navigation
-UWidget* USFCategoryTab_Branch::GetDesiredFocusTarget() const
+UWidget* USFCategoryTab_Branch::NativeGetDesiredFocusTarget() const
 {
-	UWidget* activeWidget = IsValid(TabContentSwitcher) ? TabContentSwitcher->GetActiveWidget() : nullptr;
-	return IsValid(activeWidget) ? activeWidget : nullptr;
+	UCommonActivatableWidget* activeTab = IsValid(TabContentSwitcher) ? Cast<UCommonActivatableWidget>(TabContentSwitcher->GetActiveWidget()) : nullptr;
+	return IsValid(activeTab) ? activeTab->GetDesiredFocusTarget() : Super::NativeGetDesiredFocusTarget();
 }
 #pragma endregion

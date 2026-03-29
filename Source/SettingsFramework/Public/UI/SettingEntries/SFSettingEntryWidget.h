@@ -19,6 +19,7 @@ class SETTINGSFRAMEWORK_API USFSettingEntryWidget : public UCommonUserWidget
 
 #pragma region Initialization
 public:
+	virtual void NativeConstruct() override;
 	virtual void InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition);
 	
 protected:

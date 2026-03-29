@@ -33,7 +33,7 @@ protected:
 	TObjectPtr<class UCommonTabListWidgetBase> CategoryTabList;
 
 	UPROPERTY(BlueprintReadOnly, Category = "SFSettingsScreen|Tab Navigation", meta = (BindWidget))
-	TObjectPtr<class UCommonAnimatedSwitcher> TabContentSwitcher;
+	TObjectPtr<class UCommonActivatableWidgetSwitcher> TabContentSwitcher;
 
 protected:
 	UFUNCTION()

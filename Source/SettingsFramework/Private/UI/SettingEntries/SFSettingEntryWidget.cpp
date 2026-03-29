@@ -9,6 +9,12 @@
 #include "CommonTextBlock.h"
 
 #pragma region Initialization
+void USFSettingEntryWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+	bIsFocusable = true;
+}
+
 void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
 {
 	if (!IsValid(InSettingDefinition))

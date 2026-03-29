@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CommonUserWidget.h"
+#include "CommonActivatableWidget.h"
 #include "Core/SFCoreTypes.h"
 #include "SFCategoryTabBase.generated.h"
 
@@ -11,7 +11,7 @@
  * A tab content widget representing a setting category. Can have subcategories (tabbed) or setting entries.
  */
 UCLASS(Abstract, BlueprintType, Blueprintable)
-class SETTINGSFRAMEWORK_API USFCategoryTabBase : public UCommonUserWidget
+class SETTINGSFRAMEWORK_API USFCategoryTabBase : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
 
@@ -35,10 +35,5 @@ public:
 protected:
 	UPROPERTY(Transient)
 	TObjectPtr<class USFSettingCategory> SettingCategory;
-#pragma endregion
-
-#pragma region CommonUI Navigation
-public:
-	virtual UWidget* GetDesiredFocusTarget() const;
 #pragma endregion
 };

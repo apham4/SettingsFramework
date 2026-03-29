@@ -9,10 +9,3 @@ void USFCategoryTabBase::SetCategory(class USFSettingCategory* InSettingCategory
 	SettingCategory = InSettingCategory;
 }
 #pragma endregion
-
-#pragma region CommonUI Navigation
-UWidget* USFCategoryTabBase::GetDesiredFocusTarget() const
-{
-	return nullptr;
-}
-#pragma endregion

@@ -34,6 +34,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "SFCategoryTab_Leaf", meta = (BindWidget))
 	TObjectPtr<class UPanelWidget> SettingGroupContainer;
 
+	UPROPERTY(Transient)
+	TMap<FGameplayTag, TObjectPtr<class USFSettingEntryWidget>> EntryWidgetMap;
+
 	// Implement in Blueprint: add any additional styling like padding and such.
 	UFUNCTION(BlueprintImplementableEvent, Category = "SFCategoryTab_Leaf")
 	void OnGroupWidgetAdded(class UPanelSlot* WidgetAsPanelSlot, class USFSettingGroupWidget* WidgetAsGroupWidget);
@@ -41,6 +44,9 @@ protected:
 
 #pragma region CommonUI Navigation
 public:
-	virtual UWidget* GetDesiredFocusTarget() const override;
+	virtual UWidget* NativeGetDesiredFocusTarget() const override;
+
+protected:
+	TWeakObjectPtr<class USFSettingEntryWidget> LastFocusedEntry;
 #pragma endregion
 };

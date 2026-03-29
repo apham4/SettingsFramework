@@ -30,6 +30,9 @@ void USFCategoryTab_Leaf::InitializeCategoryDisplay()
 		return;
 	}
 
+	EntryWidgetMap.Empty();
+	LastFocusedEntry = nullptr;
+
 	// Case 1: setting groups
 	for (const FSFSettingGroup& group : SettingCategory->SettingGroups)
 	{
@@ -87,19 +90,36 @@ void USFCategoryTab_Leaf::CreateSettingEntryAndAddToGroup(const USFSettingDefini
 	entryWidget->InitializeSettingEntry(SettingDefinition);
 	entryWidget->OnSettingFocused.AddDynamic(this, &USFCategoryTab_Leaf::HandleSettingEntryFocused);
 	GroupWidget->AddSettingEntry(entryWidget);
+
+	// Add to map for quick lookup later.
+	EntryWidgetMap.Emplace(SettingDefinition->SettingTag, entryWidget);
 }
 
 void USFCategoryTab_Leaf::HandleSettingEntryFocused(const FGameplayTag& SettingTag)
 {
+	if (EntryWidgetMap.Contains(SettingTag))
+	{
+		LastFocusedEntry = EntryWidgetMap[SettingTag];
+	}
+	
 	// Bubble up to screen so that the description box can display the focused setting's description.
 	OnSettingFocused.Broadcast(SettingTag);
 }
 #pragma endregion
 
 #pragma region CommonUI Navigation
-UWidget* USFCategoryTab_Leaf::GetDesiredFocusTarget() const
+UWidget* USFCategoryTab_Leaf::NativeGetDesiredFocusTarget() const
 {
-	USFSettingGroupWidget* firstGroup = (IsValid(SettingGroupContainer) && SettingGroupContainer->GetChildrenCount() > 0) ? Cast<USFSettingGroupWidget>(SettingGroupContainer->GetChildAt(0)) : nullptr;
-	return IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : nullptr;
+	UWidget* desiredFocus = nullptr;
+	if (LastFocusedEntry.IsValid() && LastFocusedEntry->IsVisible() && LastFocusedEntry->GetIsEnabled())
+	{
+		desiredFocus = LastFocusedEntry.Get();
+	}
+	else
+	{
+		USFSettingGroupWidget* firstGroup = (IsValid(SettingGroupContainer) && SettingGroupContainer->GetChildrenCount() > 0) ? Cast<USFSettingGroupWidget>(SettingGroupContainer->GetChildAt(0)) : nullptr;
+		desiredFocus = IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : Super::NativeGetDesiredFocusTarget();
+	}
+	return desiredFocus;
 }
 #pragma endregion

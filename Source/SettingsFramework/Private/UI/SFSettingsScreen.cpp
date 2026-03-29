@@ -4,7 +4,7 @@
 #include "UI/SFSettingsScreen.h"
 #include "CommonButtonBase.h"
 #include "CommonTabListWidgetBase.h"
-#include "CommonAnimatedSwitcher.h"
+#include "CommonActivatableWidgetSwitcher.h"
 #include "Core/SFLogs.h"
 #include "SFSettingsDeveloperSettings.h"
 #include "SFFunctionLibrary.h"

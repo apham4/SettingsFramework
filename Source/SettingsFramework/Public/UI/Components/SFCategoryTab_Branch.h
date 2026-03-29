@@ -37,11 +37,11 @@ protected:
 	TObjectPtr<class UCommonTabListWidgetBase> SubCategoryTabList;
 
 	UPROPERTY(BlueprintReadOnly, Category = "SFCategoryTab_Branch|Tab Navigation", meta = (BindWidget))
-	TObjectPtr<class UCommonAnimatedSwitcher> TabContentSwitcher;
+	TObjectPtr<class UCommonActivatableWidgetSwitcher> TabContentSwitcher;
 #pragma endregion
 
 #pragma region CommonUI Navigation
 public:
-	virtual UWidget* GetDesiredFocusTarget() const override;
+	virtual UWidget* NativeGetDesiredFocusTarget() const override;
 #pragma endregion
 };
