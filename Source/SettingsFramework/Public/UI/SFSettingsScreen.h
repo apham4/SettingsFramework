@@ -65,4 +65,16 @@ protected:
 protected:
 	virtual UWidget* NativeGetDesiredFocusTarget() const override;
 #pragma endregion
+
+#pragma region Input Action
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
+	TObjectPtr<class UInputAction> SaveAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
+	TObjectPtr<class UInputAction> RevertAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
+	TObjectPtr<class UInputAction> ResetToDefaultAction;
+#pragma endregion
 };

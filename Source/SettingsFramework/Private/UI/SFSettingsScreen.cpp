@@ -14,6 +14,7 @@
 #include "UI/Components/SFCategoryTab_Branch.h"
 #include "UI/Components/SFCategoryTab_Leaf.h"
 #include "UI/Components/SFCategoryTabButtonBase.h"
+#include "Input/CommonUIInputTypes.h"
 
 #pragma region Initialization
 void USFSettingsScreen::NativeOnInitialized()
@@ -22,6 +23,27 @@ void USFSettingsScreen::NativeOnInitialized()
 	if (IsValid(TabContentSwitcher))
 	{
 		TabContentSwitcher->OnActiveWidgetIndexChanged.AddUObject(this, &USFSettingsScreen::HandleSwitcherActiveIndexChanged);
+	}
+
+	if (IsValid(SaveAction))
+	{
+		FBindUIActionArgs saveArgs(SaveAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::SaveSettings));
+		saveArgs.bDisplayInActionBar = true;
+		RegisterUIActionBinding(saveArgs);
+	}
+
+	if (IsValid(RevertAction))
+	{
+		FBindUIActionArgs revertArgs(RevertAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::RevertSettings));
+		revertArgs.bDisplayInActionBar = true;
+		RegisterUIActionBinding(revertArgs);
+	}
+
+	if (IsValid(ResetToDefaultAction))
+	{
+		FBindUIActionArgs resetArgs(ResetToDefaultAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::ResetSettingsToDefault));
+		resetArgs.bDisplayInActionBar = true;
+		RegisterUIActionBinding(resetArgs);
 	}
 }
 
@@ -114,14 +136,6 @@ void USFSettingsScreen::InitializeSettingsScreen()
 			TabContentSwitcher->AddChild(tabContent);
 		}
 	}
-
-	// Select first tab after initializing
-	/*if (rootCategories.Num() > 0 && TabContentSwitcher->GetChildrenCount() > 0)
-	{
-		FName FirstTabID = FName(rootCategories[0]->CategoryTag.ToString());
-		CategoryTabList->SelectTabByID(FirstTabID);
-		HandleSwitcherActiveIndexChanged(TabContentSwitcher->GetChildAt(0), 0);
-	}*/
 
 	HandleSwitcherActiveIndexChanged(TabContentSwitcher->GetChildAt(0), 0);
 
