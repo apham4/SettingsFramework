@@ -12,7 +12,6 @@
 void USFSettingEntryWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
-	bIsFocusable = true;
 }
 
 void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
@@ -79,6 +78,11 @@ void USFSettingEntryWidget::UpdateWidgetState()
 #pragma endregion
 
 #pragma region Navigation
+UWidget* USFSettingEntryWidget::GetPrimaryFocusTarget_Implementation() const
+{
+	return const_cast<USFSettingEntryWidget*>(this);
+}
+
 void USFSettingEntryWidget::NativeOnAddedToFocusPath(const FFocusEvent& InFocusEvent)
 {
 	Super::NativeOnAddedToFocusPath(InFocusEvent);
@@ -91,6 +95,9 @@ void USFSettingEntryWidget::NativeOnAddedToFocusPath(const FFocusEvent& InFocusE
 void USFSettingEntryWidget::NativeOnMouseEnter(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent)
 {
 	Super::NativeOnMouseEnter(InGeometry, InMouseEvent);
-	SetFocus();
+	if (UWidget* focusTarget = GetPrimaryFocusTarget())
+	{
+		focusTarget->SetFocus();
+	}
 }
 #pragma endregion

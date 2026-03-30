@@ -65,6 +65,10 @@ protected:
 
 #pragma region Navigation
 public:
+	UFUNCTION(BlueprintNativeEvent, Category = "SFSettingEntryWidget|Navigation")
+	UWidget* GetPrimaryFocusTarget() const;
+	virtual UWidget* GetPrimaryFocusTarget_Implementation() const;
+
 	UPROPERTY(BlueprintAssignable, Category = "SFSettingEntryWidget|Navigation")
 	FOnSettingEntryFocused OnSettingFocused;
 

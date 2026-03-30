@@ -113,13 +113,14 @@ UWidget* USFCategoryTab_Leaf::NativeGetDesiredFocusTarget() const
 	UWidget* desiredFocus = nullptr;
 	if (LastFocusedEntry.IsValid() && LastFocusedEntry->IsVisible() && LastFocusedEntry->GetIsEnabled())
 	{
-		desiredFocus = LastFocusedEntry.Get();
+		desiredFocus = LastFocusedEntry->GetPrimaryFocusTarget();
 	}
 	else
 	{
 		USFSettingGroupWidget* firstGroup = (IsValid(SettingGroupContainer) && SettingGroupContainer->GetChildrenCount() > 0) ? Cast<USFSettingGroupWidget>(SettingGroupContainer->GetChildAt(0)) : nullptr;
-		desiredFocus = IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : Super::NativeGetDesiredFocusTarget();
+		USFSettingEntryWidget* firstEntry = IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : nullptr;
+		desiredFocus = IsValid(firstEntry) ? firstEntry->GetPrimaryFocusTarget() : nullptr;
 	}
-	return desiredFocus;
+	return IsValid(desiredFocus) ? desiredFocus : Super::NativeGetDesiredFocusTarget();
 }
 #pragma endregion
