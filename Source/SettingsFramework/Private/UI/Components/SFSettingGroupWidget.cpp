@@ -16,7 +16,23 @@ void USFSettingGroupWidget::AddSettingEntry(USFSettingEntryWidget* EntryWidget)
 	OnSettingEntryAdded(panelSlot, EntryWidget);
 }
 
-class USFSettingEntryWidget* USFSettingGroupWidget::GetFirstSettingEntry() const
+class USFSettingEntryWidget* USFSettingGroupWidget::GetFirstValidSettingEntry() const
 {
-	return (IsValid(SettingEntryContainer) && SettingEntryContainer->GetChildrenCount() > 0) ? Cast<USFSettingEntryWidget>(SettingEntryContainer->GetChildAt(0)) : nullptr;
+	if (!IsValid(SettingEntryContainer))
+	{
+		return nullptr;
+	}
+	
+	USFSettingEntryWidget* validEntry = nullptr;
+	for (UWidget* child : SettingEntryContainer->GetAllChildren())
+	{
+		USFSettingEntryWidget* asSettingEntry = Cast<USFSettingEntryWidget>(child);
+		if (IsValid(asSettingEntry) && asSettingEntry->IsVisible() && asSettingEntry->GetIsEnabled())
+		{
+			validEntry = asSettingEntry;
+			break;
+		}
+	}
+
+	return validEntry;
 }

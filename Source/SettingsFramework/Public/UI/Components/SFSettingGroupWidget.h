@@ -22,7 +22,7 @@ public:
 	// Add an initialized setting entry widget to this group.
 	void AddSettingEntry(class USFSettingEntryWidget* EntryWidget);
 
-	class USFSettingEntryWidget* GetFirstSettingEntry() const;
+	class USFSettingEntryWidget* GetFirstValidSettingEntry() const;
 	
 protected:
 	// Implement in Blueprint: add any additional styling like padding and such.

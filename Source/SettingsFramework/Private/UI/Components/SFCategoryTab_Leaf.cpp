@@ -115,11 +115,19 @@ UWidget* USFCategoryTab_Leaf::NativeGetDesiredFocusTarget() const
 	{
 		desiredFocus = LastFocusedEntry->GetPrimaryFocusTarget();
 	}
-	else
+	else if (IsValid(SettingGroupContainer))
 	{
-		USFSettingGroupWidget* firstGroup = (IsValid(SettingGroupContainer) && SettingGroupContainer->GetChildrenCount() > 0) ? Cast<USFSettingGroupWidget>(SettingGroupContainer->GetChildAt(0)) : nullptr;
-		USFSettingEntryWidget* firstEntry = IsValid(firstGroup) ? firstGroup->GetFirstSettingEntry() : nullptr;
-		desiredFocus = IsValid(firstEntry) ? firstEntry->GetPrimaryFocusTarget() : nullptr;
+		for (UWidget* child : SettingGroupContainer->GetAllChildren())
+		{
+			USFSettingGroupWidget* asGroupWidget = Cast<USFSettingGroupWidget>(child);
+			USFSettingEntryWidget* firstValidEntry = IsValid(asGroupWidget) ? asGroupWidget->GetFirstValidSettingEntry() : nullptr;
+			UWidget* primaryFocusTarget = IsValid(firstValidEntry) ? firstValidEntry->GetPrimaryFocusTarget() : nullptr;
+			if (IsValid(primaryFocusTarget))
+			{
+				desiredFocus = primaryFocusTarget;
+				break;
+			}
+		}
 	}
 	return IsValid(desiredFocus) ? desiredFocus : Super::NativeGetDesiredFocusTarget();
 }
