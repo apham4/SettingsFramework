@@ -137,12 +137,6 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
 	TArray<struct FSFSettingOption> GetSettingOptions(const UObject* WorldContextObject) const;
-
-protected:
-	virtual void PostLoad() override;
-
-	UPROPERTY(Transient)
-	TObjectPtr<class USFSettingOptionSource> CachedSettingOptionSource;
 };
 
 /**

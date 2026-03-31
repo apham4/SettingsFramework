@@ -28,6 +28,7 @@ public:
 protected:
 	void OnSettingsRegistryLoaded(TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistrySoftPtr);
 	void RegisterCategory(const class USFSettingCategory* Category);
+	void RegisterSetting(class USFSettingDefinition* Definition);
 	
 public:
 	UPROPERTY(BlueprintAssignable, Category = "SFSettingsSubsystem|Initialization")
@@ -46,6 +47,14 @@ public:
 	// Get the setting definition associated with the given setting gameplay tag
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
 	class USFSettingDefinition* GetSettingDefinition(const struct FGameplayTag& SettingTag) const;
+
+	// Get the dynamic option source object associated with the given setting gameplay tag if it is a discrete setting with dynamic options
+	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
+	class USFSettingOptionSource* GetDynamicOptionSource(const struct FGameplayTag& SettingTag) const;
+
+protected:
+	UPROPERTY(Transient)
+	TMap<struct FGameplayTag, TObjectPtr<class USFSettingOptionSource>> DynamicOptionSources;
 #pragma endregion
 
 #pragma region Settings State Management

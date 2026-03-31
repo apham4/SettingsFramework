@@ -46,6 +46,7 @@ void USFSettingsSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 void USFSettingsSubsystem::OnSettingsRegistryLoaded(TSoftObjectPtr<class USFSettingsRegistry> SettingsRegistrySoftPtr)
 {
     RegisteredSettings.Empty();
+    DynamicOptionSources.Empty();
     SettingsRegistry = SettingsRegistrySoftPtr.Get();
     if (!IsValid(SettingsRegistry))
     {
@@ -84,11 +85,7 @@ void USFSettingsSubsystem::RegisterCategory(const USFSettingCategory* Category)
         {
             for (USFSettingDefinition* settingDef : group.Settings)
             {
-                if (!IsValid(settingDef))
-                {
-                    continue;
-                }
-                RegisteredSettings.Emplace(settingDef->SettingTag, settingDef);
+                RegisterSetting(settingDef);
             }
         }
 
@@ -97,13 +94,26 @@ void USFSettingsSubsystem::RegisterCategory(const USFSettingCategory* Category)
         {
             for (USFSettingDefinition* settingDef : Category->Settings)
             {
-                if (!IsValid(settingDef))
-                {
-                    continue;
-                }
-                RegisteredSettings.Emplace(settingDef->SettingTag, settingDef);
+                RegisterSetting(settingDef);
             }
         }
+    }
+}
+
+void USFSettingsSubsystem::RegisterSetting(USFSettingDefinition* Definition)
+{
+    if (!IsValid(Definition))
+    {
+        return;
+    }
+    RegisteredSettings.Emplace(Definition->SettingTag, Definition);
+
+    // Special handling for discrete setting to initialize dynamic option source
+    const USFSettingDefinition_Discrete* asDiscrete = Cast<USFSettingDefinition_Discrete>(Definition);
+    if (IsValid(asDiscrete) && asDiscrete->bUseDynamicOptions && IsValid(asDiscrete->OptionSource))
+    {
+        USFSettingOptionSource* optionSource = NewObject<USFSettingOptionSource>(this, asDiscrete->OptionSource);
+        DynamicOptionSources.Emplace(asDiscrete->SettingTag, optionSource);
     }
 }
 #pragma endregion
@@ -117,6 +127,15 @@ TArray<USFSettingCategory*> USFSettingsSubsystem::GetRootCategories() const
 USFSettingDefinition* USFSettingsSubsystem::GetSettingDefinition(const FGameplayTag& SettingTag) const
 {
     if (const TObjectPtr<USFSettingDefinition>* found = RegisteredSettings.Find(SettingTag))
+    {
+        return *found;
+    }
+    return nullptr;
+}
+
+USFSettingOptionSource* USFSettingsSubsystem::GetDynamicOptionSource(const FGameplayTag& SettingTag) const
+{
+    if (const TObjectPtr<USFSettingOptionSource>* found = DynamicOptionSources.Find(SettingTag))
     {
         return *found;
     }

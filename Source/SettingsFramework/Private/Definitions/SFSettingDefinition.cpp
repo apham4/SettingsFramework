@@ -4,6 +4,8 @@
 #include "Definitions/SFSettingDefinition.h"
 #include "Core/SFSettingValue.h"
 #include "Definitions/SFSettingOptionSource.h"
+#include "SFFunctionLibrary.h"
+#include "SFSettingsSubsystem.h"
 
 #pragma region Discrete Setting
 TSubclassOf<USFSettingValue> USFSettingDefinition_Discrete::GetValueClass() const
@@ -18,21 +20,17 @@ TSubclassOf<USFSettingValue> USFSettingDefinition_Discrete::GetValueClass() cons
 	}
 }
 
-void USFSettingDefinition_Discrete::PostLoad()
-{
-	Super::PostLoad();
-	if (OptionSource)
-	{
-		CachedSettingOptionSource = NewObject<USFSettingOptionSource>(this, OptionSource);
-	}
-}
-
 TArray<struct FSFSettingOption> USFSettingDefinition_Discrete::GetSettingOptions(const UObject* WorldContextObject) const
 {
 	TArray<struct FSFSettingOption> options;
-	if (bUseDynamicOptions && IsValid(CachedSettingOptionSource))
+	if (bUseDynamicOptions)
 	{
-		options = CachedSettingOptionSource->GetAvailableOptions(WorldContextObject);
+		USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(WorldContextObject);
+		USFSettingOptionSource* optionSource = IsValid(settingsSubsystem) ? settingsSubsystem->GetDynamicOptionSource(SettingTag) : nullptr;
+		if (IsValid(optionSource))
+		{
+			options = optionSource->GetAvailableOptions(WorldContextObject);
+		}
 	}
 	else
 	{
@@ -44,9 +42,14 @@ TArray<struct FSFSettingOption> USFSettingDefinition_Discrete::GetSettingOptions
 USFSettingValue* USFSettingDefinition_Discrete::GetDefaultValue(const UObject* WorldContextObject) const
 {
 	USFSettingValue* defaultValue = nullptr;
-	if (bUseDynamicOptions && IsValid(CachedSettingOptionSource))
+	if (bUseDynamicOptions)
 	{
-		defaultValue = CachedSettingOptionSource->GetDefaultValue(WorldContextObject);
+		USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(WorldContextObject);
+		USFSettingOptionSource* optionSource = IsValid(settingsSubsystem) ? settingsSubsystem->GetDynamicOptionSource(SettingTag) : nullptr;
+		if (IsValid(optionSource))
+		{
+			defaultValue = optionSource->GetDefaultValue(WorldContextObject);
+		}
 	}
 	else
 	{
