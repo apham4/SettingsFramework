@@ -153,7 +153,7 @@ USFSettingValue* USFSettingsSubsystem::GetSettingValue(const FGameplayTag& Setti
     }
     else if (const TObjectPtr<USFSettingDefinition>* settingDef = RegisteredSettings.Find(SettingTag))
     {
-		valueToReturn = (*settingDef)->DefaultValue;
+        valueToReturn = (*settingDef)->GetDefaultValue(this);
     }
     return valueToReturn;
 }
@@ -167,7 +167,7 @@ USFSettingValue* USFSettingsSubsystem::GetSavedSettingValue(const FGameplayTag& 
     }
     else if (const TObjectPtr<USFSettingDefinition>* settingDef = RegisteredSettings.Find(SettingTag))
     {
-        valueToReturn = (*settingDef)->DefaultValue;
+        valueToReturn = (*settingDef)->GetDefaultValue(this);
     }
     return valueToReturn;
 }

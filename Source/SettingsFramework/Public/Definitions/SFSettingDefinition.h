@@ -48,6 +48,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SFSettingDefinition|Value", meta = (WorldContext="WorldContextObject"))
 	virtual class USFSettingValue* GetDefaultValue(const UObject* WorldContextObject) const { return DefaultValue; };
 
+protected:
 	// Fallback default value.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Value")
 	TObjectPtr<class USFSettingValue> DefaultValue;
