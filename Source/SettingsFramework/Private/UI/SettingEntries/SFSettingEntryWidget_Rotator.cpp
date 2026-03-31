@@ -39,14 +39,14 @@ void USFSettingEntryWidget_Rotator::RefreshOptions()
 	}
 
 	// Cache currently selected option
-	FSFSettingOption currentSelectedOption = Options[RotatorWidget->GetSelectedIndex()];
+	USFSettingValue* currentSelectedValue = Options.Num() > RotatorWidget->GetSelectedIndex() ? Options[RotatorWidget->GetSelectedIndex()].Value : nullptr;
 
 	// Refresh the dynamic options
 	PopulateOptions(settingDef->GetSettingOptions(this));
 
 	// Reselect the option
 	// If it was not found, select the default option
-	if (!SelectOptionByValue(currentSelectedOption.Value))
+	if (!SelectOptionByValue(currentSelectedValue))
 	{
 		SelectOptionByValue(settingDef->GetDefaultValue(this));
 	}

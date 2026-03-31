@@ -144,7 +144,7 @@ USFSettingOptionSource* USFSettingsSubsystem::GetDynamicOptionSource(const FGame
 #pragma endregion
 
 #pragma region Settings State Management
-USFSettingValue* USFSettingsSubsystem::GetSettingValue(const FGameplayTag& SettingTag) const
+USFSettingValue* USFSettingsSubsystem::GetSettingValue(const FGameplayTag SettingTag) const
 {
     USFSettingValue* valueToReturn = nullptr;
     if (const TObjectPtr<USFSettingValue>* val = CurrentValues.Find(SettingTag))
@@ -158,7 +158,7 @@ USFSettingValue* USFSettingsSubsystem::GetSettingValue(const FGameplayTag& Setti
     return valueToReturn;
 }
 
-USFSettingValue* USFSettingsSubsystem::GetSavedSettingValue(const FGameplayTag& SettingTag) const
+USFSettingValue* USFSettingsSubsystem::GetSavedSettingValue(const FGameplayTag SettingTag) const
 {
     USFSettingValue* valueToReturn = nullptr;
     if (const TObjectPtr<USFSettingValue>* val = SavedValues.Find(SettingTag))
@@ -172,13 +172,13 @@ USFSettingValue* USFSettingsSubsystem::GetSavedSettingValue(const FGameplayTag& 
     return valueToReturn;
 }
 
-USFSettingValue* USFSettingsSubsystem::GetDefaultSettingValue(const FGameplayTag& SettingTag) const
+USFSettingValue* USFSettingsSubsystem::GetDefaultSettingValue(const FGameplayTag SettingTag) const
 {
     USFSettingDefinition* settingDef = GetSettingDefinition(SettingTag);
     return IsValid(settingDef) ? settingDef->GetDefaultValue(this) : nullptr;
 }
 
-void USFSettingsSubsystem::SetSettingValue(const FGameplayTag& SettingTag, USFSettingValue* NewValue)
+void USFSettingsSubsystem::SetSettingValue(const FGameplayTag SettingTag, USFSettingValue* NewValue)
 {
     if (!IsValid(NewValue) || (CurrentValues.Contains(SettingTag) && CurrentValues[SettingTag]->Equals(NewValue)))
     {
@@ -202,7 +202,7 @@ void USFSettingsSubsystem::SetSettingValue(const FGameplayTag& SettingTag, USFSe
     --UpdateDepth;
 }
 
-bool USFSettingsSubsystem::IsSettingDirty(const struct FGameplayTag& SettingTag) const
+bool USFSettingsSubsystem::IsSettingDirty(const struct FGameplayTag SettingTag) const
 {
     const USFSettingValue* currentValue = GetSettingValue(SettingTag);
     const USFSettingValue* savedValue = GetSavedSettingValue(SettingTag);
@@ -230,7 +230,7 @@ bool USFSettingsSubsystem::AreAnySettingsDirty() const
 	return false;
 }
 
-void USFSettingsSubsystem::RevertSetting(const FGameplayTag& SettingTag)
+void USFSettingsSubsystem::RevertSetting(const FGameplayTag SettingTag)
 {
     const USFSettingValue* valueToUse = GetSavedSettingValue(SettingTag);
     valueToUse = IsValid(valueToUse) ? valueToUse : GetDefaultSettingValue(SettingTag);
@@ -244,7 +244,7 @@ void USFSettingsSubsystem::RevertSetting(const FGameplayTag& SettingTag)
     OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
 }
 
-void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag& SettingTag)
+void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag SettingTag)
 {
     const USFSettingValue* currentValue = GetSettingValue(SettingTag);
     const USFSettingValue* defaultValue = GetDefaultSettingValue(SettingTag);

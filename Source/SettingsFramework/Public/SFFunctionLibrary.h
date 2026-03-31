@@ -15,6 +15,6 @@ class SETTINGSFRAMEWORK_API USFFunctionLibrary : public UBlueprintFunctionLibrar
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintPure, Category = "SFFunctionLibrary", meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintPure, Category = "SFFunctionLibrary", meta = (WorldContext = "WorldContextObject", CallableWithoutWorldContext))
 	static class USFSettingsSubsystem* GetSettingsSubsystem(const UObject* WorldContextObject);
 };

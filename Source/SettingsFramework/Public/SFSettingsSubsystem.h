@@ -61,23 +61,23 @@ protected:
 public:
 	// Get current setting value
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetSettingValue(const struct FGameplayTag& SettingTag) const;
+	class USFSettingValue* GetSettingValue(const struct FGameplayTag SettingTag) const;
 
 	// Get saved setting value
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetSavedSettingValue(const struct FGameplayTag& SettingTag) const;
+	class USFSettingValue* GetSavedSettingValue(const struct FGameplayTag SettingTag) const;
 
 	// Get default setting value from definition
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetDefaultSettingValue(const struct FGameplayTag& SettingTag) const;
+	class USFSettingValue* GetDefaultSettingValue(const struct FGameplayTag SettingTag) const;
 
 	// Update current setting value (does not save to disk)
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void SetSettingValue(const struct FGameplayTag& SettingTag, class USFSettingValue* NewValue);
+	void SetSettingValue(const struct FGameplayTag SettingTag, class USFSettingValue* NewValue);
 
 	// Check if current value is different from saved value
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	bool IsSettingDirty(const struct FGameplayTag& SettingTag) const;
+	bool IsSettingDirty(const struct FGameplayTag SettingTag) const;
 
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
 	bool AreAnySettingsDirty() const;
@@ -85,12 +85,12 @@ public:
 	// Discard current value and revert to saved value
 	// Fires OnSettingValueChanged if the value was reverted
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void RevertSetting(const struct FGameplayTag& SettingTag);
+	void RevertSetting(const struct FGameplayTag SettingTag);
 
 	// Reset current value to default value from definition. Does not change saved value.
 	// Fires OnSettingValueChanged if the value was reset
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void ResetSettingToDefault(const struct FGameplayTag& SettingTag);
+	void ResetSettingToDefault(const struct FGameplayTag SettingTag);
 
 	// Save current setting values to disk
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
