@@ -13,6 +13,7 @@
  *
  * Abstract base class for all setting definitions.
  * Has the basic metadata such as setting Gameplay Tag, display name, description, conditions, etc.
+ * @note @abstract @blueprinttype
  */
 UCLASS(Abstract, BlueprintType)
 class SETTINGSFRAMEWORK_API USFSettingDefinition : public UDataAsset

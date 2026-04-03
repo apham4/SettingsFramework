@@ -14,6 +14,7 @@
  *
  * Abstract base class for all setting values.
  * Wraps raw data (float, bool, key) into a generic UObject for safe transport.
+ * @note @abstract @blueprinttype @blueprintable @editinlinenew @defaulttoinstanced
  */
 UCLASS(Abstract, BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced)
 class SETTINGSFRAMEWORK_API USFSettingValue : public UObject

@@ -11,6 +11,7 @@
  *
  * Base class for evaluating conditions determining a setting's state.
  * The setting Data Asset has a list of VisibilityConditions, and a list of EditabilityConditions, which will be used to evaluate its specific active/disabled/hidden state.
+ * @note @abstract @blueprintable @editinlinenew @defaulttoinstanced
  */
 UCLASS(Abstract, Blueprintable, EditInlineNew, DefaultToInstanced)
 class SETTINGSFRAMEWORK_API USFSettingCondition : public UObject

@@ -49,6 +49,11 @@ plugins:
               bro="<kbd>BlueprintReadOnly</kbd>"
               i="<kbd>Instanced</kbd>"
               va="<kbd>VisibleAnywhere</kbd>"
+              blueprinttype="<kbd>BlueprintType</kbd>"
+              abstract="<kbd>Abstract</kbd>"
+              blueprintable="<kbd>Blueprintable</kbd>"
+              editinlinenew="<kbd>EditInlineNew</kbd>"
+              defaulttoinstanced"<kbd>DefaultToInstanced</kbd>"
 
 nav:
   - Home: index.md 

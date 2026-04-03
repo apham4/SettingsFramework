@@ -12,6 +12,7 @@
  * Base class for providing a dynamic runtime list of options for a setting.
  * 
  * This class is used in USFSettingDefinition_Discrete when UseDynamicOptions is true.
+ * @note @abstract @blueprintable @editinlinenew
  */
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SETTINGSFRAMEWORK_API USFSettingOptionSource : public UObject

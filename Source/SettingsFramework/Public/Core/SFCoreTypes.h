@@ -14,6 +14,7 @@
  * This allows for great flexibility in defining what each option represents and how it behaves when selected.
  * 
  * This struct is used as the value for USFSettingDefinition_Discrete.
+ * @note @blueprinttype
  */
 USTRUCT(BlueprintType)
 struct FSFSettingOption
@@ -41,6 +42,7 @@ struct FSFSettingOption
  * A struct holding the three standard binding slots for an action: KBM Primary, KBM Secondary, and Gamepad. 
  * 
  * This struct is used as the underlying value for USFSettingValue_Key.
+ * @note @blueprinttype
  */
 USTRUCT(BlueprintType)
 struct FSFKeybindValueData
