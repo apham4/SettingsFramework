@@ -80,7 +80,6 @@ bool USFSettingValue_String::Equals(const USFSettingValue* Other) const
 FString USFSettingValue_Key::SerializeToString() const
 {
     FString OutString;
-    // NOTE_TO_SELF: First time using this. May or may not work as expected. Will need to test.
 	FSFKeybindValueData::StaticStruct()->ExportText(OutString, &Value, nullptr, nullptr, EPropertyPortFlags::PPF_None, nullptr);
     return OutString;
 }
@@ -91,8 +90,7 @@ void USFSettingValue_Key::DeserializeFromString(const FString& InString)
     {
         return;
     }
-    // NOTE_TO_SELF: First time using this as well
-    // String output device to capture error messages frin ExportText.
+    // String output device to capture error messages from ExportText.
     FStringOutputDevice errorLog;
     FSFKeybindValueData::StaticStruct()->ImportText(*InString, &Value, nullptr, EPropertyPortFlags::PPF_None, &errorLog, TEXT("USFSettingValue_Key"));
 

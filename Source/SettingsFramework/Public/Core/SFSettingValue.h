@@ -9,9 +9,6 @@
 #include "Core/SFCoreTypes.h"
 #include "SFSettingValue.generated.h"
 
-// NOTE_TO_SELF: EditInlineNew allows creating objects directly inside data asset editor properties.
-// NOTE_TO_SELF: DefaultToInstanced treats all instsances of this UObject as unique instsanced objects.
-
 /**
  * Abstract base class for all setting values.
  * Wraps raw data (float, bool, key) into a generic UObject for safe transport.
@@ -22,9 +19,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue : public UObject
     GENERATED_BODY()
 
 public:
-	// NOTE_TO_SELF: PURE_VIRTUAL forces derived classes to implement these methods.
-
-    // Convert current value to string for saving
+	// Convert current value to string for saving
     virtual FString SerializeToString() const PURE_VIRTUAL(USFSettingValue::SerializeToString, return FString(););
 
     // Load value from string

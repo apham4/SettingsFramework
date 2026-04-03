@@ -38,8 +38,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
 	TArray<TObjectPtr<class USFSettingCondition>> EditabilityConditions;
 
-	// NOTE_TO_SELF: Instanced = can pick specific subclass in editor
-
 public:
 	// Returns the class type of the value this setting uses.
 	virtual TSubclassOf<USFSettingValue> GetValueClass() const { PURE_VIRTUAL(USFSettingDefinition::GetValueClass, return nullptr;); }
@@ -104,11 +102,6 @@ UCLASS(DisplayName = "SF Discrete Setting")
 class SETTINGSFRAMEWORK_API USFSettingDefinition_Discrete : public USFSettingDefinition
 {
 	GENERATED_BODY()
-
-	// NOTE_TO_SELF: Discrete setting can have any type of underlying value. 
-	// If it's pre-defined, use GameplayTags.
-	// If it's dynamic, for example, resolutions, use string like "1920x1080" and have the listener parse it.
-	// Or if it's like a device selection, use string and put in device ID, something like that.
 
 public:
 	// The underlying value type for the options in this setting

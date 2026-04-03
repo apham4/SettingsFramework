@@ -503,7 +503,6 @@ bool USFSettingsSubsystem::ResolveKeybindingCollision(const FGameplayTag& Settin
         return true;
     }
 
-    // NOTE_TO_SELF: This value MUST have been valid for GetKeybindingCollision to return a valid collidingSetting, so what happens if it is invalid here?
     USFSettingValue_Key* collidingValue = Cast<USFSettingValue_Key>(GetSettingValue(collidingSetting));
     if (!IsValid(collidingValue))
     {

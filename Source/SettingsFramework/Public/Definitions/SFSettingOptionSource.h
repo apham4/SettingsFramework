@@ -15,7 +15,6 @@ class SETTINGSFRAMEWORK_API USFSettingOptionSource : public UObject
     GENERATED_BODY()
 
 public:
-    // NOTE_TO_SELF: Pass in World/GameInstance/PlayerController for Context
     UFUNCTION(BlueprintNativeEvent, Category = "SFSettingOptionSource")
     TArray<struct FSFSettingOption> GetAvailableOptions(const UObject* WorldContextObject) const;
     virtual TArray<struct FSFSettingOption> GetAvailableOptions_Implementation(const UObject* WorldContextObject) const { return TArray<struct FSFSettingOption>(); }
