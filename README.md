@@ -1,4 +1,4 @@
-##### 1 - Project Overview
+# 1 - Project Overview
 
 UE5 plugin SettingsFramework for game settings management with skeletal settings screen widgets using CommonUI and EnhancedInput.
 
@@ -8,13 +8,13 @@ Example host project: https://github.com/apham4/SFHost
 
 
 
-##### 2 - Engine Version
+# 2 - Engine Version
 
 Unreal Engine 5.6+
 
 
 
-##### 3 - Set Up Instructions
+# 3 - Set Up Instructions
 
 * Install Unreal Editor (version 5.6+) through the Epic Game Launcher and start a blank C++ project or open an existing one (instructions from Epic: https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-cpp-quick-start).
 * Drop the content of the plugin into the host project's directory under /Plugins/SettingsFramework.
