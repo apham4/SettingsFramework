@@ -4,7 +4,6 @@ site_description: Documentation for the UE5 SettingsFramework Plugin
 theme:
   name: material
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
   palette:
@@ -24,6 +23,17 @@ plugins:
             FILE_PATTERNS: "*.cpp *.h"
             RECURSIVE: YES
             EXTRACT_ALL: YES
+            ENABLE_PREPROCESSING: YES
+            MACRO_EXPANSION: YES
+            EXPAND_ONLY_PREDEF: YES
+            PREDEFINED: >
+              "UCLASS(...)= "
+              "USTRUCT(...)= "
+              "UENUM(...)= "
+              "GENERATED_BODY()= "
+              "UPROPERTY(...)= "
+              "UFUNCTION(...)= "
+              "PURE_VIRTUAL(...)="
 
 nav:
   - Home: index.md 
