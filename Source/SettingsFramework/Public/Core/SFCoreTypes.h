@@ -8,25 +8,37 @@
 
 #pragma region Backend
 /**
- * Represents a single selectable option in a list (e.g. "High", "1920x1080", "Monitor 1"). 
+ * @brief A struct representing a single discrete option in a list for a setting (e.g. "High", "1920x1080", "Monitor 1").
+ *
+ * A struct representing a single discrete option in a list for a setting (e.g. "High", "1920x1080", "Monitor 1"), with a localized display name and an associated value object of the abstract type USFSettingValue. 
+ * This allows for great flexibility in defining what each option represents and how it behaves when selected.
+ * 
+ * This struct is used as the value for USFSettingDefinition_Discrete.
  */
 USTRUCT(BlueprintType)
 struct FSFSettingOption
 {
     GENERATED_BODY()
 
-    // The text displayed to the player
+    /**
+    * The player-facing name of the option.
+    */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SFSettingOption")
     FText DisplayName;
 
-	// The value associated with this option, can be of any type
-    // Instanced allows inline editing in Data Asset
+	/**
+	* The value associated with this option, can be of any USFSettingValue-derived type.
+    */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced, Category = "SFSettingOption")
 	TObjectPtr<class USFSettingValue> Value;
 };
 
 /**
- * Holds the three standard binding slots for an action.
+ * @brief A struct holding the three standard binding slots for an action.
+ *
+ * A struct holding the three standard binding slots for an action: KBM Primary, KBM Secondary, and Gamepad. 
+ * 
+ * This struct is used as the underlying value for USFSettingValue_Key.
  */
 USTRUCT(BlueprintType)
 struct FSFKeybindValueData
@@ -50,6 +62,9 @@ struct FSFKeybindValueData
     }
 };
 
+/**
+ * Enum defining how to resolve keybind collisions when adding a new keybind.
+ */
 UENUM(BlueprintType)
 enum class ESFKeybindCollisionResolution : uint8
 {

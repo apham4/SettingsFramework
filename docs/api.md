@@ -12,8 +12,8 @@ Classes representing setting values of different data types.
 * [USFSettingValue_Tag](SettingsFramework\class_u_s_f_setting_value___tag.md)
 * [USFSettingValue_String](SettingsFramework\class_u_s_f_setting_value___string.md)
 * [USFSettingValue_Key](SettingsFramework\class_u_s_f_setting_value___key.md)
-* [FSFSettingOption](SettingsFramework\struct_f_s_f_setting_option.md) (for use with USFSettingValue_Discrete)
-* [FSFKeybindValueData](SettingsFramework\struct_f_s_f_keybind_value_data.md) (for use with USFSettingValue_Key)
+* [FSFSettingOption](SettingsFramework\struct_f_s_f_setting_option.md)
+* [FSFKeybindValueData](SettingsFramework\struct_f_s_f_keybind_value_data.md)
 
 
 ## 2 - Setting Definition

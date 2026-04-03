@@ -8,7 +8,9 @@
 #include "SFSaveGame.generated.h"
 
 /**
- * SaveGame to store settings data.
+ * @brief SaveGame object to serialize setting data.
+ *
+ * SaveGame object to serialize setting data.
  */
 UCLASS()
 class SETTINGSFRAMEWORK_API USFSaveGame : public USaveGame
@@ -16,6 +18,9 @@ class SETTINGSFRAMEWORK_API USFSaveGame : public USaveGame
 	GENERATED_BODY()
 	
 public:
+	/**
+	* A map of setting Gameplay Tags to their serialized string values. The actual value objects are reconstructed from these strings when loading the save game.
+	*/
 	UPROPERTY(VisibleAnywhere, Category = "SFSaveGame")
 	TMap<FGameplayTag, FString> SerializedSettings;
 };
