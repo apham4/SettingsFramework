@@ -20,6 +20,7 @@ class SETTINGSFRAMEWORK_API USFSaveGame : public USaveGame
 public:
 	/**
 	* A map of setting Gameplay Tags to their serialized string values. The actual value objects are reconstructed from these strings when loading the save game.
+	* * @note @va
 	*/
 	UPROPERTY(VisibleAnywhere, Category = "SFSaveGame")
 	TMap<FGameplayTag, FString> SerializedSettings;

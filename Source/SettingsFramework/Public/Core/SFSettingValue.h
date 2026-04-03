@@ -23,6 +23,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue : public UObject
 public:
 	/**
     * Convert current value to string for saving
+	* @return The string representation of the current value. Should be parseable by DeserializeFromString().
     */
     virtual FString SerializeToString() const PURE_VIRTUAL(USFSettingValue::SerializeToString, return FString(););
 
@@ -35,6 +36,7 @@ public:
     /**
     * Creates a deep copy of this value
 	* @param Outer The outer for the new duplicated object. Typically the caller should pass in itself as the outer, so that the duplicated value will be owned by the same object that owns this value.
+	* @return A deep copy of this value object.
     */
     virtual USFSettingValue* Duplicate(UObject* Outer) const
     {
@@ -44,11 +46,13 @@ public:
     /**
     * Checks equality with another value object.
 	* @param Other The other value object to compare with.
+	* @return true if the two value objects are considered equal in terms of their underlying value, false otherwise.
     */
     virtual bool Equals(const USFSettingValue* Other) const PURE_VIRTUAL(USFSettingValue::Equals, return false;);
 
     /**
     * Helper function for debugging. Simply calls SerializeToString().
+	* @return The string representation of the current value, same as SerializeToString().
     */
     virtual FString ToString() const { return SerializeToString(); }
 };
@@ -68,6 +72,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Scalar : public USFSettingValue
 public:
     /**
     * The underlying numeric value.
+    * @note @ea @brw
     */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     float Value = 0.0f;
@@ -101,6 +106,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Bool : public USFSettingValue
 public:
     /**
     * The underlying bool value.
+    * @note @ea @brw
     */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     bool Value = false;
@@ -134,6 +140,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Tag : public USFSettingValue
 public:
     /**
     * The underlying Gameplay Tag value.
+	* @note @ea @brw
     */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     FGameplayTag Value;
@@ -167,6 +174,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_String : public USFSettingValue
 public:
     /**
     * The underlying string value.
+    * @note @ea @brw
     */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     FString Value;
@@ -200,6 +208,7 @@ class SETTINGSFRAMEWORK_API USFSettingValue_Key : public USFSettingValue
 public:
     /**
     * The underlying keybind data struct.
+	* @note @ea @brw
     */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Value")
     FSFKeybindValueData Value;

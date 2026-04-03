@@ -25,6 +25,8 @@ plugins:
             STRIP_FROM_INC_PATH: "Source/SettingsFramework/Public"
             RECURSIVE: YES
             EXTRACT_ALL: YES
+            SORT_MEMBER_DOCS: NO
+            SORT_BRIEF_DOCS: NO
             ENABLE_PREPROCESSING: YES
             MACRO_EXPANSION: YES
             EXPAND_ONLY_PREDEF: YES
@@ -36,6 +38,17 @@ plugins:
               "UPROPERTY(...)= "
               "UFUNCTION(...)= "
               "PURE_VIRTUAL(...)="
+            ALIASES: >
+              bc="<kbd>BlueprintCallable</kbd>"
+              bp="<kbd>BlueprintPure</kbd>"
+              bne="<kbd>BlueprintNativeEvent</kbd>"
+              bie="<kbd>BlueprintImplementableEvent</kbd>"
+              edo="<kbd>EditDefaultsOnly</kbd>"
+              ea="<kbd>EditAnywhere</kbd>"
+              brw="<kbd>BlueprintReadWrite</kbd>"
+              bro="<kbd>BlueprintReadOnly</kbd>"
+              i="<kbd>Instanced</kbd>"
+              va="<kbd>VisibleAnywhere</kbd>"
 
 nav:
   - Home: index.md 

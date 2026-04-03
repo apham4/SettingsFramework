@@ -31,7 +31,7 @@ Classes for defining settings using Data Assets.
 ### 2.2 Metadata
 
 * [USFSettingCondition](SettingsFramework\class_u_s_f_setting_condition.md)
-* [USFSettingOptionSource](SettingsFramework\class_u_s_f_setting_option_source.md) (for use with USFSettingDefinition_Discrete)
+* [USFSettingOptionSource](SettingsFramework\class_u_s_f_setting_option_source.md)
 
 
 ## 3 - Setting Hierarchy
