@@ -1,0 +1,32 @@
+site_name: SettingsFramework Documentation
+site_description: Documentation for the UE5 SettingsFramework Plugin
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+  palette:
+    scheme: slate
+
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        SettingsFramework:
+          src-dirs: "Source/SettingsFramework/Public Source/SettingsFramework/Private"
+          full-doc: True
+          doxy-cfg:
+            PROJECT_NAME: "SettingsFramework"
+            GENERATE_HTML: NO
+            GENERATE_XML: YES
+            FILE_PATTERNS: "*.cpp *.h"
+            RECURSIVE: YES
+            EXTRACT_ALL: YES
+
+nav:
+  - Home: index.md 
+  - Installation: installation.md
+  - Blueprint Guide: blueprint.md
+  - API Reference: api.md
