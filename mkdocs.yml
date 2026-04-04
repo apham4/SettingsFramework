@@ -1,6 +1,5 @@
 site_name: SettingsFramework Documentation
 site_description: Documentation for the UE5 SettingsFramework Plugin
-site_url: https://apham4.github.io/SettingsFramework/
 
 theme:
   name: material
