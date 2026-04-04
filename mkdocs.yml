@@ -20,6 +20,7 @@ plugins:
             PROJECT_NAME: "SettingsFramework"
             GENERATE_HTML: NO
             GENERATE_XML: YES
+            CASE_SENSE_NAMES: YES
             FILE_PATTERNS: "*.cpp *.h"
             FORCE_LOCAL_INCLUDES: YES
             STRIP_FROM_INC_PATH: "Source/SettingsFramework/Public"
