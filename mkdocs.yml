@@ -14,7 +14,7 @@ plugins:
   - search
   - mkdoxy:
       projects:
-        SettingsFramework:
+        api:
           src-dirs: "Source/SettingsFramework/Public"
           full-doc: True
           doxy-cfg:
