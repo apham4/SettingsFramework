@@ -52,6 +52,8 @@ plugins:
               config="<kbd>Config</kbd>"
               t="<kbd>Transient</kbd>"
               ba="<kbd>BlueprintAssignable</kbd>"
+              bw="<kbd>BindWidget</kbd>"
+              bwo="<kbd>BindWidgetOptional</kbd>"
               blueprinttype="<kbd>BlueprintType</kbd>"
               abstract="<kbd>Abstract</kbd>"
               blueprintable="<kbd>Blueprintable</kbd>"
