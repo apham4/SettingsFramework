@@ -14,7 +14,7 @@ plugins:
   - mkdoxy:
       projects:
         SettingsFramework:
-          src-dirs: "Source/SettingsFramework/Public Source/SettingsFramework/Private"
+          src-dirs: "Source/SettingsFramework/Public"
           full-doc: True
           doxy-cfg:
             PROJECT_NAME: "SettingsFramework"
@@ -50,6 +50,8 @@ plugins:
               i="<kbd>Instanced</kbd>"
               va="<kbd>VisibleAnywhere</kbd>"
               config="<kbd>Config</kbd>"
+              t="<kbd>Transient</kbd>"
+              ba="<kbd>BlueprintAssignable</kbd>"
               blueprinttype="<kbd>BlueprintType</kbd>"
               abstract="<kbd>Abstract</kbd>"
               blueprintable="<kbd>Blueprintable</kbd>"
