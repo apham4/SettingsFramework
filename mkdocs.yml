@@ -49,11 +49,13 @@ plugins:
               bro="<kbd>BlueprintReadOnly</kbd>"
               i="<kbd>Instanced</kbd>"
               va="<kbd>VisibleAnywhere</kbd>"
+              config="<kbd>Config</kbd>"
               blueprinttype="<kbd>BlueprintType</kbd>"
               abstract="<kbd>Abstract</kbd>"
               blueprintable="<kbd>Blueprintable</kbd>"
               editinlinenew="<kbd>EditInlineNew</kbd>"
-              defaulttoinstanced"<kbd>DefaultToInstanced</kbd>"
+              defaulttoinstanced="<kbd>DefaultToInstanced</kbd>"
+              configgame="<kbd>Config=Game</kbd>"
 
 nav:
   - Home: index.md 
