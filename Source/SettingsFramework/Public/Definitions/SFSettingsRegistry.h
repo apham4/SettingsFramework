@@ -7,7 +7,10 @@
 #include "SFSettingsRegistry.generated.h"
 
 /**
- * Central Setting Collection containing all setting definitions and their hierarchies to be loaded by the FSSettingsSubsystem.
+ * @brief The central registry asset that contains the entire hierarchy of settings.
+ *
+ * The central registry asset that contains the entire hierarchy of settings, starting from the root categories down to individual setting definitions.
+ * This needs to be assigned through the plugin's project-wide Developer Settings to be loaded on initialization by the USFSettingsSubsystem.
  */
 UCLASS()
 class SETTINGSFRAMEWORK_API USFSettingsRegistry : public UDataAsset
@@ -15,7 +18,11 @@ class SETTINGSFRAMEWORK_API USFSettingsRegistry : public UDataAsset
 	GENERATED_BODY()
 	
 public:
-	// The outermost categories. Categories can contain sub-categories OR individual setting definitions.
+	/**
+	* The collection of outer-most categories. Categories can contain sub-categories OR individual setting definitions.
+	* Any setting definitions that should be loaded by the plugin must be contained in this hierarchy starting from these root categories.
+	* @note @edo @bro
+	*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsRegistry")
 	TArray<TObjectPtr<class USFSettingCategory>> RootCategories;
 };
