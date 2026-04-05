@@ -1,0 +1,69 @@
+site_name: SettingsFramework Documentation
+site_description: Documentation for the UE5 SettingsFramework Plugin
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+  palette:
+    scheme: slate
+
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        CodeAPI:
+          src-dirs: "Source/SettingsFramework/Public"
+          full-doc: True
+          doxy-cfg:
+            PROJECT_NAME: "SettingsFramework"
+            GENERATE_HTML: NO
+            GENERATE_XML: YES
+            CASE_SENSE_NAMES: YES
+            FILE_PATTERNS: "*.cpp *.h"
+            FORCE_LOCAL_INCLUDES: YES
+            STRIP_FROM_INC_PATH: "Source/SettingsFramework/Public"
+            RECURSIVE: YES
+            EXTRACT_ALL: YES
+            SORT_MEMBER_DOCS: NO
+            SORT_BRIEF_DOCS: NO
+            ENABLE_PREPROCESSING: YES
+            MACRO_EXPANSION: YES
+            EXPAND_ONLY_PREDEF: YES
+            PREDEFINED: >
+              "UCLASS(...)= "
+              "USTRUCT(...)= "
+              "UENUM(...)= "
+              "GENERATED_BODY()= "
+              "UPROPERTY(...)= "
+              "UFUNCTION(...)= "
+              "PURE_VIRTUAL(...)="
+            ALIASES: >
+              bc="<kbd>BlueprintCallable</kbd>"
+              bp="<kbd>BlueprintPure</kbd>"
+              bne="<kbd>BlueprintNativeEvent</kbd>"
+              bie="<kbd>BlueprintImplementableEvent</kbd>"
+              edo="<kbd>EditDefaultsOnly</kbd>"
+              ea="<kbd>EditAnywhere</kbd>"
+              brw="<kbd>BlueprintReadWrite</kbd>"
+              bro="<kbd>BlueprintReadOnly</kbd>"
+              i="<kbd>Instanced</kbd>"
+              va="<kbd>VisibleAnywhere</kbd>"
+              config="<kbd>Config</kbd>"
+              t="<kbd>Transient</kbd>"
+              ba="<kbd>BlueprintAssignable</kbd>"
+              bw="<kbd>BindWidget</kbd>"
+              bwo="<kbd>BindWidgetOptional</kbd>"
+              blueprinttype="<kbd>BlueprintType</kbd>"
+              abstract="<kbd>Abstract</kbd>"
+              blueprintable="<kbd>Blueprintable</kbd>"
+              editinlinenew="<kbd>EditInlineNew</kbd>"
+              defaulttoinstanced="<kbd>DefaultToInstanced</kbd>"
+              configgame="<kbd>Config=Game</kbd>"
+
+nav:
+  - Home: index.md 
+  - Installation: installation.md
+  - Blueprint Guide: blueprint.md
+  - API Reference: api.md

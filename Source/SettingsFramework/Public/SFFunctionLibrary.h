@@ -7,7 +7,9 @@
 #include "SFFunctionLibrary.generated.h"
 
 /**
- * Utility function library for Settings Framework.
+ * @brief Utility function library for the SettingsFramework.
+ *
+ * Utility function library for the SettingsFramework.
  */
 UCLASS()
 class SETTINGSFRAMEWORK_API USFFunctionLibrary : public UBlueprintFunctionLibrary
@@ -15,6 +17,11 @@ class SETTINGSFRAMEWORK_API USFFunctionLibrary : public UBlueprintFunctionLibrar
 	GENERATED_BODY()
 
 public:
+	/**
+	* Get the USFSettingsSubsystem instance.
+	* @param WorldContextObject World context object to get the world from. Can be any object that has a valid world, such as an actor, a component, a widget, etc.
+	* @return The USFSettingsSubsystem instance.
+	*/
 	UFUNCTION(BlueprintPure, Category = "SFFunctionLibrary", meta = (WorldContext = "WorldContextObject", CallableWithoutWorldContext))
 	static class USFSettingsSubsystem* GetSettingsSubsystem(const UObject* WorldContextObject);
 };
