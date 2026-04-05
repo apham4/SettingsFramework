@@ -9,12 +9,26 @@
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
 #include "SFSettingsDeveloperSettings.h"
+#include "CommonInputSubsystem.h"
 
 #pragma region Initialization
 void USFSettingEntryWidget_Keybind::NativeConstruct()
 {
 	Super::NativeConstruct();
 	bIsFocusable = true;
+}
+
+void USFSettingEntryWidget_Keybind::NativeOnInitialized()
+{
+	Super::NativeOnInitialized();
+
+	ULocalPlayer* localPlayer = GetOwningLocalPlayer();
+	UCommonInputSubsystem* commonInputSubsystem = IsValid(localPlayer) ? localPlayer->GetSubsystem<UCommonInputSubsystem>() : nullptr;
+	if (IsValid(commonInputSubsystem))
+	{
+		commonInputSubsystem->OnInputMethodChangedNative.AddUObject(this, &USFSettingEntryWidget_Keybind::HandleInputMethodChanged);
+		HandleInputMethodChanged(commonInputSubsystem->GetCurrentInputType());
+	}
 }
 
 void USFSettingEntryWidget_Keybind::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
@@ -40,7 +54,7 @@ void USFSettingEntryWidget_Keybind::InitializeSettingEntry(const class USFSettin
 void USFSettingEntryWidget_Keybind::UpdateVisualValue_Implementation(const USFSettingValue* NewValue)
 {
 	const USFSettingValue_Key* keyValue = Cast<USFSettingValue_Key>(NewValue);
-	if (!IsValid(keyValue) || keyValue->Value == CurrentKeybindData)
+	if (!IsValid(keyValue))
 	{
 		return;
 	}
@@ -52,26 +66,56 @@ void USFSettingEntryWidget_Keybind::UpdateVisualValue_Implementation(const USFSe
 
 void USFSettingEntryWidget_Keybind::ApplyNewKeybind(FKey NewKey)
 {
+	bool bShouldApply = true;
 	USFSettingsSubsystem* settingsSubsystem = USFFunctionLibrary::GetSettingsSubsystem(this);
-	if (!IsValid(settingsSubsystem) || (NewKey.IsGamepadKey() != (CurrentListeningSlot == ESFKeybindSlot::Gamepad)))
-	{
-		return;
-	}
+	bShouldApply &= IsValid(settingsSubsystem);
+	bShouldApply &= (NewKey.IsGamepadKey() == (CurrentListeningSlot == ESFKeybindSlot::Gamepad));
+	
+	bool bKeybindChanged = (CurrentListeningSlot == ESFKeybindSlot::KBMPrimary && CurrentKeybindData.KBMPrimary != NewKey)
+						|| (CurrentListeningSlot == ESFKeybindSlot::KBMSecondary && CurrentKeybindData.KBMSecondary != NewKey)
+						|| (CurrentListeningSlot == ESFKeybindSlot::Gamepad && CurrentKeybindData.Gamepad != NewKey);
 
-	FSFKeybindValueData newData = CurrentKeybindData;
-	switch (CurrentListeningSlot)
+	bShouldApply &= bKeybindChanged;
+
+	if (bShouldApply)
 	{
-		case ESFKeybindSlot::KBMPrimary:
-			newData.KBMPrimary = NewKey;
-			break;
-		case ESFKeybindSlot::KBMSecondary:
-			newData.KBMSecondary = NewKey;
-			break;
-		case ESFKeybindSlot::Gamepad:
-			newData.Gamepad = NewKey;
-			break;
-		default:
-			break;
+		FSFKeybindValueData newData = CurrentKeybindData;
+		switch (CurrentListeningSlot)
+		{
+			case ESFKeybindSlot::KBMPrimary:
+				newData.KBMPrimary = NewKey;
+				break;
+			case ESFKeybindSlot::KBMSecondary:
+				newData.KBMSecondary = NewKey;
+				break;
+			case ESFKeybindSlot::Gamepad:
+				newData.Gamepad = NewKey;
+				break;
+			default:
+				break;
+		}
+
+		// Update via SFSettingsSubsystem::UpdateKeybinding instead of using USFSettingEntryWidget::OnUserChangedValue for collision detection
+		const USFSettingsDeveloperSettings* devSettings = GetDefault<USFSettingsDeveloperSettings>();
+		ESFKeybindCollisionResolution collisionResolution = IsValid(devSettings) ? devSettings->DefaultKeybindCollisionResolution : ESFKeybindCollisionResolution::Overwrite;
+		settingsSubsystem->UpdateKeybinding(SettingTag, newData, collisionResolution);
+	}
+	else
+	{
+		switch (CurrentListeningSlot)
+		{
+			case ESFKeybindSlot::KBMPrimary:
+				SetSlotText(CurrentListeningSlot, CurrentKeybindData.KBMPrimary, false);
+				break;
+			case ESFKeybindSlot::KBMSecondary:
+				SetSlotText(CurrentListeningSlot, CurrentKeybindData.KBMSecondary, false);
+				break;
+			case ESFKeybindSlot::Gamepad:
+				SetSlotText(CurrentListeningSlot, CurrentKeybindData.Gamepad, false);
+				break;
+			default:
+				break;
+		}
 	}
 
 	if (IsValid(KBMPrimaryButton))
@@ -89,11 +133,6 @@ void USFSettingEntryWidget_Keybind::ApplyNewKeybind(FKey NewKey)
 
 	// Reshow cursor if it was hidden
 	CurrentListeningSlot = ESFKeybindSlot::None;
-
-	// Update via SFSettingsSubsystem::UpdateKeybinding instead of using USFSettingEntryWidget::OnUserChangedValue for collision detection
-	const USFSettingsDeveloperSettings* devSettings = GetDefault<USFSettingsDeveloperSettings>();
-	ESFKeybindCollisionResolution collisionResolution = IsValid(devSettings) ? devSettings->DefaultKeybindCollisionResolution : ESFKeybindCollisionResolution::Overwrite;
-	settingsSubsystem->UpdateKeybinding(SettingTag, newData, collisionResolution);
 }
 #pragma endregion
 
@@ -134,6 +173,20 @@ void USFSettingEntryWidget_Keybind::HandleGamepadButtonClicked()
 	}
 }
 
+void USFSettingEntryWidget_Keybind::HandleInputMethodChanged(ECommonInputType InputType)
+{
+	if (InputType == ECommonInputType::Gamepad)
+	{
+		KBMPrimaryButton->SetVisibility(ESlateVisibility::Collapsed);
+		KBMSecondaryButton->SetVisibility(ESlateVisibility::Collapsed);
+	}
+	else
+	{
+		KBMPrimaryButton->SetVisibility(ESlateVisibility::Visible);
+		KBMSecondaryButton->SetVisibility(ESlateVisibility::Visible);
+	}
+}
+
 void USFSettingEntryWidget_Keybind::CancelListening()
 {
 	// NOTE_TO_SELF: currently not called
@@ -148,6 +201,25 @@ void USFSettingEntryWidget_Keybind::ClearSlot(ESFKeybindSlot SlotToClear)
 	// NOTE_TO_SELF: currently not called
 	CurrentListeningSlot = SlotToClear;
 	ApplyNewKeybind(FKey());
+}
+#pragma endregion
+
+#pragma region Navigation
+UWidget* USFSettingEntryWidget_Keybind::GetPrimaryFocusTarget_Implementation() const
+{
+	if (IsValid(KBMPrimaryButton) && KBMPrimaryButton->IsVisible() && KBMPrimaryButton->GetIsEnabled())
+	{
+		return KBMPrimaryButton;
+	}
+	else if (IsValid(KBMSecondaryButton) && KBMSecondaryButton->IsVisible() && KBMSecondaryButton->GetIsEnabled())
+	{
+		return KBMSecondaryButton;
+	}
+	else if (IsValid(GamepadButton) && GamepadButton->IsVisible() && GamepadButton->GetIsEnabled())
+	{
+		return GamepadButton;
+	}
+	return Super::GetPrimaryFocusTarget_Implementation();
 }
 #pragma endregion
 

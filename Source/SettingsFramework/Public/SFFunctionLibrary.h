@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "CommonInputTypeEnum.h"
 #include "SFFunctionLibrary.generated.h"
 
 /**
@@ -24,4 +25,12 @@ public:
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFFunctionLibrary", meta = (WorldContext = "WorldContextObject", CallableWithoutWorldContext))
 	static class USFSettingsSubsystem* GetSettingsSubsystem(const UObject* WorldContextObject);
+
+	/**
+	* Retrieves the current CommonUI input method (e.g., Gamepad, MouseAndKeyboard).
+	* @param WorldContextObject World context object to get the world from. Can be any object that has a valid world, such as an actor, a component, a widget, etc.
+	* @return The active ECommonInputType. Defaults to MouseAndKeyboard if unable to determine.
+	*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Input|CommonUI", meta = (WorldContext = "WorldContextObject", CallableWithoutWorldContext))
+	static ECommonInputType GetCurrentInputMethod(const UObject* WorldContextObject);
 };

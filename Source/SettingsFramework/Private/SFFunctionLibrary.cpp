@@ -3,6 +3,7 @@
 
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
+#include "CommonInputSubsystem.h"
 
 USFSettingsSubsystem* USFFunctionLibrary::GetSettingsSubsystem(const UObject* WorldContextObject)
 {
@@ -11,3 +12,13 @@ USFSettingsSubsystem* USFFunctionLibrary::GetSettingsSubsystem(const UObject* Wo
 	USFSettingsSubsystem* settingsSubsystem = IsValid(gameInstance) ? gameInstance->GetSubsystem<USFSettingsSubsystem>() : nullptr;
 	return settingsSubsystem;
 }
+
+ECommonInputType USFFunctionLibrary::GetCurrentInputMethod(const UObject* WorldContextObject)
+{
+	const UWorld* world = GEngine->GetWorldFromContextObjectChecked(WorldContextObject);
+	APlayerController* playerController = IsValid(world) ? world->GetFirstPlayerController() : nullptr;
+	ULocalPlayer* localPlayer = IsValid(playerController) ? playerController->GetLocalPlayer() : nullptr;
+	UCommonInputSubsystem* commonInputSubsystem = IsValid(localPlayer) ? localPlayer->GetSubsystem<UCommonInputSubsystem>() : nullptr;
+	return IsValid(commonInputSubsystem) ? commonInputSubsystem->GetCurrentInputType() : ECommonInputType::MouseAndKeyboard;
+}
+

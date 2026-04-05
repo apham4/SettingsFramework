@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UI/SettingEntries/SFSettingEntryWidget.h"
 #include "Core/SFCoreTypes.h"
+#include "CommonInputTypeEnum.h"
 #include "SFSettingEntryWidget_Keybind.generated.h"
 
 /**
@@ -40,6 +41,7 @@ class SETTINGSFRAMEWORK_API USFSettingEntryWidget_Keybind : public USFSettingEnt
 protected:
 	/** @cond */
 	virtual void NativeConstruct() override;
+	virtual void NativeOnInitialized() override;
 	/** @endcond */
 
 	/**
@@ -79,6 +81,9 @@ protected:
 
 	UFUNCTION()
 	void HandleGamepadButtonClicked();
+
+	UFUNCTION()
+	void HandleInputMethodChanged(ECommonInputType InputType);
 	/** @endcond */
 
 	/**
@@ -133,9 +138,14 @@ protected:
 	ESFKeybindSlot CurrentListeningSlot = ESFKeybindSlot::None;
 #pragma endregion
 
+#pragma region Navigation
+public:
+	/** @cond */
+	virtual UWidget* GetPrimaryFocusTarget_Implementation() const;
+#pragma endregion
+
 #pragma region Input
 protected:
-	/** @cond */
 	virtual FReply NativeOnKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent) override;
 	virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
 	virtual FReply NativeOnMouseWheel(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;

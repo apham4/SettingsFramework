@@ -15,7 +15,7 @@
  * This is the superclass of USFCategoryTab_Branch, which displays a branch-type category with subcategories, and USFCategoryTab_Leaf, which displays a leaf-type category with setting entries.
  * @note @abstract @blueprinttype
  */
-UCLASS(Abstract, BlueprintType, Blueprintable)
+UCLASS(Abstract, BlueprintType)
 class SETTINGSFRAMEWORK_API USFCategoryTabBase : public UCommonActivatableWidget
 {
 	GENERATED_BODY()

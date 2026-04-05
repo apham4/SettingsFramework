@@ -14,7 +14,7 @@
  * The widget blueprint implementing this class should be assigned to the SettingGroupWidgetClass in the Developer Settings at Project Settings > Plugins > SettingsFramework.
  * @note @abstract @blueprinttype @blueprintable
  */
-UCLASS()
+UCLASS(Abstract, BlueprintType, Blueprintable)
 class SETTINGSFRAMEWORK_API USFSettingGroupWidget : public UCommonUserWidget
 {
 	GENERATED_BODY()
