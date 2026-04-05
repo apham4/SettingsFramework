@@ -3,11 +3,11 @@
 	"Version": 1,
 	"VersionName": "1.0",
 	"FriendlyName": "SettingsFramework",
-	"Description": "Framework for setting up settings assets, their runtime manager, and CommonUI widgets.",
-	"Category": "Other",
+	"Description": "Game settings creation and management, with a pre-integrated skeletal UI.",
+	"Category": "Settings",
 	"CreatedBy": "Anh Pham",
 	"CreatedByURL": "",
-	"DocsURL": "",
+	"DocsURL": "https://apham4.github.io/SettingsFramework/",
 	"MarketplaceURL": "",
 	"SupportURL": "",
 	"CanContainContent": true,
@@ -20,7 +20,14 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"PlatformAllowList": [
-				"Win64"
+				"Win64",
+				"Mac",
+				"Linux",
+				"PS5",
+				"XSX",
+				"Switch",
+				"PS4",
+				"XboxOne"
 			]
 		}
 	],
