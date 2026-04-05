@@ -1,0 +1,1410 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UE5 SettingsFramework Plugin">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Class USFSettingsSubsystem - SettingsFramework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class-usfsettingssubsystem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SettingsFramework Documentation" class="md-header__button md-logo" aria-label="SettingsFramework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SettingsFramework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class USFSettingsSubsystem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SettingsFramework Documentation" class="md-nav__button md-logo" aria-label="SettingsFramework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SettingsFramework Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-attributes-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Attributes Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-onsettingvaluechanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable OnSettingValueChanged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-onsettingvaluesaved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable OnSettingValueSaved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-onsettingsinitialized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable OnSettingsInitialized
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-areanysettingsdirty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function AreAnySettingsDirty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getdefaultsettingvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetDefaultSettingValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getdynamicoptionsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetDynamicOptionSource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getkeybindingcollision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetKeybindingCollision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getrootcategories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetRootCategories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getsavedsettingvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetSavedSettingValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getsettingdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetSettingDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getsettingvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetSettingValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-isinitialized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function IsInitialized
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-issettingdirty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function IsSettingDirty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-issettingeditable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function IsSettingEditable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-issettingvisible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function IsSettingVisible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-resetsettingtodefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function ResetSettingToDefault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-resetsettingstodefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function ResetSettingsToDefault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-revertsetting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function RevertSetting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-revertsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function RevertSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-savesettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SaveSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-setsettingvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SetSettingValue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-updatekeybinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function UpdateKeybinding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Attributes Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protected Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-currentvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable CurrentValues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-dynamicoptionsources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable DynamicOptionSources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-registeredsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable RegisteredSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-savedvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable SavedValues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-settingsregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable SettingsRegistry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protected Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-loadsettingsfromsavegame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function LoadSettingsFromSaveGame
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-resolvekeybindingcollision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function ResolveKeybindingCollision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-savesettingstosavegame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SaveSettingsToSaveGame
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="class-usfsettingssubsystem">Class USFSettingsSubsystem</h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="./"><strong>USFSettingsSubsystem</strong></a></p>
+<p><em>The subsystem that manages all settings data and logic at runtime.</em> <a href="#detailed-description">More...</a></p>
+<ul>
+<li><code>#include "SFSettingsSubsystem.h"</code></li>
+</ul>
+<p>Inherits the following classes: UGameInstanceSubsystem</p>
+<h2 id="public-attributes">Public Attributes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">FOnSFSettingChanged</td>
+<td style="text-align: left;"><a href="#variable-onsettingvaluechanged"><strong>OnSettingValueChanged</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">FOnSFSettingSaved</td>
+<td style="text-align: left;"><a href="#variable-onsettingvaluesaved"><strong>OnSettingValueSaved</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">FOnSFSettingsInitialized</td>
+<td style="text-align: left;"><a href="#variable-onsettingsinitialized"><strong>OnSettingsInitialized</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions">Public Functions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-areanysettingsdirty"><strong>AreAnySettingsDirty</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-getdefaultsettingvalue"><strong>GetDefaultSettingValue</strong></a> (const struct FGameplayTag SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class <a href="../classUSFSettingOptionSource/"><strong>USFSettingOptionSource</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-getdynamicoptionsource"><strong>GetDynamicOptionSource</strong></a> (const struct FGameplayTag &amp; SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">struct FGameplayTag</td>
+<td style="text-align: left;"><a href="#function-getkeybindingcollision"><strong>GetKeybindingCollision</strong></a> (const struct FKey &amp; Key, const struct FGameplayTagContainer &amp; CollisionChannels, const struct FGameplayTag &amp; SettingTagToIgnore) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">TArray&lt; <a href="../classUSFSettingCategory/"><strong>USFSettingCategory</strong></a> * &gt;</td>
+<td style="text-align: left;"><a href="#function-getrootcategories"><strong>GetRootCategories</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-getsavedsettingvalue"><strong>GetSavedSettingValue</strong></a> (const struct FGameplayTag SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class <a href="../classUSFSettingDefinition/"><strong>USFSettingDefinition</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-getsettingdefinition"><strong>GetSettingDefinition</strong></a> (const struct FGameplayTag &amp; SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-getsettingvalue"><strong>GetSettingValue</strong></a> (const struct FGameplayTag SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-isinitialized"><strong>IsInitialized</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-issettingdirty"><strong>IsSettingDirty</strong></a> (const struct FGameplayTag SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-issettingeditable"><strong>IsSettingEditable</strong></a> (const struct FGameplayTag &amp; SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-issettingvisible"><strong>IsSettingVisible</strong></a> (const struct FGameplayTag &amp; SettingTag) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-resetsettingtodefault"><strong>ResetSettingToDefault</strong></a> (const struct FGameplayTag SettingTag) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-resetsettingstodefault"><strong>ResetSettingsToDefault</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-revertsetting"><strong>RevertSetting</strong></a> (const struct FGameplayTag SettingTag) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-revertsettings"><strong>RevertSettings</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-savesettings"><strong>SaveSettings</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setsettingvalue"><strong>SetSettingValue</strong></a> (const struct FGameplayTag SettingTag, class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> * NewValue) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-updatekeybinding"><strong>UpdateKeybinding</strong></a> (const struct FGameplayTag &amp; SettingTag, struct <a href="../structFSFKeybindValueData/"><strong>FSFKeybindValueData</strong></a> &amp; NewValue, const enum <a href="../SFCoreTypes_8h/#enum-esfkeybindcollisionresolution"><strong>ESFKeybindCollisionResolution</strong></a> &amp; ResolutionPolicy) <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes">Protected Attributes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">TMap&lt; struct FGameplayTag, TObjectPtr&lt; class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-currentvalues"><strong>CurrentValues</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">TMap&lt; struct FGameplayTag, TObjectPtr&lt; class <a href="../classUSFSettingOptionSource/"><strong>USFSettingOptionSource</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-dynamicoptionsources"><strong>DynamicOptionSources</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">TMap&lt; struct FGameplayTag, TObjectPtr&lt; class <a href="../classUSFSettingDefinition/"><strong>USFSettingDefinition</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-registeredsettings"><strong>RegisteredSettings</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">TMap&lt; struct FGameplayTag, TObjectPtr&lt; class <a href="../classUSFSettingValue/"><strong>USFSettingValue</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-savedvalues"><strong>SavedValues</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">TObjectPtr&lt; class <a href="../classUSFSettingsRegistry/"><strong>USFSettingsRegistry</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#variable-settingsregistry"><strong>SettingsRegistry</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions">Protected Functions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-loadsettingsfromsavegame"><strong>LoadSettingsFromSaveGame</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-resolvekeybindingcollision"><strong>ResolveKeybindingCollision</strong></a> (const struct FGameplayTag &amp; SettingBeingUpdated, const struct FKey &amp; NewKey, const struct FKey &amp; OldKey, const struct FGameplayTagContainer &amp; CollisionChannels, const enum <a href="../SFCoreTypes_8h/#enum-esfkeybindcollisionresolution"><strong>ESFKeybindCollisionResolution</strong></a> &amp; ResolutionPolicy) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-savesettingstosavegame"><strong>SaveSettingsToSaveGame</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-description">Detailed Description</h2>
+<p>This subsystem is responsible for managing all settings data and logic at runtime. This includes tasks such as:</p>
+<ul>
+<li>Asynchronously loads setting definitions and categories from the settings registry on initialization</li>
+<li>Manages current and saved setting values</li>
+<li>Checks conditions for settings' visibility and editability</li>
+<li>Handles saving and loading settings to disk.</li>
+<li>Among other things. </li>
+</ul>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintType</code> </p>
+<h2 id="public-attributes-documentation">Public Attributes Documentation</h2>
+<h3 id="variable-onsettingvaluechanged">variable OnSettingValueChanged</h3>
+<pre><code class="language-C++">FOnSFSettingChanged USFSettingsSubsystem::OnSettingValueChanged;
+</code></pre>
+<p>Event fired when a setting's current active value is changed. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintAssignable</code> </p>
+<hr>
+
+<h3 id="variable-onsettingvaluesaved">variable OnSettingValueSaved</h3>
+<pre><code class="language-C++">FOnSFSettingSaved USFSettingsSubsystem::OnSettingValueSaved;
+</code></pre>
+<p>Event fired when a setting's current active value is saved to disk. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintAssignable</code> </p>
+<hr>
+
+<h3 id="variable-onsettingsinitialized">variable OnSettingsInitialized</h3>
+<pre><code class="language-C++">FOnSFSettingsInitialized USFSettingsSubsystem::OnSettingsInitialized;
+</code></pre>
+<p>Event fired when the settings registry has finished loading and saved setting values have been loaded from disk, indicating that the subsystem is ready to be used. </p>
+<hr>
+<h2 id="public-functions-documentation">Public Functions Documentation</h2>
+<h3 id="function-areanysettingsdirty">function AreAnySettingsDirty</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::AreAnySettingsDirty () const
+</code></pre>
+<p>Check if any setting has its current active value different from its saved value. </p>
+<p><strong>Returns:</strong></p>
+<p>true if there is at least one setting that is dirty, false if all settings are clean or if there are no registered settings. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getdefaultsettingvalue">function GetDefaultSettingValue</h3>
+<pre><code class="language-C++">class USFSettingValue * USFSettingsSubsystem::GetDefaultSettingValue (
+    const struct FGameplayTag SettingTag
+) const
+</code></pre>
+<p>Get the default value of a setting associated with the given setting Gameplay Tag. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The default value of the setting associated with the given setting Gameplay Tag. Returns nullptr if the tag is not found or if the value is invalid. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getdynamicoptionsource">function GetDynamicOptionSource</h3>
+<pre><code class="language-C++">class USFSettingOptionSource * USFSettingsSubsystem::GetDynamicOptionSource (
+    const struct FGameplayTag &amp; SettingTag
+) const
+</code></pre>
+<p>Get the dynamic option source object associated with the given setting Gameplay Tag if it is a discrete setting with dynamic options. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The setting option source object associated with the given setting Gameplay Tag. Returns nullptr if invalid. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getkeybindingcollision">function GetKeybindingCollision</h3>
+<pre><code class="language-C++">struct FGameplayTag USFSettingsSubsystem::GetKeybindingCollision (
+    const struct FKey &amp; Key,
+    const struct FGameplayTagContainer &amp; CollisionChannels,
+    const struct FGameplayTag &amp; SettingTagToIgnore
+) const
+</code></pre>
+<p>Check for keybinding collisions with a given input key and collision channels, excluding a specific setting. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>Key</code> The input key to check for collisions. </li>
+<li><code>CollisionChannels</code> The Gameplay Tag container of collision channels to check against. Only settings that have at least one of these tags in their collision channels will be checked for collision. </li>
+<li><code>SettingTagToIgnore</code> The Gameplay Tag of the setting to ignore during collision check. This is useful when updating a keybinding for a specific setting and you want to ignore collision with its current keybinding. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The Gameplay Tag of the setting that has a colliding keybinding, or an empty tag if there are no collisions. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getrootcategories">function GetRootCategories</h3>
+<pre><code class="language-C++">TArray&lt; USFSettingCategory * &gt; USFSettingsSubsystem::GetRootCategories () const
+</code></pre>
+<p>Get the collection of root categories. </p>
+<p><strong>Returns:</strong></p>
+<p>An array of root categories. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getsavedsettingvalue">function GetSavedSettingValue</h3>
+<pre><code class="language-C++">class USFSettingValue * USFSettingsSubsystem::GetSavedSettingValue (
+    const struct FGameplayTag SettingTag
+) const
+</code></pre>
+<p>Get the saved value of a setting associated with the given setting Gameplay Tag. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The saved value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no saved value is found. Returns nullptr if the tag is not found or if the value is invalid. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getsettingdefinition">function GetSettingDefinition</h3>
+<pre><code class="language-C++">class USFSettingDefinition * USFSettingsSubsystem::GetSettingDefinition (
+    const struct FGameplayTag &amp; SettingTag
+) const
+</code></pre>
+<p>Get the setting definition associated with the given setting Gameplay Tag </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The setting definition Data Asset associated with the given setting Gameplay Tag. Returns nullptr if the tag is not found or if the associated asset failed to load. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-getsettingvalue">function GetSettingValue</h3>
+<pre><code class="language-C++">class USFSettingValue * USFSettingsSubsystem::GetSettingValue (
+    const struct FGameplayTag SettingTag
+) const
+</code></pre>
+<p>Get the current active value of a setting associated with the given setting Gameplay Tag. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The current active value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no saved value is found. Returns nullptr if the tag is not found or if the value is invalid. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-isinitialized">function IsInitialized</h3>
+<pre><code class="language-C++">inline bool USFSettingsSubsystem::IsInitialized () const
+</code></pre>
+<p>Checks if the settings registry has finished loading and saved setting values have been loaded from disk. </p>
+<p><strong>Returns:</strong></p>
+<p>true if the subsystem is ready to be used, false if the settings registry is still loading or if there was an error during initialization. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-issettingdirty">function IsSettingDirty</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::IsSettingDirty (
+    const struct FGameplayTag SettingTag
+) const
+</code></pre>
+<p>Check if the current active value of the setting associated with the given setting Gameplay Tag is different from its saved value. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if they are different or if one of them is invalid, false if they are the same or if they are both invalid. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-issettingeditable">function IsSettingEditable</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::IsSettingEditable (
+    const struct FGameplayTag &amp; SettingTag
+) const
+</code></pre>
+<p>Check if a setting associated with the given setting Gameplay Tag should be editable/enabled based on its editability conditions defined in its setting definition. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if the setting should be editable/enabled, false if it should be disabled or if the tag's setting is not found. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-issettingvisible">function IsSettingVisible</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::IsSettingVisible (
+    const struct FGameplayTag &amp; SettingTag
+) const
+</code></pre>
+<p>Check if a setting associated with the given setting Gameplay Tag should be visible based on its visibility conditions defined in its setting definition. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if the setting should be visible, false if it should be hidden or if the tag's setting is not found. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintPure</code> </p>
+<hr>
+
+<h3 id="function-resetsettingtodefault">function ResetSettingToDefault</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::ResetSettingToDefault (
+    const struct FGameplayTag SettingTag
+) 
+</code></pre>
+<p>Discard current active value and reset to default value for the setting associated with the given setting Gameplay Tag. Does not change saved value. Fires OnSettingValueChanged if the value was reset. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-resetsettingstodefault">function ResetSettingsToDefault</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::ResetSettingsToDefault () 
+</code></pre>
+<p>Discard the current active value and reset to default value for all settings. Does not change saved values. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-revertsetting">function RevertSetting</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::RevertSetting (
+    const struct FGameplayTag SettingTag
+) 
+</code></pre>
+<p>Discard current active value and revert to saved value for the setting associated with the given setting Gameplay Tag. Does not change saved value. Fires OnSettingValueChanged if the value was reverted. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-revertsettings">function RevertSettings</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::RevertSettings () 
+</code></pre>
+<p>Discard the current active value and revert to saved value for all settings that have unsaved changes. Does not change saved values. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-savesettings">function SaveSettings</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::SaveSettings () 
+</code></pre>
+<p>Save and serialize all current active setting values to disk, overwriting previous saved values. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-setsettingvalue">function SetSettingValue</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::SetSettingValue (
+    const struct FGameplayTag SettingTag,
+    class USFSettingValue * NewValue
+) 
+</code></pre>
+<p>Update the current active value of a setting associated with the given setting Gameplay Tag. Does not save value to disk. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag associated with the setting. </li>
+</ul>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+
+<h3 id="function-updatekeybinding">function UpdateKeybinding</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::UpdateKeybinding (
+    const struct FGameplayTag &amp; SettingTag,
+    struct FSFKeybindValueData &amp; NewValue,
+    const enum ESFKeybindCollisionResolution &amp; ResolutionPolicy
+) 
+</code></pre>
+<p>Update a keybinding for a setting with specific collision handling. If the new keybinding collides with existing keybindings based on the given collision channels, the collision will be resolved according to the specified resolution policy. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingTag</code> The Gameplay Tag of the setting to update the keybinding for. </li>
+<li><code>NewValue</code> The new keybinding value data to apply to the setting. </li>
+<li><code>ResolutionPolicy</code> The policy to use for resolving keybinding collisions if the new keybinding collides with existing keybindings. <strong>AllowDuplicate</strong> means the new keybinding will be applied even if there is a collision. <strong>Overwrite</strong> means the existing conflicting keybind will be removed. <strong>Swap</strong> means the existing conflicting keybind will be changed to the new keybinding's old value. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if the keybinding was updated successfully, false if there was an error such as the setting tag not being found, the new value being invalid, or if collision resolution failed. </p>
+<p><strong>Note:</strong></p>
+<p><code>BlueprintCallable</code> </p>
+<hr>
+<h2 id="protected-attributes-documentation">Protected Attributes Documentation</h2>
+<h3 id="variable-currentvalues">variable CurrentValues</h3>
+<pre><code class="language-C++">TMap&lt;struct FGameplayTag, TObjectPtr&lt;class USFSettingValue&gt; &gt; USFSettingsSubsystem::CurrentValues;
+</code></pre>
+<p>The map of setting GameplayTag to current active value for registered settings. Used for managing current setting values at runtime. </p>
+<p><strong>Note:</strong></p>
+<p><code>Transient</code> </p>
+<hr>
+
+<h3 id="variable-dynamicoptionsources">variable DynamicOptionSources</h3>
+<pre><code class="language-C++">TMap&lt;struct FGameplayTag, TObjectPtr&lt;class USFSettingOptionSource&gt; &gt; USFSettingsSubsystem::DynamicOptionSources;
+</code></pre>
+<p>The map of setting GameplayTag to setting setting option source object for registered discrete settings wtih dynamic options. </p>
+<p><strong>Note:</strong></p>
+<p><code>Transient</code> </p>
+<hr>
+
+<h3 id="variable-registeredsettings">variable RegisteredSettings</h3>
+<pre><code class="language-C++">TMap&lt;struct FGameplayTag, TObjectPtr&lt;class USFSettingDefinition&gt; &gt; USFSettingsSubsystem::RegisteredSettings;
+</code></pre>
+<p>The map of setting GameplayTag to setting definition Data Asset for registered settings. Used for quick lookup of setting definitions at runtime. </p>
+<p><strong>Note:</strong></p>
+<p><code>Transient</code> </p>
+<hr>
+
+<h3 id="variable-savedvalues">variable SavedValues</h3>
+<pre><code class="language-C++">TMap&lt;struct FGameplayTag, TObjectPtr&lt;class USFSettingValue&gt; &gt; USFSettingsSubsystem::SavedValues;
+</code></pre>
+<p>The map of setting GameplayTag to saved value for registered settings. Used for managing saved setting values at runtime and for saving/loading settings to disk. </p>
+<p><strong>Note:</strong></p>
+<p><code>Transient</code> </p>
+<hr>
+
+<h3 id="variable-settingsregistry">variable SettingsRegistry</h3>
+<pre><code class="language-C++">TObjectPtr&lt;class USFSettingsRegistry&gt; USFSettingsSubsystem::SettingsRegistry;
+</code></pre>
+<p>Transient pointer to the loaded settings registry asset. </p>
+<p><strong>Note:</strong></p>
+<p><code>Transient</code> </p>
+<hr>
+<h2 id="protected-functions-documentation">Protected Functions Documentation</h2>
+<h3 id="function-loadsettingsfromsavegame">function LoadSettingsFromSaveGame</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::LoadSettingsFromSaveGame () 
+</code></pre>
+<p>Load saved setting values from disk and update CurrentValues and SavedValues maps accordingly. Called during initialization after settings registry is loaded. </p>
+<hr>
+
+<h3 id="function-resolvekeybindingcollision">function ResolveKeybindingCollision</h3>
+<pre><code class="language-C++">bool USFSettingsSubsystem::ResolveKeybindingCollision (
+    const struct FGameplayTag &amp; SettingBeingUpdated,
+    const struct FKey &amp; NewKey,
+    const struct FKey &amp; OldKey,
+    const struct FGameplayTagContainer &amp; CollisionChannels,
+    const enum ESFKeybindCollisionResolution &amp; ResolutionPolicy
+) 
+</code></pre>
+<p>Check for keybinding collisions with a given new keybinding for a specific setting and resolve them according to the specified resolution policy. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>SettingBeingUpdated</code> The Gameplay Tag of the setting that is being updated with the new keybinding. </li>
+<li><code>NewKey</code> The new keybinding value that is being applied to the setting. </li>
+<li><code>OldKey</code> The old keybinding value that is being replaced by the new keybinding for the setting. </li>
+<li><code>CollisionChannels</code> The Gameplay Tag container of collision channels to check against. Only settings that have at least one of these tags in their collision channels will be checked for collision. </li>
+<li><code>ResolutionPolicy</code> The policy to use for resolving keybinding collisions if the new keybinding collides with existing keybindings. <strong>AllowDuplicate</strong> means the new keybinding will be applied even if there is a collision. <strong>Overwrite</strong> means the existing conflicting keybind will be removed. <strong>Swap</strong> means the existing conflicting keybind will be changed to the new keybinding's old value. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if the collision was resolved successfully, false if resolution failed. </p>
+<hr>
+
+<h3 id="function-savesettingstosavegame">function SaveSettingsToSaveGame</h3>
+<pre><code class="language-C++">void USFSettingsSubsystem::SaveSettingsToSaveGame () 
+</code></pre>
+<p>Save current active setting values to disk and update SavedValues map accordingly. Called when SaveSettings is called. </p>
+<hr>
+
+<hr />
+<p>The documentation for this class was generated from the following file <code>Source/SettingsFramework/Public/SFSettingsSubsystem.h</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingsDeveloperSettings" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingsDeveloperSettings</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UDeveloperSettings</basecompoundref>
+    <includes refid="SFSettingsDeveloperSettings_8h" local="yes">SFSettingsDeveloperSettings.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a6da66740188140f1b8bdfcf36aa5a5f9" prot="public" static="no" mutable="no">
+        <type>TSoftObjectPtr&lt; class <ref refid="classUSFSettingsRegistry" kindref="compound">USFSettingsRegistry</ref> &gt;</type>
+        <definition>TSoftObjectPtr&lt;class USFSettingsRegistry&gt; USFSettingsDeveloperSettings::SettingsRegistry</definition>
+        <argsstring></argsstring>
+        <name>SettingsRegistry</name>
+        <qualifiedname>USFSettingsDeveloperSettings::SettingsRegistry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The master registry asset containing setting hierarchy and definitions. Loaded asynchronously on <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> initialization. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="28" column="16" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a4c3d8da66c90687ec8a6e2bbdd5ac471" prot="public" static="no" mutable="no">
+        <type>FString</type>
+        <definition>FString USFSettingsDeveloperSettings::SaveGameSlotName</definition>
+        <argsstring></argsstring>
+        <name>SaveGameSlotName</name>
+        <qualifiedname>USFSettingsDeveloperSettings::SaveGameSlotName</qualifiedname>
+        <initializer>= TEXT(&quot;SF_SaveSlot&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save slot name for saving and loading setting values to and from disk. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="35" column="9" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a7577de093cb4e5aaf480a719d172e97c" prot="public" static="no" mutable="no">
+        <type>int32</type>
+        <definition>int32 USFSettingsDeveloperSettings::MaxUpdateDepth</definition>
+        <argsstring></argsstring>
+        <name>MaxUpdateDepth</name>
+        <qualifiedname>USFSettingsDeveloperSettings::MaxUpdateDepth</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The recursion guard for conditional dependencies: Maximum depth for updating setting dependencies to prevent infinite loops. If the depth is exceeded, a warning will be logged and the update will be halted. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="42" column="7" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1ac89aca765d1abb85b8ddfb65f1e0edf5" prot="public" static="no" mutable="no">
+        <type><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref></type>
+        <definition>ESFKeybindCollisionResolution USFSettingsDeveloperSettings::DefaultKeybindCollisionResolution</definition>
+        <argsstring></argsstring>
+        <name>DefaultKeybindCollisionResolution</name>
+        <qualifiedname>USFSettingsDeveloperSettings::DefaultKeybindCollisionResolution</qualifiedname>
+        <initializer>= ESFKeybindCollisionResolution::Overwrite</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The default keybind collision resolution policy when adding a new keybind that conflicts with an existing one. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="49" column="31" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1ab8ddb656b243e0e11f9a5417270ed6ee" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFCategoryTabButtonBase" kindref="compound">USFCategoryTabButtonBase</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFCategoryTabButtonBase&gt; USFSettingsDeveloperSettings::RootTabButtonClass</definition>
+        <argsstring></argsstring>
+        <name>RootTabButtonClass</name>
+        <qualifiedname>USFSettingsDeveloperSettings::RootTabButtonClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget class for the Settings Screen UI&apos;s root category tab buttons. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="56" column="13" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a679c37b5610d8021dd351b8da4e66bfe" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFCategoryTabButtonBase" kindref="compound">USFCategoryTabButtonBase</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFCategoryTabButtonBase&gt; USFSettingsDeveloperSettings::BranchTabButtonClass</definition>
+        <argsstring></argsstring>
+        <name>BranchTabButtonClass</name>
+        <qualifiedname>USFSettingsDeveloperSettings::BranchTabButtonClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget class for the Settings Screen UI&apos;s branch category tab buttons. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="63" column="13" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1aafbe8aaa13f69931a95155dbaaf78ae8" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFCategoryTab_Branch&gt; USFSettingsDeveloperSettings::BranchTabContentClass</definition>
+        <argsstring></argsstring>
+        <name>BranchTabContentClass</name>
+        <qualifiedname>USFSettingsDeveloperSettings::BranchTabContentClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget class for displaying the content of a Branch category (containing sub-categories) in the Settings Screen UI. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="70" column="13" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a43bf95967fde1a6b547e9e146262b9f1" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFCategoryTab__Leaf" kindref="compound">USFCategoryTab_Leaf</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFCategoryTab_Leaf&gt; USFSettingsDeveloperSettings::LeafTabContentClass</definition>
+        <argsstring></argsstring>
+        <name>LeafTabContentClass</name>
+        <qualifiedname>USFSettingsDeveloperSettings::LeafTabContentClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget class for displaying the content of a Leaf category (containing setting groups and setting entries) in the Settings Screen UI. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="77" column="13" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1a002b0b156af817f26f1c50cfede139b3" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFSettingGroupWidget" kindref="compound">USFSettingGroupWidget</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFSettingGroupWidget&gt; USFSettingsDeveloperSettings::SettingGroupWidgetClass</definition>
+        <argsstring></argsstring>
+        <name>SettingGroupWidgetClass</name>
+        <qualifiedname>USFSettingsDeveloperSettings::SettingGroupWidgetClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget class for displaying a setting group in the Settings Screen UI. <simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="84" column="13" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsDeveloperSettings_1ae082a6dd394452e2afb4d99b21a34476" prot="public" static="no" mutable="no">
+        <type>TMap&lt; TSubclassOf&lt; class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> &gt;, TSubclassOf&lt; class <ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref> &gt; &gt;</type>
+        <definition>TMap&lt;TSubclassOf&lt;class USFSettingDefinition&gt;, TSubclassOf&lt;class USFSettingEntryWidget&gt; &gt; USFSettingsDeveloperSettings::SettingEntryWidgetClasses</definition>
+        <argsstring></argsstring>
+        <name>SettingEntryWidgetClasses</name>
+        <qualifiedname>USFSettingsDeveloperSettings::SettingEntryWidgetClasses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The mapping of widget classes to display each variation of setting definition (e.g. a slider widget for a scalar setting) in the Settings Screen UI.<itemizedlist>
+<listitem><para><simplesect kind="note"><para><computeroutput>Config</computeroutput> <computeroutput>EditAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="91" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingsDeveloperSettings_1a65bac9fbbf624963de3eb31c29d7f1df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>FName</type>
+        <definition>virtual FName USFSettingsDeveloperSettings::GetCategoryName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetCategoryName</name>
+        <qualifiedname>USFSettingsDeveloperSettings::GetCategoryName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="94" column="15" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Developer settings to define project-wide configurations for the SettingsFramework plugin. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Developer settings to define project-wide configurations for the SettingsFramework plugin. Accessed through <bold>Project Settings</bold> &gt; <bold>Plugins</bold> &gt; <bold>SettingsFramework</bold> in the Unreal Editor. <simplesect kind="note"><para><computeroutput>Config=Game</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UDeveloperSettings</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsDeveloperSettings</label>
+        <link refid="classUSFSettingsDeveloperSettings"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UDeveloperSettings</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsDeveloperSettings</label>
+        <link refid="classUSFSettingsDeveloperSettings"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" line="18" column="1" bodyfile="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h" bodystart="19" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classUSFSettingsDeveloperSettings_1a679c37b5610d8021dd351b8da4e66bfe" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>BranchTabButtonClass</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1aafbe8aaa13f69931a95155dbaaf78ae8" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>BranchTabContentClass</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1ac89aca765d1abb85b8ddfb65f1e0edf5" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>DefaultKeybindCollisionResolution</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a65bac9fbbf624963de3eb31c29d7f1df" prot="public" virt="virtual"><scope>USFSettingsDeveloperSettings</scope><name>GetCategoryName</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a43bf95967fde1a6b547e9e146262b9f1" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>LeafTabContentClass</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a7577de093cb4e5aaf480a719d172e97c" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>MaxUpdateDepth</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1ab8ddb656b243e0e11f9a5417270ed6ee" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>RootTabButtonClass</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a4c3d8da66c90687ec8a6e2bbdd5ac471" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>SaveGameSlotName</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1ae082a6dd394452e2afb4d99b21a34476" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>SettingEntryWidgetClasses</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a002b0b156af817f26f1c50cfede139b3" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>SettingGroupWidgetClass</name></member>
+      <member refid="classUSFSettingsDeveloperSettings_1a6da66740188140f1b8bdfcf36aa5a5f9" prot="public" virt="non-virtual"><scope>USFSettingsDeveloperSettings</scope><name>SettingsRegistry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

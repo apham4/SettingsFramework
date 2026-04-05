@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingCategory_8h" kind="file" language="C++">
+    <compoundname>SFSettingCategory.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Engine/DataAsset.h</includes>
+    <includes local="yes">GameplayTagContainer.h</includes>
+    <includes local="yes">SFSettingCategory.generated.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Definitions/SFSettingCategory.h</label>
+        <link refid="SFSettingCategory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="3">
+        <label>Engine/DataAsset.h</label>
+      </node>
+      <node id="4">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="5">
+        <label>SFSettingCategory.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structFSFSettingGroup" prot="public">FSFSettingGroup</innerclass>
+    <innerclass refid="classUSFSettingCategory" prot="public">USFSettingCategory</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESFCategoryType</name>
+        <enumvalue id="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" prot="public">
+          <name>UMETA</name>
+          <initializer>=(ToolTip = &quot;Contains other Sub-Categories&quot;)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" prot="public">
+          <name>UMETA</name>
+          <initializer>=(ToolTip = &quot;Contains individual Settings&quot;)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enum to define whether a Category is a Branch (contains sub-categories) or a Leaf (contains individual settings). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="14" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="15" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Engine/DataAsset.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameplayTagContainer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingCategory.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">UENUM(BlueprintType)</highlight></codeline>
+<codeline lineno="14" refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref><sp/>:<sp/>uint8</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Branch<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kindref="member">UMETA</ref>(ToolTip<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Contains<sp/>other<sp/>Sub-Categories&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>Leaf<sp/><sp/><sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kindref="member">UMETA</ref>(ToolTip<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Contains<sp/>individual<sp/>Settings&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">USTRUCT(BlueprintType)</highlight></codeline>
+<codeline lineno="28" refid="structFSFSettingGroup" refkind="compound"><highlight class="normal">struct<sp/><ref refid="structFSFSettingGroup" kindref="compound">FSFSettingGroup</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingGroup&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37" refid="structFSFSettingGroup_1acfc0c5abc8dbe2819fc07f9b634b5345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FText<sp/>GroupDisplayName;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/>&quot;SFSettingGroup&quot;)</highlight></codeline>
+<codeline lineno="44" refid="structFSFSettingGroup_1a7a894ba7bed634a8b2b3ac75c5fe6e4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;TObjectPtr&lt;class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>&gt;&gt;<sp/>Settings;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">UCLASS(BlueprintType)</highlight></codeline>
+<codeline lineno="54" refid="classUSFSettingCategory" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref><sp/>:<sp/>public<sp/>UDataAsset</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingCategory&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64" refid="classUSFSettingCategory_1a95de8bab9f22164eccaa5ce751ba2439" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>CategoryTag;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingCategory&quot;)</highlight></codeline>
+<codeline lineno="71" refid="classUSFSettingCategory_1a8cce7d43f1d3bd0299802ef40f3227ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref><sp/>CategoryType<sp/>=<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref>::Leaf;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingCategory|Display&quot;)</highlight></codeline>
+<codeline lineno="78" refid="classUSFSettingCategory_1a6a52ef10f9687dafaed854f54872f826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FText<sp/>DisplayName;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingCategory|Branch&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;CategoryType<sp/>==<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref>::Branch&quot;))</highlight></codeline>
+<codeline lineno="85" refid="classUSFSettingCategory_1a635f4aacae8743226b2e7f7282da35b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;TObjectPtr&lt;<ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>&gt;&gt;<sp/>Subcategories;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingCategory|Leaf&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;CategoryType<sp/>==<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref>::Leaf&quot;))</highlight></codeline>
+<codeline lineno="92" refid="classUSFSettingCategory_1a81ece28496af75ca5ac7a9664311e44a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;<ref refid="structFSFSettingGroup" kindref="compound">FSFSettingGroup</ref>&gt;<sp/>SettingGroups;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingCategory|Leaf&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;CategoryType<sp/>==<sp/><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref>::Leaf&quot;))</highlight></codeline>
+<codeline lineno="99" refid="classUSFSettingCategory_1a310e4f6ba1fa1f6ad3762b3f6818156c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;TObjectPtr&lt;class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>&gt;&gt;<sp/>Settings;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f5fe102898a9b0642bc955593c0a287a" kind="dir">
+    <compoundname>Source/SettingsFramework/Public</compoundname>
+    <innerdir refid="dir_39651220af2aa02d3a35c23742da36c9">Source/SettingsFramework/Public/Core</innerdir>
+    <innerdir refid="dir_49fd2e6d8d3cd0aca0d770534c763afe">Source/SettingsFramework/Public/Definitions</innerdir>
+    <innerdir refid="dir_2040f41784c4464894ecea1e6ef2879a">Source/SettingsFramework/Public/SaveGame</innerdir>
+    <innerdir refid="dir_c0d111a2beff4c46a32685df6daadb0f">Source/SettingsFramework/Public/UI</innerdir>
+    <innerfile refid="SettingsFramework_8h">SettingsFramework.h</innerfile>
+    <innerfile refid="SFFunctionLibrary_8h">SFFunctionLibrary.h</innerfile>
+    <innerfile refid="SFSettingsDeveloperSettings_8h">SFSettingsDeveloperSettings.h</innerfile>
+    <innerfile refid="SFSettingsSubsystem_8h">SFSettingsSubsystem.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/"/>
+  </compounddef>
+</doxygen>

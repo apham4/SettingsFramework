@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingsDeveloperSettings_8h" kind="file" language="C++">
+    <compoundname>SFSettingsDeveloperSettings.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Engine/DeveloperSettings.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">SFSettingsDeveloperSettings.generated.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h</label>
+        <link refid="SFSettingsDeveloperSettings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="3">
+        <label>Engine/DeveloperSettings.h</label>
+      </node>
+      <node id="5">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="6">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="7">
+        <label>SFSettingsDeveloperSettings.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingsDeveloperSettings" prot="public">USFSettingsDeveloperSettings</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Engine/DeveloperSettings.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingsDeveloperSettings.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">UCLASS(Config<sp/>=<sp/>Game,<sp/>meta<sp/>=<sp/>(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Settings<sp/>Framework&quot;</highlight><highlight class="normal">,<sp/>ToolTip<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Developer<sp/>settings<sp/>to<sp/>define<sp/>project-wide<sp/>configurations<sp/>for<sp/>the<sp/>SettingsFramework<sp/>plugin.&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="18" refid="classUSFSettingsDeveloperSettings" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingsDeveloperSettings" kindref="compound">USFSettingsDeveloperSettings</ref><sp/>:<sp/>public<sp/>UDeveloperSettings</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Settings<sp/>Registry&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28" refid="classUSFSettingsDeveloperSettings_1a6da66740188140f1b8bdfcf36aa5a5f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSoftObjectPtr&lt;class<sp/><ref refid="classUSFSettingsRegistry" kindref="compound">USFSettingsRegistry</ref>&gt;<sp/>SettingsRegistry;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>Serialization&quot;)</highlight></codeline>
+<codeline lineno="35" refid="classUSFSettingsDeveloperSettings_1a4c3d8da66c90687ec8a6e2bbdd5ac471" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FString<sp/>SaveGameSlotName<sp/>=<sp/>TEXT(&quot;SF_SaveSlot&quot;);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>Conditions&quot;)</highlight></codeline>
+<codeline lineno="42" refid="classUSFSettingsDeveloperSettings_1a7577de093cb4e5aaf480a719d172e97c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32<sp/>MaxUpdateDepth<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>Logic&quot;)</highlight></codeline>
+<codeline lineno="49" refid="classUSFSettingsDeveloperSettings_1ac89aca765d1abb85b8ddfb65f1e0edf5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref><sp/>DefaultKeybindCollisionResolution<sp/>=<sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref>::Overwrite;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="56" refid="classUSFSettingsDeveloperSettings_1ab8ddb656b243e0e11f9a5417270ed6ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFCategoryTabButtonBase" kindref="compound">USFCategoryTabButtonBase</ref>&gt;<sp/>RootTabButtonClass;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="63" refid="classUSFSettingsDeveloperSettings_1a679c37b5610d8021dd351b8da4e66bfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFCategoryTabButtonBase" kindref="compound">USFCategoryTabButtonBase</ref>&gt;<sp/>BranchTabButtonClass;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="70" refid="classUSFSettingsDeveloperSettings_1aafbe8aaa13f69931a95155dbaaf78ae8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref>&gt;<sp/>BranchTabContentClass;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="77" refid="classUSFSettingsDeveloperSettings_1a43bf95967fde1a6b547e9e146262b9f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFCategoryTab__Leaf" kindref="compound">USFCategoryTab_Leaf</ref>&gt;<sp/>LeafTabContentClass;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="84" refid="classUSFSettingsDeveloperSettings_1a002b0b156af817f26f1c50cfede139b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFSettingGroupWidget" kindref="compound">USFSettingGroupWidget</ref>&gt;<sp/>SettingGroupWidgetClass;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Config,<sp/>EditAnywhere,<sp/>Category<sp/>=<sp/>&quot;Settings<sp/>UI&quot;)</highlight></codeline>
+<codeline lineno="91" refid="classUSFSettingsDeveloperSettings_1ae082a6dd394452e2afb4d99b21a34476" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TMap&lt;TSubclassOf&lt;class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>&gt;,<sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref>&gt;&gt;<sp/>SettingEntryWidgetClasses;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="94" refid="classUSFSettingsDeveloperSettings_1a65bac9fbbf624963de3eb31c29d7f1df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FName<sp/>GetCategoryName()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FName(</highlight><highlight class="stringliteral">&quot;Plugins&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h"/>
+  </compounddef>
+</doxygen>

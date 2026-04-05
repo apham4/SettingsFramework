@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingOptionSource" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingOptionSource</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UObject</basecompoundref>
+    <includes refid="SFSettingOptionSource_8h" local="yes">Definitions/SFSettingOptionSource.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingOptionSource_1ae7c2453d53c7f3442c8b4e7d3d48c108" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt;</type>
+        <definition>TArray&lt; struct FSFSettingOption &gt; USFSettingOptionSource::GetAvailableOptions</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>GetAvailableOptions</name>
+        <qualifiedname>USFSettingOptionSource::GetAvailableOptions</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the list of options to choose from for this setting <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorldContextObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world context object from which to get the world object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The list of options to choose from for this setting. The value should be of the type specified by the setting definition&apos;s ValueWrapperClass. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintNativeEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" line="30" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingOptionSource_1a2414643b4b36b68808db458d9400b71b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt;</type>
+        <definition>virtual TArray&lt; struct FSFSettingOption &gt; USFSettingOptionSource::GetAvailableOptions_Implementation</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>GetAvailableOptions_Implementation</name>
+        <qualifiedname>USFSettingOptionSource::GetAvailableOptions_Implementation</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Native implementation of GetAvailableOptions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" line="35" column="20" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingOptionSource_1a36ce246b381bc3001e59f7c7824fd7b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>class USFSettingValue * USFSettingOptionSource::GetDefaultValue</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>GetDefaultValue</name>
+        <qualifiedname>USFSettingOptionSource::GetDefaultValue</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the default value for this setting. This is optional to implement, and if not implemented, the setting will use the fallback default value defined in the DefaultValue property of the setting definition. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorldContextObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world context object from which to get the world object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The default value for this setting. The value should be of the type specified by the setting definition&apos;s ValueWrapperClass. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintNativeEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" line="44" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingOptionSource_1a44b4ee4529c519d31d074f7ab27965dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>virtual class USFSettingValue * USFSettingOptionSource::GetDefaultValue_Implementation</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>GetDefaultValue_Implementation</name>
+        <qualifiedname>USFSettingOptionSource::GetDefaultValue_Implementation</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Native implementation of GetDefaultValue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" line="49" column="35" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for providing a dynamic runtime list of options for a setting. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class for providing a dynamic runtime list of options for a setting.</para>
+<para>This class is used in <ref refid="classUSFSettingDefinition__Discrete" kindref="compound">USFSettingDefinition_Discrete</ref> when UseDynamicOptions is true. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>Blueprintable</computeroutput> <computeroutput>EditInlineNew</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingOptionSource</label>
+        <link refid="classUSFSettingOptionSource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingOptionSource</label>
+        <link refid="classUSFSettingOptionSource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" line="18" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h" bodystart="19" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classUSFSettingOptionSource_1ae7c2453d53c7f3442c8b4e7d3d48c108" prot="public" virt="non-virtual"><scope>USFSettingOptionSource</scope><name>GetAvailableOptions</name></member>
+      <member refid="classUSFSettingOptionSource_1a2414643b4b36b68808db458d9400b71b" prot="public" virt="virtual"><scope>USFSettingOptionSource</scope><name>GetAvailableOptions_Implementation</name></member>
+      <member refid="classUSFSettingOptionSource_1a36ce246b381bc3001e59f7c7824fd7b2" prot="public" virt="non-virtual"><scope>USFSettingOptionSource</scope><name>GetDefaultValue</name></member>
+      <member refid="classUSFSettingOptionSource_1a44b4ee4529c519d31d074f7ab27965dd" prot="public" virt="virtual"><scope>USFSettingOptionSource</scope><name>GetDefaultValue_Implementation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

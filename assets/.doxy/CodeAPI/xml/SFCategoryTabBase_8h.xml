@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFCategoryTabBase_8h" kind="file" language="C++">
+    <compoundname>SFCategoryTabBase.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">CommonActivatableWidget.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">SFCategoryTabBase.generated.h</includes>
+    <includedby refid="SFCategoryTab__Branch_8h" local="yes">Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h</includedby>
+    <includedby refid="SFCategoryTab__Leaf_8h" local="yes">Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Leaf.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h</label>
+        <link refid="SFCategoryTabBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CommonActivatableWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="5">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="7">
+        <label>SFCategoryTabBase.generated.h</label>
+      </node>
+      <node id="6">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h</label>
+        <link refid="SFCategoryTabBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h</label>
+        <link refid="SFCategoryTab__Branch_8h"/>
+      </node>
+      <node id="3">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Leaf.h</label>
+        <link refid="SFCategoryTab__Leaf_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUSFCategoryTabBase" prot="public">USFCategoryTabBase</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonActivatableWidget.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFCategoryTabBase.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType)</highlight></codeline>
+<codeline lineno="19" refid="classUSFCategoryTabBase" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFCategoryTabBase" kindref="compound">USFCategoryTabBase</ref><sp/>:<sp/>public<sp/>UCommonActivatableWidget</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" kindref="member">SetCategory</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*<sp/>InSettingCategory);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0" kindref="member">InitializeCategoryDisplay</ref>()<sp/>{};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Setting<sp/>Category<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFCategoryTabBase|Setting<sp/>Category<sp/>Data&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="45" refid="classUSFCategoryTabBase_1a00359215a33fc41fd0ca0891b772c328" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>class<sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*<sp/>GetSettingCategory()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SettingCategory;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintAssignable,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFCategoryTabBase&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="51" refid="classUSFCategoryTabBase_1a258c9f18dac18a3f9d6f585fe8b3d131" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FOnSettingEntryFocused<sp/>OnSettingFocused;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="59" refid="classUSFCategoryTabBase_1a176c4c9b46e33321ba89d48d98902ca8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>&gt;<sp/>SettingCategory;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h"/>
+  </compounddef>
+</doxygen>

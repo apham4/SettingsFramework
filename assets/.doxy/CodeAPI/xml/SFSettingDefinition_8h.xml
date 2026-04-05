@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingDefinition_8h" kind="file" language="C++">
+    <compoundname>SFSettingDefinition.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Engine/DataAsset.h</includes>
+    <includes local="yes">GameplayTagContainer.h</includes>
+    <includes refid="SFSettingValue_8h" local="yes">Core/SFSettingValue.h</includes>
+    <includes local="yes">SFSettingDefinition.generated.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Core/SFSettingValue.h</label>
+        <link refid="SFSettingValue_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h</label>
+        <link refid="SFSettingDefinition_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="3">
+        <label>Engine/DataAsset.h</label>
+      </node>
+      <node id="9">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="4">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="7">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="10">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="12">
+        <label>SFSettingDefinition.generated.h</label>
+      </node>
+      <node id="11">
+        <label>SFSettingValue.generated.h</label>
+      </node>
+      <node id="6">
+        <label>UObject/NoExportTypes.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingDefinition" prot="public">USFSettingDefinition</innerclass>
+    <innerclass refid="classUSFSettingDefinition__Scalar" prot="public">USFSettingDefinition_Scalar</innerclass>
+    <innerclass refid="classUSFSettingDefinition__Bool" prot="public">USFSettingDefinition_Bool</innerclass>
+    <innerclass refid="classUSFSettingDefinition__Discrete" prot="public">USFSettingDefinition_Discrete</innerclass>
+    <innerclass refid="classUSFSettingDefinition__Key" prot="public">USFSettingDefinition_Key</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Engine/DataAsset.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameplayTagContainer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFSettingValue_8h" kindref="compound">Core/SFSettingValue.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingDefinition.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType)</highlight></codeline>
+<codeline lineno="19" refid="classUSFSettingDefinition" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref><sp/>:<sp/>public<sp/>UDataAsset</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29" refid="classUSFSettingDefinition_1ada8935284ed7e3d9bdafb9afbba02f26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>SettingTag;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Display&quot;)</highlight></codeline>
+<codeline lineno="36" refid="classUSFSettingDefinition_1aaee9e00677afd6076b316cf345b5b799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FText<sp/>DisplayName;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Display&quot;,<sp/>meta<sp/>=<sp/>(MultiLine<sp/>=<sp/>true))</highlight></codeline>
+<codeline lineno="43" refid="classUSFSettingDefinition_1a06797d42e05a2fd775cf2de7199d0504" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FText<sp/>Description;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Behavior&quot;)</highlight></codeline>
+<codeline lineno="52" refid="classUSFSettingDefinition_1aeabc1ee0b6502a4b06de8e0b952d901b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;TObjectPtr&lt;class<sp/><ref refid="classUSFSettingCondition" kindref="compound">USFSettingCondition</ref>&gt;&gt;<sp/>VisibilityConditions;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Behavior&quot;)</highlight></codeline>
+<codeline lineno="61" refid="classUSFSettingDefinition_1ab80502499ecc8ea71304cc5a85096241" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;TObjectPtr&lt;class<sp/><ref refid="classUSFSettingCondition" kindref="compound">USFSettingCondition</ref>&gt;&gt;<sp/>EditabilityConditions;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="68" refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>TSubclassOf&lt;<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>GetValueClass()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/>PURE_VIRTUAL(<ref refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4" kindref="member">USFSettingDefinition::GetValueClass</ref>,<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;);<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition|Value&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(WorldContext=</highlight><highlight class="stringliteral">&quot;WorldContextObject&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="76" refid="classUSFSettingDefinition_1a00ead9833c334c437cd2c3c842e77d97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetDefaultValue(const<sp/>UObject*<sp/>WorldContextObject)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DefaultValue;<sp/>};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition|Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84" refid="classUSFSettingDefinition_1aabb9eff3fef5f1c3f1e6f3c4a2411324" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>DefaultValue;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>Scalar<sp/>Setting&quot;)</highlight></codeline>
+<codeline lineno="95" refid="classUSFSettingDefinition__Scalar" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingDefinition__Scalar" kindref="compound">USFSettingDefinition_Scalar</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition|Value|Scalar&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="105" refid="classUSFSettingDefinition__Scalar_1a1950890771afe404da1b039139390015" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>float<sp/>MinValue<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Scalar&quot;)</highlight></codeline>
+<codeline lineno="112" refid="classUSFSettingDefinition__Scalar_1a9d04434a21cea19aa87fc97e073d5b27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>MaxValue<sp/>=<sp/>100.0f;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Scalar&quot;)</highlight></codeline>
+<codeline lineno="119" refid="classUSFSettingDefinition__Scalar_1ac3a90d15f1c785efe6e691e125268b01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>StepSize<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="125" refid="classUSFSettingDefinition__Scalar_1aabe90425645f05cc303f4db13aa8a087" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>TSubclassOf&lt;<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>GetValueClass()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight></codeline>
+<codeline lineno="126"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>USFSettingValue_Scalar::StaticClass();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SF<sp/>Bool<sp/>Setting&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="139" refid="classUSFSettingDefinition__Bool" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingDefinition__Bool" kindref="compound">USFSettingDefinition_Bool</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="147" refid="classUSFSettingDefinition__Bool_1a2b141971c5da452e0f5113f0754ba172" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>TSubclassOf&lt;USFSettingValue&gt;<sp/><ref refid="classUSFSettingDefinition__Bool_1a2b141971c5da452e0f5113f0754ba172" kindref="member">GetValueClass</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight></codeline>
+<codeline lineno="148"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>USFSettingValue_Bool::StaticClass();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SF<sp/>Discrete<sp/>Setting&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="161" refid="classUSFSettingDefinition__Discrete" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingDefinition__Discrete" kindref="compound">USFSettingDefinition_Discrete</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition|Value|Discrete&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="171" refid="classUSFSettingDefinition__Discrete_1aa0ad73e98d4af05d62c532fd9799075b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>ValueWrapperClass;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Discrete&quot;)</highlight></codeline>
+<codeline lineno="178" refid="classUSFSettingDefinition__Discrete_1a90643457e2396e9a4ceea29810d440fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bUseDynamicOptions<sp/>=<sp/>false;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Discrete&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;!bUseDynamicOptions&quot;))</highlight></codeline>
+<codeline lineno="185" refid="classUSFSettingDefinition__Discrete_1acd6b4b6a03ed5aeb275964776c9b9e5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref>&gt;<sp/>StaticOptions;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Discrete&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;bUseDynamicOptions&quot;))</highlight></codeline>
+<codeline lineno="192" refid="classUSFSettingDefinition__Discrete_1a7782ac77017e0b534833aa83f3c2caa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TSubclassOf&lt;class<sp/><ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref>&gt;<sp/>OptionSource;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Discrete&quot;,<sp/>meta<sp/>=<sp/>(EditCondition<sp/>=<sp/>&quot;bUseDynamicOptions&quot;))</highlight></codeline>
+<codeline lineno="199" refid="classUSFSettingDefinition__Discrete_1a084f30073ae25fcb3266d7cfa9d09a95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTagContainer<sp/>DeterminantSettingTags;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="205" refid="classUSFSettingDefinition__Discrete_1af809f41ba78da3bec180b09c48dd5aca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>TSubclassOf&lt;<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>GetValueClass()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="classUSFSettingDefinition__Discrete_1af10633f22d3183e680a561b2488a77cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetDefaultValue(const<sp/>UObject*<sp/>WorldContextObject)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value&quot;,<sp/>meta<sp/>=<sp/>(WorldContext=&quot;WorldContextObject&quot;))</highlight></codeline>
+<codeline lineno="218" refid="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref>&gt;<sp/>GetSettingOptions(const<sp/>UObject*<sp/>WorldContextObject)<sp/>const;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>Keybind<sp/>Setting&quot;)</highlight></codeline>
+<codeline lineno="229" refid="classUSFSettingDefinition__Key" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingDefinition__Key" kindref="compound">USFSettingDefinition_Key</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref></highlight></codeline>
+<codeline lineno="230"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingDefinition|Value|Keybind&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="239" refid="classUSFSettingDefinition__Key_1affac6aa1292e2a6d89772708502f6759" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FName<sp/>KBMPrimaryName;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Keybind&quot;)</highlight></codeline>
+<codeline lineno="246" refid="classUSFSettingDefinition__Key_1ae26d25014ad149771a647e1ab0cfec2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FName<sp/>KBMSecondaryName;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Value|Keybind&quot;)</highlight></codeline>
+<codeline lineno="253" refid="classUSFSettingDefinition__Key_1a6437819a787f4ec1e7743e7ac45e670e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FName<sp/>GamepadName;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditDefaultsOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingDefinition|Behavior&quot;)</highlight></codeline>
+<codeline lineno="261" refid="classUSFSettingDefinition__Key_1acb2c4278b74e572ab71a07b4fa640a9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTagContainer<sp/>CollisionChannels;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="267" refid="classUSFSettingDefinition__Key_1a5e12788d85fa2b170f50c9853a76100b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>TSubclassOf&lt;<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>GetValueClass()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight></codeline>
+<codeline lineno="268"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>USFSettingValue_Key::StaticClass();</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h"/>
+  </compounddef>
+</doxygen>

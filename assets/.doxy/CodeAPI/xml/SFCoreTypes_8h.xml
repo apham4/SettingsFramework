@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFCoreTypes_8h" kind="file" language="C++">
+    <compoundname>SFCoreTypes.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Framework/Commands/InputChord.h</includes>
+    <includes local="yes">SFCoreTypes.generated.h</includes>
+    <includedby refid="SFSettingValue_8h" local="yes">Source/SettingsFramework/Public/Core/SFSettingValue.h</includedby>
+    <includedby refid="SFSettingsDeveloperSettings_8h" local="yes">Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h</includedby>
+    <includedby refid="SFCategoryTabBase_8h" local="yes">Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h</includedby>
+    <includedby refid="SFSettingEntryWidget_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h</includedby>
+    <includedby refid="SFSettingEntryWidget__Keybind_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="3">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="4">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Source/SettingsFramework/Public/Core/SFSettingValue.h</label>
+        <link refid="SFSettingValue_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h</label>
+        <link refid="SFSettingDefinition_8h"/>
+      </node>
+      <node id="4">
+        <label>Source/SettingsFramework/Public/SFSettingsDeveloperSettings.h</label>
+        <link refid="SFSettingsDeveloperSettings_8h"/>
+      </node>
+      <node id="5">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h</label>
+        <link refid="SFCategoryTabBase_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h</label>
+        <link refid="SFCategoryTab__Branch_8h"/>
+      </node>
+      <node id="7">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Leaf.h</label>
+        <link refid="SFCategoryTab__Leaf_8h"/>
+      </node>
+      <node id="8">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h</label>
+        <link refid="SFSettingEntryWidget_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h</label>
+        <link refid="SFSettingEntryWidget__Checkbox_8h"/>
+      </node>
+      <node id="10">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h</label>
+        <link refid="SFSettingEntryWidget__Keybind_8h"/>
+      </node>
+      <node id="11">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h</label>
+        <link refid="SFSettingEntryWidget__Rotator_8h"/>
+      </node>
+      <node id="12">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Slider.h</label>
+        <link refid="SFSettingEntryWidget__Slider_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structFSFSettingOption" prot="public">FSFSettingOption</innerclass>
+    <innerclass refid="structFSFKeybindValueData" prot="public">FSFKeybindValueData</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESFKeybindCollisionResolution</name>
+        <enumvalue id="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" prot="public">
+          <name>UMETA</name>
+          <initializer>=(DisplayName = &quot;Allow Duplicate Bindings&quot;)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" prot="public">
+          <name>UMETA</name>
+          <initializer>=(DisplayName = &quot;Overwrite Existing Binding&quot;)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" prot="public">
+          <name>UMETA</name>
+          <initializer>=(DisplayName = &quot;Swap Bindings&quot;)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enum defining how to resolve keybind collisions when adding a new keybind. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="85" column="1" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="86" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="SFCoreTypes_8h_1ac7063d8ca90276e03fa8844ec2d4889b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</definition>
+        <argsstring>(FOnSettingEntryFocused, const struct FGameplayTag &amp;, SettingTag)</argsstring>
+        <name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</name>
+        <param>
+          <type>FOnSettingEntryFocused</type>
+        </param>
+        <param>
+          <type>const struct FGameplayTag &amp;</type>
+        </param>
+        <param>
+          <type>SettingTag</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="97" column="1" declfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" declline="97" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Framework/Commands/InputChord.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFCoreTypes.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Backend</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">USTRUCT(BlueprintType)</highlight></codeline>
+<codeline lineno="20" refid="structFSFSettingOption" refkind="compound"><highlight class="normal">struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingOption&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29" refid="structFSFSettingOption_1a3dd5aadf6d296ac86348c636d5ecc826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FText<sp/>DisplayName;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Instanced,<sp/>Category<sp/>=<sp/>&quot;SFSettingOption&quot;)</highlight></codeline>
+<codeline lineno="36" refid="structFSFSettingOption_1a61a3bb5316be853d71f3f646456a096a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;<sp/>Value;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">USTRUCT(BlueprintType)</highlight></codeline>
+<codeline lineno="48" refid="structFSFKeybindValueData" refkind="compound"><highlight class="normal">struct<sp/><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFKeybindValueData&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="57" refid="structFSFKeybindValueData_1a328a539f286ec2cbbfd9ecdb52ff97f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FKey<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca45eaa293c847862872a0dd29e4bb3150" kindref="member">KBMPrimary</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/>&quot;SFKeybindValueData&quot;)</highlight></codeline>
+<codeline lineno="64" refid="structFSFKeybindValueData_1a6bf410709e3bacf2d7bee22151965aae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FKey<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dcab7dd31970654fc8a058668a50f879a9a" kindref="member">KBMSecondary</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/>&quot;SFKeybindValueData&quot;)</highlight></codeline>
+<codeline lineno="71" refid="structFSFKeybindValueData_1aea6d65f73ad608aaed466fc43a522893" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FKey<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca221f6781b4faa2d321ca0d928f518d6e" kindref="member">Gamepad</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structFSFKeybindValueData_1a7659289ad5036a021032349c7b19ce75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(const<sp/><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref>&amp;<sp/>Other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="74"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca45eaa293c847862872a0dd29e4bb3150" kindref="member">KBMPrimary</ref><sp/>==<sp/>Other.<ref refid="structFSFKeybindValueData_1a328a539f286ec2cbbfd9ecdb52ff97f3" kindref="member">KBMPrimary</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dcab7dd31970654fc8a058668a50f879a9a" kindref="member">KBMSecondary</ref><sp/>==<sp/>Other.KBMSecondary</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca221f6781b4faa2d321ca0d928f518d6e" kindref="member">Gamepad</ref><sp/>==<sp/>Other.Gamepad;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">UENUM(BlueprintType)</highlight></codeline>
+<codeline lineno="85" refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref><sp/>:<sp/>uint8</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>collision<sp/>found,<sp/>allow<sp/>the<sp/>new<sp/>binding<sp/>to<sp/>be<sp/>added<sp/>alongside<sp/>the<sp/>existing<sp/>one,<sp/>even<sp/>if<sp/>they<sp/>are<sp/>the<sp/>same<sp/>action<sp/>or<sp/>same<sp/>input.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>AllowDuplicate<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kindref="member">UMETA</ref>(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Allow<sp/>Duplicate<sp/>Bindings&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>collision<sp/>found,<sp/>allow<sp/>the<sp/>new<sp/>binding<sp/>but<sp/>remove<sp/>the<sp/>existing<sp/>one(s)<sp/>that<sp/>conflict<sp/>with<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>Overwrite<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kindref="member">UMETA</ref>(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Overwrite<sp/>Existing<sp/>Binding&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>collision<sp/>found,<sp/>allow<sp/>the<sp/>new<sp/>binding<sp/>but<sp/>also<sp/>change<sp/>the<sp/>conflicting<sp/>existing<sp/>binding<sp/>to<sp/>the<sp/>new<sp/>binding&apos;s<sp/>old<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>Swap<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kindref="member">UMETA</ref>(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Swap<sp/>Bindings&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>UI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="SFCoreTypes_8h_1ac7063d8ca90276e03fa8844ec2d4889b" refkind="member"><highlight class="normal"><ref refid="SFCoreTypes_8h_1ac7063d8ca90276e03fa8844ec2d4889b" kindref="member">DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</ref>(FOnSettingEntryFocused,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>FGameplayTag&amp;,<sp/>SettingTag);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h"/>
+  </compounddef>
+</doxygen>

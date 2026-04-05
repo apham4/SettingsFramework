@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d359c2365a038846f780cd493464dc51" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/UI/Components</compoundname>
+    <innerfile refid="SFCategoryTab__Branch_8h">SFCategoryTab_Branch.h</innerfile>
+    <innerfile refid="SFCategoryTab__Leaf_8h">SFCategoryTab_Leaf.h</innerfile>
+    <innerfile refid="SFCategoryTabBase_8h">SFCategoryTabBase.h</innerfile>
+    <innerfile refid="SFCategoryTabButtonBase_8h">SFCategoryTabButtonBase.h</innerfile>
+    <innerfile refid="SFSettingGroupWidget_8h">SFSettingGroupWidget.h</innerfile>
+    <innerfile refid="SFSettingInfoDisplay_8h">SFSettingInfoDisplay.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/UI/Components/"/>
+  </compounddef>
+</doxygen>

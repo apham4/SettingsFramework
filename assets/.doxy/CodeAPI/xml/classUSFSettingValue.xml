@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingValue" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingValue</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UObject</basecompoundref>
+    <derivedcompoundref refid="classUSFSettingValue__Bool" prot="public" virt="non-virtual">USFSettingValue_Bool</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingValue__Key" prot="public" virt="non-virtual">USFSettingValue_Key</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingValue__Scalar" prot="public" virt="non-virtual">USFSettingValue_Scalar</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingValue__String" prot="public" virt="non-virtual">USFSettingValue_String</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingValue__Tag" prot="public" virt="non-virtual">USFSettingValue_Tag</derivedcompoundref>
+    <includes refid="SFSettingValue_8h" local="yes">Core/SFSettingValue.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>FString</type>
+        <definition>virtual FString USFSettingValue::SerializeToString</definition>
+        <argsstring>() const</argsstring>
+        <name>SerializeToString</name>
+        <qualifiedname>USFSettingValue::SerializeToString</qualifiedname>
+        <reimplementedby refid="classUSFSettingValue__Scalar_1a595fd1054ed13a8448514814835938e9">SerializeToString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Bool_1a68061c898917091c218e801f1936294c">SerializeToString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Tag_1ac2dc2b875cb3cad33d2999e40e4d2aeb">SerializeToString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__String_1abf62b30d50cda7e6015b2a142878e52b">SerializeToString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Key_1a59daba9bc5e40a43f506a78b8ff090f1">SerializeToString</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convert current value to string for saving <simplesect kind="return"><para>The string representation of the current value. Should be parseable by <ref refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" kindref="member">DeserializeFromString()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="29" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingValue::DeserializeFromString</definition>
+        <argsstring>(const FString &amp;InString)</argsstring>
+        <name>DeserializeFromString</name>
+        <qualifiedname>USFSettingValue::DeserializeFromString</qualifiedname>
+        <reimplementedby refid="classUSFSettingValue__Scalar_1aa4ddff883e3e7c1beb6058d1cd09da73">DeserializeFromString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Bool_1a171202d909c895e126c559935cda4bbe">DeserializeFromString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Tag_1a802be916f7d5c97953e9b594c81e4fc2">DeserializeFromString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__String_1a229f1195b51a53183c8cdefff958bc43">DeserializeFromString</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Key_1a6788c6623bd3ca370aaf5050e25212c5">DeserializeFromString</reimplementedby>
+        <param>
+          <type>const FString &amp;</type>
+          <declname>InString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load value from string <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to parse the value from, typically loaded from disk. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="35" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue_1afef0792cabd7da25584974c05b95830d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>virtual USFSettingValue * USFSettingValue::Duplicate</definition>
+        <argsstring>(UObject *Outer) const</argsstring>
+        <name>Duplicate</name>
+        <qualifiedname>USFSettingValue::Duplicate</qualifiedname>
+        <param>
+          <type>UObject *</type>
+          <declname>Outer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a deep copy of this value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Outer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The outer for the new duplicated object. Typically the caller should pass in itself as the outer, so that the duplicated value will be owned by the same object that owns this value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A deep copy of this value object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="42" column="29" bodyfile="Source/SettingsFramework/Public/Core/SFSettingValue.h" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool USFSettingValue::Equals</definition>
+        <argsstring>(const USFSettingValue *Other) const</argsstring>
+        <name>Equals</name>
+        <qualifiedname>USFSettingValue::Equals</qualifiedname>
+        <reimplementedby refid="classUSFSettingValue__Scalar_1af2b99f5ae335a9eb9281fdf023c06f7c">Equals</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Bool_1a579f8a83c06a9b895b5f6e5f1ad97f01">Equals</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Tag_1a6d788f91db534fbafc1fc215034e9887">Equals</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__String_1a45a98ab80c7aa5d95e27b015d2f252d8">Equals</reimplementedby>
+        <reimplementedby refid="classUSFSettingValue__Key_1ae1dfc05cd36e7586f5b2faf47a04e821">Equals</reimplementedby>
+        <param>
+          <type>const <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>Other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks equality with another value object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other value object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the two value objects are considered equal in terms of their underlying value, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="52" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>FString</type>
+        <definition>virtual FString USFSettingValue::ToString</definition>
+        <argsstring>() const</argsstring>
+        <name>ToString</name>
+        <qualifiedname>USFSettingValue::ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper function for debugging. Simply calls <ref refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" kindref="member">SerializeToString()</ref>. <simplesect kind="return"><para>The string representation of the current value, same as <ref refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" kindref="member">SerializeToString()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="58" column="21" bodyfile="Source/SettingsFramework/Public/Core/SFSettingValue.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract base class for all setting values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Abstract base class for all setting values. Wraps raw data (float, bool, key) into a generic UObject for safe transport. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> <computeroutput>EditInlineNew</computeroutput> <computeroutput>DefaultToInstanced</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingValue</label>
+        <link refid="classUSFSettingValue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>USFSettingValue_Bool</label>
+        <link refid="classUSFSettingValue__Bool"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>USFSettingValue_Key</label>
+        <link refid="classUSFSettingValue__Key"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>USFSettingValue_Scalar</label>
+        <link refid="classUSFSettingValue__Scalar"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>USFSettingValue_String</label>
+        <link refid="classUSFSettingValue__String"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>USFSettingValue_Tag</label>
+        <link refid="classUSFSettingValue__Tag"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingValue</label>
+        <link refid="classUSFSettingValue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="20" column="1" bodyfile="Source/SettingsFramework/Public/Core/SFSettingValue.h" bodystart="21" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" prot="public" virt="virtual"><scope>USFSettingValue</scope><name>DeserializeFromString</name></member>
+      <member refid="classUSFSettingValue_1afef0792cabd7da25584974c05b95830d" prot="public" virt="virtual"><scope>USFSettingValue</scope><name>Duplicate</name></member>
+      <member refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" prot="public" virt="virtual"><scope>USFSettingValue</scope><name>Equals</name></member>
+      <member refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" prot="public" virt="virtual"><scope>USFSettingValue</scope><name>SerializeToString</name></member>
+      <member refid="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" prot="public" virt="virtual"><scope>USFSettingValue</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

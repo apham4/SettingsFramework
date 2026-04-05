@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structFSFSettingOption" kind="struct" language="C++" prot="public">
+    <compoundname>FSFSettingOption</compoundname>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structFSFSettingOption_1a3dd5aadf6d296ac86348c636d5ecc826" prot="public" static="no" mutable="no">
+        <type>FText</type>
+        <definition>FText FSFSettingOption::DisplayName</definition>
+        <argsstring></argsstring>
+        <name>DisplayName</name>
+        <qualifiedname>FSFSettingOption::DisplayName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The player-facing name of the option. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="29" column="11" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structFSFSettingOption_1a61a3bb5316be853d71f3f646456a096a" prot="public" static="no" mutable="no">
+        <type>TObjectPtr&lt; class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt;</type>
+        <definition>TObjectPtr&lt;class USFSettingValue&gt; FSFSettingOption::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>FSFSettingOption::Value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The value associated with this option, can be of any USFSettingValue-derived type. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> <computeroutput>Instanced</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="36" column="12" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A struct representing a single discrete option in a list for a setting. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A struct representing a single discrete option in a list for a setting (e.g. &quot;High&quot;, &quot;1920x1080&quot;, &quot;Monitor 1&quot;), with a localized display name and an associated value object of the abstract type <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>. This allows for great flexibility in defining what each option represents and how it behaves when selected.</para>
+<para>This struct is used as the value for <ref refid="classUSFSettingDefinition__Discrete" kindref="compound">USFSettingDefinition_Discrete</ref>. <simplesect kind="note"><para><computeroutput>BlueprintType</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="20" column="1" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="21" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structFSFSettingOption_1a3dd5aadf6d296ac86348c636d5ecc826" prot="public" virt="non-virtual"><scope>FSFSettingOption</scope><name>DisplayName</name></member>
+      <member refid="structFSFSettingOption_1a61a3bb5316be853d71f3f646456a096a" prot="public" virt="non-virtual"><scope>FSFSettingOption</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

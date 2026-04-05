@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SettingsFramework_8h" kind="file" language="C++">
+    <compoundname>SettingsFramework.h</compoundname>
+    <includes local="yes">Modules/ModuleManager.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/SettingsFramework.h</label>
+        <link refid="SettingsFramework_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Modules/ModuleManager.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classFSettingsFrameworkModule" prot="public">FSettingsFrameworkModule</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>Epic<sp/>Games,<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Modules/ModuleManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classFSettingsFrameworkModule" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classFSettingsFrameworkModule" kindref="compound">FSettingsFrameworkModule</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IModuleInterface</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classFSettingsFrameworkModule_1a63fe32444cb3d23434537f959efc63ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFSettingsFrameworkModule_1a63fe32444cb3d23434537f959efc63ce" kindref="member">StartupModule</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13" refid="classFSettingsFrameworkModule_1aaae9ac370b8b002a3d7dc58fc537b0ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFSettingsFrameworkModule_1aaae9ac370b8b002a3d7dc58fc537b0ab" kindref="member">ShutdownModule</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/SettingsFramework.h"/>
+  </compounddef>
+</doxygen>

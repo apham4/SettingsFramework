@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_dd3f92a21678ddc03a3f228a025d1f4e" kind="dir">
+    <compoundname>Source/SettingsFramework</compoundname>
+    <innerdir refid="dir_f5fe102898a9b0642bc955593c0a287a">Source/SettingsFramework/Public</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/"/>
+  </compounddef>
+</doxygen>

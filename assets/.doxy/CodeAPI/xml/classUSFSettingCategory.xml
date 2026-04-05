@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingCategory" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingCategory</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UDataAsset</basecompoundref>
+    <includes refid="SFSettingCategory_8h" local="yes">Definitions/SFSettingCategory.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingCategory_1a95de8bab9f22164eccaa5ce751ba2439" prot="public" static="no" mutable="no">
+        <type>FGameplayTag</type>
+        <definition>FGameplayTag USFSettingCategory::CategoryTag</definition>
+        <argsstring></argsstring>
+        <name>CategoryTag</name>
+        <qualifiedname>USFSettingCategory::CategoryTag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The category&apos;s unique identifier. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="64" column="14" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingCategory_1a8cce7d43f1d3bd0299802ef40f3227ac" prot="public" static="no" mutable="no">
+        <type><ref refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kindref="member">ESFCategoryType</ref></type>
+        <definition>ESFCategoryType USFSettingCategory::CategoryType</definition>
+        <argsstring></argsstring>
+        <name>CategoryType</name>
+        <qualifiedname>USFSettingCategory::CategoryType</qualifiedname>
+        <initializer>= ESFCategoryType::Leaf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is this a Branch category that contains sub-categories, or a Leaf category that contains individual settings? <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="71" column="21" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingCategory_1a6a52ef10f9687dafaed854f54872f826" prot="public" static="no" mutable="no">
+        <type>FText</type>
+        <definition>FText USFSettingCategory::DisplayName</definition>
+        <argsstring></argsstring>
+        <name>DisplayName</name>
+        <qualifiedname>USFSettingCategory::DisplayName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The player-facing name of this category, displayed on UI. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="78" column="11" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingCategory_1a635f4aacae8743226b2e7f7282da35b6" prot="public" static="no" mutable="no">
+        <type>TArray&lt; TObjectPtr&lt; <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> &gt; &gt;</type>
+        <definition>TArray&lt;TObjectPtr&lt;USFSettingCategory&gt; &gt; USFSettingCategory::Subcategories</definition>
+        <argsstring></argsstring>
+        <name>Subcategories</name>
+        <qualifiedname>USFSettingCategory::Subcategories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For Branch category. The collection of sub-categories under this category. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="85" column="12" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingCategory_1a81ece28496af75ca5ac7a9664311e44a" prot="public" static="no" mutable="no">
+        <type>TArray&lt; <ref refid="structFSFSettingGroup" kindref="compound">FSFSettingGroup</ref> &gt;</type>
+        <definition>TArray&lt;FSFSettingGroup&gt; USFSettingCategory::SettingGroups</definition>
+        <argsstring></argsstring>
+        <name>SettingGroups</name>
+        <qualifiedname>USFSettingCategory::SettingGroups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For Leaf category. The collection of setting groups under this category. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="92" column="12" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingCategory_1a310e4f6ba1fa1f6ad3762b3f6818156c" prot="public" static="no" mutable="no">
+        <type>TArray&lt; TObjectPtr&lt; class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> &gt; &gt;</type>
+        <definition>TArray&lt;TObjectPtr&lt;class USFSettingDefinition&gt; &gt; USFSettingCategory::Settings</definition>
+        <argsstring></argsstring>
+        <name>Settings</name>
+        <qualifiedname>USFSettingCategory::Settings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For Leaf category. If setting groups are not desired, individual settings can be added directly to the category without grouping. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="99" column="12" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines a Category that can contain either Sub-Categories (Branch) or individual Settings (Leaf). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Defines a Category that can contain either Sub-Categories (Branch) or individual Settings (Leaf). <simplesect kind="note"><para><computeroutput>BlueprintType</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UDataAsset</label>
+      </node>
+      <node id="1">
+        <label>USFSettingCategory</label>
+        <link refid="classUSFSettingCategory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UDataAsset</label>
+      </node>
+      <node id="1">
+        <label>USFSettingCategory</label>
+        <link refid="classUSFSettingCategory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" line="54" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCategory.h" bodystart="55" bodyend="100"/>
+    <listofallmembers>
+      <member refid="classUSFSettingCategory_1a95de8bab9f22164eccaa5ce751ba2439" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>CategoryTag</name></member>
+      <member refid="classUSFSettingCategory_1a8cce7d43f1d3bd0299802ef40f3227ac" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>CategoryType</name></member>
+      <member refid="classUSFSettingCategory_1a6a52ef10f9687dafaed854f54872f826" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>DisplayName</name></member>
+      <member refid="classUSFSettingCategory_1a81ece28496af75ca5ac7a9664311e44a" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>SettingGroups</name></member>
+      <member refid="classUSFSettingCategory_1a310e4f6ba1fa1f6ad3762b3f6818156c" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>Settings</name></member>
+      <member refid="classUSFSettingCategory_1a635f4aacae8743226b2e7f7282da35b6" prot="public" virt="non-virtual"><scope>USFSettingCategory</scope><name>Subcategories</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

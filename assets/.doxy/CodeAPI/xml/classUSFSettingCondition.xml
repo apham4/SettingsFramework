@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingCondition" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingCondition</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UObject</basecompoundref>
+    <includes refid="SFSettingCondition_8h" local="yes">Definitions/SFSettingCondition.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingCondition_1a2c72c4c6c2fefa4546ab4d5b04e421ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingCondition::IsConditionMet</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>IsConditionMet</name>
+        <qualifiedname>USFSettingCondition::IsConditionMet</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Evaluate the condition. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorldContextObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world context object from which to get the world object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the condition is met, false otherwise. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintNativeEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCondition.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingCondition_1a7d7a339821f8a6df00ff2b7d8c5a966b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool USFSettingCondition::IsConditionMet_Implementation</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>IsConditionMet_Implementation</name>
+        <qualifiedname>USFSettingCondition::IsConditionMet_Implementation</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Native implementation of IsConditionMet. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingCondition.h" line="34" column="14" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCondition.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for evaluating conditions determining a setting&apos;s state. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class for evaluating conditions determining a setting&apos;s state. The setting Data Asset has a list of VisibilityConditions, and a list of EditabilityConditions, which will be used to evaluate its specific active/disabled/hidden state. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>Blueprintable</computeroutput> <computeroutput>EditInlineNew</computeroutput> <computeroutput>DefaultToInstanced</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingCondition</label>
+        <link refid="classUSFSettingCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UObject</label>
+      </node>
+      <node id="1">
+        <label>USFSettingCondition</label>
+        <link refid="classUSFSettingCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingCondition.h" line="17" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingCondition.h" bodystart="18" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classUSFSettingCondition_1a2c72c4c6c2fefa4546ab4d5b04e421ae" prot="public" virt="non-virtual"><scope>USFSettingCondition</scope><name>IsConditionMet</name></member>
+      <member refid="classUSFSettingCondition_1a7d7a339821f8a6df00ff2b7d8c5a966b" prot="public" virt="virtual"><scope>USFSettingCondition</scope><name>IsConditionMet_Implementation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

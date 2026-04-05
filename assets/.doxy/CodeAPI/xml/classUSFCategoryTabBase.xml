@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFCategoryTabBase" kind="class" language="C++" prot="public">
+    <compoundname>USFCategoryTabBase</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UCommonActivatableWidget</basecompoundref>
+    <derivedcompoundref refid="classUSFCategoryTab__Branch" prot="public" virt="non-virtual">USFCategoryTab_Branch</derivedcompoundref>
+    <derivedcompoundref refid="classUSFCategoryTab__Leaf" prot="public" virt="non-virtual">USFCategoryTab_Leaf</derivedcompoundref>
+    <includes refid="SFCategoryTabBase_8h" local="yes">UI/Components/SFCategoryTabBase.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFCategoryTabBase_1a258c9f18dac18a3f9d6f585fe8b3d131" prot="public" static="no" mutable="no">
+        <type>FOnSettingEntryFocused</type>
+        <definition>FOnSettingEntryFocused USFCategoryTabBase::OnSettingFocused</definition>
+        <argsstring></argsstring>
+        <name>OnSettingFocused</name>
+        <qualifiedname>USFCategoryTabBase::OnSettingFocused</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event fired when a setting entry within this category is hovered/focused in the UI, with the focused setting&apos;s tag as a parameter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="51" column="24" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFCategoryTabBase_1a176c4c9b46e33321ba89d48d98902ca8" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> &gt;</type>
+        <definition>TObjectPtr&lt;class USFSettingCategory&gt; USFCategoryTabBase::SettingCategory</definition>
+        <argsstring></argsstring>
+        <name>SettingCategory</name>
+        <qualifiedname>USFCategoryTabBase::SettingCategory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The transient pointer to the category asset represented by this widget. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="59" column="12" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFCategoryTabBase::SetCategory</definition>
+        <argsstring>(class USFSettingCategory *InSettingCategory)</argsstring>
+        <name>SetCategory</name>
+        <qualifiedname>USFCategoryTabBase::SetCategory</qualifiedname>
+        <param>
+          <type>class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> *</type>
+          <declname>InSettingCategory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assign the corresponding category asset to this widget. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InSettingCategory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category asset represented by this widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFCategoryTabBase::InitializeCategoryDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeCategoryDisplay</name>
+        <qualifiedname>USFCategoryTabBase::InitializeCategoryDisplay</qualifiedname>
+        <reimplementedby refid="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7">InitializeCategoryDisplay</reimplementedby>
+        <reimplementedby refid="classUSFCategoryTab__Leaf_1abf4a31e14088f1cefbcd7d1a1a96fa4e">InitializeCategoryDisplay</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Populate the widget with the data from the category asset. This is called when the widget is displayed for the first time to allow for lazy loading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="34" column="14" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFCategoryTabBase_1a00359215a33fc41fd0ca0891b772c328" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> *</type>
+        <definition>const class USFSettingCategory * USFCategoryTabBase::GetSettingCategory</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSettingCategory</name>
+        <qualifiedname>USFCategoryTabBase::GetSettingCategory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the category asset assigned to this widget. <simplesect kind="return"><para>The category asset assigned to this widget. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="45" column="32" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for the content widget representing a setting category. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for the content widget representing a setting category.</para>
+<para>This is the superclass of <ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref>, which displays a branch-type category with subcategories, and <ref refid="classUSFCategoryTab__Leaf" kindref="compound">USFCategoryTab_Leaf</ref>, which displays a leaf-type category with setting entries. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="1">
+        <label>USFCategoryTabBase</label>
+        <link refid="classUSFCategoryTabBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>USFCategoryTab_Branch</label>
+        <link refid="classUSFCategoryTab__Branch"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>USFCategoryTab_Leaf</label>
+        <link refid="classUSFCategoryTab__Leaf"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="1">
+        <label>USFCategoryTabBase</label>
+        <link refid="classUSFCategoryTabBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" line="19" column="1" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabBase.h" bodystart="20" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classUSFCategoryTabBase_1a00359215a33fc41fd0ca0891b772c328" prot="public" virt="non-virtual"><scope>USFCategoryTabBase</scope><name>GetSettingCategory</name></member>
+      <member refid="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0" prot="public" virt="virtual"><scope>USFCategoryTabBase</scope><name>InitializeCategoryDisplay</name></member>
+      <member refid="classUSFCategoryTabBase_1a258c9f18dac18a3f9d6f585fe8b3d131" prot="public" virt="non-virtual"><scope>USFCategoryTabBase</scope><name>OnSettingFocused</name></member>
+      <member refid="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" prot="public" virt="non-virtual"><scope>USFCategoryTabBase</scope><name>SetCategory</name></member>
+      <member refid="classUSFCategoryTabBase_1a176c4c9b46e33321ba89d48d98902ca8" prot="protected" virt="non-virtual"><scope>USFCategoryTabBase</scope><name>SettingCategory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

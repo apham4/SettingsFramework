@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_49fd2e6d8d3cd0aca0d770534c763afe" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/Definitions</compoundname>
+    <innerfile refid="SFSettingCategory_8h">SFSettingCategory.h</innerfile>
+    <innerfile refid="SFSettingCondition_8h">SFSettingCondition.h</innerfile>
+    <innerfile refid="SFSettingDefinition_8h">SFSettingDefinition.h</innerfile>
+    <innerfile refid="SFSettingOptionSource_8h">SFSettingOptionSource.h</innerfile>
+    <innerfile refid="SFSettingsRegistry_8h">SFSettingsRegistry.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/Definitions/"/>
+  </compounddef>
+</doxygen>

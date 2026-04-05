@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_39651220af2aa02d3a35c23742da36c9" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/Core</compoundname>
+    <innerfile refid="SFCoreTypes_8h">SFCoreTypes.h</innerfile>
+    <innerfile refid="SFLogs_8h">SFLogs.h</innerfile>
+    <innerfile refid="SFSettingValue_8h">SFSettingValue.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/Core/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingValue_8h" kind="file" language="C++">
+    <compoundname>SFSettingValue.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">UObject/NoExportTypes.h</includes>
+    <includes local="yes">GameplayTagContainer.h</includes>
+    <includes local="yes">InputCoreTypes.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">SFSettingValue.generated.h</includes>
+    <includedby refid="SFSettingDefinition_8h" local="yes">Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Core/SFSettingValue.h</label>
+        <link refid="SFSettingValue_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="7">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="4">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="5">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="8">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="9">
+        <label>SFSettingValue.generated.h</label>
+      </node>
+      <node id="3">
+        <label>UObject/NoExportTypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Core/SFSettingValue.h</label>
+        <link refid="SFSettingValue_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h</label>
+        <link refid="SFSettingDefinition_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUSFSettingValue" prot="public">USFSettingValue</innerclass>
+    <innerclass refid="classUSFSettingValue__Scalar" prot="public">USFSettingValue_Scalar</innerclass>
+    <innerclass refid="classUSFSettingValue__Bool" prot="public">USFSettingValue_Bool</innerclass>
+    <innerclass refid="classUSFSettingValue__Tag" prot="public">USFSettingValue_Tag</innerclass>
+    <innerclass refid="classUSFSettingValue__String" prot="public">USFSettingValue_String</innerclass>
+    <innerclass refid="classUSFSettingValue__Key" prot="public">USFSettingValue_Key</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;UObject/NoExportTypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameplayTagContainer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;InputCoreTypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingValue.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType,<sp/>Blueprintable,<sp/>EditInlineNew,<sp/>DefaultToInstanced)</highlight></codeline>
+<codeline lineno="20" refid="classUSFSettingValue" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref><sp/>:<sp/>public<sp/>UObject</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>FString<sp/><ref refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" kindref="member">SerializeToString</ref>()<sp/>const<sp/>PURE_VIRTUAL(<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>::SerializeToString,<sp/>return<sp/>FString(););</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>PURE_VIRTUAL(<ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>::DeserializeFromString,<sp/>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classUSFSettingValue_1afef0792cabd7da25584974c05b95830d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Duplicate(UObject*<sp/>Outer)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="43"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DuplicateObject&lt;USFSettingValue&gt;(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Outer);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" kindref="member">Equals</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PURE_VIRTUAL(<ref refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" kindref="member">USFSettingValue::Equals</ref>,<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>FString<sp/><ref refid="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" kindref="member">ToString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SerializeToString();<sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SF<sp/>Scalar<sp/>Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69" refid="classUSFSettingValue__Scalar" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue__Scalar" kindref="compound">USFSettingValue_Scalar</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="79" refid="classUSFSettingValue__Scalar_1ac5720258f5a694358536aa236c0d5b0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>float<sp/>Value<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classUSFSettingValue__Scalar_1a595fd1054ed13a8448514814835938e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FString<sp/>SerializeToString()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="88" refid="classUSFSettingValue__Scalar_1aa4ddff883e3e7c1beb6058d1cd09da73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>override;</highlight></codeline>
+<codeline lineno="92" refid="classUSFSettingValue__Scalar_1af2b99f5ae335a9eb9281fdf023c06f7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Equals(const<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>Bool<sp/>Value&quot;)</highlight></codeline>
+<codeline lineno="103" refid="classUSFSettingValue__Bool" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue__Bool" kindref="compound">USFSettingValue_Bool</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113" refid="classUSFSettingValue__Bool_1ac45dfddf20229ec80396a0c4cb59cb11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>Value<sp/>=<sp/>false;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classUSFSettingValue__Bool_1a68061c898917091c218e801f1936294c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FString<sp/>SerializeToString()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="122" refid="classUSFSettingValue__Bool_1a171202d909c895e126c559935cda4bbe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>override;</highlight></codeline>
+<codeline lineno="126" refid="classUSFSettingValue__Bool_1a579f8a83c06a9b895b5f6e5f1ad97f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Equals(const<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>Tag<sp/>Value&quot;)</highlight></codeline>
+<codeline lineno="137" refid="classUSFSettingValue__Tag" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue__Tag" kindref="compound">USFSettingValue_Tag</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="147" refid="classUSFSettingValue__Tag_1a57418f12bf7a5465295c6c3791e20ec7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>Value;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="classUSFSettingValue__Tag_1ac2dc2b875cb3cad33d2999e40e4d2aeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FString<sp/>SerializeToString()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="156" refid="classUSFSettingValue__Tag_1a802be916f7d5c97953e9b594c81e4fc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>override;</highlight></codeline>
+<codeline lineno="160" refid="classUSFSettingValue__Tag_1a6d788f91db534fbafc1fc215034e9887" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Equals(const<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>String<sp/>Value&quot;)</highlight></codeline>
+<codeline lineno="171" refid="classUSFSettingValue__String" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue__String" kindref="compound">USFSettingValue_String</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref></highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="181" refid="classUSFSettingValue__String_1a710a0df7768a618c3050dd8e1ce1759b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FString<sp/>Value;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="classUSFSettingValue__String_1abf62b30d50cda7e6015b2a142878e52b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FString<sp/>SerializeToString()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="190" refid="classUSFSettingValue__String_1a229f1195b51a53183c8cdefff958bc43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>override;</highlight></codeline>
+<codeline lineno="194" refid="classUSFSettingValue__String_1a45a98ab80c7aa5d95e27b015d2f252d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Equals(const<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">UCLASS(DisplayName<sp/>=<sp/>&quot;SF<sp/>Keybind<sp/>Value&quot;)</highlight></codeline>
+<codeline lineno="205" refid="classUSFSettingValue__Key" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingValue__Key" kindref="compound">USFSettingValue_Key</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(EditAnywhere,<sp/>BlueprintReadWrite,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Value&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="215" refid="classUSFSettingValue__Key_1a2dc0e146494c84575d3a09ae5618be1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref><sp/>Value;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classUSFSettingValue__Key_1a59daba9bc5e40a43f506a78b8ff090f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>FString<sp/>SerializeToString()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="224" refid="classUSFSettingValue__Key_1a6788c6623bd3ca370aaf5050e25212c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DeserializeFromString(const<sp/>FString&amp;<sp/>InString)<sp/>override;</highlight></codeline>
+<codeline lineno="228" refid="classUSFSettingValue__Key_1ae1dfc05cd36e7586f5b2faf47a04e821" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Equals(const<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Other)<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h"/>
+  </compounddef>
+</doxygen>

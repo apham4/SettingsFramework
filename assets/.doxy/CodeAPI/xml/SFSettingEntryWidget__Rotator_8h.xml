@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingEntryWidget__Rotator_8h" kind="file" language="C++">
+    <compoundname>SFSettingEntryWidget_Rotator.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes refid="SFSettingEntryWidget_8h" local="yes">UI/SettingEntries/SFSettingEntryWidget.h</includes>
+    <includes local="yes">SFSettingEntryWidget_Rotator.generated.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UI/SettingEntries/SFSettingEntryWidget.h</label>
+        <link refid="SFSettingEntryWidget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h</label>
+        <link refid="SFSettingEntryWidget__Rotator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CommonUserWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="7">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="5">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="8">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="9">
+        <label>SFSettingEntryWidget.generated.h</label>
+      </node>
+      <node id="10">
+        <label>SFSettingEntryWidget_Rotator.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingEntryWidget__Rotator" prot="public">USFSettingEntryWidget_Rotator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFSettingEntryWidget_8h" kindref="compound">UI/SettingEntries/SFSettingEntryWidget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingEntryWidget_Rotator.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">UCLASS()</highlight></codeline>
+<codeline lineno="17" refid="classUSFSettingEntryWidget__Rotator" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingEntryWidget__Rotator" kindref="compound">USFSettingEntryWidget_Rotator</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget_Rotator&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="27" refid="classUSFSettingEntryWidget__Rotator_1a3ff5063a7678ebefc7940d01e1a01805" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>RefreshOptions();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="33" refid="classUSFSettingEntryWidget__Rotator_1a1d104a625b18ba532ec5d945a97dd78c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>InitializeSettingEntry(const<sp/>class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>InSettingDefinition)<sp/>override;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classUSFSettingEntryWidget__Rotator_1a57a629efdfeb40a46f5a043d027f41fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateVisualValue_Implementation(const<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue)<sp/>override;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleRotatorRotated(int32<sp/>NewValue,<sp/>enum<sp/>ERotatorDirection<sp/>RotatorDirection);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="49" refid="classUSFSettingEntryWidget__Rotator_1a62ccc7ea71f980af1a87eafbb4fa6d56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CheckForDeterminantSettings(const<sp/>FGameplayTag&amp;<sp/>ChangedSettingTag,<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget_Rotator&quot;,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="56" refid="classUSFSettingEntryWidget__Rotator_1ad14791ca7cd7ae9a8f7e35cf93b34817" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonRotator&gt;<sp/>RotatorWidget;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="63" refid="classUSFSettingEntryWidget__Rotator_1a49787e63c1e86a63cf8d9e6b253a6236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref>&gt;<sp/>Options;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Helpers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71" refid="classUSFSettingEntryWidget__Rotator_1ac68bf1f17bccd831095513cc2b208b6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Rotator_1ac68bf1f17bccd831095513cc2b208b6d" kindref="member">PopulateOptions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TArray&lt;struct<sp/>FSFSettingOption&gt;&amp;<sp/>SettingOptions);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classUSFSettingEntryWidget__Rotator_1a346038a00edcce909c03c1049b643779" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Rotator_1a346038a00edcce909c03c1049b643779" kindref="member">SelectOptionByValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>Value);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h"/>
+  </compounddef>
+</doxygen>
