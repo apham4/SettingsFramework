@@ -6,6 +6,8 @@ Widgets support KBM and Gamepad.
 
 Example host project: https://github.com/apham4/SFHost
 
+Documentation: https://apham4.github.io/SettingsFramework/ 
+
 
 
 # 2 - Engine Version
