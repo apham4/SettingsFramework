@@ -1,6 +1,6 @@
 The Settings Subsystem (`USFSettingsSubsystem`) is the core backend engine of the Settings Framework. It is the singleton with which you interact at runtime to manage the runtime states of your settings, listen to setting changes, check their visibility/editability conditions, and save or load them from disk.
 
-This guide goes over the Settings Subsystem's functionalities in Blueprint. For more details about `USFSettingsSubsystem`, refer to its full [C++ API reference](../CodeAPI/classUSFSettingsSubsystem/).
+This guide goes over the Settings Subsystem's functionalities in Blueprint. For more details about `USFSettingsSubsystem`, refer to its full [C++ API reference](../../CodeAPI/classUSFSettingsSubsystem/).
 
 ---
 
