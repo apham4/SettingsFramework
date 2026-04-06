@@ -1,5 +1,6 @@
 site_name: Settings Framework Documentation
 site_description: Documentation for the UE5 Settings Framework Plugin
+copyright: "&copy; 2026 Anh Pham"
 
 theme:
   name: material
@@ -67,7 +68,7 @@ nav:
   - Setup: installation.md
   - Blueprint Guide: 
     - blueprint/index.md
-    - SFSettingsSubsystem: blueprint/settingssubsystem.md
+    - Settings Subsystem: blueprint/settingssubsystem.md
     - Container Widgets: blueprint/container_widgets.md
     - Setting Entry Widgets: blueprint/entry_widgets.md
     - Misc Widgets & Blueprints: blueprint/misc.md

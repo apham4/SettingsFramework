@@ -1,8 +1,8 @@
 # Blueprint Guide
 
-Details about the included Blueprint files. WIP.
+This section provides information on how to interact with the Settings Framework in Blueprint, as well as details about the included Blueprint assets.
 
-* [SFSettingsSubsystem](settingssubsystem.md)
+* [Settings Subsystem](settingssubsystem.md)
 
 
 * [Container Widgets](container_widgets.md)

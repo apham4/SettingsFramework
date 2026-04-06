@@ -2,6 +2,8 @@
 
 Guide on the requirements, installation, and usage scenarios for the Settings Framework plugin.
 
+---
+
 ## 1 - Requirements
 
 * **Engine Version:** Unreal Engine 5.6 or later.
@@ -10,7 +12,7 @@ Guide on the requirements, installation, and usage scenarios for the Settings Fr
     * `CommonUI`
     * `EnhancedInput`
 
-
+---
 
 ## 2 - Installation
 
@@ -37,7 +39,7 @@ You can install the Settings Framework plugin either via the Fab/Unreal Engine M
 4. Right-click your `.uproject` file and select **Generate Visual Studio project files**.
 5. After building and opening the Unreal Editor, the plugin should be automatically enabled.
 
-
+---
 
 ## 3 - Getting Started & Usage Scenarios
 
@@ -55,8 +57,8 @@ The Settings Framework is designed to be highly modular. Whether you just want t
 4. **Configure Project Settings:** Navigate to **Edit** > **Project Settings** > **Settings Framework**.
     * Set the **Settings Registry** field to the asset you created in step 3.
     * Properties like **Save Game Slot Name**, **Max Update Depth**, and **Default Keybind Collision Resolution** have default values provided, but can be tweaked here if needed.
-5. **Manage data at runtime:** The `SFSettingsSubsystem` handles the backend. It provides public API functions for saving, reverting, and resetting settings to default, which you can call explicitly via Blueprint or C++.
-    * Refer to the `SFSettingsSubsystem`'s [Blueprint Guide](../blueprint/settingssubsystem/) or [C++ API Reference](../CodeAPI/classUSFSettingsSubsystem/) for details.
+5. **Manage data at runtime:** The **Settings Subsystem** handles the backend. It provides public API functions for saving, reverting, and resetting settings to default, which you can call explicitly via Blueprint or C++.
+    * Refer to the Settings Subsystem's [Blueprint Guide](../blueprint/settingssubsystem/) or [C++ API Reference](../CodeAPI/classUSFSettingsSubsystem/) for details.
 
 
 
@@ -83,7 +85,7 @@ The Settings Framework is designed to be highly modular. Whether you just want t
 1. **Follow the Steps in Scenario 1 & 2** as needed for your project's baseline setup.
 2. **Modify Build.cs:** To expose the plugin's classes to your project's native code, you must add `"SettingsFramework"` to your module's dependencies. Open your project's `[ProjectName].Build.cs` file and update the `PublicDependencyModuleNames`:
 
-        ```csharp
+        
         PublicDependencyModuleNames.AddRange(new string[] { 
             "Core", 
             "CoreUObject", 
@@ -91,7 +93,7 @@ The Settings Framework is designed to be highly modular. Whether you just want t
             "InputCore", 
             "SettingsFramework" // <-- Add this line
         });
-        ```
+        
 
 3. **Recompile:** Generate project files and recompile your project. You can now include Settings Framework headers and extend its base C++ classes.
     * Refer to the full [C++ API Reference](../api) for details.
