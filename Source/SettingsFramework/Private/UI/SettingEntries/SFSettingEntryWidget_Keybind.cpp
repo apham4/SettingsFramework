@@ -177,11 +177,13 @@ void USFSettingEntryWidget_Keybind::HandleInputMethodChanged(ECommonInputType In
 {
 	if (InputType == ECommonInputType::Gamepad)
 	{
+		GamepadButton->SetVisibility(ESlateVisibility::Visible);
 		KBMPrimaryButton->SetVisibility(ESlateVisibility::Collapsed);
 		KBMSecondaryButton->SetVisibility(ESlateVisibility::Collapsed);
 	}
 	else
 	{
+		GamepadButton->SetVisibility(ESlateVisibility::Collapsed);
 		KBMPrimaryButton->SetVisibility(ESlateVisibility::Visible);
 		KBMSecondaryButton->SetVisibility(ESlateVisibility::Visible);
 	}
