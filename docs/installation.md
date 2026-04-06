@@ -56,7 +56,7 @@ The Settings Framework is designed to be highly modular. Whether you just want t
     * Set the **Settings Registry** field to the asset you created in step 3.
     * Properties like **Save Game Slot Name**, **Max Update Depth**, and **Default Keybind Collision Resolution** have default values provided, but can be tweaked here if needed.
 5. **Manage data at runtime:** The `SFSettingsSubsystem` handles the backend. It provides public API functions for saving, reverting, and resetting settings to default, which you can call explicitly via Blueprint or C++.
-    * Refer to the `SFSettingsSubsystem`'s [Blueprint Guide](/Placeholder/) or [C++ API Reference](../CodeAPI/classUSFSettingsSubsystem/) for details.
+    * Refer to the `SFSettingsSubsystem`'s [Blueprint Guide](../blueprint/settingssubsystem/) or [C++ API Reference](../CodeAPI/classUSFSettingsSubsystem/) for details.
 
 
 
