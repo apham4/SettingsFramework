@@ -6,8 +6,8 @@ This guide covers the container widgets provided in the SettingsFramework skelet
 
 ## 1 - WBP_SettingsScreen
 
-* **Located in:*** `/Plugins/Settings Framework/UI/`.
-* ***Native parent class:** [USFSettingsScreen](/CodeAPI/classUSFSettingsScreen/).
+* **Located in:** `/Plugins/Settings Framework/UI/`.
+* **Native parent class:** [USFSettingsScreen](/CodeAPI/classUSFSettingsScreen/).
 * **Bind Widget Requirements:** 
     * `CategoryTabList` (UCommonTabListWidgetBase): Displays the buttons used to navigate between root categories.
     * `TabContentSwitcher` (UCommonActivatableWidgetSwitcher): Displays the content corresponding to the currently selected root category.
@@ -22,8 +22,8 @@ This is the primary entry point and root container for the settings UI, designed
 
 ## 2 - WBP_SettingInfoDisplay
 
-* **Located in:*** `/Plugins/Settings Framework/UI/Components/`.
-* ***Native parent class:** [USFSettingInfoDisplay](/CodeAPI/classUSFSettingInfoDisplay/).
+* **Located in:** `/Plugins/Settings Framework/UI/Components/`.
+* **Native parent class:** [USFSettingInfoDisplay](/CodeAPI/classUSFSettingInfoDisplay/).
 
 Positioned on the right side of the `WBP_SettingsScreen`, this widget displays metadata (Name and Description) for the currently focused setting entry. It automatically hides itself when the focused setting is a Keybind, as those generally do not require detailed descriptions.
 
@@ -33,8 +33,8 @@ It overrides the `DisplaySettingByDefinition` function from its parent class to 
 
 ## 3 - WBP_CategoryTab_Branch
 
-* **Located in:*** `/Plugins/Settings Framework/UI/Components/`.
-* ***Native parent class:** [USFCategoryTab_Branch](/CodeAPI/classUSFCategoryTab__Branch/).
+* **Located in:** `/Plugins/Settings Framework/UI/Components/`.
+* **Native parent class:** [USFCategoryTab_Branch](/CodeAPI/classUSFCategoryTab__Branch/).
 * **Bind Widget Requirements:** 
     * `SubCategoryTabList` (UCommonTabListWidgetBase): Displays the buttons used to navigate between sub-categories.
     * `TabContentSwitcher` (UCommonActivatableWidgetSwitcher): Displays the content corresponding to the currently selected sub-category.
@@ -48,8 +48,8 @@ Because the skeletal UI is restricted to one level of nesting, any child categor
 
 ## 4 - WBP_CategoryTab_Leaf
 
-* **Located in:*** `/Plugins/Settings Framework/UI/Components/`.
-* ***Native parent class:** [USFCategoryTab_Leaf](/CodeAPI/classUSFCategoryTab__Leaf/).
+* **Located in:** `/Plugins/Settings Framework/UI/Components/`.
+* **Native parent class:** [USFCategoryTab_Leaf](/CodeAPI/classUSFCategoryTab__Leaf/).
 * **Project Setup:** Intended to be assigned to the `Leaf Tab Content Class` in **Edit** > **Project Settings** > **Plugins** > **Settings Framework**.
 
 This widget represents the content area for a Leaf-type setting category. It can be dynamically added to the `TabContentSwitcher` of either the main `WBP_SettingsScreen` (if the root is a leaf) or a `WBP_CategoryTab_Branch` widget. It is responsible for displaying the category's actual settings by spawning one or more `WBP_SettingGroup` widgets.
@@ -58,8 +58,8 @@ This widget represents the content area for a Leaf-type setting category. It can
 
 ## 5 - WBP_SettingGroup
 
-* **Located in:*** `/Plugins/Settings Framework/UI/Components/`.
-* ***Native parent class:** [USFSettingGroupWidget](/CodeAPI/classUSFSettingGroupWidget/).
+* **Located in:** `/Plugins/Settings Framework/UI/Components/`.
+* **Native parent class:** [USFSettingGroupWidget](/CodeAPI/classUSFSettingGroupWidget/).
 * **Project Setup:** Intended to be assigned to the `Setting Group Widget Class` in **Edit** > **Project Settings** > **Plugins** > **Settings Framework**.
 
 This widget displays a group's setting entries in a vertical box, with the group name on top. It's displayed inside WBP_CategoryTab_Leaf. If a leaf-type category does not use setting groups, then all of its settings are displayed in one group without a name.
