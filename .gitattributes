@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Exclude items from GitHub release archives
+/.github/       export-ignore
+/docs/          export-ignore
+mkdocs.yml      export-ignore
+.gitignore      export-ignore
+.gitattributes  export-ignore
