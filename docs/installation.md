@@ -1,6 +1,6 @@
 # Setup
 
-Guide on the requirements, installation, and usage scenarios for the SettingsFramework plugin.
+Guide on the requirements, installation, and usage scenarios for the Settings Framework plugin.
 
 ## 1 - Requirements
 
@@ -14,7 +14,7 @@ Guide on the requirements, installation, and usage scenarios for the SettingsFra
 
 ## 2 - Installation
 
-You can install the SettingsFramework plugin either via the Fab/Unreal Engine Marketplace (recommended for Blueprint-only projects) or by compiling it from source code (for C++ projects).
+You can install the Settings Framework plugin either via the Fab/Unreal Engine Marketplace (recommended for Blueprint-only projects) or by compiling it from source code (for C++ projects).
 
 
 
@@ -23,7 +23,7 @@ You can install the SettingsFramework plugin either via the Fab/Unreal Engine Ma
 1. Download the plugin from [Fab/Marketplace](/Placeholder/).
 2. Open your project in the Unreal Editor.
 3. Navigate to **Edit > Plugins**.
-4. Search for "SettingsFramework" in the Installed section and check the box to enable it.
+4. Search for "Settings Framework" in the Installed section and check the box to enable it.
 5. Install plugin prerequisites if prompted.
 6. Restart the editor when prompted.
 
@@ -41,7 +41,7 @@ You can install the SettingsFramework plugin either via the Fab/Unreal Engine Ma
 
 ## 3 - Getting Started & Usage Scenarios
 
-The SettingsFramework is designed to be highly modular. Whether you just want the backend data management, want to use the skeletal UI widgets, or want to extend the system with C++, follow the path that matches your use case.
+The Settings Framework is designed to be highly modular. Whether you just want the backend data management, want to use the skeletal UI widgets, or want to extend the system with C++, follow the path that matches your use case.
 
 
 
@@ -54,7 +54,7 @@ The SettingsFramework is designed to be highly modular. Whether you just want th
 3. **Create the registry:** In the Content Browser, right-click > **Miscellaneous** > **Data Asset** and select `SF Settings Registry`. Add your root categories to this registry.
 4. **Configure Project Settings:** Navigate to **Edit** > **Project Settings** > **Settings Framework**.
     * Set the **Settings Registry** field to the asset you created in step 3.
-    * Properties like Save Game Slot Name, Max Update Depth, and Default Keybind Collision Resolution have default values provided, but can be tweaked here if needed.
+    * Properties like **Save Game Slot Name**, **Max Update Depth**, and **Default Keybind Collision Resolution** have default values provided, but can be tweaked here if needed.
 5. **Manage data at runtime:** The `SFSettingsSubsystem` handles the backend. It provides public API functions for saving, reverting, and resetting settings to default, which you can call explicitly via Blueprint or C++.
     * Refer to the `SFSettingsSubsystem`'s [Blueprint Guide](/Placeholder/) or [C++ API Reference](../CodeAPI/classUSFSettingsSubsystem/) for details.
 
@@ -66,7 +66,7 @@ The SettingsFramework is designed to be highly modular. Whether you just want th
 
 1. **Follow the steps in Scenario 1** to set up your Data Assets.
 2. **Locate the provided widget blueprints:** In the Content Browser, enable **Show Plugin Content**. Navigate to `/Plugins/SettingsFramework/UI/` to find the skeletal CommonUI widget blueprints provided by the plugin.
-3. **Configure UI in Project Settings:** In **Edit** > **Project Settings** > **SettingsFramework**, you must fill in all the fields located under the **Settings UI** category to point to your desired widget classes. This is for the widgets to know which inner widget classes to populate themselves with.
+3. **Configure UI in Project Settings:** In **Edit** > **Project Settings** > **Settings Framework**, you must fill in all the fields located under the **Settings UI** category to point to your desired widget classes. This is for the widgets to know which inner widget classes to populate themselves with.
 4. **Map Input Actions:** The plugin provides Input Actions (located in `/Plugins/SettingsFramework/UI/InputActions/`) that are already hooked up to the skeletal widgets. However, they need to be mapped to specific inputs in your project's Input Mapping Context to be triggered.
 5. **Display the menu:** Integrate the `WBP_SettingsScreen` widget into your project's UI layout so that it can be pushed to your `CommonActivatableWidgetStack`.
 
@@ -93,5 +93,5 @@ The SettingsFramework is designed to be highly modular. Whether you just want th
         });
         ```
 
-3. **Recompile:** Generate project files and recompile your project. You can now include SettingsFramework headers and extend its base C++ classes.
+3. **Recompile:** Generate project files and recompile your project. You can now include Settings Framework headers and extend its base C++ classes.
     * Refer to the full [C++ API Reference](../api) for details.

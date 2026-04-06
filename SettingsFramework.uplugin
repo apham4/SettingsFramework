@@ -2,7 +2,7 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "SettingsFramework",
+	"FriendlyName": "Settings Framework",
 	"Description": "Game settings creation and management, with a pre-integrated skeletal UI.",
 	"Category": "Settings",
 	"CreatedBy": "Anh Pham",

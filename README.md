@@ -1,4 +1,4 @@
-UE5 plugin SettingsFramework for game settings management with skeletal settings screen widgets using CommonUI and EnhancedInput.
+UE5 plugin Settings Framework for game settings management with skeletal settings screen widgets using CommonUI and EnhancedInput.
 
 Widgets support KBM and Gamepad.
 

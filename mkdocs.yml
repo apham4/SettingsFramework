@@ -1,5 +1,5 @@
-site_name: SettingsFramework Documentation
-site_description: Documentation for the UE5 SettingsFramework Plugin
+site_name: Settings Framework Documentation
+site_description: Documentation for the UE5 Settings Framework Plugin
 
 theme:
   name: material

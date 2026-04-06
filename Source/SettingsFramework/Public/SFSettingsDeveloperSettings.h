@@ -8,9 +8,9 @@
 #include "SFSettingsDeveloperSettings.generated.h"
 
 /**
- * @brief Developer settings to define project-wide configurations for the SettingsFramework plugin.
+ * @brief Developer settings to define project-wide configurations for the Settings Framework plugin.
  *
- * Developer settings to define project-wide configurations for the SettingsFramework plugin. 
+ * Developer settings to define project-wide configurations for the Settings Framework plugin. 
  * Accessed through **Project Settings** > **Plugins** > **SettingsFramework** in the Unreal Editor.
  * @note @configgame
  */
