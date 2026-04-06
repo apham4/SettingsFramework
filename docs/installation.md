@@ -5,6 +5,7 @@ Guide on the requirements, installation, and usage scenarios for the SettingsFra
 ## 1 - Requirements
 
 * **Engine Version:** Unreal Engine 5.6 or later.
+* **Supported Platform:** Windows (Tested). The plugin is configured to compile for Mac, Linux, and Consoles, but has currently only been verified on Windows.
 * **Required Engine Plugins:** The following built-in engine plugins must be enabled in your project (`Edit > Plugins`):
     * `CommonUI`
     * `EnhancedInput`
