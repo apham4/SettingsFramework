@@ -64,6 +64,6 @@ plugins:
 
 nav:
   - Home: index.md 
-  - Installation: installation.md
+  - Setup: installation.md
   - Blueprint Guide: blueprint.md
   - API Reference: api.md
