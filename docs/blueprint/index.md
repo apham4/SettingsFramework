@@ -12,3 +12,6 @@ This section provides information on how to interact with the Settings Framework
 
 
 * [Misc Widgets & Blueprints](misc.md)
+
+
+In addition to the Blueprint assets, the SettingsFramework is configured via its Developer Settings, located under **Edit** > **Project Settings** > **Plugins** > **Settings Framework**. Hover over any field to view a tooltip explaining its specific function within your project.
