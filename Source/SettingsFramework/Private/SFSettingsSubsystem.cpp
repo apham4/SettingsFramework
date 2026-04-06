@@ -417,7 +417,7 @@ void USFSettingsSubsystem::SaveSettingsToSaveGame()
 #pragma endregion
 
 #pragma region Keybinding
-FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FKey& Key, const FGameplayTagContainer& CollisionChannels, const FGameplayTag& SettingTagToIgnore) const
+FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FKey Key, const FGameplayTagContainer CollisionChannels, const FGameplayTag SettingTagToIgnore) const
 {
     if (!Key.IsValid() || CollisionChannels.IsEmpty())
     {
@@ -450,7 +450,7 @@ FGameplayTag USFSettingsSubsystem::GetKeybindingCollision(const FKey& Key, const
     return retVal;
 }
 
-bool USFSettingsSubsystem::UpdateKeybinding(const FGameplayTag& SettingTag, FSFKeybindValueData& NewValue, const ESFKeybindCollisionResolution& ResolutionPolicy)
+bool USFSettingsSubsystem::UpdateKeybinding(const FGameplayTag SettingTag, FSFKeybindValueData& NewValue, const ESFKeybindCollisionResolution ResolutionPolicy)
 {
     USFSettingDefinition_Key* keySettingDef = Cast<USFSettingDefinition_Key>(GetSettingDefinition(SettingTag));
     if (!IsValid(keySettingDef))

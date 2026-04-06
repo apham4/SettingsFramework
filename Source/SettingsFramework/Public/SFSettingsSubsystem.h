@@ -299,7 +299,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Keybinding")
-	struct FGameplayTag GetKeybindingCollision(const struct FKey& Key, const struct FGameplayTagContainer& CollisionChannels, const struct FGameplayTag& SettingTagToIgnore) const;
+	struct FGameplayTag GetKeybindingCollision(const struct FKey Key, const struct FGameplayTagContainer CollisionChannels, const struct FGameplayTag SettingTagToIgnore) const;
 
 	/**
 	* Update a keybinding for a setting with specific collision handling. 
@@ -312,7 +312,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|Keybinding")
-	bool UpdateKeybinding(const struct FGameplayTag& SettingTag, struct FSFKeybindValueData& NewValue, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
+	bool UpdateKeybinding(const struct FGameplayTag SettingTag, struct FSFKeybindValueData& NewValue, const enum ESFKeybindCollisionResolution ResolutionPolicy);
 
 protected:
 	/**
