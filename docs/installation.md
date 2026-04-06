@@ -67,9 +67,9 @@ The Settings Framework is designed to be highly modular. Whether you just want t
 *Best for users who want a basic but functional settings menu out-of-the-box using CommonUI with the backend integrated.*
 
 1. **Follow the steps in Scenario 1** to set up your Data Assets.
-2. **Locate the provided widget blueprints:** In the Content Browser, enable **Show Plugin Content**. Navigate to `/Plugins/SettingsFramework/UI/` to find the skeletal CommonUI widget blueprints provided by the plugin.
+2. **Locate the provided widget blueprints:** In the Content Browser, enable **Show Plugin Content**. Navigate to `/Plugins/Settings Framework/UI/` to find the skeletal CommonUI widget blueprints provided by the plugin.
 3. **Configure UI in Project Settings:** In **Edit** > **Project Settings** > **Settings Framework**, you must fill in all the fields located under the **Settings UI** category to point to your desired widget classes. This is for the widgets to know which inner widget classes to populate themselves with.
-4. **Map Input Actions:** The plugin provides Input Actions (located in `/Plugins/SettingsFramework/UI/InputActions/`) that are already hooked up to the skeletal widgets. However, they need to be mapped to specific inputs in your project's Input Mapping Context to be triggered.
+4. **Map Input Actions:** The plugin provides Input Actions (located in `/Plugins/Settings Framework/UI/InputActions/`) that are already hooked up to the skeletal widgets. However, they need to be mapped to specific inputs in your project's Input Mapping Context to be triggered.
 5. **Display the menu:** Integrate the `WBP_SettingsScreen` widget into your project's UI layout so that it can be pushed to your `CommonActivatableWidgetStack`.
 
 
