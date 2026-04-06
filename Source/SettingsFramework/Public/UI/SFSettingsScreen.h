@@ -9,9 +9,9 @@
 /**
  * @brief The native base class for the outer-most widget of the settings screen UI. A widget blueprint subclass of this is to be added to a project's CommonUI widget stack.
  *
- * On initialization, this widget queries the USFSettingsSubsystem instance for setting categories and definitions, constructs and populates itself with the appropriate tabs and setting widgets, and binds to the subsystem's events to update the UI when settings are changed.
+ * On initialization, this widget queries the USFSettingsSubsystem instance for setting categories and definitions, constructs and populates itself with the appropriate tabs and setting widgets.
  * 
- * The skeletal settings screen UI in SettingsFramework only allows for one level of category nesting, meaning only root categories are allowed to be branch-type categories (containing sub-categories).
+ * The skeletal settings screen UI in Settings Framework only allows for one level of category nesting, meaning only root categories are allowed to be branch-type categories (containing sub-categories).
  * Any branch-type categories under that level are ignored when constructing the UI.
  * 
  * This widget also requests the USFSettingsSubsystem instance to perform actions such as saving, reverting, or resetting settings when initiated by the player from the UI.

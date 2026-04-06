@@ -11,10 +11,10 @@
  * @brief Developer settings to define project-wide configurations for the Settings Framework plugin.
  *
  * Developer settings to define project-wide configurations for the Settings Framework plugin. 
- * Accessed through **Project Settings** > **Plugins** > **SettingsFramework** in the Unreal Editor.
+ * Accessed through **Project Settings** > **Plugins** > **Settings Framework** in the Unreal Editor.
  * @note @configgame
  */
-UCLASS(Config = Game, meta = (DisplayName = "Settings Framework", ToolTip = "Developer settings to define project-wide configurations for the SettingsFramework plugin."))
+UCLASS(Config = Game, meta = (DisplayName = "Settings Framework", ToolTip = "Developer settings to define project-wide configurations for the Settings Framework plugin."))
 class SETTINGSFRAMEWORK_API USFSettingsDeveloperSettings : public UDeveloperSettings
 {
 	GENERATED_BODY()
