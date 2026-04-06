@@ -93,4 +93,4 @@ The SettingsFramework is designed to be highly modular. Whether you just want th
         ```
 
 3. **Recompile:** Generate project files and recompile your project. You can now include SettingsFramework headers and extend its base C++ classes.
-    * Refer to the full [C++ API Reference](/api) for details.
+    * Refer to the full [C++ API Reference](../api) for details.
