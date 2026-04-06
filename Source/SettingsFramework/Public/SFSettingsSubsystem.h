@@ -106,7 +106,7 @@ public:
 	/**
 	* Get the current active value of a setting associated with the given setting Gameplay Tag.
 	* @param SettingTag The Gameplay Tag associated with the setting.
-	* @return The current active value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no saved value is found. Returns nullptr if the tag is not found or if the value is invalid.
+	* @return The current active value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no current value is found. Returns nullptr if the tag is not found or if the value is invalid.
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
@@ -136,7 +136,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void SetSettingValue(const struct FGameplayTag SettingTag, class USFSettingValue* NewValue);
+	void SetSettingValue(const struct FGameplayTag SettingTag, const class USFSettingValue* NewValue);
 
 	/**
 	* Check if the current active value of the setting associated with the given setting Gameplay Tag is different from its saved value.

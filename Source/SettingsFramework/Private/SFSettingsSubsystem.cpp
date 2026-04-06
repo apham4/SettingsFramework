@@ -178,7 +178,7 @@ USFSettingValue* USFSettingsSubsystem::GetDefaultSettingValue(const FGameplayTag
     return IsValid(settingDef) ? settingDef->GetDefaultValue(this) : nullptr;
 }
 
-void USFSettingsSubsystem::SetSettingValue(const FGameplayTag SettingTag, USFSettingValue* NewValue)
+void USFSettingsSubsystem::SetSettingValue(const FGameplayTag SettingTag, const USFSettingValue* NewValue)
 {
     if (!IsValid(NewValue) || (CurrentValues.Contains(SettingTag) && CurrentValues[SettingTag]->Equals(NewValue)))
     {
@@ -239,9 +239,7 @@ void USFSettingsSubsystem::RevertSetting(const FGameplayTag SettingTag)
     {
         return;
     }
-    USFSettingValue* duplicatedValue = valueToUse->Duplicate(this);
-    CurrentValues.Emplace(SettingTag, duplicatedValue);
-    OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
+    SetSettingValue(SettingTag, valueToUse);
 }
 
 void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag SettingTag)
@@ -252,9 +250,7 @@ void USFSettingsSubsystem::ResetSettingToDefault(const FGameplayTag SettingTag)
     {
         return;
     }
-    USFSettingValue* duplicatedValue = defaultValue->Duplicate(this);
-    CurrentValues.Emplace(SettingTag, duplicatedValue);
-    OnSettingValueChanged.Broadcast(SettingTag, duplicatedValue);
+	SetSettingValue(SettingTag, defaultValue);
 }
 
 void USFSettingsSubsystem::SaveSettings()
@@ -270,7 +266,6 @@ void USFSettingsSubsystem::SaveSettings()
             OnSettingValueSaved.Broadcast(settingTag, duplicatedValue);
 		}
     }
-
     SaveSettingsToSaveGame();
 }
 
@@ -339,16 +334,15 @@ void USFSettingsSubsystem::UpdateSettingDependencies()
         const FGameplayTag& settingTag = entry.Key;
         USFSettingDefinition* settingDef = entry.Value;
 
-        if (!IsSettingVisible(settingTag) || !IsSettingEditable(settingTag))
+        if (!IsValid(settingDef))
         {
-            // Setting is hidden or disabled, check to see if its value is different from default. If so, revert.
-			USFSettingValue* currentValue = (CurrentValues.Contains(settingTag)) ? CurrentValues[settingTag] : nullptr;
-            USFSettingValue* defaultValue = settingDef->GetDefaultValue(this);
+            continue;
+		}
 
-            if (currentValue && !currentValue->Equals(defaultValue))
-            {
-				SetSettingValue(settingTag, defaultValue);
-			}
+        // Setting is hidden or disabled, revert to default if applicable.
+        if (settingDef->bRevertToDefaultOnDisable && (!IsSettingVisible(settingTag) || !IsSettingEditable(settingTag)))
+        {
+            RevertSetting(settingTag);
         }
     }
 }

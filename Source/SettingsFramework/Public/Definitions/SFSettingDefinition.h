@@ -60,6 +60,13 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
 	TArray<TObjectPtr<class USFSettingCondition>> EditabilityConditions;
 
+	/**
+	* Should this setting be reverted to its default value if its VisibilityConditions or EditabilityConditions are not met.
+	* @note @edo @bro
+	*/
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingDefinition|Behavior")
+	bool bRevertToDefaultOnDisable = false;
+
 public:
 	/**
 	* Get the USFSettingValue-derived class of the value this setting uses.
