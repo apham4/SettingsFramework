@@ -2,6 +2,7 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
+	"EngineVersion":  "5.7.0",
 	"FriendlyName": "Settings Framework",
 	"Description": "Game settings creation and management, with a pre-integrated skeletal UI.",
 	"Category": "Settings",
