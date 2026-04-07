@@ -73,3 +73,6 @@ nav:
     - Setting Entry Widgets: blueprint/entry_widgets.md
     - Misc Widgets & Blueprints: blueprint/misc.md
   - API Reference: api.md
+
+markdown_extensions:
+  - md_in_html
