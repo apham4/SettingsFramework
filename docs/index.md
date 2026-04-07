@@ -37,9 +37,9 @@ The plugin is divided into three distinct layers:
 
 Guides to get the plugin up and running in your project:
 
-* **[Requirements & Installation Guide](../installation/)**: Engine requirements, setup steps, and usage scenarios.
-* **[Blueprint Guide](../blueprint/)**: Info on how to interact with the Settings Subsystem, and details about the included skeletal UI widgets.
-* **[C++ API Reference](../api/)**: Full Doxygen-generated API documentation for native code extensions.
+* **[Requirements & Installation Guide](installation.md)**: Engine requirements, setup steps, and usage scenarios.
+* **[Blueprint Guide](blueprint/index.md)**: How to interact with the Settings Subsystem, and details about the included skeletal UI widgets.
+* **[C++ API Reference](api.md)**: Full Doxygen-generated API documentation for native code extensions.
 
 ---
 
