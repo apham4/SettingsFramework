@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "GameplayTagContainer.h"
 #include "SFSettingsSubsystem.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSFSettingChanged, const struct FGameplayTag&, SettingTag, class USFSettingValue*, NewValue);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSFSettingSaved, const struct FGameplayTag&, SettingTag, class USFSettingValue*, SavedValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSFSettingChanged, const FGameplayTag&, SettingTag, class USFSettingValue*, NewValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSFSettingSaved, const FGameplayTag&, SettingTag, class USFSettingValue*, SavedValue);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSFSettingsInitialized);
 
 /**
@@ -81,7 +82,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
-	class USFSettingDefinition* GetSettingDefinition(const struct FGameplayTag& SettingTag) const;
+	class USFSettingDefinition* GetSettingDefinition(const FGameplayTag& SettingTag) const;
 
 	/**
 	* Get the dynamic option source object associated with the given setting Gameplay Tag if it is a discrete setting with dynamic options.
@@ -90,7 +91,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Setting Data")
-	class USFSettingOptionSource* GetDynamicOptionSource(const struct FGameplayTag& SettingTag) const;
+	class USFSettingOptionSource* GetDynamicOptionSource(const FGameplayTag& SettingTag) const;
 
 protected:
 	/**
@@ -98,7 +99,7 @@ protected:
 	* @note @t
 	*/
 	UPROPERTY(Transient)
-	TMap<struct FGameplayTag, TObjectPtr<class USFSettingOptionSource>> DynamicOptionSources;
+	TMap<FGameplayTag, TObjectPtr<class USFSettingOptionSource>> DynamicOptionSources;
 #pragma endregion
 
 #pragma region Settings State Management
@@ -110,7 +111,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetSettingValue(const struct FGameplayTag SettingTag) const;
+	class USFSettingValue* GetSettingValue(const FGameplayTag SettingTag) const;
 
 	/**
 	* Get the saved value of a setting associated with the given setting Gameplay Tag.
@@ -119,7 +120,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetSavedSettingValue(const struct FGameplayTag SettingTag) const;
+	class USFSettingValue* GetSavedSettingValue(const FGameplayTag SettingTag) const;
 
 	/**
 	* Get the default value of a setting associated with the given setting Gameplay Tag.
@@ -128,7 +129,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	class USFSettingValue* GetDefaultSettingValue(const struct FGameplayTag SettingTag) const;
+	class USFSettingValue* GetDefaultSettingValue(const FGameplayTag SettingTag) const;
 
 	/**
 	* Update the current active value of a setting associated with the given setting Gameplay Tag. Does not save value to disk.
@@ -136,7 +137,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void SetSettingValue(const struct FGameplayTag SettingTag, const class USFSettingValue* NewValue);
+	void SetSettingValue(const FGameplayTag SettingTag, const class USFSettingValue* NewValue);
 
 	/**
 	* Check if the current active value of the setting associated with the given setting Gameplay Tag is different from its saved value.
@@ -145,7 +146,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|State Management")
-	bool IsSettingDirty(const struct FGameplayTag SettingTag) const;
+	bool IsSettingDirty(const FGameplayTag SettingTag) const;
 
 	/**
 	* Check if any setting has its current active value different from its saved value.
@@ -162,7 +163,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void RevertSetting(const struct FGameplayTag SettingTag);
+	void RevertSetting(const FGameplayTag SettingTag);
 
 	/**
 	* Discard current active value and reset to default value for the setting associated with the given setting Gameplay Tag. Does not change saved value.
@@ -171,7 +172,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|State Management")
-	void ResetSettingToDefault(const struct FGameplayTag SettingTag);
+	void ResetSettingToDefault(const FGameplayTag SettingTag);
 
 	/**
 	* Save and serialize all current active setting values to disk, overwriting previous saved values.
@@ -222,21 +223,21 @@ protected:
 	* @note @t
 	*/
 	UPROPERTY(Transient)
-	TMap<struct FGameplayTag, TObjectPtr<class USFSettingDefinition>> RegisteredSettings;
+	TMap<FGameplayTag, TObjectPtr<class USFSettingDefinition>> RegisteredSettings;
 
 	/**
 	* The map of setting GameplayTag to current active value for registered settings. Used for managing current setting values at runtime.
 	* @note @t
 	*/
 	UPROPERTY(Transient)
-	TMap<struct FGameplayTag, TObjectPtr<class USFSettingValue>> CurrentValues;
+	TMap<FGameplayTag, TObjectPtr<class USFSettingValue>> CurrentValues;
 
 	/**
 	* The map of setting GameplayTag to saved value for registered settings. Used for managing saved setting values at runtime and for saving/loading settings to disk.
 	* @note @t
 	*/
 	UPROPERTY(Transient)
-	TMap<struct FGameplayTag, TObjectPtr<class USFSettingValue>> SavedValues;
+	TMap<FGameplayTag, TObjectPtr<class USFSettingValue>> SavedValues;
 #pragma endregion
 
 #pragma region Condition Checks
@@ -248,7 +249,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Conditions")
-	bool IsSettingVisible(const struct FGameplayTag& SettingTag) const;
+	bool IsSettingVisible(const FGameplayTag& SettingTag) const;
 
 	/**
 	* Check if a setting associated with the given setting Gameplay Tag should be editable/enabled based on its editability conditions defined in its setting definition.
@@ -257,7 +258,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Conditions")
-	bool IsSettingEditable(const struct FGameplayTag& SettingTag) const;
+	bool IsSettingEditable(const FGameplayTag& SettingTag) const;
 
 protected:
 	/** @cond */
@@ -299,7 +300,7 @@ public:
 	* @note @bp
 	*/
 	UFUNCTION(BlueprintPure, Category = "SFSettingsSubsystem|Keybinding")
-	struct FGameplayTag GetKeybindingCollision(const struct FKey Key, const struct FGameplayTagContainer CollisionChannels, const struct FGameplayTag SettingTagToIgnore) const;
+	FGameplayTag GetKeybindingCollision(const struct FKey Key, const FGameplayTagContainer CollisionChannels, const FGameplayTag SettingTagToIgnore) const;
 
 	/**
 	* Update a keybinding for a setting with specific collision handling. 
@@ -312,7 +313,7 @@ public:
 	* @note @bc
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SFSettingsSubsystem|Keybinding")
-	bool UpdateKeybinding(const struct FGameplayTag SettingTag, struct FSFKeybindValueData& NewValue, const enum ESFKeybindCollisionResolution ResolutionPolicy);
+	bool UpdateKeybinding(const FGameplayTag SettingTag, struct FSFKeybindValueData& NewValue, const enum ESFKeybindCollisionResolution ResolutionPolicy);
 
 protected:
 	/**
@@ -325,6 +326,6 @@ protected:
 	* **AllowDuplicate** means the new keybinding will be applied even if there is a collision. **Overwrite** means the existing conflicting keybind will be removed. **Swap** means the existing conflicting keybind will be changed to the new keybinding's old value.
 	* @return true if the collision was resolved successfully, false if resolution failed.
 	*/
-	bool ResolveKeybindingCollision(const struct FGameplayTag& SettingBeingUpdated, const struct FKey& NewKey, const struct FKey& OldKey, const struct FGameplayTagContainer& CollisionChannels, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
+	bool ResolveKeybindingCollision(const FGameplayTag& SettingBeingUpdated, const struct FKey& NewKey, const struct FKey& OldKey, const FGameplayTagContainer& CollisionChannels, const enum ESFKeybindCollisionResolution& ResolutionPolicy);
 #pragma endregion
 };

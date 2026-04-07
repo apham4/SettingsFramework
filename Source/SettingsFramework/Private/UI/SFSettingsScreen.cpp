@@ -15,6 +15,7 @@
 #include "UI/Components/SFCategoryTab_Leaf.h"
 #include "UI/Components/SFCategoryTabButtonBase.h"
 #include "Input/CommonUIInputTypes.h"
+#include "CommonInputSettings.h"
 
 #pragma region Initialization
 void USFSettingsScreen::NativeOnInitialized()
@@ -25,25 +26,32 @@ void USFSettingsScreen::NativeOnInitialized()
 		TabContentSwitcher->OnActiveWidgetIndexChanged.AddUObject(this, &USFSettingsScreen::HandleSwitcherActiveIndexChanged);
 	}
 
-	if (IsValid(SaveAction))
-	{
-		FBindUIActionArgs saveArgs(SaveAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::SaveSettings));
-		saveArgs.bDisplayInActionBar = true;
-		RegisterUIActionBinding(saveArgs);
-	}
+	// Only register input actions if Common Input Enhanced Input is enabled
+	const UCommonInputSettings* inputSettings = GetDefault<UCommonInputSettings>();
+	const bool bIsEnhancedInputEnabled = IsValid(inputSettings) && inputSettings->GetEnableEnhancedInputSupport();
 
-	if (IsValid(RevertAction))
+	if (bIsEnhancedInputEnabled)
 	{
-		FBindUIActionArgs revertArgs(RevertAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::RevertSettings));
-		revertArgs.bDisplayInActionBar = true;
-		RegisterUIActionBinding(revertArgs);
-	}
+		if (IsValid(SaveAction))
+		{
+			FBindUIActionArgs saveArgs(SaveAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::SaveSettings));
+			saveArgs.bDisplayInActionBar = true;
+			RegisterUIActionBinding(saveArgs);
+		}
 
-	if (IsValid(ResetToDefaultAction))
-	{
-		FBindUIActionArgs resetArgs(ResetToDefaultAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::ResetSettingsToDefault));
-		resetArgs.bDisplayInActionBar = true;
-		RegisterUIActionBinding(resetArgs);
+		if (IsValid(RevertAction))
+		{
+			FBindUIActionArgs revertArgs(RevertAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::RevertSettings));
+			revertArgs.bDisplayInActionBar = true;
+			RegisterUIActionBinding(revertArgs);
+		}
+
+		if (IsValid(ResetToDefaultAction))
+		{
+			FBindUIActionArgs resetArgs(ResetToDefaultAction, FSimpleDelegate::CreateUObject(this, &USFSettingsScreen::ResetSettingsToDefault));
+			resetArgs.bDisplayInActionBar = true;
+			RegisterUIActionBinding(resetArgs);
+		}
 	}
 }
 

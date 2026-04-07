@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Framework/Commands/InputChord.h"
+#include "InputCoreTypes.h"
 #include "SFCoreTypes.generated.h"
 
 #pragma region Backend

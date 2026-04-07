@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CommonActivatableWidget.h"
 #include "UI/Components/SFCategoryTabBase.h"
+#include "GameplayTagContainer.h"
 #include "SFCategoryTab_Leaf.generated.h"
 
 /**

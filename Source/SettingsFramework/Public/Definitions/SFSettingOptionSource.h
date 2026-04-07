@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "Core/SFCoreTypes.h"
 #include "SFSettingOptionSource.generated.h"
 
 /**

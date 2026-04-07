@@ -2,7 +2,6 @@
 
 
 #include "SFSettingsSubsystem.h"
-#include "GameplayTagContainer.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/StreamableManager.h"
 #include "Engine/AssetManager.h"
@@ -15,6 +14,7 @@
 #include "Definitions/SFSettingCondition.h"
 #include "SaveGame/SFSaveGame.h"
 #include "SFSettingsDeveloperSettings.h"
+#include "Definitions/SFSettingOptionSource.h"
 
 #pragma region Initialization
 void USFSettingsSubsystem::Initialize(FSubsystemCollectionBase& Collection)
