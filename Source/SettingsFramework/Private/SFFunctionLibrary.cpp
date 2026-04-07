@@ -3,7 +3,13 @@
 
 #include "SFFunctionLibrary.h"
 #include "SFSettingsSubsystem.h"
+#include "Engine/Engine.h"
+#include "Engine/World.h"
+#include "Engine/GameInstance.h"
+#include "GameFramework/PlayerController.h"
+#include "Engine/LocalPlayer.h"
 #include "CommonInputSubsystem.h"
+#include "CommonInputTypeEnum.h"
 
 USFSettingsSubsystem* USFFunctionLibrary::GetSettingsSubsystem(const UObject* WorldContextObject)
 {

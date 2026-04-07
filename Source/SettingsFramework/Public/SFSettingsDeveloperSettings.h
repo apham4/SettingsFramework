@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/DeveloperSettings.h"
 #include "Core/SFCoreTypes.h"
+#include "Templates/SubclassOf.h"
 #include "SFSettingsDeveloperSettings.generated.h"
 
 /**
