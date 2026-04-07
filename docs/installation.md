@@ -6,7 +6,7 @@ Guide on the requirements, installation, and usage scenarios for the Settings Fr
 
 ## 1 - Requirements
 
-* **Engine Version:** Unreal Engine 5.6 or later.
+* **Supported Engine Version:** Unreal Engine 5.7 and later.
 * **Supported Platform:** Windows (Tested). The plugin is configured to compile for Mac, Linux, and Consoles, but has currently only been verified on Windows.
 * **Required Engine Plugins:** The following built-in engine plugins must be enabled in your project (`Edit > Plugins`):
     * `CommonUI`
@@ -74,7 +74,7 @@ The Settings Framework is designed to be highly modular. Whether you just want t
 
 
 
-**⚠️ Note on CommonUI dependency:** The skeletal widgets rely heavily on Unreal Engine's `CommonUI` plugin. Because Epic Games frequently updates and refactors `CommonUI` with each major engine release, migrating this plugin to future Unreal Engine versions (e.g., UE 5.7+) may require manual updates to the provided widget Blueprints to resolve deprecations or structural changes.
+**⚠️ Note on CommonUI dependency:** The skeletal widgets rely heavily on Unreal Engine's `CommonUI` plugin. Because Epic Games frequently updates and refactors `CommonUI` with each major engine release, migrating this plugin to future Unreal Engine versions (e.g., UE 5.8+) may require manual updates to the provided widget Blueprints to resolve deprecations or structural changes.
 
 
 

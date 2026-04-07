@@ -2,7 +2,7 @@ UE5 plugin Settings Framework for game settings management with skeletal setting
 
 Widgets support KBM and Gamepad.
 
-Engine Version: Unreal Engine 5.6
+Engine Version: Unreal Engine 5.7
 
 Example host project: https://github.com/apham4/SFHost
 
