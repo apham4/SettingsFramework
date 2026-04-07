@@ -16,7 +16,7 @@ This is the primary entry point and root container for the settings UI, designed
 
 **Category Nesting:** The provided skeletal UI intentionally supports only one level of category nesting for UX reason. This means only root categories can be Branch-type categories. Any Branch-type categories placed deeper in the hierarchy will be ignored during UI construction.
 
-**Input Actions:** This widget provides fields to map Input Actions for subsystem commands (Saving, Reverting, and Resetting to Default). By default, these are populated with `IA_UI_Save`, `IA_UI_Revert`, and `IA_UI_ResetToDefault`. **Note:** You must map these Input Actions to actual keys/buttons inside your project's Input Mapping Context (IMC) for them to function.
+**Input Actions:** This widget provides fields to map Input Actions for subsystem commands (Saving, Reverting, and Resetting to Default). By default, these are populated with `IA_UI_Save`, `IA_UI_Revert`, and `IA_UI_ResetToDefault`. **Note:** You must map these Input Actions to actual keys/buttons inside your project's Input Mapping Context (IMC) for them to function. Ensure that Enhanced Input Support is enabled for Common Input in **Edit** > **Project Settings** > **Common Input Settings** > **Enable Enhanced Input Support**, and that your project's default input class is set to Enhanced Input.
 
 ---
 

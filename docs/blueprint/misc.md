@@ -43,7 +43,7 @@ These are modular helper widgets designed to build the interactive components of
 
 These are Unreal Engine **Enhanced Input Actions** utilized for triggering specific subsystem commands directly from the UI (such as saving, reverting settings, or switching tabs). 
 
-While they are already hooked up to their respective widgets (like `WBP_SettingsScreen`), they are not mapped to any keys by default. You must assign these Input Actions to specific keys or gamepad buttons inside your project's Input Mapping Context (IMC) for them to be triggered by the player.
+While they are already hooked up to their respective widgets (like `WBP_SettingsScreen`), they are not mapped to any keys by default. You must assign these Input Actions to specific keys or gamepad buttons inside your project's Input Mapping Context (IMC) for them to be triggered by the player. Ensure that Enhanced Input Support is enabled for Common Input in **Edit** > **Project Settings** > **Common Input Settings** > **Enable Enhanced Input Support**, and that your project's default input class is set to Enhanced Input.
 
 ---
 

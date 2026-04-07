@@ -115,21 +115,21 @@ protected:
 #pragma region Input Action
 protected:
 	/**
-	* The optional EnhancedInput action to automatically call SaveSettings.
+	* The optional EnhancedInput action to automatically call SaveSettings. Requires Enhanced Input support to be enabled in Common Input settings.
 	* @note @edo @bro
 	*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
 	TObjectPtr<class UInputAction> SaveAction;
 
 	/**
-	* The optional EnhancedInput action to automatically call RevertSettings.
+	* The optional EnhancedInput action to automatically call RevertSettings. Requires Enhanced Input support to be enabled in Common Input settings.
 	* @note @edo @bro
 	*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
 	TObjectPtr<class UInputAction> RevertAction;
 
 	/**
-	* The optional EnhancedInput action to automatically call ResetSettingsToDefault.
+	* The optional EnhancedInput action to automatically call ResetSettingsToDefault. Requires Enhanced Input support to be enabled in Common Input settings.
 	* @note @edo @bro
 	*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFSettingsScreen|Input Action")
