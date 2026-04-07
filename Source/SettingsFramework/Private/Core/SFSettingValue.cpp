@@ -2,6 +2,7 @@
 
 #include "Core/SFSettingValue.h"
 #include "Core/SFLogs.h"
+#include "Misc/StringOutputDevice.h"
 
 #pragma region USFSettingValue_Scalar
 FString USFSettingValue_Scalar::SerializeToString() const

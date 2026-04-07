@@ -15,7 +15,7 @@
 void USFSettingEntryWidget_Keybind::NativeConstruct()
 {
 	Super::NativeConstruct();
-	bIsFocusable = true;
+	SetIsFocusable(true);
 }
 
 void USFSettingEntryWidget_Keybind::NativeOnInitialized()

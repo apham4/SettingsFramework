@@ -12,6 +12,7 @@
 void USFSettingEntryWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
+	SetIsFocusable(false);
 }
 
 void USFSettingEntryWidget::InitializeSettingEntry(const class USFSettingDefinition* InSettingDefinition)
