@@ -21,14 +21,7 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"PlatformAllowList": [
-				"Win64",
-				"Mac",
-				"Linux",
-				"PS5",
-				"XSX",
-				"Switch",
-				"PS4",
-				"XboxOne"
+				"Win64"
 			]
 		}
 	],

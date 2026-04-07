@@ -7,7 +7,8 @@ Guide on the requirements, installation, and usage scenarios for the Settings Fr
 ## 1 - Requirements
 
 * **Supported Engine Version:** Unreal Engine 5.7 and later.
-* **Supported Platform:** Windows (Tested). The plugin is configured to compile for Mac, Linux, and Consoles, but has currently only been verified on Windows.
+* **Supported Platform:** Windows.
+    * To allow additional platforms, add them to `SettingsFramework.uplugin` under `Modules` > `SettingsFramework` > `PlatformAllowList`. Plugin code is platform-agnostic but has only been tested on Windows.
 * **Required Engine Plugins:** The following built-in engine plugins must be enabled in your project (`Edit > Plugins`):
     * `CommonUI`
     * `EnhancedInput`
