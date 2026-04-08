@@ -44,7 +44,7 @@ You can install the Settings Framework plugin either via the Fab/Unreal Engine M
 
 ## 3 - Getting Started & Usage Scenarios
 
-The Settings Framework is designed to be highly modular. Whether you just want the backend data management, want to use the skeletal UI widgets, or want to extend the system with C++, follow the path that matches your use case.
+The Settings Framework is designed to be highly modular. Whether you just want the backend data management, want to use the basic UI widgets, or want to extend the system with C++, follow the path that matches your use case.
 
 
 
@@ -63,19 +63,23 @@ The Settings Framework is designed to be highly modular. Whether you just want t
 
 
 
-### 3.2 Scenario 2: Skeletal UI Widgets
+### 3.2 Scenario 2: Basic UI Widgets
 
 *Best for users who want a basic but functional settings menu out-of-the-box using CommonUI with the backend integrated.*
 
 1. **Follow the steps in Scenario 1** to set up your Data Assets.
-2. **Locate the provided widget blueprints:** In the Content Browser, enable **Show Plugin Content**. Navigate to `/Plugins/Settings Framework/UI/` to find the skeletal CommonUI widget blueprints provided by the plugin.
+2. **Locate the provided widget blueprints:** In the Content Browser, enable **Show Plugin Content**. Navigate to `/Plugins/Settings Framework/UI/` to find the basic CommonUI widget blueprints provided by the plugin.
 3. **Configure UI in Project Settings:** In **Edit** > **Project Settings** > **Settings Framework**, you must fill in all the fields located under the **Settings UI** category to point to your desired widget classes. This is for the widgets to know which inner widget classes to populate themselves with.
-4. **Map Input Actions:** The plugin provides Input Actions (located in `/Plugins/Settings Framework/UI/InputActions/`) that are already hooked up to the skeletal widgets. However, they need to be mapped to specific inputs in your project's Input Mapping Context to be triggered.
-5. **Display the menu:** Integrate the `WBP_SettingsScreen` widget into your project's UI layout so that it can be pushed to your `CommonActivatableWidgetStack`.
+4. **Map Input Actions:** The plugin provides Input Actions (located in `/Plugins/Settings Framework/UI/InputActions/`) that are already hooked up to the widgets. However, they need to be mapped to specific inputs in your project's Input Mapping Context to be triggered.
+5. **Integrate the menu:** Integrate the `WBP_SettingsScreen` widget into your project's UI. The widget automatically initializes on activation. This can be done by pushing the widget onto a `CommonActivatableWidgetStack`, or manually calling `Activate Widget` on it.
 
 
+**⚠️ Note on CommonUI and Enhanced Input dependency:** This plugin utilizes Common UI and Enhanced Input from Epic Games for its UI widgets and navigation. Refer to the following guides to set up these features in your project:
 
-**⚠️ Note on CommonUI dependency:** The skeletal widgets rely heavily on Unreal Engine's `CommonUI` plugin. Because Epic Games frequently updates and refactors `CommonUI` with each major engine release, migrating this plugin to future Unreal Engine versions (e.g., UE 5.8+) may require manual updates to the provided widget Blueprints to resolve deprecations or structural changes.
+* [Common UI Quickstart Guide](https://dev.epicgames.com/documentation/unreal-engine/common-ui-quickstart-guide-for-unreal-engine).
+* [Using Common UI with Enhanced Input in Unreal Engine](https://dev.epicgames.com/documentation/unreal-engine/using-commonui-with-enhnaced-input-in-unreal-engine).
+
+ Because Epic Games frequently updates and refactors Common UI with each major engine release, migrating this plugin to future Unreal Engine versions (e.g., UE 5.8+) may require manual updates to the provided widget Blueprints to resolve deprecations or structural changes.
 
 
 

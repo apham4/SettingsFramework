@@ -1,10 +1,9 @@
 # Settings Framework
 
-Settings Framework is a data-driven game settings management system with a ready-to-use CommonUI skeletal interface.
+Settings Framework is a data-driven game settings management system with a ready-to-use basic CommonUI interface.
 
 <figure style="text-align: center;">
-  <img src="img/settings_menu.png" alt="Settings Menu at runtime" style="display: block; margin: 0 auto;">
-  <figcaption>The provided WBP_SettingsScreen with settings and categories in the SFHost demo project.</figcaption>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/47peYxmFICo?si=_P_l893ciXmJrWzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </figure>
 
 ## 1 - Overview
@@ -16,7 +15,7 @@ Settings Framework is a comprehensive and modular Unreal Engine 5 plugin designe
 * **Automated State Management:** The Settings Subsystem automatically handles loading Data Assets at start up, managing setting values, and loading/saving from disk.
 * **Keybinding Support:** Includes keybind collision detection based on collision channels and customizable resolution policies (Swap, Overwrite, Allow Duplicate).
 * **Dynamic Conditions:** Easily configure condition logic to hide or disable specific settings based on runtime states.
-* **Starter UI Widgets:** Built entirely on Epic's Common UI, the plugin includes a suite of fully navigable widgets that handle tabs, groups, and setting entries.
+* **Basic UI Widgets:** Built entirely on Epic's Common UI and Enhanced Input, the plugin includes a suite of fully navigable widgets that handle tabs, groups, and setting entries.
 
 ### Structure
 The plugin is divided into three distinct layers:
@@ -38,8 +37,15 @@ The plugin is divided into three distinct layers:
 Guides to get the plugin up and running in your project:
 
 * **[Requirements & Installation Guide](installation.md)**: Engine requirements, setup steps, and usage scenarios.
-* **[Blueprint Guide](blueprint/index.md)**: How to interact with the Settings Subsystem, and details about the included skeletal UI widgets.
+* **[Blueprint Guide](blueprint/index.md)**: How to interact with the Settings Subsystem, and details about the included basic UI widgets.
 * **[C++ API Reference](api.md)**: Full Doxygen-generated API documentation for native code extensions.
+
+**⚠️ Note on CommonUI and Enhanced Input dependency:** This plugin utilizes Common UI and Enhanced Input from Epic Games for its UI widgets and navigation. Refer to the following guides to set up these features in your project:
+
+* [Common UI Quickstart Guide](https://dev.epicgames.com/documentation/unreal-engine/common-ui-quickstart-guide-for-unreal-engine).
+* [Using Common UI with Enhanced Input in Unreal Engine](https://dev.epicgames.com/documentation/unreal-engine/using-commonui-with-enhnaced-input-in-unreal-engine).
+
+ Because Epic Games frequently updates and refactors Common UI with each major engine release, migrating this plugin to future Unreal Engine versions (e.g., UE 5.8+) may require manual updates to the provided widget Blueprints to resolve deprecations or structural changes.
 
 ---
 

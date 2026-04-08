@@ -1,4 +1,4 @@
-This guide covers the miscellaneous Blueprints that support the SettingsFramework skeletal UI suite. These include helper widgets for building complex UI elements, as well as the standard CommonUI and EnhancedInput configuration assets required to make the system fully functional.
+This guide covers the miscellaneous Blueprints that support the SettingsFramework basic UI suite. These include helper widgets for building complex UI elements, as well as the standard CommonUI and EnhancedInput configuration assets required to make the system fully functional.
 
 **⚠️ Note:** Ensure **Show Plugin Content** is enabled in your Content Drawer's settings to locate these Blueprints.
 
@@ -51,4 +51,4 @@ While they are already hooked up to their respective widgets (like `WBP_Settings
 
 * **Located in:** `/Plugins/SettingsFramework/UI/Styles/`
 
-These are foundational styling Data Assets used to enforce visual consistency across the skeletal UI, adhering strictly to the **CommonUI** styling paradigm. They control the default typography and button states (Normal, Hovered, Pressed) used throughout the plugin's widgets.
+These are foundational styling Data Assets used to enforce visual consistency across the basic UI suite, adhering strictly to the **CommonUI** styling paradigm. They control the default typography and button states (Normal, Hovered, Pressed) used throughout the plugin's widgets.

@@ -1,4 +1,4 @@
-This guide covers the setting entry widgets provided in the SettingsFramework skeletal UI suite. It explains their primary functions, the native C++ classes they extend, and any additional Blueprint functionality they introduce on top of their parent classes. Each setting entry widget class corresponds to a different setting data type.
+This guide covers the setting entry widgets provided in the SettingsFramework basic UI suite. It explains their primary functions, the native C++ classes they extend, and any additional Blueprint functionality they introduce on top of their parent classes. Each setting entry widget class corresponds to a different setting data type.
 
 * All setting entry widgets are located in `/Plugins/SettingsFramework/UI/SettingEntries`.
 * All setting entry widgets have the optional Bind Widget element `SettingLabel` (UCommonTextBlock) for displaying the setting's name.

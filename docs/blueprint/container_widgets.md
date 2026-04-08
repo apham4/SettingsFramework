@@ -1,4 +1,4 @@
-This guide covers the container widgets provided in the SettingsFramework skeletal UI suite. It explains their primary functions, the native C++ classes they extend, and any additional Blueprint functionality they introduce on top of their parent classes.
+This guide covers the container widgets provided in the SettingsFramework basic UI suite. It explains their primary functions, the native C++ classes they extend, and any additional Blueprint functionality they introduce on top of their parent classes.
 
 **⚠️ Note:** Ensure **Show Plugin Content** is enabled in your Content Drawer's settings to locate these Blueprints.
 
@@ -14,7 +14,7 @@ This guide covers the container widgets provided in the SettingsFramework skelet
 
 This is the primary entry point and root container for the settings UI, designed to be pushed to your project's CommonUI Activatable Widget Stack. Upon initialization, this widget queries the Settings Subsystem for your defined categories and settings, automatically generating and populating the appropriate tabs and setting entries.
 
-**Category Nesting:** The provided skeletal UI intentionally supports only one level of category nesting for UX reason. This means only root categories can be Branch-type categories. Any Branch-type categories placed deeper in the hierarchy will be ignored during UI construction.
+**Category Nesting:** The provided UI intentionally supports only one level of category nesting for UX reason. This means only root categories can be Branch-type categories. Any Branch-type categories placed deeper in the hierarchy will be ignored during UI construction.
 
 **Input Actions:** This widget provides fields to map Input Actions for subsystem commands (Saving, Reverting, and Resetting to Default). By default, these are populated with `IA_UI_Save`, `IA_UI_Revert`, and `IA_UI_ResetToDefault`. **Note:** You must map these Input Actions to actual keys/buttons inside your project's Input Mapping Context (IMC) for them to function. Ensure that Enhanced Input Support is enabled for Common Input in **Edit** > **Project Settings** > **Common Input Settings** > **Enable Enhanced Input Support**, and that your project's default input class is set to Enhanced Input.
 
@@ -42,7 +42,7 @@ It overrides the `DisplaySettingByDefinition` function from its parent class to 
 
 This widget represents the content area for a Branch-type setting category. It is dynamically added to the `TabContentSwitcher` inside `WBP_SettingsScreen` and generates sub-tabs for each of its child categories. 
 
-Because the skeletal UI is restricted to one level of nesting, any child category that is also a Branch-type will be ignored by this widget.
+Because the UI is restricted to one level of nesting, any child category that is also a Branch-type will be ignored by this widget.
 
 ---
 
