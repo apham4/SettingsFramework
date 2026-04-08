@@ -49,11 +49,10 @@ Guides to get the plugin up and running in your project:
 
 ---
 
-## 3 - Repositories & Examples
+## 3 - Example Project
 
-The source code for the plugin and a fully playable demonstration project are available on GitHub. Exploring the SFHost demo project is highly recommended to see exactly how the Data Assets and UI are configured.
+The fully playable demonstration project is available on GitHub. Exploring the SFHost demo project is highly recommended to see exactly how the Data Assets and UI are configured.
 
-* **[SettingsFramework Plugin Repository](https://github.com/apham4/SettingsFramework)**
 * **[SFHost Demo Project](https://github.com/apham4/SFHost)**
 
 ---
