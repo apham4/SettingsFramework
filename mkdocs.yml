@@ -68,6 +68,7 @@ nav:
   - Setup: installation.md
   - Blueprint Guide: 
     - blueprint/index.md
+    - Step-by-Step Blueprint-Only: blueprint/step_by_step.md
     - Settings Subsystem: blueprint/settingssubsystem.md
     - Container Widgets: blueprint/container_widgets.md
     - Setting Entry Widgets: blueprint/entry_widgets.md

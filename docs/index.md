@@ -38,6 +38,7 @@ Guides to get the plugin up and running in your project:
 
 * **[Requirements & Installation Guide](installation.md)**: Engine requirements, setup steps, and usage scenarios.
 * **[Blueprint Guide](blueprint/index.md)**: How to interact with the Settings Subsystem, and details about the included basic UI widgets.
+* **[Step-by-Step Blueprint-Only Project Setup](blueprint/step_by_step.md)**: Detailed guide for setting up a fresh Blueprint-only project with the plugin. Demo project download included. 
 * **[C++ API Reference](api.md)**: Full Doxygen-generated API documentation for native code extensions.
 
 **⚠️ Note on CommonUI and Enhanced Input dependency:** This plugin utilizes Common UI and Enhanced Input from Epic Games for its UI widgets and navigation. Refer to the following guides to set up these features in your project:
@@ -51,9 +52,10 @@ Guides to get the plugin up and running in your project:
 
 ## 3 - Example Project
 
-The fully playable demonstration project is available on GitHub. Exploring the SFHost demo project is highly recommended to see exactly how the Data Assets and UI are configured.
+Fully playable demonstration projects are available for download below. Exploring the demo projects is highly recommended to see exactly how the Data Assets and UI are configured.
 
 * **[SFHost Demo Project](https://github.com/apham4/SFHost)**
+* **[Blueprint-only Demo Project](/placeholder/)**
 
 ---
 

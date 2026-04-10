@@ -23,11 +23,11 @@ You can install the Settings Framework plugin either via the Fab/Unreal Engine M
 
 ### 2.1 Install via Fab/Unreal Engine Marketplace
 
-1. Download the plugin from [Fab/Marketplace](/Placeholder/).
+1. Download the plugin from [Fab/Marketplace](https://www.fab.com/listings/191da1e4-b412-4f56-bcc1-41b56b6f6ac0).
 2. Open your project in the Unreal Editor.
 3. Navigate to **Edit > Plugins**.
 4. Search for "Settings Framework" in the Installed section and check the box to enable it.
-5. Install plugin prerequisites if prompted.
+5. Install plugin prerequisites if prompted. Specifically, this plugin requires **Common UI** and **Enhanced Input** from Epic Games.
 6. Restart the editor when prompted.
 
 

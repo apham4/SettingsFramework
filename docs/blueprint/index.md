@@ -2,6 +2,10 @@
 
 This section provides information on how to interact with the Settings Framework in Blueprint, as well as details about the included Blueprint assets.
 
+
+* [Step-by-Step Blueprint-Only Guide](step_by_step.md)
+
+
 * [Settings Subsystem](settingssubsystem.md)
 
 
