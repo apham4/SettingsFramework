@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingValue__Key" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingValue_Key</compoundname>
+    <basecompoundref refid="classUSFSettingValue" prot="public" virt="non-virtual">USFSettingValue</basecompoundref>
+    <includes refid="SFSettingValue_8h" local="yes">Core/SFSettingValue.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingValue__Key_1a2dc0e146494c84575d3a09ae5618be1c" prot="public" static="no" mutable="no">
+        <type><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref></type>
+        <definition>FSFKeybindValueData USFSettingValue_Key::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>USFSettingValue_Key::Value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The underlying keybind data struct. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="215" column="25" bodyfile="Source/SettingsFramework/Public/Core/SFSettingValue.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingValue__Key_1a59daba9bc5e40a43f506a78b8ff090f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>FString</type>
+        <definition>virtual FString USFSettingValue_Key::SerializeToString</definition>
+        <argsstring>() const override</argsstring>
+        <name>SerializeToString</name>
+        <qualifiedname>USFSettingValue_Key::SerializeToString</qualifiedname>
+        <reimplements refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249">SerializeToString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Convert current value to string for saving <simplesect kind="return"><para>The string representation of the current value. Should be parseable by <ref refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" kindref="member">DeserializeFromString()</ref>.</para>
+</simplesect>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="220" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue__Key_1a6788c6623bd3ca370aaf5050e25212c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingValue_Key::DeserializeFromString</definition>
+        <argsstring>(const FString &amp;InString) override</argsstring>
+        <name>DeserializeFromString</name>
+        <qualifiedname>USFSettingValue_Key::DeserializeFromString</qualifiedname>
+        <reimplements refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a">DeserializeFromString</reimplements>
+        <param>
+          <type>const FString &amp;</type>
+          <declname>InString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Load value from string <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to parse the value from, typically loaded from disk.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="224" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingValue__Key_1ae1dfc05cd36e7586f5b2faf47a04e821" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool USFSettingValue_Key::Equals</definition>
+        <argsstring>(const USFSettingValue *Other) const override</argsstring>
+        <name>Equals</name>
+        <qualifiedname>USFSettingValue_Key::Equals</qualifiedname>
+        <reimplements refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e">Equals</reimplements>
+        <param>
+          <type>const <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>Other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Checks equality with another value object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other value object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the two value objects are considered equal in terms of their underlying value, false otherwise.</para>
+</simplesect>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="228" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Setting value representing a key binding for KBM and Gamepad. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Setting value representing a key binding for KBM and Gamepad.</para>
+<para>Blueprint display name: SF Keybind Value. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UObject</label>
+      </node>
+      <node id="2">
+        <label>USFSettingValue</label>
+        <link refid="classUSFSettingValue"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingValue_Key</label>
+        <link refid="classUSFSettingValue__Key"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>FSFKeybindValueData</label>
+        <link refid="structFSFKeybindValueData"/>
+      </node>
+      <node id="3">
+        <label>UObject</label>
+      </node>
+      <node id="2">
+        <label>USFSettingValue</label>
+        <link refid="classUSFSettingValue"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingValue_Key</label>
+        <link refid="classUSFSettingValue__Key"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Value</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Core/SFSettingValue.h" line="205" column="1" bodyfile="Source/SettingsFramework/Public/Core/SFSettingValue.h" bodystart="206" bodyend="229"/>
+    <listofallmembers>
+      <member refid="classUSFSettingValue__Key_1a6788c6623bd3ca370aaf5050e25212c5" prot="public" virt="virtual"><scope>USFSettingValue_Key</scope><name>DeserializeFromString</name></member>
+      <member refid="classUSFSettingValue_1afef0792cabd7da25584974c05b95830d" prot="public" virt="virtual"><scope>USFSettingValue_Key</scope><name>Duplicate</name></member>
+      <member refid="classUSFSettingValue__Key_1ae1dfc05cd36e7586f5b2faf47a04e821" prot="public" virt="virtual"><scope>USFSettingValue_Key</scope><name>Equals</name></member>
+      <member refid="classUSFSettingValue__Key_1a59daba9bc5e40a43f506a78b8ff090f1" prot="public" virt="virtual"><scope>USFSettingValue_Key</scope><name>SerializeToString</name></member>
+      <member refid="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" prot="public" virt="virtual"><scope>USFSettingValue_Key</scope><name>ToString</name></member>
+      <member refid="classUSFSettingValue__Key_1a2dc0e146494c84575d3a09ae5618be1c" prot="public" virt="non-virtual"><scope>USFSettingValue_Key</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

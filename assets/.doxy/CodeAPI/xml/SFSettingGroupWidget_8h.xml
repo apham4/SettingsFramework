@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingGroupWidget_8h" kind="file" language="C++">
+    <compoundname>SFSettingGroupWidget.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">CommonUserWidget.h</includes>
+    <includes local="yes">SFSettingGroupWidget.generated.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h</label>
+        <link refid="SFSettingGroupWidget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CommonUserWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="4">
+        <label>SFSettingGroupWidget.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingGroupWidget" prot="public">USFSettingGroupWidget</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonUserWidget.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingGroupWidget.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType,<sp/>Blueprintable)</highlight></codeline>
+<codeline lineno="18" refid="classUSFSettingGroupWidget" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingGroupWidget" kindref="compound">USFSettingGroupWidget</ref><sp/>:<sp/>public<sp/>UCommonUserWidget</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintImplementableEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingGroup&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29" refid="classUSFSettingGroupWidget_1a3c40867ee59e7e0fa5fb3ccdc13bae1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>DisplaySettingGroupInfo(const<sp/>struct<sp/><ref refid="structFSFSettingGroup" kindref="compound">FSFSettingGroup</ref>&amp;<sp/>SettingGroup);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classUSFSettingGroupWidget_1a0f9c49900ee7b470b1d7ffa9e7879d5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddSettingEntry(class<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref>*<sp/>EntryWidget);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classUSFSettingGroupWidget_1a919b67e222cc12984bb16f41974e3957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref>*<sp/>GetFirstValidSettingEntry()<sp/>const;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintImplementableEvent,<sp/>Category<sp/>=<sp/>&quot;SFSettingGroup&quot;)</highlight></codeline>
+<codeline lineno="51" refid="classUSFSettingGroupWidget_1a9458bcdaaf8181e1ef2af404d17967ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnSettingEntryAdded(class<sp/>UPanelSlot*<sp/>EntryAsPanelSlot,<sp/>class<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref>*<sp/>EntryAsSettingWidget);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingGroup&quot;,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="57" refid="classUSFSettingGroupWidget_1ad807eb28084455aacf0fae3a6d2348f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UPanelWidget&gt;<sp/>SettingEntryContainer;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h"/>
+  </compounddef>
+</doxygen>

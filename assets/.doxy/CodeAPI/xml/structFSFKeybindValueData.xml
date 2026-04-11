@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structFSFKeybindValueData" kind="struct" language="C++" prot="public">
+    <compoundname>FSFKeybindValueData</compoundname>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structFSFKeybindValueData_1a328a539f286ec2cbbfd9ecdb52ff97f3" prot="public" static="no" mutable="no">
+        <type>FKey</type>
+        <definition>FKey FSFKeybindValueData::KBMPrimary</definition>
+        <argsstring></argsstring>
+        <name>KBMPrimary</name>
+        <qualifiedname>FSFKeybindValueData::KBMPrimary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The primary KBM key for this action. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="58" column="10" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structFSFKeybindValueData_1a6bf410709e3bacf2d7bee22151965aae" prot="public" static="no" mutable="no">
+        <type>FKey</type>
+        <definition>FKey FSFKeybindValueData::KBMSecondary</definition>
+        <argsstring></argsstring>
+        <name>KBMSecondary</name>
+        <qualifiedname>FSFKeybindValueData::KBMSecondary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The secondary KBM key for this action. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="65" column="10" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structFSFKeybindValueData_1aea6d65f73ad608aaed466fc43a522893" prot="public" static="no" mutable="no">
+        <type>FKey</type>
+        <definition>FKey FSFKeybindValueData::Gamepad</definition>
+        <argsstring></argsstring>
+        <name>Gamepad</name>
+        <qualifiedname>FSFKeybindValueData::Gamepad</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Gamepad key for this action. <simplesect kind="note"><para><computeroutput>EditAnywhere</computeroutput> <computeroutput>BlueprintReadWrite</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="72" column="10" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structFSFKeybindValueData_1a7659289ad5036a021032349c7b19ce75" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FSFKeybindValueData::operator==</definition>
+        <argsstring>(const FSFKeybindValueData &amp;Other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>FSFKeybindValueData::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref> &amp;</type>
+          <declname>Other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="74" column="10" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="74" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A struct holding the three standard binding slots for an action. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A struct holding the three standard binding slots for an action: KBM Primary, KBM Secondary, and Gamepad.</para>
+<para>This struct is used as the underlying value for <ref refid="classUSFSettingValue__Key" kindref="compound">USFSettingValue_Key</ref>. <simplesect kind="note"><para><computeroutput>BlueprintType</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/Core/SFCoreTypes.h" line="49" column="1" bodyfile="Source/SettingsFramework/Public/Core/SFCoreTypes.h" bodystart="50" bodyend="80"/>
+    <listofallmembers>
+      <member refid="structFSFKeybindValueData_1aea6d65f73ad608aaed466fc43a522893" prot="public" virt="non-virtual"><scope>FSFKeybindValueData</scope><name>Gamepad</name></member>
+      <member refid="structFSFKeybindValueData_1a328a539f286ec2cbbfd9ecdb52ff97f3" prot="public" virt="non-virtual"><scope>FSFKeybindValueData</scope><name>KBMPrimary</name></member>
+      <member refid="structFSFKeybindValueData_1a6bf410709e3bacf2d7bee22151965aae" prot="public" virt="non-virtual"><scope>FSFKeybindValueData</scope><name>KBMSecondary</name></member>
+      <member refid="structFSFKeybindValueData_1a7659289ad5036a021032349c7b19ce75" prot="public" virt="non-virtual"><scope>FSFKeybindValueData</scope><name>operator==</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

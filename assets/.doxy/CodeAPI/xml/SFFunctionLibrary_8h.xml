@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFFunctionLibrary_8h" kind="file" language="C++">
+    <compoundname>SFFunctionLibrary.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Kismet/BlueprintFunctionLibrary.h</includes>
+    <includes local="yes">CommonInputTypeEnum.h</includes>
+    <includes local="yes">SFFunctionLibrary.generated.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/SFFunctionLibrary.h</label>
+        <link refid="SFFunctionLibrary_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CommonInputTypeEnum.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="3">
+        <label>Kismet/BlueprintFunctionLibrary.h</label>
+      </node>
+      <node id="5">
+        <label>SFFunctionLibrary.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFFunctionLibrary" prot="public">USFFunctionLibrary</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Kismet/BlueprintFunctionLibrary.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonInputTypeEnum.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFFunctionLibrary.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">UCLASS()</highlight></codeline>
+<codeline lineno="16" refid="classUSFFunctionLibrary" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFFunctionLibrary" kindref="compound">USFFunctionLibrary</ref><sp/>:<sp/>public<sp/>UBlueprintFunctionLibrary</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFFunctionLibrary&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(WorldContext<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WorldContextObject&quot;</highlight><highlight class="normal">,<sp/>CallableWithoutWorldContext))</highlight></codeline>
+<codeline lineno="27" refid="classUSFFunctionLibrary_1a62d4ee498fa8f43ac95bb4dd2d20a71b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/>class<sp/><ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>*<sp/>GetSettingsSubsystem(const<sp/>UObject*<sp/>WorldContextObject);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;Input|CommonUI&quot;,<sp/>meta<sp/>=<sp/>(WorldContext<sp/>=<sp/>&quot;WorldContextObject&quot;,<sp/>CallableWithoutWorldContext))</highlight></codeline>
+<codeline lineno="35" refid="classUSFFunctionLibrary_1a0741cee64e7a1059f2ec71bfecb51f40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/>ECommonInputType<sp/>GetCurrentInputMethod(const<sp/>UObject*<sp/>WorldContextObject);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/SFFunctionLibrary.h"/>
+  </compounddef>
+</doxygen>

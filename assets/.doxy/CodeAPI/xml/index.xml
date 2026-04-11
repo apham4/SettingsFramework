@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classFSettingsFrameworkModule" kind="class"><name>FSettingsFrameworkModule</name>
+    <member refid="classFSettingsFrameworkModule_1a63fe32444cb3d23434537f959efc63ce" kind="function"><name>StartupModule</name></member>
+    <member refid="classFSettingsFrameworkModule_1aaae9ac370b8b002a3d7dc58fc537b0ab" kind="function"><name>ShutdownModule</name></member>
+  </compound>
+  <compound refid="structFSFKeybindValueData" kind="struct"><name>FSFKeybindValueData</name>
+    <member refid="structFSFKeybindValueData_1a328a539f286ec2cbbfd9ecdb52ff97f3" kind="variable"><name>KBMPrimary</name></member>
+    <member refid="structFSFKeybindValueData_1a6bf410709e3bacf2d7bee22151965aae" kind="variable"><name>KBMSecondary</name></member>
+    <member refid="structFSFKeybindValueData_1aea6d65f73ad608aaed466fc43a522893" kind="variable"><name>Gamepad</name></member>
+    <member refid="structFSFKeybindValueData_1a7659289ad5036a021032349c7b19ce75" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="structFSFSettingGroup" kind="struct"><name>FSFSettingGroup</name>
+    <member refid="structFSFSettingGroup_1acfc0c5abc8dbe2819fc07f9b634b5345" kind="variable"><name>GroupDisplayName</name></member>
+    <member refid="structFSFSettingGroup_1a7a894ba7bed634a8b2b3ac75c5fe6e4a" kind="variable"><name>Settings</name></member>
+  </compound>
+  <compound refid="structFSFSettingOption" kind="struct"><name>FSFSettingOption</name>
+    <member refid="structFSFSettingOption_1a3dd5aadf6d296ac86348c636d5ecc826" kind="variable"><name>DisplayName</name></member>
+    <member refid="structFSFSettingOption_1a61a3bb5316be853d71f3f646456a096a" kind="variable"><name>Value</name></member>
+  </compound>
+  <compound refid="classUSFCategoryTab__Branch" kind="class"><name>USFCategoryTab_Branch</name>
+    <member refid="classUSFCategoryTab__Branch_1a4b3a5d9a62f779ebaa0c1094b4092215" kind="variable"><name>SubCategoryTabList</name></member>
+    <member refid="classUSFCategoryTab__Branch_1ad6e73fde06f5ef91ef09294a9904a381" kind="variable"><name>TabContentSwitcher</name></member>
+    <member refid="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7" kind="function"><name>InitializeCategoryDisplay</name></member>
+  </compound>
+  <compound refid="classUSFCategoryTab__Leaf" kind="class"><name>USFCategoryTab_Leaf</name>
+    <member refid="classUSFCategoryTab__Leaf_1a1a1222ee40922903012e2686817646b4" kind="variable"><name>SettingGroupContainer</name></member>
+    <member refid="classUSFCategoryTab__Leaf_1ab930428ab61f41a994a1459ba997eca7" kind="variable"><name>EntryWidgetMap</name></member>
+    <member refid="classUSFCategoryTab__Leaf_1abf4a31e14088f1cefbcd7d1a1a96fa4e" kind="function"><name>InitializeCategoryDisplay</name></member>
+    <member refid="classUSFCategoryTab__Leaf_1aa06cdb62de4611897f5398f77c164c16" kind="function"><name>OnGroupWidgetAdded</name></member>
+  </compound>
+  <compound refid="classUSFCategoryTabBase" kind="class"><name>USFCategoryTabBase</name>
+    <member refid="classUSFCategoryTabBase_1a258c9f18dac18a3f9d6f585fe8b3d131" kind="variable"><name>OnSettingFocused</name></member>
+    <member refid="classUSFCategoryTabBase_1a176c4c9b46e33321ba89d48d98902ca8" kind="variable"><name>SettingCategory</name></member>
+    <member refid="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" kind="function"><name>SetCategory</name></member>
+    <member refid="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0" kind="function"><name>InitializeCategoryDisplay</name></member>
+    <member refid="classUSFCategoryTabBase_1a00359215a33fc41fd0ca0891b772c328" kind="function"><name>GetSettingCategory</name></member>
+  </compound>
+  <compound refid="classUSFCategoryTabButtonBase" kind="class"><name>USFCategoryTabButtonBase</name>
+    <member refid="classUSFCategoryTabButtonBase_1a4591e90ef3c6d9ee31b86c7071e6ac4b" kind="function"><name>SetCategoryData</name></member>
+    <member refid="classUSFCategoryTabButtonBase_1ad4634d245f2e96fdd69552ab84d1ede6" kind="function"><name>SetCategoryData_Implementation</name></member>
+  </compound>
+  <compound refid="classUSFFunctionLibrary" kind="class"><name>USFFunctionLibrary</name>
+    <member refid="classUSFFunctionLibrary_1a62d4ee498fa8f43ac95bb4dd2d20a71b" kind="function"><name>GetSettingsSubsystem</name></member>
+    <member refid="classUSFFunctionLibrary_1a0741cee64e7a1059f2ec71bfecb51f40" kind="function"><name>GetCurrentInputMethod</name></member>
+  </compound>
+  <compound refid="classUSFSaveGame" kind="class"><name>USFSaveGame</name>
+    <member refid="classUSFSaveGame_1ac5a52ab1103246c7c144aacdcd07c222" kind="variable"><name>SerializedSettings</name></member>
+  </compound>
+  <compound refid="classUSFSettingCategory" kind="class"><name>USFSettingCategory</name>
+    <member refid="classUSFSettingCategory_1a95de8bab9f22164eccaa5ce751ba2439" kind="variable"><name>CategoryTag</name></member>
+    <member refid="classUSFSettingCategory_1a8cce7d43f1d3bd0299802ef40f3227ac" kind="variable"><name>CategoryType</name></member>
+    <member refid="classUSFSettingCategory_1a6a52ef10f9687dafaed854f54872f826" kind="variable"><name>DisplayName</name></member>
+    <member refid="classUSFSettingCategory_1a635f4aacae8743226b2e7f7282da35b6" kind="variable"><name>Subcategories</name></member>
+    <member refid="classUSFSettingCategory_1a81ece28496af75ca5ac7a9664311e44a" kind="variable"><name>SettingGroups</name></member>
+    <member refid="classUSFSettingCategory_1a310e4f6ba1fa1f6ad3762b3f6818156c" kind="variable"><name>Settings</name></member>
+  </compound>
+  <compound refid="classUSFSettingCondition" kind="class"><name>USFSettingCondition</name>
+    <member refid="classUSFSettingCondition_1a2c72c4c6c2fefa4546ab4d5b04e421ae" kind="function"><name>IsConditionMet</name></member>
+    <member refid="classUSFSettingCondition_1a7d7a339821f8a6df00ff2b7d8c5a966b" kind="function"><name>IsConditionMet_Implementation</name></member>
+  </compound>
+  <compound refid="classUSFSettingDefinition" kind="class"><name>USFSettingDefinition</name>
+    <member refid="classUSFSettingDefinition_1ada8935284ed7e3d9bdafb9afbba02f26" kind="variable"><name>SettingTag</name></member>
+    <member refid="classUSFSettingDefinition_1aaee9e00677afd6076b316cf345b5b799" kind="variable"><name>DisplayName</name></member>
+    <member refid="classUSFSettingDefinition_1a06797d42e05a2fd775cf2de7199d0504" kind="variable"><name>Description</name></member>
+    <member refid="classUSFSettingDefinition_1aeabc1ee0b6502a4b06de8e0b952d901b" kind="variable"><name>VisibilityConditions</name></member>
+    <member refid="classUSFSettingDefinition_1ab80502499ecc8ea71304cc5a85096241" kind="variable"><name>EditabilityConditions</name></member>
+    <member refid="classUSFSettingDefinition_1a5c5236bbd304e72f9157624bb2616ff1" kind="variable"><name>bRevertToDefaultOnDisable</name></member>
+    <member refid="classUSFSettingDefinition_1aabb9eff3fef5f1c3f1e6f3c4a2411324" kind="variable"><name>DefaultValue</name></member>
+    <member refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4" kind="function"><name>GetValueClass</name></member>
+    <member refid="classUSFSettingDefinition_1a00ead9833c334c437cd2c3c842e77d97" kind="function"><name>GetDefaultValue</name></member>
+  </compound>
+  <compound refid="classUSFSettingDefinition__Bool" kind="class"><name>USFSettingDefinition_Bool</name>
+    <member refid="classUSFSettingDefinition__Bool_1a2b141971c5da452e0f5113f0754ba172" kind="function"><name>GetValueClass</name></member>
+  </compound>
+  <compound refid="classUSFSettingDefinition__Discrete" kind="class"><name>USFSettingDefinition_Discrete</name>
+    <member refid="classUSFSettingDefinition__Discrete_1aa0ad73e98d4af05d62c532fd9799075b" kind="variable"><name>ValueWrapperClass</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1a90643457e2396e9a4ceea29810d440fa" kind="variable"><name>bUseDynamicOptions</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1acd6b4b6a03ed5aeb275964776c9b9e5e" kind="variable"><name>StaticOptions</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1a7782ac77017e0b534833aa83f3c2caa7" kind="variable"><name>OptionSource</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1a084f30073ae25fcb3266d7cfa9d09a95" kind="variable"><name>DeterminantSettingTags</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1af809f41ba78da3bec180b09c48dd5aca" kind="function"><name>GetValueClass</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1af10633f22d3183e680a561b2488a77cc" kind="function"><name>GetDefaultValue</name></member>
+    <member refid="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" kind="function"><name>GetSettingOptions</name></member>
+  </compound>
+  <compound refid="classUSFSettingDefinition__Key" kind="class"><name>USFSettingDefinition_Key</name>
+    <member refid="classUSFSettingDefinition__Key_1affac6aa1292e2a6d89772708502f6759" kind="variable"><name>KBMPrimaryName</name></member>
+    <member refid="classUSFSettingDefinition__Key_1ae26d25014ad149771a647e1ab0cfec2c" kind="variable"><name>KBMSecondaryName</name></member>
+    <member refid="classUSFSettingDefinition__Key_1a6437819a787f4ec1e7743e7ac45e670e" kind="variable"><name>GamepadName</name></member>
+    <member refid="classUSFSettingDefinition__Key_1acb2c4278b74e572ab71a07b4fa640a9e" kind="variable"><name>CollisionChannels</name></member>
+    <member refid="classUSFSettingDefinition__Key_1a5e12788d85fa2b170f50c9853a76100b" kind="function"><name>GetValueClass</name></member>
+  </compound>
+  <compound refid="classUSFSettingDefinition__Scalar" kind="class"><name>USFSettingDefinition_Scalar</name>
+    <member refid="classUSFSettingDefinition__Scalar_1a1950890771afe404da1b039139390015" kind="variable"><name>MinValue</name></member>
+    <member refid="classUSFSettingDefinition__Scalar_1a9d04434a21cea19aa87fc97e073d5b27" kind="variable"><name>MaxValue</name></member>
+    <member refid="classUSFSettingDefinition__Scalar_1ac3a90d15f1c785efe6e691e125268b01" kind="variable"><name>StepSize</name></member>
+    <member refid="classUSFSettingDefinition__Scalar_1aabe90425645f05cc303f4db13aa8a087" kind="function"><name>GetValueClass</name></member>
+  </compound>
+  <compound refid="classUSFSettingEntryWidget" kind="class"><name>USFSettingEntryWidget</name>
+    <member refid="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" kind="variable"><name>SettingLabel</name></member>
+    <member refid="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" kind="variable"><name>SettingTag</name></member>
+    <member refid="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" kind="variable"><name>OnSettingFocused</name></member>
+    <member refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2" kind="function"><name>InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" kind="function"><name>GetSettingTag</name></member>
+    <member refid="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" kind="function"><name>GetSettingDefinition</name></member>
+    <member refid="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" kind="function"><name>BP_InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" kind="function"><name>OnUserChangedValue</name></member>
+    <member refid="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" kind="function"><name>UpdateVisualValue</name></member>
+    <member refid="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33" kind="function"><name>UpdateVisualValue_Implementation</name></member>
+    <member refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" kind="function"><name>UpdateWidgetState</name></member>
+  </compound>
+  <compound refid="classUSFSettingEntryWidget__Checkbox" kind="class"><name>USFSettingEntryWidget_Checkbox</name>
+    <member refid="classUSFSettingEntryWidget__Checkbox_1ad626a571eaa80ab8c30216570648dde0" kind="variable"><name>CheckboxWidget</name></member>
+    <member refid="classUSFSettingEntryWidget__Checkbox_1a35a98e5e8e9f1b6a4c7df5eef7e329f6" kind="function"><name>InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget__Checkbox_1a77b01df242282a4634f65d32b094b84c" kind="function"><name>UpdateVisualValue_Implementation</name></member>
+  </compound>
+  <compound refid="classUSFSettingEntryWidget__Keybind" kind="class"><name>USFSettingEntryWidget_Keybind</name>
+    <member refid="classUSFSettingEntryWidget__Keybind_1adb10567888e6053a1d20155c71f142ae" kind="variable"><name>CurrentKeybindData</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a4d52a361b98a0284aa83287b23e5c6fc" kind="variable"><name>KBMPrimaryButton</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a4b09fe8c957c2f6535484c4a4ff268fb" kind="variable"><name>KBMSecondaryButton</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a35ff8d21b3580b94eb5e4c1df628f6e7" kind="variable"><name>GamepadButton</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a909eb844f8b5d7f44de0ed30faa58550" kind="variable"><name>CurrentListeningSlot</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a7b2bf2a80b0c3277b86199106d4b463a" kind="function"><name>InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a05b15b22ce8091155963d7365e2cd559" kind="function"><name>UpdateVisualValue_Implementation</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a427001aea9e394fb03a908529c916bef" kind="function"><name>ApplyNewKeybind</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a930bc2e426fe1b4daaf9ab563d7da36e" kind="function"><name>SetSlotText</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1ab33f765aea338133f00b46f3570dd0b6" kind="function"><name>SetSlotText_Implementation</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1a2420dabbe79cc73a1dab742179989506" kind="function"><name>CancelListening</name></member>
+    <member refid="classUSFSettingEntryWidget__Keybind_1af991552068ce5ceea813430e25dededd" kind="function"><name>ClearSlot</name></member>
+  </compound>
+  <compound refid="classUSFSettingEntryWidget__Rotator" kind="class"><name>USFSettingEntryWidget_Rotator</name>
+    <member refid="classUSFSettingEntryWidget__Rotator_1ad14791ca7cd7ae9a8f7e35cf93b34817" kind="variable"><name>RotatorWidget</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a49787e63c1e86a63cf8d9e6b253a6236" kind="variable"><name>Options</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a3ff5063a7678ebefc7940d01e1a01805" kind="function"><name>RefreshOptions</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a1d104a625b18ba532ec5d945a97dd78c" kind="function"><name>InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a57a629efdfeb40a46f5a043d027f41fe" kind="function"><name>UpdateVisualValue_Implementation</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a62ccc7ea71f980af1a87eafbb4fa6d56" kind="function"><name>CheckForDeterminantSettings</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1ac68bf1f17bccd831095513cc2b208b6d" kind="function"><name>PopulateOptions</name></member>
+    <member refid="classUSFSettingEntryWidget__Rotator_1a346038a00edcce909c03c1049b643779" kind="function"><name>SelectOptionByValue</name></member>
+  </compound>
+  <compound refid="classUSFSettingEntryWidget__Slider" kind="class"><name>USFSettingEntryWidget_Slider</name>
+    <member refid="classUSFSettingEntryWidget__Slider_1a9d6f006698f88e5fbc7242112d66a1a6" kind="variable"><name>SliderWidget</name></member>
+    <member refid="classUSFSettingEntryWidget__Slider_1ab5dab078e98614b9ef5380e93bbd5b89" kind="function"><name>InitializeSettingEntry</name></member>
+    <member refid="classUSFSettingEntryWidget__Slider_1afea13819e5fdb0b0b47be0c271efd904" kind="function"><name>UpdateVisualValue_Implementation</name></member>
+  </compound>
+  <compound refid="classUSFSettingGroupWidget" kind="class"><name>USFSettingGroupWidget</name>
+    <member refid="classUSFSettingGroupWidget_1ad807eb28084455aacf0fae3a6d2348f1" kind="variable"><name>SettingEntryContainer</name></member>
+    <member refid="classUSFSettingGroupWidget_1a3c40867ee59e7e0fa5fb3ccdc13bae1d" kind="function"><name>DisplaySettingGroupInfo</name></member>
+    <member refid="classUSFSettingGroupWidget_1a0f9c49900ee7b470b1d7ffa9e7879d5c" kind="function"><name>AddSettingEntry</name></member>
+    <member refid="classUSFSettingGroupWidget_1a919b67e222cc12984bb16f41974e3957" kind="function"><name>GetFirstValidSettingEntry</name></member>
+    <member refid="classUSFSettingGroupWidget_1a9458bcdaaf8181e1ef2af404d17967ce" kind="function"><name>OnSettingEntryAdded</name></member>
+  </compound>
+  <compound refid="classUSFSettingInfoDisplay" kind="class"><name>USFSettingInfoDisplay</name>
+    <member refid="classUSFSettingInfoDisplay_1ae977e3bb683adacf2cabb4d4ebca8c3b" kind="function"><name>DisplaySetting</name></member>
+    <member refid="classUSFSettingInfoDisplay_1a462bc5053436ed6358397fa04619f40b" kind="function"><name>DisplaySettingByDefinition</name></member>
+  </compound>
+  <compound refid="classUSFSettingOptionSource" kind="class"><name>USFSettingOptionSource</name>
+    <member refid="classUSFSettingOptionSource_1ae7c2453d53c7f3442c8b4e7d3d48c108" kind="function"><name>GetAvailableOptions</name></member>
+    <member refid="classUSFSettingOptionSource_1a2414643b4b36b68808db458d9400b71b" kind="function"><name>GetAvailableOptions_Implementation</name></member>
+    <member refid="classUSFSettingOptionSource_1a36ce246b381bc3001e59f7c7824fd7b2" kind="function"><name>GetDefaultValue</name></member>
+    <member refid="classUSFSettingOptionSource_1a44b4ee4529c519d31d074f7ab27965dd" kind="function"><name>GetDefaultValue_Implementation</name></member>
+  </compound>
+  <compound refid="classUSFSettingsDeveloperSettings" kind="class"><name>USFSettingsDeveloperSettings</name>
+    <member refid="classUSFSettingsDeveloperSettings_1a6da66740188140f1b8bdfcf36aa5a5f9" kind="variable"><name>SettingsRegistry</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a4c3d8da66c90687ec8a6e2bbdd5ac471" kind="variable"><name>SaveGameSlotName</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a7577de093cb4e5aaf480a719d172e97c" kind="variable"><name>MaxUpdateDepth</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1ac89aca765d1abb85b8ddfb65f1e0edf5" kind="variable"><name>DefaultKeybindCollisionResolution</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1ab8ddb656b243e0e11f9a5417270ed6ee" kind="variable"><name>RootTabButtonClass</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a679c37b5610d8021dd351b8da4e66bfe" kind="variable"><name>BranchTabButtonClass</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1aafbe8aaa13f69931a95155dbaaf78ae8" kind="variable"><name>BranchTabContentClass</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a43bf95967fde1a6b547e9e146262b9f1" kind="variable"><name>LeafTabContentClass</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a002b0b156af817f26f1c50cfede139b3" kind="variable"><name>SettingGroupWidgetClass</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1ae082a6dd394452e2afb4d99b21a34476" kind="variable"><name>SettingEntryWidgetClasses</name></member>
+    <member refid="classUSFSettingsDeveloperSettings_1a65bac9fbbf624963de3eb31c29d7f1df" kind="function"><name>GetCategoryName</name></member>
+  </compound>
+  <compound refid="classUSFSettingsRegistry" kind="class"><name>USFSettingsRegistry</name>
+    <member refid="classUSFSettingsRegistry_1a07babff76b99838facab78b92812ee81" kind="variable"><name>RootCategories</name></member>
+  </compound>
+  <compound refid="classUSFSettingsScreen" kind="class"><name>USFSettingsScreen</name>
+    <member refid="classUSFSettingsScreen_1a04b7fce3a982706d2a847371769e3b85" kind="variable"><name>CategoryTabList</name></member>
+    <member refid="classUSFSettingsScreen_1abf4f50c030a787fb1a480a670feac005" kind="variable"><name>TabContentSwitcher</name></member>
+    <member refid="classUSFSettingsScreen_1a5eb559c2a87931b6165d5a0b91154335" kind="variable"><name>SettingInfoDisplay</name></member>
+    <member refid="classUSFSettingsScreen_1a7aa24fc05a2ca16876828bfb6548ccfc" kind="variable"><name>SaveAction</name></member>
+    <member refid="classUSFSettingsScreen_1a70e77d6cd09cbe4abe48dbb887f6d4e1" kind="variable"><name>RevertAction</name></member>
+    <member refid="classUSFSettingsScreen_1a574567d6fb4ffec062134d0b80a16c14" kind="variable"><name>ResetToDefaultAction</name></member>
+    <member refid="classUSFSettingsScreen_1a029a3a0beb4f16105701c20ad5e40673" kind="function"><name>InitializeSettingsScreen</name></member>
+    <member refid="classUSFSettingsScreen_1a78d87bd247346f92aac5bd92d8c8e571" kind="function"><name>SaveSettings</name></member>
+    <member refid="classUSFSettingsScreen_1a91980f612637e28d33304a0cbaa53b17" kind="function"><name>RevertSettings</name></member>
+    <member refid="classUSFSettingsScreen_1a968fa3c78a0e2c867f75408e24d7e728" kind="function"><name>ResetSettingsToDefault</name></member>
+  </compound>
+  <compound refid="classUSFSettingsSubsystem" kind="class"><name>USFSettingsSubsystem</name>
+    <member refid="classUSFSettingsSubsystem_1ab4c7ef86dca5892e8590745802087c2b" kind="variable"><name>OnSettingsInitialized</name></member>
+    <member refid="classUSFSettingsSubsystem_1aaf1902385551ef6b7cb395e19ec03850" kind="variable"><name>OnSettingValueChanged</name></member>
+    <member refid="classUSFSettingsSubsystem_1acce5484006756b6e4263680bdf5b97cf" kind="variable"><name>OnSettingValueSaved</name></member>
+    <member refid="classUSFSettingsSubsystem_1a0d4330f3e0ebfccf94b6b7bb3dbbe671" kind="variable"><name>DynamicOptionSources</name></member>
+    <member refid="classUSFSettingsSubsystem_1adfd88e5e9e342f89b46853ca9e8a44fb" kind="variable"><name>SettingsRegistry</name></member>
+    <member refid="classUSFSettingsSubsystem_1a377be0d22173b5235e89cffb39e2c26c" kind="variable"><name>RegisteredSettings</name></member>
+    <member refid="classUSFSettingsSubsystem_1ab557eb9059b1899ecb5bd22321c7fc84" kind="variable"><name>CurrentValues</name></member>
+    <member refid="classUSFSettingsSubsystem_1a278e3ce6da1a97dbd40c6004e9cf7067" kind="variable"><name>SavedValues</name></member>
+    <member refid="classUSFSettingsSubsystem_1a8b5c457bdee862d4cccc9dbe7937b302" kind="function"><name>IsInitialized</name></member>
+    <member refid="classUSFSettingsSubsystem_1a0304c6a24961281e5e292221c7634783" kind="function"><name>GetRootCategories</name></member>
+    <member refid="classUSFSettingsSubsystem_1a7178d3d952bd36ac98b89da7d8e6cf8e" kind="function"><name>GetSettingDefinition</name></member>
+    <member refid="classUSFSettingsSubsystem_1aecd59360c84d567b6dca0211370d5964" kind="function"><name>GetDynamicOptionSource</name></member>
+    <member refid="classUSFSettingsSubsystem_1a91d001a2f90995da56e83d582953b799" kind="function"><name>GetSettingValue</name></member>
+    <member refid="classUSFSettingsSubsystem_1a09b818d00dcfa4b22d3fee2263d36820" kind="function"><name>GetSavedSettingValue</name></member>
+    <member refid="classUSFSettingsSubsystem_1a07cc2985567599bf6b70b55ed9886e5b" kind="function"><name>GetDefaultSettingValue</name></member>
+    <member refid="classUSFSettingsSubsystem_1a147b4792b3ccfbdfdaf53be39abd1a9d" kind="function"><name>SetSettingValue</name></member>
+    <member refid="classUSFSettingsSubsystem_1a84f59b6e922a15309e6e177897224fa8" kind="function"><name>IsSettingDirty</name></member>
+    <member refid="classUSFSettingsSubsystem_1a0bd8332ba0cb4b491047a28324129eed" kind="function"><name>AreAnySettingsDirty</name></member>
+    <member refid="classUSFSettingsSubsystem_1aef52e5da8c1a38291850029948d258ce" kind="function"><name>RevertSetting</name></member>
+    <member refid="classUSFSettingsSubsystem_1a1439b511c2d7d110bee077f396ff894b" kind="function"><name>ResetSettingToDefault</name></member>
+    <member refid="classUSFSettingsSubsystem_1aa9a14b9a01b23df21a7475885019f898" kind="function"><name>SaveSettings</name></member>
+    <member refid="classUSFSettingsSubsystem_1a988cee74b6c5db875554d108cf14e78b" kind="function"><name>RevertSettings</name></member>
+    <member refid="classUSFSettingsSubsystem_1ad8c7fcdac5e0204bcce77f092943d3aa" kind="function"><name>ResetSettingsToDefault</name></member>
+    <member refid="classUSFSettingsSubsystem_1a15d08d2dd5d83d0dc48bb84fa87a11d8" kind="function"><name>IsSettingVisible</name></member>
+    <member refid="classUSFSettingsSubsystem_1af54d98268dc191080b6ff96aa590c1b3" kind="function"><name>IsSettingEditable</name></member>
+    <member refid="classUSFSettingsSubsystem_1ae8dd7da59f9c8fed83a42df83f186942" kind="function"><name>GetKeybindingCollision</name></member>
+    <member refid="classUSFSettingsSubsystem_1aaeb6a77a73e69b2bff2fcc33bd86a748" kind="function"><name>UpdateKeybinding</name></member>
+    <member refid="classUSFSettingsSubsystem_1a3f194ed3ad0d7be45be0d04d021eca50" kind="function"><name>LoadSettingsFromSaveGame</name></member>
+    <member refid="classUSFSettingsSubsystem_1a173d4bbab8c434c30c98c098e3540a00" kind="function"><name>SaveSettingsToSaveGame</name></member>
+    <member refid="classUSFSettingsSubsystem_1a28a8b169b89325b0ef9cab1350912fe9" kind="function"><name>ResolveKeybindingCollision</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue" kind="class"><name>USFSettingValue</name>
+    <member refid="classUSFSettingValue_1a747ac479d7e0625e8f4058cdef4ae249" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue_1afe2f09e1962f1dc6627b330e58df1e0a" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue_1afef0792cabd7da25584974c05b95830d" kind="function"><name>Duplicate</name></member>
+    <member refid="classUSFSettingValue_1ac921a57fab11922012ad5c31b2a23c5e" kind="function"><name>Equals</name></member>
+    <member refid="classUSFSettingValue_1a9ee8119cc6eae6e0b5cfe8d4c4444c1d" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue__Bool" kind="class"><name>USFSettingValue_Bool</name>
+    <member refid="classUSFSettingValue__Bool_1ac45dfddf20229ec80396a0c4cb59cb11" kind="variable"><name>Value</name></member>
+    <member refid="classUSFSettingValue__Bool_1a68061c898917091c218e801f1936294c" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue__Bool_1a171202d909c895e126c559935cda4bbe" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue__Bool_1a579f8a83c06a9b895b5f6e5f1ad97f01" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue__Key" kind="class"><name>USFSettingValue_Key</name>
+    <member refid="classUSFSettingValue__Key_1a2dc0e146494c84575d3a09ae5618be1c" kind="variable"><name>Value</name></member>
+    <member refid="classUSFSettingValue__Key_1a59daba9bc5e40a43f506a78b8ff090f1" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue__Key_1a6788c6623bd3ca370aaf5050e25212c5" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue__Key_1ae1dfc05cd36e7586f5b2faf47a04e821" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue__Scalar" kind="class"><name>USFSettingValue_Scalar</name>
+    <member refid="classUSFSettingValue__Scalar_1ac5720258f5a694358536aa236c0d5b0c" kind="variable"><name>Value</name></member>
+    <member refid="classUSFSettingValue__Scalar_1a595fd1054ed13a8448514814835938e9" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue__Scalar_1aa4ddff883e3e7c1beb6058d1cd09da73" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue__Scalar_1af2b99f5ae335a9eb9281fdf023c06f7c" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue__String" kind="class"><name>USFSettingValue_String</name>
+    <member refid="classUSFSettingValue__String_1a710a0df7768a618c3050dd8e1ce1759b" kind="variable"><name>Value</name></member>
+    <member refid="classUSFSettingValue__String_1abf62b30d50cda7e6015b2a142878e52b" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue__String_1a229f1195b51a53183c8cdefff958bc43" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue__String_1a45a98ab80c7aa5d95e27b015d2f252d8" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="classUSFSettingValue__Tag" kind="class"><name>USFSettingValue_Tag</name>
+    <member refid="classUSFSettingValue__Tag_1a57418f12bf7a5465295c6c3791e20ec7" kind="variable"><name>Value</name></member>
+    <member refid="classUSFSettingValue__Tag_1ac2dc2b875cb3cad33d2999e40e4d2aeb" kind="function"><name>SerializeToString</name></member>
+    <member refid="classUSFSettingValue__Tag_1a802be916f7d5c97953e9b594c81e4fc2" kind="function"><name>DeserializeFromString</name></member>
+    <member refid="classUSFSettingValue__Tag_1a6d788f91db534fbafc1fc215034e9887" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="SFCoreTypes_8h" kind="file"><name>SFCoreTypes.h</name>
+    <member refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kind="enum"><name>ESFKeybindCollisionResolution</name></member>
+    <member refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kind="enumvalue"><name>UMETA</name></member>
+    <member refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kind="enumvalue"><name>UMETA</name></member>
+    <member refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cbaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kind="enumvalue"><name>UMETA</name></member>
+    <member refid="SFCoreTypes_8h_1ac7063d8ca90276e03fa8844ec2d4889b" kind="function"><name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</name></member>
+  </compound>
+  <compound refid="SFLogs_8h" kind="file"><name>SFLogs.h</name>
+    <member refid="SFLogs_8h_1af9c529ce9d3db6b1a72814f33ee727e6" kind="function"><name>DECLARE_LOG_CATEGORY_EXTERN</name></member>
+  </compound>
+  <compound refid="SFSettingValue_8h" kind="file"><name>SFSettingValue.h</name>
+  </compound>
+  <compound refid="SFSettingCategory_8h" kind="file"><name>SFSettingCategory.h</name>
+    <member refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acacca" kind="enum"><name>ESFCategoryType</name></member>
+    <member refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kind="enumvalue"><name>UMETA</name></member>
+    <member refid="SFSettingCategory_8h_1a741beb8bcff058bf080f138366acaccaaa3f80d8f0f1b4ffa8c475f5d60ea5635" kind="enumvalue"><name>UMETA</name></member>
+  </compound>
+  <compound refid="SFSettingCondition_8h" kind="file"><name>SFSettingCondition.h</name>
+  </compound>
+  <compound refid="SFSettingDefinition_8h" kind="file"><name>SFSettingDefinition.h</name>
+  </compound>
+  <compound refid="SFSettingOptionSource_8h" kind="file"><name>SFSettingOptionSource.h</name>
+  </compound>
+  <compound refid="SFSettingsRegistry_8h" kind="file"><name>SFSettingsRegistry.h</name>
+  </compound>
+  <compound refid="SFSaveGame_8h" kind="file"><name>SFSaveGame.h</name>
+  </compound>
+  <compound refid="SettingsFramework_8h" kind="file"><name>SettingsFramework.h</name>
+  </compound>
+  <compound refid="SFFunctionLibrary_8h" kind="file"><name>SFFunctionLibrary.h</name>
+  </compound>
+  <compound refid="SFSettingsDeveloperSettings_8h" kind="file"><name>SFSettingsDeveloperSettings.h</name>
+  </compound>
+  <compound refid="SFSettingsSubsystem_8h" kind="file"><name>SFSettingsSubsystem.h</name>
+    <member refid="SFSettingsSubsystem_8h_1a39384747fe7d5ea2e05d2cc216983532" kind="function"><name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</name></member>
+    <member refid="SFSettingsSubsystem_8h_1a57caaf8ef2e7cc4a6319047e5e92450c" kind="function"><name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</name></member>
+    <member refid="SFSettingsSubsystem_8h_1a771370550de7f6d6e47a5e50cba3583a" kind="function"><name>DECLARE_DYNAMIC_MULTICAST_DELEGATE</name></member>
+  </compound>
+  <compound refid="SFCategoryTab__Branch_8h" kind="file"><name>SFCategoryTab_Branch.h</name>
+  </compound>
+  <compound refid="SFCategoryTab__Leaf_8h" kind="file"><name>SFCategoryTab_Leaf.h</name>
+  </compound>
+  <compound refid="SFCategoryTabBase_8h" kind="file"><name>SFCategoryTabBase.h</name>
+  </compound>
+  <compound refid="SFCategoryTabButtonBase_8h" kind="file"><name>SFCategoryTabButtonBase.h</name>
+  </compound>
+  <compound refid="SFSettingGroupWidget_8h" kind="file"><name>SFSettingGroupWidget.h</name>
+  </compound>
+  <compound refid="SFSettingInfoDisplay_8h" kind="file"><name>SFSettingInfoDisplay.h</name>
+  </compound>
+  <compound refid="SFSettingEntryWidget_8h" kind="file"><name>SFSettingEntryWidget.h</name>
+  </compound>
+  <compound refid="SFSettingEntryWidget__Checkbox_8h" kind="file"><name>SFSettingEntryWidget_Checkbox.h</name>
+  </compound>
+  <compound refid="SFSettingEntryWidget__Keybind_8h" kind="file"><name>SFSettingEntryWidget_Keybind.h</name>
+    <member refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kind="enum"><name>ESFKeybindSlot</name></member>
+    <member refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca45eaa293c847862872a0dd29e4bb3150" kind="enumvalue"><name>KBMPrimary</name></member>
+    <member refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dcab7dd31970654fc8a058668a50f879a9a" kind="enumvalue"><name>KBMSecondary</name></member>
+    <member refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca221f6781b4faa2d321ca0d928f518d6e" kind="enumvalue"><name>Gamepad</name></member>
+  </compound>
+  <compound refid="SFSettingEntryWidget__Rotator_8h" kind="file"><name>SFSettingEntryWidget_Rotator.h</name>
+  </compound>
+  <compound refid="SFSettingEntryWidget__Slider_8h" kind="file"><name>SFSettingEntryWidget_Slider.h</name>
+  </compound>
+  <compound refid="SFSettingsScreen_8h" kind="file"><name>SFSettingsScreen.h</name>
+  </compound>
+  <compound refid="dir_d359c2365a038846f780cd493464dc51" kind="dir"><name>Source/SettingsFramework/Public/UI/Components</name>
+  </compound>
+  <compound refid="dir_39651220af2aa02d3a35c23742da36c9" kind="dir"><name>Source/SettingsFramework/Public/Core</name>
+  </compound>
+  <compound refid="dir_49fd2e6d8d3cd0aca0d770534c763afe" kind="dir"><name>Source/SettingsFramework/Public/Definitions</name>
+  </compound>
+  <compound refid="dir_f5fe102898a9b0642bc955593c0a287a" kind="dir"><name>Source/SettingsFramework/Public</name>
+  </compound>
+  <compound refid="dir_2040f41784c4464894ecea1e6ef2879a" kind="dir"><name>Source/SettingsFramework/Public/SaveGame</name>
+  </compound>
+  <compound refid="dir_ee82e1fcdef3b55cd27efecd9a182f3f" kind="dir"><name>Source/SettingsFramework/Public/UI/SettingEntries</name>
+  </compound>
+  <compound refid="dir_dd3f92a21678ddc03a3f228a025d1f4e" kind="dir"><name>Source/SettingsFramework</name>
+  </compound>
+  <compound refid="dir_74389ed8173ad57b461b9d623a1f3867" kind="dir"><name>Source</name>
+  </compound>
+  <compound refid="dir_c0d111a2beff4c46a32685df6daadb0f" kind="dir"><name>Source/SettingsFramework/Public/UI</name>
+  </compound>
+</doxygenindex>

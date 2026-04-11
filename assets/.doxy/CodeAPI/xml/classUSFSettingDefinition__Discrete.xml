@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingDefinition__Discrete" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingDefinition_Discrete</compoundname>
+    <basecompoundref refid="classUSFSettingDefinition" prot="public" virt="non-virtual">USFSettingDefinition</basecompoundref>
+    <includes refid="SFSettingDefinition_8h" local="yes">Definitions/SFSettingDefinition.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingDefinition__Discrete_1aa0ad73e98d4af05d62c532fd9799075b" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt;</type>
+        <definition>TSubclassOf&lt;USFSettingValue&gt; USFSettingDefinition_Discrete::ValueWrapperClass</definition>
+        <argsstring></argsstring>
+        <name>ValueWrapperClass</name>
+        <qualifiedname>USFSettingDefinition_Discrete::ValueWrapperClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The underlying value type for the options in this setting. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="178" column="13" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Discrete_1a90643457e2396e9a4ceea29810d440fa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool USFSettingDefinition_Discrete::bUseDynamicOptions</definition>
+        <argsstring></argsstring>
+        <name>bUseDynamicOptions</name>
+        <qualifiedname>USFSettingDefinition_Discrete::bUseDynamicOptions</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Does this setting have options that are generated dynamically at runtime? <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="185" column="6" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Discrete_1acd6b4b6a03ed5aeb275964776c9b9e5e" prot="public" static="no" mutable="no">
+        <type>TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt;</type>
+        <definition>TArray&lt;struct FSFSettingOption&gt; USFSettingDefinition_Discrete::StaticOptions</definition>
+        <argsstring></argsstring>
+        <name>StaticOptions</name>
+        <qualifiedname>USFSettingDefinition_Discrete::StaticOptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For static options. The list of options to choose from for this setting. Each option has a display name and an underlying value. The value should be of the type specified by ValueWrapperClass. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="192" column="8" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Discrete_1a7782ac77017e0b534833aa83f3c2caa7" prot="public" static="no" mutable="no">
+        <type>TSubclassOf&lt; class <ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref> &gt;</type>
+        <definition>TSubclassOf&lt;class USFSettingOptionSource&gt; USFSettingDefinition_Discrete::OptionSource</definition>
+        <argsstring></argsstring>
+        <name>OptionSource</name>
+        <qualifiedname>USFSettingDefinition_Discrete::OptionSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For dynamic options. The evaluator class that generates the options for this setting. The object created from this class is stored in <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>, and the logic from that object is run in <ref refid="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" kindref="member">GetSettingOptions()</ref> and <ref refid="classUSFSettingDefinition__Discrete_1af10633f22d3183e680a561b2488a77cc" kindref="member">GetDefaultValue()</ref>. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="199" column="13" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Discrete_1a084f30073ae25fcb3266d7cfa9d09a95" prot="public" static="no" mutable="no">
+        <type>FGameplayTagContainer</type>
+        <definition>FGameplayTagContainer USFSettingDefinition_Discrete::DeterminantSettingTags</definition>
+        <argsstring></argsstring>
+        <name>DeterminantSettingTags</name>
+        <qualifiedname>USFSettingDefinition_Discrete::DeterminantSettingTags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For dynamic options. The collection of settings that this setting should listen to to refresh its dynamic options. If the setting has a different refresh condition, explicitly call <ref refid="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" kindref="member">GetSettingOptions()</ref> for a new set of options. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="206" column="23" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingDefinition__Discrete_1af809f41ba78da3bec180b09c48dd5aca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>TSubclassOf&lt; <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt;</type>
+        <definition>virtual TSubclassOf&lt; USFSettingValue &gt; USFSettingDefinition_Discrete::GetValueClass</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetValueClass</name>
+        <qualifiedname>USFSettingDefinition_Discrete::GetValueClass</qualifiedname>
+        <reimplements refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4">GetValueClass</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Get the USFSettingValue-derived class of the value this setting uses. <simplesect kind="return"><para>The USFSettingValue-derived class of the value this setting uses.</para>
+</simplesect>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="212" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingDefinition__Discrete_1af10633f22d3183e680a561b2488a77cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>virtual class USFSettingValue * USFSettingDefinition_Discrete::GetDefaultValue</definition>
+        <argsstring>(const UObject *WorldContextObject) const override</argsstring>
+        <name>GetDefaultValue</name>
+        <qualifiedname>USFSettingDefinition_Discrete::GetDefaultValue</qualifiedname>
+        <reimplements refid="classUSFSettingDefinition_1a00ead9833c334c437cd2c3c842e77d97">GetDefaultValue</reimplements>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the default value for this setting. <simplesect kind="return"><para>If UseDynamicOptions is set to true, return the default value evaluated from the OptionSource. Else, return the fallback default value defined in the DefaultValue property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="218" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt;</type>
+        <definition>TArray&lt; struct FSFSettingOption &gt; USFSettingDefinition_Discrete::GetSettingOptions</definition>
+        <argsstring>(const UObject *WorldContextObject) const</argsstring>
+        <name>GetSettingOptions</name>
+        <qualifiedname>USFSettingDefinition_Discrete::GetSettingOptions</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the option list for this setting. <simplesect kind="return"><para>If UseDynamicOptions is set to true, return the option list evaluated from the OptionSource. Else, return the static option list defined in the StaticOptions property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="225" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Setting definition for setting an option among a list. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Setting definition for setting an option among a list. This is usually used for a dropdown or a rotator.</para>
+<para>Blueprint display name: SF Discrete Setting. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Discrete</label>
+        <link refid="classUSFSettingDefinition__Discrete"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Discrete</label>
+        <link refid="classUSFSettingDefinition__Discrete"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="168" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="169" bodyend="226"/>
+    <listofallmembers>
+      <member refid="classUSFSettingDefinition_1a5c5236bbd304e72f9157624bb2616ff1" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>bRevertToDefaultOnDisable</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1a90643457e2396e9a4ceea29810d440fa" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>bUseDynamicOptions</name></member>
+      <member refid="classUSFSettingDefinition_1aabb9eff3fef5f1c3f1e6f3c4a2411324" prot="protected" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>DefaultValue</name></member>
+      <member refid="classUSFSettingDefinition_1a06797d42e05a2fd775cf2de7199d0504" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>Description</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1a084f30073ae25fcb3266d7cfa9d09a95" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>DeterminantSettingTags</name></member>
+      <member refid="classUSFSettingDefinition_1aaee9e00677afd6076b316cf345b5b799" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>DisplayName</name></member>
+      <member refid="classUSFSettingDefinition_1ab80502499ecc8ea71304cc5a85096241" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>EditabilityConditions</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1af10633f22d3183e680a561b2488a77cc" prot="public" virt="virtual"><scope>USFSettingDefinition_Discrete</scope><name>GetDefaultValue</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1a4c949456968d05572d097a2cc28012d6" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>GetSettingOptions</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1af809f41ba78da3bec180b09c48dd5aca" prot="public" virt="virtual"><scope>USFSettingDefinition_Discrete</scope><name>GetValueClass</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1a7782ac77017e0b534833aa83f3c2caa7" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>OptionSource</name></member>
+      <member refid="classUSFSettingDefinition_1ada8935284ed7e3d9bdafb9afbba02f26" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1acd6b4b6a03ed5aeb275964776c9b9e5e" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>StaticOptions</name></member>
+      <member refid="classUSFSettingDefinition__Discrete_1aa0ad73e98d4af05d62c532fd9799075b" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>ValueWrapperClass</name></member>
+      <member refid="classUSFSettingDefinition_1aeabc1ee0b6502a4b06de8e0b952d901b" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Discrete</scope><name>VisibilityConditions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

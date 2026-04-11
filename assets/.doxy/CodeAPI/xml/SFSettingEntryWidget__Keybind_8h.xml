@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingEntryWidget__Keybind_8h" kind="file" language="C++">
+    <compoundname>SFSettingEntryWidget_Keybind.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes refid="SFSettingEntryWidget_8h" local="yes">UI/SettingEntries/SFSettingEntryWidget.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">CommonInputTypeEnum.h</includes>
+    <includes local="yes">SFSettingEntryWidget_Keybind.generated.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UI/SettingEntries/SFSettingEntryWidget.h</label>
+        <link refid="SFSettingEntryWidget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h</label>
+        <link refid="SFSettingEntryWidget__Keybind_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>CommonInputTypeEnum.h</label>
+      </node>
+      <node id="4">
+        <label>CommonUserWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="7">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="5">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="8">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="9">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="10">
+        <label>SFSettingEntryWidget.generated.h</label>
+      </node>
+      <node id="12">
+        <label>SFSettingEntryWidget_Keybind.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingEntryWidget__Keybind" prot="public">USFSettingEntryWidget_Keybind</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESFKeybindSlot</name>
+        <enumvalue id="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca45eaa293c847862872a0dd29e4bb3150" prot="public">
+          <name>KBMPrimary</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dcab7dd31970654fc8a058668a50f879a9a" prot="public">
+          <name>KBMSecondary</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca221f6781b4faa2d321ca0d928f518d6e" prot="public">
+          <name>Gamepad</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enum to track which keybind slot is currently listening for input for rebinding. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h" line="15" column="1" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h" bodystart="16" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFSettingEntryWidget_8h" kindref="compound">UI/SettingEntries/SFSettingEntryWidget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonInputTypeEnum.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingEntryWidget_Keybind.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">UENUM(BlueprintType)</highlight></codeline>
+<codeline lineno="15" refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref><sp/>:<sp/>uint8</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca6adf97f83acf6453d4a6a4b1070f3754" kindref="member">None</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca45eaa293c847862872a0dd29e4bb3150" kindref="member">KBMPrimary</ref>,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dcab7dd31970654fc8a058668a50f879a9a" kindref="member">KBMSecondary</ref>,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca221f6781b4faa2d321ca0d928f518d6e" kindref="member">Gamepad</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">UCLASS()</highlight></codeline>
+<codeline lineno="35" refid="classUSFSettingEntryWidget__Keybind" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingEntryWidget__Keybind" kindref="compound">USFSettingEntryWidget_Keybind</ref><sp/>:<sp/>public<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Bind<sp/>CommonUI<sp/>actions<sp/>to<sp/>Clear<sp/>and<sp/>Cancel.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeConstruct()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeOnInitialized()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50" refid="classUSFSettingEntryWidget__Keybind_1a7b2bf2a80b0c3277b86199106d4b463a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Keybind_1a7b2bf2a80b0c3277b86199106d4b463a" kindref="member">InitializeSettingEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>InSettingDefinition)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Setting<sp/>Value<sp/>&amp;<sp/>State</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58" refid="classUSFSettingEntryWidget__Keybind_1a05b15b22ce8091155963d7365e2cd559" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Keybind_1a05b15b22ce8091155963d7365e2cd559" kindref="member">UpdateVisualValue_Implementation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classUSFSettingEntryWidget__Keybind_1a427001aea9e394fb03a908529c916bef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Keybind_1a427001aea9e394fb03a908529c916bef" kindref="member">ApplyNewKeybind</ref>(FKey<sp/>NewKey);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY()</highlight></codeline>
+<codeline lineno="70" refid="classUSFSettingEntryWidget__Keybind_1adb10567888e6053a1d20155c71f142ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref><sp/>CurrentKeybindData;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Keybind<sp/>Widgets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>HandleKBMPrimaryButtonClicked();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleKBMSecondaryButtonClicked();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleGamepadButtonClicked();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleInputMethodChanged(ECommonInputType<sp/>InputType);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget_Keybind<sp/>|<sp/>Keybind<sp/>Widgets&quot;)</highlight></codeline>
+<codeline lineno="96" refid="classUSFSettingEntryWidget__Keybind_1a930bc2e426fe1b4daaf9ab563d7da36e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetSlotText(<ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref><sp/>SlotToSet,<sp/>FKey<sp/>Key,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bIsListening);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classUSFSettingEntryWidget__Keybind_1ab33f765aea338133f00b46f3570dd0b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetSlotText_Implementation(<ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref><sp/>SlotToSet,<sp/>FKey<sp/>Key,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bIsListening)<sp/>{};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classUSFSettingEntryWidget__Keybind_1a2420dabbe79cc73a1dab742179989506" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Keybind_1a2420dabbe79cc73a1dab742179989506" kindref="member">CancelListening</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classUSFSettingEntryWidget__Keybind_1af991552068ce5ceea813430e25dededd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget__Keybind_1af991552068ce5ceea813430e25dededd" kindref="member">ClearSlot</ref>(<ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref><sp/>SlotToClear);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget_Keybind|Keybind<sp/>Widgets&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="119" refid="classUSFSettingEntryWidget__Keybind_1a4d52a361b98a0284aa83287b23e5c6fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonButtonBase&gt;<sp/>KBMPrimaryButton;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget_Keybind|Keybind<sp/>Widgets&quot;,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="126" refid="classUSFSettingEntryWidget__Keybind_1a4b09fe8c957c2f6535484c4a4ff268fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonButtonBase&gt;<sp/>KBMSecondaryButton;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget_Keybind|Keybind<sp/>Widgets&quot;,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="133" refid="classUSFSettingEntryWidget__Keybind_1a35ff8d21b3580b94eb5e4c1df628f6e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonButtonBase&gt;<sp/>GamepadButton;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classUSFSettingEntryWidget__Keybind_1a909eb844f8b5d7f44de0ed30faa58550" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref><sp/>CurrentListeningSlot<sp/>=<sp/><ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dc" kindref="member">ESFKeybindSlot</ref>::<ref refid="SFSettingEntryWidget__Keybind_8h_1adddec19af8864fed89b9d2f034bd21dca6adf97f83acf6453d4a6a4b1070f3754" kindref="member">None</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Navigation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>UWidget*<sp/>GetPrimaryFocusTarget_Implementation()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>FReply<sp/>NativeOnKeyDown(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FGeometry&amp;<sp/>InGeometry,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FKeyEvent&amp;<sp/>InKeyEvent)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>FReply<sp/>NativeOnMouseButtonDown(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FGeometry&amp;<sp/>InGeometry,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FPointerEvent&amp;<sp/>InMouseEvent)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>FReply<sp/>NativeOnMouseWheel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FGeometry&amp;<sp/>InGeometry,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FPointerEvent&amp;<sp/>InMouseEvent)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h"/>
+  </compounddef>
+</doxygen>

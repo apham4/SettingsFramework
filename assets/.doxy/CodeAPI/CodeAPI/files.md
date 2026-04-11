@@ -1,0 +1,41 @@
+
+# File List
+
+Here is a list of all files with brief descriptions:
+
+
+* **dir** [**Source**](dir_74389ed8173ad57b461b9d623a1f3867.md)     
+    * **dir** [**SettingsFramework**](dir_dd3f92a21678ddc03a3f228a025d1f4e.md)     
+        * **dir** [**Public**](dir_f5fe102898a9b0642bc955593c0a287a.md)     
+            * **file** [**SFFunctionLibrary.h**](SFFunctionLibrary_8h.md)     
+            * **file** [**SFSettingsDeveloperSettings.h**](SFSettingsDeveloperSettings_8h.md)     
+            * **file** [**SFSettingsSubsystem.h**](SFSettingsSubsystem_8h.md)     
+            * **file** [**SettingsFramework.h**](SettingsFramework_8h.md)     
+            * **dir** [**Core**](dir_39651220af2aa02d3a35c23742da36c9.md)     
+                * **file** [**SFCoreTypes.h**](SFCoreTypes_8h.md)     
+                * **file** [**SFLogs.h**](SFLogs_8h.md)     
+                * **file** [**SFSettingValue.h**](SFSettingValue_8h.md)     
+            * **dir** [**Definitions**](dir_49fd2e6d8d3cd0aca0d770534c763afe.md)     
+                * **file** [**SFSettingCategory.h**](SFSettingCategory_8h.md)     
+                * **file** [**SFSettingCondition.h**](SFSettingCondition_8h.md)     
+                * **file** [**SFSettingDefinition.h**](SFSettingDefinition_8h.md)     
+                * **file** [**SFSettingOptionSource.h**](SFSettingOptionSource_8h.md)     
+                * **file** [**SFSettingsRegistry.h**](SFSettingsRegistry_8h.md)     
+            * **dir** [**SaveGame**](dir_2040f41784c4464894ecea1e6ef2879a.md)     
+                * **file** [**SFSaveGame.h**](SFSaveGame_8h.md)     
+            * **dir** [**UI**](dir_c0d111a2beff4c46a32685df6daadb0f.md)     
+                * **file** [**SFSettingsScreen.h**](SFSettingsScreen_8h.md)     
+                * **dir** [**Components**](dir_d359c2365a038846f780cd493464dc51.md)     
+                    * **file** [**SFCategoryTabBase.h**](SFCategoryTabBase_8h.md)     
+                    * **file** [**SFCategoryTabButtonBase.h**](SFCategoryTabButtonBase_8h.md)     
+                    * **file** [**SFCategoryTab\_Branch.h**](SFCategoryTab__Branch_8h.md)     
+                    * **file** [**SFCategoryTab\_Leaf.h**](SFCategoryTab__Leaf_8h.md)     
+                    * **file** [**SFSettingGroupWidget.h**](SFSettingGroupWidget_8h.md)     
+                    * **file** [**SFSettingInfoDisplay.h**](SFSettingInfoDisplay_8h.md)     
+                * **dir** [**SettingEntries**](dir_ee82e1fcdef3b55cd27efecd9a182f3f.md)     
+                    * **file** [**SFSettingEntryWidget.h**](SFSettingEntryWidget_8h.md)     
+                    * **file** [**SFSettingEntryWidget\_Checkbox.h**](SFSettingEntryWidget__Checkbox_8h.md)     
+                    * **file** [**SFSettingEntryWidget\_Keybind.h**](SFSettingEntryWidget__Keybind_8h.md)     
+                    * **file** [**SFSettingEntryWidget\_Rotator.h**](SFSettingEntryWidget__Rotator_8h.md)     
+                    * **file** [**SFSettingEntryWidget\_Slider.h**](SFSettingEntryWidget__Slider_8h.md)     
+

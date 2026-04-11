@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingEntryWidget" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingEntryWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UCommonUserWidget</basecompoundref>
+    <derivedcompoundref refid="classUSFSettingEntryWidget__Checkbox" prot="public" virt="non-virtual">USFSettingEntryWidget_Checkbox</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingEntryWidget__Keybind" prot="public" virt="non-virtual">USFSettingEntryWidget_Keybind</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingEntryWidget__Rotator" prot="public" virt="non-virtual">USFSettingEntryWidget_Rotator</derivedcompoundref>
+    <derivedcompoundref refid="classUSFSettingEntryWidget__Slider" prot="public" virt="non-virtual">USFSettingEntryWidget_Slider</derivedcompoundref>
+    <includes refid="SFSettingEntryWidget_8h" local="yes">UI/SettingEntries/SFSettingEntryWidget.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonTextBlock &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonTextBlock&gt; USFSettingEntryWidget::SettingLabel</definition>
+        <argsstring></argsstring>
+        <name>SettingLabel</name>
+        <qualifiedname>USFSettingEntryWidget::SettingLabel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Optional text block widget displaying the setting name/label. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidgetOptional</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="58" column="12" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" prot="protected" static="no" mutable="no">
+        <type>FGameplayTag</type>
+        <definition>FGameplayTag USFSettingEntryWidget::SettingTag</definition>
+        <argsstring></argsstring>
+        <name>SettingTag</name>
+        <qualifiedname>USFSettingEntryWidget::SettingTag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Gameplay Tag of the setting represented by this entry widget, used to communication with the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="92" column="14" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" prot="public" static="no" mutable="no">
+        <type>FOnSettingEntryFocused</type>
+        <definition>FOnSettingEntryFocused USFSettingEntryWidget::OnSettingFocused</definition>
+        <argsstring></argsstring>
+        <name>OnSettingFocused</name>
+        <qualifiedname>USFSettingEntryWidget::OnSettingFocused</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event fired when the setting entry is hovered/focused in the UI, used for bubbling up the focused setting&apos;s tag to the settings screen widget to display its info. <simplesect kind="note"><para><computeroutput>BlueprintAssignable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="84" column="24" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget::InitializeSettingEntry</definition>
+        <argsstring>(const class USFSettingDefinition *InSettingDefinition)</argsstring>
+        <name>InitializeSettingEntry</name>
+        <qualifiedname>USFSettingEntryWidget::InitializeSettingEntry</qualifiedname>
+        <reimplementedby refid="classUSFSettingEntryWidget__Checkbox_1a35a98e5e8e9f1b6a4c7df5eef7e329f6">InitializeSettingEntry</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Keybind_1a7b2bf2a80b0c3277b86199106d4b463a">InitializeSettingEntry</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Rotator_1a1d104a625b18ba532ec5d945a97dd78c">InitializeSettingEntry</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Slider_1ab5dab078e98614b9ef5380e93bbd5b89">InitializeSettingEntry</reimplementedby>
+        <param>
+          <type>const class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+          <declname>InSettingDefinition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the data and display of this setting entry widget based on the assigned setting definition asset. Subclasses can override this function to hook up any setting type-specific logic or display elements, but should call the parent implementation to ensure the base functionality is executed (e.g., binding to setting value change events from the subsystem). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InSettingDefinition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting definition asset represented by this widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="34" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>FGameplayTag</type>
+        <definition>FGameplayTag USFSettingEntryWidget::GetSettingTag</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSettingTag</name>
+        <qualifiedname>USFSettingEntryWidget::GetSettingTag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Gameplay Tag of the setting represented by this entry widget. <simplesect kind="return"><para>The Gameplay Tag of the setting represented by this entry widget. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="69" column="14" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+        <definition>class USFSettingDefinition * USFSettingEntryWidget::GetSettingDefinition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSettingDefinition</name>
+        <qualifiedname>USFSettingEntryWidget::GetSettingDefinition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the setting definition asset represented by this entry widget. <simplesect kind="return"><para>The setting definition asset represented by this entry widget. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="77" column="28"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget::BP_InitializeSettingEntry</definition>
+        <argsstring>(const class USFSettingDefinition *InSettingDefinition)</argsstring>
+        <name>BP_InitializeSettingEntry</name>
+        <qualifiedname>USFSettingEntryWidget::BP_InitializeSettingEntry</qualifiedname>
+        <param>
+          <type>const class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+          <declname>InSettingDefinition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the display of this setting entry widget based on the assigned setting definition asset, called after the native InitializeSettingEntry to allow for Blueprint implementations to run after the base logic. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InSettingDefinition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting definition asset represented by this widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintImplementableEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="43" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget::OnUserChangedValue</definition>
+        <argsstring>(class USFSettingValue *NewValue)</argsstring>
+        <name>OnUserChangedValue</name>
+        <qualifiedname>USFSettingEntryWidget::OnUserChangedValue</qualifiedname>
+        <param>
+          <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> to change the value of the setting represented by this entry widget. This should be called when the user interacts with the entry widget to change the setting value (e.g., moving a slider, checking/unchecking a checkbox, etc.). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>NewValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value to set for the setting, represented as a <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="104" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget::UpdateVisualValue</definition>
+        <argsstring>(const class USFSettingValue *NewValue)</argsstring>
+        <name>UpdateVisualValue</name>
+        <qualifiedname>USFSettingEntryWidget::UpdateVisualValue</qualifiedname>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the visual representation of the setting value (e.g., slider position, checkbox state) based on the given value. This is called in response to setting value change events from the subsystem to ensure the UI stays in sync with the actual setting values. When overriding in Blueprint, call the parent implementation if the native superclass has one. <simplesect kind="note"><para><computeroutput>BlueprintNativeEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="113" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget::UpdateVisualValue_Implementation</definition>
+        <argsstring>(const class USFSettingValue *NewValue)</argsstring>
+        <name>UpdateVisualValue_Implementation</name>
+        <qualifiedname>USFSettingEntryWidget::UpdateVisualValue_Implementation</qualifiedname>
+        <reimplementedby refid="classUSFSettingEntryWidget__Checkbox_1a77b01df242282a4634f65d32b094b84c">UpdateVisualValue_Implementation</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Keybind_1a05b15b22ce8091155963d7365e2cd559">UpdateVisualValue_Implementation</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Rotator_1a57a629efdfeb40a46f5a043d027f41fe">UpdateVisualValue_Implementation</reimplementedby>
+        <reimplementedby refid="classUSFSettingEntryWidget__Slider_1afea13819e5fdb0b0b47be0c271efd904">UpdateVisualValue_Implementation</reimplementedby>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Native implementation of UpdateVisualValue, can be optionally overridden by C++ subclasses to handle setting value change events from the subsystem. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="118" column="14" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget::UpdateWidgetState</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateWidgetState</name>
+        <qualifiedname>USFSettingEntryWidget::UpdateWidgetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal function to update the visibility and editability of the widget based on the evaluation of the associated setting from the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="123" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for a single setting entry in the settings UI. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for a single setting entry in the settings UI. This widget represents and displays a single setting definition from the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>, allowing the player to view and change the setting value. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>USFSettingEntryWidget_Checkbox</label>
+        <link refid="classUSFSettingEntryWidget__Checkbox"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>USFSettingEntryWidget_Keybind</label>
+        <link refid="classUSFSettingEntryWidget__Keybind"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>USFSettingEntryWidget_Rotator</label>
+        <link refid="classUSFSettingEntryWidget__Rotator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>USFSettingEntryWidget_Slider</label>
+        <link refid="classUSFSettingEntryWidget__Slider"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" line="19" column="1" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h" bodystart="20" bodyend="138"/>
+    <listofallmembers>
+      <member refid="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>BP_InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>GetSettingDefinition</name></member>
+      <member refid="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>GetSettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2" prot="public" virt="virtual"><scope>USFSettingEntryWidget</scope><name>InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>OnSettingFocused</name></member>
+      <member refid="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>OnUserChangedValue</name></member>
+      <member refid="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>SettingLabel</name></member>
+      <member refid="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>UpdateVisualValue</name></member>
+      <member refid="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33" prot="protected" virt="virtual"><scope>USFSettingEntryWidget</scope><name>UpdateVisualValue_Implementation</name></member>
+      <member refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget</scope><name>UpdateWidgetState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

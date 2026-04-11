@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingsScreen" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingsScreen</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UCommonActivatableWidget</basecompoundref>
+    <includes refid="SFSettingsScreen_8h" local="yes">UI/SFSettingsScreen.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingsScreen_1a04b7fce3a982706d2a847371769e3b85" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonTabListWidgetBase &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonTabListWidgetBase&gt; USFSettingsScreen::CategoryTabList</definition>
+        <argsstring></argsstring>
+        <name>CategoryTabList</name>
+        <qualifiedname>USFSettingsScreen::CategoryTabList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Common Tab List widget containing tab buttons representing the root setting categories. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="53" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsScreen_1abf4f50c030a787fb1a480a670feac005" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonActivatableWidgetSwitcher &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonActivatableWidgetSwitcher&gt; USFSettingsScreen::TabContentSwitcher</definition>
+        <argsstring></argsstring>
+        <name>TabContentSwitcher</name>
+        <qualifiedname>USFSettingsScreen::TabContentSwitcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Common Activatable Widget Switcher containing the content for each root setting category, switched by the CategoryTabList. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="60" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsScreen_1a5eb559c2a87931b6165d5a0b91154335" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class <ref refid="classUSFSettingInfoDisplay" kindref="compound">USFSettingInfoDisplay</ref> &gt;</type>
+        <definition>TObjectPtr&lt;class USFSettingInfoDisplay&gt; USFSettingsScreen::SettingInfoDisplay</definition>
+        <argsstring></argsstring>
+        <name>SettingInfoDisplay</name>
+        <qualifiedname>USFSettingsScreen::SettingInfoDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The widget displaying detailed information about the currently focused setting, such as its display name, description, etc. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="81" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsScreen_1a7aa24fc05a2ca16876828bfb6548ccfc" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UInputAction &gt;</type>
+        <definition>TObjectPtr&lt;class UInputAction&gt; USFSettingsScreen::SaveAction</definition>
+        <argsstring></argsstring>
+        <name>SaveAction</name>
+        <qualifiedname>USFSettingsScreen::SaveAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The optional EnhancedInput action to automatically call SaveSettings. Requires Enhanced Input support to be enabled in Common Input settings. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="122" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsScreen_1a70e77d6cd09cbe4abe48dbb887f6d4e1" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UInputAction &gt;</type>
+        <definition>TObjectPtr&lt;class UInputAction&gt; USFSettingsScreen::RevertAction</definition>
+        <argsstring></argsstring>
+        <name>RevertAction</name>
+        <qualifiedname>USFSettingsScreen::RevertAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The optional EnhancedInput action to automatically call RevertSettings. Requires Enhanced Input support to be enabled in Common Input settings. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="129" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsScreen_1a574567d6fb4ffec062134d0b80a16c14" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UInputAction &gt;</type>
+        <definition>TObjectPtr&lt;class UInputAction&gt; USFSettingsScreen::ResetToDefaultAction</definition>
+        <argsstring></argsstring>
+        <name>ResetToDefaultAction</name>
+        <qualifiedname>USFSettingsScreen::ResetToDefaultAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The optional EnhancedInput action to automatically call ResetSettingsToDefault. Requires Enhanced Input support to be enabled in Common Input settings. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="136" column="12" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingsScreen_1a029a3a0beb4f16105701c20ad5e40673" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsScreen::InitializeSettingsScreen</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeSettingsScreen</name>
+        <qualifiedname>USFSettingsScreen::InitializeSettingsScreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the settings screen by querying the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> for setting categories and definitions, constructing and populating tabs and setting widgets, and binding to subsystem events. Called on widget activation to allow for lazy loading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="39" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsScreen_1a78d87bd247346f92aac5bd92d8c8e571" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsScreen::SaveSettings</definition>
+        <argsstring>()</argsstring>
+        <name>SaveSettings</name>
+        <qualifiedname>USFSettingsScreen::SaveSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> to save all setting values. Can be called manually or bound to SaveAction. <simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="91" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsScreen_1a91980f612637e28d33304a0cbaa53b17" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsScreen::RevertSettings</definition>
+        <argsstring>()</argsstring>
+        <name>RevertSettings</name>
+        <qualifiedname>USFSettingsScreen::RevertSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> to revert all setting values to their saved values. Can be called manually or bound to RevertAction. <simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="98" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsScreen_1a968fa3c78a0e2c867f75408e24d7e728" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsScreen::ResetSettingsToDefault</definition>
+        <argsstring>()</argsstring>
+        <name>ResetSettingsToDefault</name>
+        <qualifiedname>USFSettingsScreen::ResetSettingsToDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> to reset all setting values to their default values. Can be called manually or bound to ResetToDefaultAction. <simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="105" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for the outer-most widget of the settings screen UI. A widget blueprint subclass of this is to be added to a project&apos;s CommonUI widget stack. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>On initialization, this widget queries the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> instance for setting categories and definitions, constructs and populates itself with the appropriate tabs and setting widgets.</para>
+<para>The skeletal settings screen UI in Settings Framework only allows for one level of category nesting, meaning only root categories are allowed to be branch-type categories (containing sub-categories). Any branch-type categories under that level are ignored when constructing the UI.</para>
+<para>This widget also requests the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> instance to perform actions such as saving, reverting, or resetting settings when initiated by the player from the UI. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsScreen</label>
+        <link refid="classUSFSettingsScreen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsScreen</label>
+        <link refid="classUSFSettingsScreen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" line="21" column="1" bodyfile="Source/SettingsFramework/Public/UI/SFSettingsScreen.h" bodystart="22" bodyend="138"/>
+    <listofallmembers>
+      <member refid="classUSFSettingsScreen_1a04b7fce3a982706d2a847371769e3b85" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>CategoryTabList</name></member>
+      <member refid="classUSFSettingsScreen_1a029a3a0beb4f16105701c20ad5e40673" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>InitializeSettingsScreen</name></member>
+      <member refid="classUSFSettingsScreen_1a968fa3c78a0e2c867f75408e24d7e728" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>ResetSettingsToDefault</name></member>
+      <member refid="classUSFSettingsScreen_1a574567d6fb4ffec062134d0b80a16c14" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>ResetToDefaultAction</name></member>
+      <member refid="classUSFSettingsScreen_1a70e77d6cd09cbe4abe48dbb887f6d4e1" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>RevertAction</name></member>
+      <member refid="classUSFSettingsScreen_1a91980f612637e28d33304a0cbaa53b17" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>RevertSettings</name></member>
+      <member refid="classUSFSettingsScreen_1a7aa24fc05a2ca16876828bfb6548ccfc" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>SaveAction</name></member>
+      <member refid="classUSFSettingsScreen_1a78d87bd247346f92aac5bd92d8c8e571" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>SaveSettings</name></member>
+      <member refid="classUSFSettingsScreen_1a5eb559c2a87931b6165d5a0b91154335" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>SettingInfoDisplay</name></member>
+      <member refid="classUSFSettingsScreen_1abf4f50c030a787fb1a480a670feac005" prot="protected" virt="non-virtual"><scope>USFSettingsScreen</scope><name>TabContentSwitcher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

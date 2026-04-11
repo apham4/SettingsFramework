@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingOptionSource_8h" kind="file" language="C++">
+    <compoundname>SFSettingOptionSource.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">UObject/NoExportTypes.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">SFSettingOptionSource.generated.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h</label>
+        <link refid="SFSettingOptionSource_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="5">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="6">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="7">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="8">
+        <label>SFSettingOptionSource.generated.h</label>
+      </node>
+      <node id="3">
+        <label>UObject/NoExportTypes.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingOptionSource" prot="public">USFSettingOptionSource</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;UObject/NoExportTypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingOptionSource.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">UCLASS(Abstract,<sp/>Blueprintable,<sp/>EditInlineNew)</highlight></codeline>
+<codeline lineno="19" refid="classUSFSettingOptionSource" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref><sp/>:<sp/>public<sp/>UObject</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingOptionSource&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31" refid="classUSFSettingOptionSource_1ae7c2453d53c7f3442c8b4e7d3d48c108" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref>&gt;<sp/>GetAvailableOptions(const<sp/>UObject*<sp/>WorldContextObject)<sp/>const;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="classUSFSettingOptionSource_1a2414643b4b36b68808db458d9400b71b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>TArray&lt;struct<sp/><ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref>&gt;<sp/>GetAvailableOptions_Implementation(const<sp/>UObject*<sp/>WorldContextObject)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TArray&lt;struct<sp/>FSFSettingOption&gt;();<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingOptionSource&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="45" refid="classUSFSettingOptionSource_1a36ce246b381bc3001e59f7c7824fd7b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetDefaultValue(const<sp/>UObject*<sp/>WorldContextObject)<sp/>const;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classUSFSettingOptionSource_1a44b4ee4529c519d31d074f7ab27965dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetDefaultValue_Implementation(const<sp/>UObject*<sp/>WorldContextObject)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingOptionSource.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingDefinition__Bool" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingDefinition_Bool</compoundname>
+    <basecompoundref refid="classUSFSettingDefinition" prot="public" virt="non-virtual">USFSettingDefinition</basecompoundref>
+    <includes refid="SFSettingDefinition_8h" local="yes">Definitions/SFSettingDefinition.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingDefinition__Bool_1a2b141971c5da452e0f5113f0754ba172" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>TSubclassOf&lt; <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt;</type>
+        <definition>virtual TSubclassOf&lt; USFSettingValue &gt; USFSettingDefinition_Bool::GetValueClass</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetValueClass</name>
+        <qualifiedname>USFSettingDefinition_Bool::GetValueClass</qualifiedname>
+        <reimplements refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4">GetValueClass</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Get the USFSettingValue-derived class of the value this setting uses. <simplesect kind="return"><para>The USFSettingValue-derived class of the value this setting uses.</para>
+</simplesect>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="154" column="21" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="154" bodyend="157"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Setting definition for setting a boolean value. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Setting definition for setting a boolean value.</para>
+<para>Blueprint display name: SF Bool Setting. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Bool</label>
+        <link refid="classUSFSettingDefinition__Bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Bool</label>
+        <link refid="classUSFSettingDefinition__Bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="146" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="147" bodyend="158"/>
+    <listofallmembers>
+      <member refid="classUSFSettingDefinition_1a5c5236bbd304e72f9157624bb2616ff1" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>bRevertToDefaultOnDisable</name></member>
+      <member refid="classUSFSettingDefinition_1aabb9eff3fef5f1c3f1e6f3c4a2411324" prot="protected" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>DefaultValue</name></member>
+      <member refid="classUSFSettingDefinition_1a06797d42e05a2fd775cf2de7199d0504" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>Description</name></member>
+      <member refid="classUSFSettingDefinition_1aaee9e00677afd6076b316cf345b5b799" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>DisplayName</name></member>
+      <member refid="classUSFSettingDefinition_1ab80502499ecc8ea71304cc5a85096241" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>EditabilityConditions</name></member>
+      <member refid="classUSFSettingDefinition_1a00ead9833c334c437cd2c3c842e77d97" prot="public" virt="virtual"><scope>USFSettingDefinition_Bool</scope><name>GetDefaultValue</name></member>
+      <member refid="classUSFSettingDefinition__Bool_1a2b141971c5da452e0f5113f0754ba172" prot="public" virt="virtual"><scope>USFSettingDefinition_Bool</scope><name>GetValueClass</name></member>
+      <member refid="classUSFSettingDefinition_1ada8935284ed7e3d9bdafb9afbba02f26" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingDefinition_1aeabc1ee0b6502a4b06de8e0b952d901b" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Bool</scope><name>VisibilityConditions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSaveGame" kind="class" language="C++" prot="public">
+    <compoundname>USFSaveGame</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">USaveGame</basecompoundref>
+    <includes refid="SFSaveGame_8h" local="yes">SaveGame/SFSaveGame.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSaveGame_1ac5a52ab1103246c7c144aacdcd07c222" prot="public" static="no" mutable="no">
+        <type>TMap&lt; FGameplayTag, FString &gt;</type>
+        <definition>TMap&lt;FGameplayTag, FString&gt; USFSaveGame::SerializedSettings</definition>
+        <argsstring></argsstring>
+        <name>SerializedSettings</name>
+        <qualifiedname>USFSaveGame::SerializedSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of setting Gameplay Tags to their serialized string values. The actual value objects are reconstructed from these strings when loading the save game.<itemizedlist>
+<listitem><para><simplesect kind="note"><para><computeroutput>VisibleAnywhere</computeroutput> </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SaveGame/SFSaveGame.h" line="26" column="6" bodyfile="Source/SettingsFramework/Public/SaveGame/SFSaveGame.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>SaveGame object to serialize setting data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>SaveGame object to serialize setting data. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>USFSaveGame</label>
+        <link refid="classUSFSaveGame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>USaveGame</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>USFSaveGame</label>
+        <link refid="classUSFSaveGame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>USaveGame</label>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/SaveGame/SFSaveGame.h" line="16" column="1" bodyfile="Source/SettingsFramework/Public/SaveGame/SFSaveGame.h" bodystart="17" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classUSFSaveGame_1ac5a52ab1103246c7c144aacdcd07c222" prot="public" virt="non-virtual"><scope>USFSaveGame</scope><name>SerializedSettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

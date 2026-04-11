@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingsRegistry" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingsRegistry</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UDataAsset</basecompoundref>
+    <includes refid="SFSettingsRegistry_8h" local="yes">Definitions/SFSettingsRegistry.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingsRegistry_1a07babff76b99838facab78b92812ee81" prot="public" static="no" mutable="no">
+        <type>TArray&lt; TObjectPtr&lt; class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> &gt; &gt;</type>
+        <definition>TArray&lt;TObjectPtr&lt;class USFSettingCategory&gt; &gt; USFSettingsRegistry::RootCategories</definition>
+        <argsstring></argsstring>
+        <name>RootCategories</name>
+        <qualifiedname>USFSettingsRegistry::RootCategories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The collection of outer-most categories. Categories can contain sub-categories OR individual setting definitions. Any setting definitions that should be loaded by the plugin must be contained in this hierarchy starting from these root categories. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingsRegistry.h" line="27" column="8" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingsRegistry.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The central registry asset that contains the entire hierarchy of settings. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The central registry asset that contains the entire hierarchy of settings, starting from the root categories down to individual setting definitions. This needs to be assigned through the plugin&apos;s project-wide Developer Settings to be loaded on initialization by the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UDataAsset</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsRegistry</label>
+        <link refid="classUSFSettingsRegistry"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UDataAsset</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsRegistry</label>
+        <link refid="classUSFSettingsRegistry"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingsRegistry.h" line="16" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingsRegistry.h" bodystart="17" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classUSFSettingsRegistry_1a07babff76b99838facab78b92812ee81" prot="public" virt="non-virtual"><scope>USFSettingsRegistry</scope><name>RootCategories</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

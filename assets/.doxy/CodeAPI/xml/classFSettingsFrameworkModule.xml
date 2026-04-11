@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classFSettingsFrameworkModule" kind="class" language="C++" prot="public">
+    <compoundname>FSettingsFrameworkModule</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IModuleInterface</basecompoundref>
+    <includes refid="SettingsFramework_8h" local="yes">SettingsFramework.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFSettingsFrameworkModule_1a63fe32444cb3d23434537f959efc63ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void FSettingsFrameworkModule::StartupModule</definition>
+        <argsstring>() override</argsstring>
+        <name>StartupModule</name>
+        <qualifiedname>FSettingsFrameworkModule::StartupModule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>IModuleInterface implementation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SettingsFramework.h" line="12" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classFSettingsFrameworkModule_1aaae9ac370b8b002a3d7dc58fc537b0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void FSettingsFrameworkModule::ShutdownModule</definition>
+        <argsstring>() override</argsstring>
+        <name>ShutdownModule</name>
+        <qualifiedname>FSettingsFrameworkModule::ShutdownModule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SettingsFramework.h" line="13" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FSettingsFrameworkModule</label>
+        <link refid="classFSettingsFrameworkModule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IModuleInterface</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>FSettingsFrameworkModule</label>
+        <link refid="classFSettingsFrameworkModule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IModuleInterface</label>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/SettingsFramework.h" line="7" column="1" bodyfile="Source/SettingsFramework/Public/SettingsFramework.h" bodystart="8" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classFSettingsFrameworkModule_1aaae9ac370b8b002a3d7dc58fc537b0ab" prot="public" virt="virtual"><scope>FSettingsFrameworkModule</scope><name>ShutdownModule</name></member>
+      <member refid="classFSettingsFrameworkModule_1a63fe32444cb3d23434537f959efc63ce" prot="public" virt="virtual"><scope>FSettingsFrameworkModule</scope><name>StartupModule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

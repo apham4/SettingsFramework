@@ -1,0 +1,975 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UE5 Settings Framework Plugin">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../settingssubsystem/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Step-by-Step Blueprint-Only - Settings Framework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-defining-settings-and-categories" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Settings Framework Documentation" class="md-header__button md-logo" aria-label="Settings Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Settings Framework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Step-by-Step Blueprint-Only
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Settings Framework Documentation" class="md-nav__button md-logo" aria-label="Settings Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Settings Framework Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step-by-Step Blueprint-Only
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step-by-Step Blueprint-Only
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-defining-settings-and-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 - Defining Settings and Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-displaying-the-settings-screen-ui-on-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 - Displaying the Settings Screen UI on Viewport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-setting-up-visibility-and-editability-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 - Setting up Visibility and Editability Conditions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-setting-up-reactive-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 - Setting up Reactive Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-up-runtime-dynamic-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 - Setting up Runtime Dynamic Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-setting-up-common-ui-and-enhanced-input-for-navigation-and-keybind-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 - Setting up Common UI and Enhanced Input for Navigation and Keybind Widget
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settingssubsystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container_widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Entry Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc Widgets & Blueprints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-defining-settings-and-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 - Defining Settings and Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-displaying-the-settings-screen-ui-on-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 - Displaying the Settings Screen UI on Viewport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-setting-up-visibility-and-editability-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 - Setting up Visibility and Editability Conditions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-setting-up-reactive-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 - Setting up Reactive Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-up-runtime-dynamic-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 - Setting up Runtime Dynamic Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-setting-up-common-ui-and-enhanced-input-for-navigation-and-keybind-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 - Setting up Common UI and Enhanced Input for Navigation and Keybind Widget
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Step-by-Step Blueprint-Only</h1>
+
+<p>This guide provides step-by-step instructions on how to set up a Blueprint-only project once you have installed the plugin.</p>
+<p>Blueprint-only demo project download: [link].</p>
+<h2 id="1-defining-settings-and-categories">1 - Defining Settings and Categories</h2>
+<ul>
+<li>To define a setting, in the Content Browser, right-click &gt; <strong>Miscellaneous</strong> &gt; <strong>Data Asset</strong>. Select between <code>SF Bool Setting</code>, <code>SF Discrete Setting</code>, <code>SF Keybind Setting</code>, or <code>SF Scalar Setting</code> based on your needs. All settings have some common fields, such as Setting Tag, Display Name, Description, etc. while each setting type also has type-sepcific fields to customize them. For example, the <code>SF Scalar Setting</code> data asset allows you to set the min value, max value, and the step size. All fields have tooltips detailing their functionalities.</li>
+<li>Notably, <code>SF Discrete Setting</code> (typically shown as a dropdown or a rotator button) allows for either static options defined at design time or dynamic options. <ul>
+<li>If <code>Use Dynamic Options</code> is False, you can specify values by filling the <code>Static Options</code> array.</li>
+<li>If <code>Use Dynamic Options</code> is True, you have to specify an Option Source class (runtime object for generating options) and a collection of <code>Determinant Setting Tags</code> (settings whose value changes would trigger an options refresh).</li>
+<li>Their underlying data type (specified by  <code>Value Wrapper Class</code> field) can be either Gameplay Tag (<code>SFSettingValue_Tag</code>), which works better for pre-defined static options, or strings (<code>SFSettingValue_String</code>), which works better for options generated at runtime.</li>
+<li>Further details about dynamic options are available in a section below.</li>
+</ul>
+</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_discrete_setting.jpg" alt="A Discrete Setting with static options." style="display: block; margin: 0 auto;">
+  <figcaption>A Discrete Setting with static options.</figcaption>
+</figure>
+
+<ul>
+<li>To define a category, In the Content Browser, right-click &gt; <strong>Miscellaneous</strong> &gt; <strong>Data Asset</strong> and select <code>SF Setting Category</code>. Similar to setting definitions, a category has an indentifying Category Tag, and a Display Name.</li>
+<li>The <code>Category Type</code> field has 2 options: Branch or Leaf. <ul>
+<li>A Branch category contains other sub-categories. </li>
+<li>A Leaf category contains setting definitions. You can specify Setting Groups, which are purely presentational groupings with a display name. You can also just add all your setting definitions in the <code>Settings</code> array if you do not want to use groups. In this case, setting entries are displayed all in the same group.</li>
+</ul>
+</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_leaf_category.jpg" alt="A Leaf category with setting groups." style="display: block; margin: 0 auto;">
+  <figcaption>A Leaf category with setting groups.</figcaption>
+</figure>
+
+<ul>
+<li>Lastly, to tie it all together, you need to specify a Settings Registry. In the Content Browser, right-click &gt; <strong>Miscellaneous</strong> &gt; <strong>Data Asset</strong> and select <code>SF Settings Registry</code>. The registry contains all your root categories. At initialization, the Settings Subsystem will traverse the categories down to the leaf level, gathering all setting definitions and load them asynchronously. In <code>WBP_SettingsScreen</code>, root categories are displayed as major tabs, and their subcategories are displayed as minor tabs.</li>
+<li>In order for the Settings Subsystem to find your Registry, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Settings Framework</strong> and assign your registry asset to the <code>Settings Registry</code> field.<ul>
+<li>You may need to press <strong>Set As Default</strong> to prevent values from being reset between Editor sessions.</li>
+</ul>
+</li>
+<li>Now your setting definitions are all set.</li>
+</ul>
+<hr />
+<h2 id="2-displaying-the-settings-screen-ui-on-viewport">2 - Displaying the Settings Screen UI on Viewport</h2>
+<p>If you have an existing project using Common UI, you'll need to push <code>WBP_SettingsScreen</code> onto your <code>CommonActivatableWidgetStack</code> and activate it (either automatically by Common UI or through calling <code>ActivateWidget</code> manually). If you are starting with a blank projects, here are the steps to set it up:</p>
+<ul>
+<li>Make a widget Blueprint of type <code>CommonUserWidget</code> and name it <code>WBP_HUD</code>. This will be added to our viewport and act as the main container for widgets in our UI.</li>
+<li>In the <code>WBP_HUD</code>, add a <code>CommonActivatableWidgetStack</code>. Make it a variable and name it <code>Widget Stack</code>.</li>
+<li>Make a Blueprint of type <code>PlayerController</code> and name it <code>BP_PlayerController</code>. On Begin Play, set up some script to add <code>WBP_HUD</code> to the viewport and push <code>WBP_SettingsScreen</code> to its widget stack. Normally you would push <code>WBP_SettingsScreen</code> when the player performs an action to bring up the settings screen, but for the sake of simplicity, we'll set it up right at Begin Play since it is the only screen in this project.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_script_add_widget.jpg" alt="Adding WBP_HUD and WBP_SettingsScreen to Viewport in BP_PlayerController." style="display: block; margin: 0 auto;">
+  <figcaption>Adding WBP_HUD and WBP_SettingsScreen to Viewport in BP_PlayerController.</figcaption>
+</figure>
+
+<ul>
+<li>Make a Blueprint of type <code>GameModeBase</code> and name it <code>BP_GameMode</code>. In its Details panel, assign our new <code>BP_PlayerController</code> as the new player controller class.</li>
+<li>We can use this new game mode active by making it the game mode of a specific level, or the default gamemode of the project. Go to <strong>Edit &gt; Project &gt; Maps &amp; Modes</strong> and set the <code>Default Gamemode</code> to our <code>BP_GameMode</code>.</li>
+<li>For <code>WBP_SettingsScreen</code> to work correctly, we have to specify which component widgets it should use. Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Settings Framework</strong> and assign the following:<ul>
+<li>Root Tab Button Class: <code>WBP_MajorTabButton</code></li>
+<li>Branch Tab Button Class: <code>WBP_MinorTabButton</code></li>
+<li>Branch Tab Content Class: <code>WBP_CategoryTab_Branch</code></li>
+<li>Leaf Tab Content Class: <code>WBP_CategoryTab_Leaf</code></li>
+<li>Setting Group Widget Class: <code>WBP_SettingGroup</code></li>
+<li>Setting Entry Widget Classes:<ul>
+<li><code>SFSettingDefinition_Bool</code> -&gt; <code>WBP_SettingEntry_Checkbox</code></li>
+<li><code>SFSettingDefinition_Discrete</code> -&gt; <code>WBP_SettingEntry_Rotator</code></li>
+<li><code>SFSettingDefinition_Key</code> -&gt; <code>WBP_SettingEntry_Keybind</code></li>
+<li><code>SFSettingDefinition_Scalar</code> -&gt; <code>WBP_SettingEntry_Slider</code></li>
+</ul>
+</li>
+<li>You may need to press <strong>Set As Default</strong> to prevent values from being reset between Editor sessions.</li>
+</ul>
+</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_developer_settings.jpg" alt="Configured Developer Settings in Project Settings." style="display: block; margin: 0 auto;">
+  <figcaption>Configured Developer Settings in Project Settings.</figcaption>
+</figure>
+
+<ul>
+<li>Now when we start the game, we'll see the settings screen, with all settings populated.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_runtime_populated.jpg" alt="Widget populated with settings." style="display: block; margin: 0 auto;">
+  <figcaption>Widget populated with settings.</figcaption>
+</figure>
+
+<hr />
+<h2 id="3-setting-up-visibility-and-editability-conditions">3 - Setting up Visibility and Editability Conditions</h2>
+<p>Settings can be configured to update their states dynamically at runtime through the <code>Visibility Conditions</code> and <code>Editability Conditions</code> fields in their definition data assets. In this guide's example, <strong>Texture Quality</strong> should only be user-editable if <strong>Graphics Preset</strong> is set to Custom.</p>
+<ul>
+<li>Make a Blueprint of type <code>SFSettingCondition</code> and name it <code>GraphicsPresetCustom</code>.</li>
+<li>In this Blueprint, override the function <code>IsConditionMet</code>. This function should return True if the condition is met, and False otherwise. The following is the example script for checking if <strong>Graphics Preset</strong> is set to Custom:</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_setting_condition.jpg" alt="Condition check for Graphics Preset being set to Custom." style="display: block; margin: 0 auto;">
+  <figcaption>Condition check for Graphics Preset being set to Custom.</figcaption>
+</figure>
+
+<ul>
+<li>After saving this condition Blueprint, we assign it to the appropriate setting definition data asset (<code>EA_TextureQuality</code> for the <strong>Texture Quality</strong> setting).</li>
+<li>Add an element to the <code>Editability Conditions</code> field, and assign the newly created <code>GraphicsPresetCustom</code> Blueprint to it. This is the collection of conditions evaluated to determine a setting's editability. The setting is disabled if any condition in the collection returns False. Similarly, the setting is hidden if any condition in the <code>Visibility Conditions</code> collection returns False.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_setting_condition_assigned.jpg" alt="The setting condition assigned in a setting data asset." style="display: block; margin: 0 auto;">
+  <figcaption>The setting condition assigned in a setting data asset.</figcaption>
+</figure>
+
+<ul>
+<li>Now when we start the game, we'll see that <strong>Texture Quality</strong> is disabled when <strong>Graphics Preset</strong> is set to Low/Medium/High and only becomes customizable if it is set to Custom.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_setting_condition_runtime.jpg" alt="Texture Quality is disabled when Graphics Preset is set to High." style="display: block; margin: 0 auto;">
+  <figcaption>Texture Quality is disabled when Graphics Preset is set to High.</figcaption>
+</figure>
+
+<hr />
+<h2 id="4-setting-up-reactive-settings">4 - Setting up Reactive Settings</h2>
+<p>In the previous section, we successfully disable (or hide) the <strong>Texture Quality</strong> setting when <strong>Graphics Preset</strong> is not set to Custom. However, when <strong>Graphics Preset</strong> is set to values such as Low/Medium/High, we also want <strong>Texture Quality</strong> to update to match. This can be done through the Settings Subsystem's API functions.</p>
+<p>This should be implemented in the Blueprint that controls the specific setting's logic. The following steps were implemented in the Player Controller Blueprint for simplicity.</p>
+<ul>
+<li>At <code>Begin Play</code> or initialization, bind to the Settings Subsystem's <code>On Setting Value Changed</code> with a handler function. Optionally, call the handler function directly with the value of the determinant setting (<strong>Graphics Preset</strong> in this case)'s value to make sure the logic runs with its initial value.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_reactive_beginplay.jpg" alt="Binding to Setting Value Changed at Begin Play." style="display: block; margin: 0 auto;">
+  <figcaption>Binding to Setting Value Changed at Begin Play.</figcaption>
+</figure>
+
+<ul>
+<li>In the handler function, set up a script that updates <strong>Texture Quality</strong> according to <strong>Graphics Preset</strong>'s value if it is not set to Custom. Save the Blueprint. The example handler logic is shown in the following screenshot:</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_reactive_handler.jpg" alt="Handler function logic to set reactive settings." style="display: block; margin: 0 auto;">
+  <figcaption>Handler function logic to set reactive settings.</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+  <img src="../../img/sbs_reactive_helper.jpg" alt="Helper function to check if Graphics Preset is set to Custom." style="display: block; margin: 0 auto;">
+  <figcaption>Helper function to check if Graphics Preset is set to Custom.</figcaption>
+</figure>
+
+<ul>
+<li>Now when we start the game, we'll see that <strong>Texture Quality</strong> is updated according to <strong>Graphics Preset</strong>'s value when it is set to Low/Medium/High.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_reactive_runtime.jpg" alt="Texture Quality is set according to Graphics Preset's value." style="display: block; margin: 0 auto;">
+  <figcaption>Texture Quality is set according to Graphics Preset's value.</figcaption>
+</figure>
+
+<hr />
+<h2 id="5-setting-up-runtime-dynamic-options">5 - Setting up Runtime Dynamic Options</h2>
+<p>It is not always possible to specify selectable options at design time for discrete settings. For example, the <strong>Resolution</strong> setting should be populated with values supported by the monitor, and the <strong>Audio Output Device</strong> setting should be populated with a list of connected audio devices. This is where dynamic options come in. The following guide shows the process for evaluating and populating the options for the <strong>Resolution</strong> setting.</p>
+<ul>
+<li>Make a Blueprint of type <code>USFSettingOptionSource</code> and name it <code>ResolutionOptionSource</code>.</li>
+<li>In this Blueprint, override the function <code>Get Available Options</code>. This function should return an array of selectable options as <code>SFSettingOption</code> structs, which contains a localized <code>Display Name</code> and an underlying <code>SFSettingValue</code>, which can be of any defined data type. For <code>ResolutionOptionSource</code>, we retrieve the list of supported fullscreen resolutions and construct setting options from them. The script can be seen below:</li>
+</ul>
+<p>[[ Screenshot of ResolutionOptionSource::GetAvailableOptions script. ]]</p>
+<ul>
+<li>Additionally, override the function <code>Get Default Value</code>. This function should return the <code>SFSettingValue</code> that corresponds to the setting option that the user should revert to upon hitting <strong>Revert to Default</strong>. The <code>ResolutionOptionSource</code> example returns the largest available resolution as the default value.</li>
+</ul>
+<p>[[ Screenshot of ResolutionOptionSource::GetDefaultValue script. ]]</p>
+<ul>
+<li>Remember to mention calling RefreshOptions and GetSettingOptions manually.</li>
+</ul>
+<hr />
+<h2 id="6-setting-up-common-ui-and-enhanced-input-for-navigation-and-keybind-widget">6 - Setting up Common UI and Enhanced Input for Navigation and Keybind Widget</h2>
+<p>Common UI with Enhanced Input must be set up for the keybind widget and the built-in gamepad navigation to work. Here are the steps I took to set them up:</p>
+<ul>
+<li>Go to <strong>Edit &gt; Project Settings &gt; Game &gt; Common Input Settings</strong> and set <code>Enable Enhanced Input Support</code> to True. Restart the Editor when prompted.</li>
+<li>In the Content Browser, right-click &gt; <strong>Input</strong> &gt; <strong>Input Action</strong> to make an Input Action Blueprint and name it <code>IA_UI_Confirm</code>. Make another one and name it <code>IA_UI_Back</code>. These are our basic yes/no actions.</li>
+<li>Make a Blueprint of type <code>CommonUIInputData</code> and name it <code>BP_InputData</code>. In its Details panel, set <code>Enhanced Input Click Action</code> to the new <code>IA_UI_Confirm</code> and <code>Enhanced Input Back Action</code> to <code>IA_UI_Back</code>.</li>
+<li>Go to <strong>Edit &gt; Project Settings &gt; Game &gt; Common Input Settings</strong> and set <code>Input Data</code> to the new <code>BP_InputData</code>.</li>
+<li>Optionally, on the same screen, you can set up controller data assets in <strong>Platform Input &gt; Windows</strong> (or your platform of choice) <strong>&gt; Default &gt; Controller Data</strong>. Controller Data helps you assign input key values to icons, which Common UI will use to display prompts for input action on the UI.</li>
+<li>Go to <strong>Edit &gt; Project Settings &gt; Engine &gt; General Settings</strong> and set <code>Game Viewport Client Class</code> to <code>CommonGameViewportClient</code>.</li>
+<li>In the Content Browser, right-click &gt; <strong>Input</strong> &gt; <strong>Input Mapping Context</strong> to make an Input Mapping Context (IMC) and name it <code>IMC_DefaultUI</code>. In this Blueprint, add to the <strong>Default Key Mappings</strong> &gt; <strong>Mappings</strong> the yes/no input actions from before (<code>IA_UI_Confirm</code> and <code>IA_UI_Back</code>) as well as the input actions that came with the plugin (<code>IA_UI_PrevTab_Major</code>, <code>IA_UI_NextTab_Major</code>, <code>IA_UI_PrevTab_Minor</code>, <code>IA_UI_NextTab_Minor</code>, <code>IA_UI_Save</code>, <code>IA_UI_Revert</code>, <code>IA_UI_ResetToDefault</code>). Assign your desired input keys to them.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_imc.jpg" alt="Input Mapping Context populated." style="display: block; margin: 0 auto;">
+  <figcaption>Input Mapping Context populated.</figcaption>
+</figure>
+
+<ul>
+<li>When using Enhanced Input, we usually want to activate/deactivate IMCs at runtime (for example, switching between gameplay and UI mappings). However, in this project, we only have the UI screen, so we'll make it the default IMC. Go to <strong>Edit &gt; Project Settings &gt; Engine &gt; Enhanced Input</strong> and add the new <code>IMC_DefaultUI</code> to <code>Default Mapping Contexts</code>.</li>
+<li>Now when we start the game, our assigned input keys should work to perform actions and action prompts should appear if controller data assets are set up.</li>
+</ul>
+<figure style="text-align: center;">
+  <img src="../../img/sbs_runtime_prompts.jpg" alt="Settings screen with functional navigation." style="display: block; margin: 0 auto;">
+  <figcaption>Settings screen with functional navigation.</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Anh Pham
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

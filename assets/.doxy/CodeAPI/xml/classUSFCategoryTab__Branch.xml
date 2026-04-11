@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFCategoryTab__Branch" kind="class" language="C++" prot="public">
+    <compoundname>USFCategoryTab_Branch</compoundname>
+    <basecompoundref refid="classUSFCategoryTabBase" prot="public" virt="non-virtual">USFCategoryTabBase</basecompoundref>
+    <includes refid="SFCategoryTab__Branch_8h" local="yes">UI/Components/SFCategoryTab_Branch.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFCategoryTab__Branch_1a4b3a5d9a62f779ebaa0c1094b4092215" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonTabListWidgetBase &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonTabListWidgetBase&gt; USFCategoryTab_Branch::SubCategoryTabList</definition>
+        <argsstring></argsstring>
+        <name>SubCategoryTabList</name>
+        <qualifiedname>USFCategoryTab_Branch::SubCategoryTabList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Common Tab List widget containing tab buttons representing the sub-categories. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" line="52" column="12" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFCategoryTab__Branch_1ad6e73fde06f5ef91ef09294a9904a381" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonActivatableWidgetSwitcher &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonActivatableWidgetSwitcher&gt; USFCategoryTab_Branch::TabContentSwitcher</definition>
+        <argsstring></argsstring>
+        <name>TabContentSwitcher</name>
+        <qualifiedname>USFCategoryTab_Branch::TabContentSwitcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Common Activatable Widget Switcher containing the content for each sub-category, switched by the SubCategoryTabList. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" line="59" column="12" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFCategoryTab_Branch::InitializeCategoryDisplay</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeCategoryDisplay</name>
+        <qualifiedname>USFCategoryTab_Branch::InitializeCategoryDisplay</qualifiedname>
+        <reimplements refid="classUSFCategoryTabBase_1a1f0a9d43c21dc3d4926edf65a5df5db0">InitializeCategoryDisplay</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Populate the widget with the data from the category asset. This is called when the widget is displayed for the first time to allow for lazy loading.</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" line="29" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for the content widget representing a branch-type setting category (contains sub-categories). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for the content widget representing a branch-type setting category (contains sub-categories). This is a subclass of <ref refid="classUSFCategoryTabBase" kindref="compound">USFCategoryTabBase</ref>. It is added to <ref refid="classUSFSettingsScreen" kindref="compound">USFSettingsScreen</ref>&apos;s TabContentSwitcher for branch-type categories.</para>
+<para>The widget blueprint implementing this class should be assigned to the BranchTabContentClass in the Developer Settings at Project Settings &gt; Plugins &gt; SettingsFramework. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="2">
+        <label>USFCategoryTabBase</label>
+        <link refid="classUSFCategoryTabBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFCategoryTab_Branch</label>
+        <link refid="classUSFCategoryTab__Branch"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UCommonActivatableWidget</label>
+      </node>
+      <node id="2">
+        <label>USFCategoryTabBase</label>
+        <link refid="classUSFCategoryTabBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFCategoryTab_Branch</label>
+        <link refid="classUSFCategoryTab__Branch"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" line="20" column="1" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h" bodystart="21" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classUSFCategoryTabBase_1a00359215a33fc41fd0ca0891b772c328" prot="public" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>GetSettingCategory</name></member>
+      <member refid="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7" prot="public" virt="virtual"><scope>USFCategoryTab_Branch</scope><name>InitializeCategoryDisplay</name></member>
+      <member refid="classUSFCategoryTabBase_1a258c9f18dac18a3f9d6f585fe8b3d131" prot="public" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>OnSettingFocused</name></member>
+      <member refid="classUSFCategoryTabBase_1ab2a9413807b8ce491b5c09e56ebebb66" prot="public" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>SetCategory</name></member>
+      <member refid="classUSFCategoryTabBase_1a176c4c9b46e33321ba89d48d98902ca8" prot="protected" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>SettingCategory</name></member>
+      <member refid="classUSFCategoryTab__Branch_1a4b3a5d9a62f779ebaa0c1094b4092215" prot="protected" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>SubCategoryTabList</name></member>
+      <member refid="classUSFCategoryTab__Branch_1ad6e73fde06f5ef91ef09294a9904a381" prot="protected" virt="non-virtual"><scope>USFCategoryTab_Branch</scope><name>TabContentSwitcher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

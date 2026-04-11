@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingEntryWidget_8h" kind="file" language="C++">
+    <compoundname>SFSettingEntryWidget.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">CommonUserWidget.h</includes>
+    <includes local="yes">GameplayTagContainer.h</includes>
+    <includes refid="SFCoreTypes_8h" local="yes">Core/SFCoreTypes.h</includes>
+    <includes local="yes">SFSettingEntryWidget.generated.h</includes>
+    <includedby refid="SFSettingEntryWidget__Checkbox_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h</includedby>
+    <includedby refid="SFSettingEntryWidget__Keybind_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h</includedby>
+    <includedby refid="SFSettingEntryWidget__Rotator_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h</includedby>
+    <includedby refid="SFSettingEntryWidget__Slider_8h" local="yes">Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Slider.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h</label>
+        <link refid="SFSettingEntryWidget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CommonUserWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="6">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="4">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="7">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="8">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+      <node id="9">
+        <label>SFSettingEntryWidget.generated.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h</label>
+        <link refid="SFSettingEntryWidget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h</label>
+        <link refid="SFSettingEntryWidget__Checkbox_8h"/>
+      </node>
+      <node id="3">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Keybind.h</label>
+        <link refid="SFSettingEntryWidget__Keybind_8h"/>
+      </node>
+      <node id="4">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h</label>
+        <link refid="SFSettingEntryWidget__Rotator_8h"/>
+      </node>
+      <node id="5">
+        <label>Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Slider.h</label>
+        <link refid="SFSettingEntryWidget__Slider_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUSFSettingEntryWidget" prot="public">USFSettingEntryWidget</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonUserWidget.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameplayTagContainer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCoreTypes_8h" kindref="compound">Core/SFCoreTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingEntryWidget.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType,<sp/>Blueprintable)</highlight></codeline>
+<codeline lineno="19" refid="classUSFSettingEntryWidget" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref><sp/>:<sp/>public<sp/>UCommonUserWidget</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeConstruct()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2" kindref="member">InitializeSettingEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>InSettingDefinition);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintImplementableEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Initialization&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(DisplayName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Initialize<sp/>Setting<sp/>Entry&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="43" refid="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>BP_InitializeSettingEntry(const<sp/>class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>InSettingDefinition);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleOnSettingValueChanged(const<sp/>FGameplayTag&amp;<sp/>ChangedSettingTag,<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Widgets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Widgets&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(BindWidgetOptional))</highlight></codeline>
+<codeline lineno="58" refid="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonTextBlock&gt;<sp/>SettingLabel;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Setting<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Setting<sp/>Data&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69" refid="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>GetSettingTag()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SettingTag;<sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Setting<sp/>Data&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="77" refid="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>GetSettingDefinition()<sp/>const;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintAssignable,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget|Setting<sp/>Data&quot;)</highlight></codeline>
+<codeline lineno="84" refid="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FOnSettingEntryFocused<sp/>OnSettingFocused;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget|Setting<sp/>Data&quot;)</highlight></codeline>
+<codeline lineno="92" refid="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>SettingTag;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Setting<sp/>Value<sp/>&amp;<sp/>State</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Setting<sp/>Value<sp/>&amp;<sp/>State&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="104" refid="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>OnUserChangedValue(class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/>&quot;SFSettingEntryWidget|Setting<sp/>Value<sp/>&amp;<sp/>State&quot;)</highlight></codeline>
+<codeline lineno="113" refid="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateVisualValue(const<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateVisualValue_Implementation(const<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue)<sp/>{};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" kindref="member">UpdateWidgetState</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Navigation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingEntryWidget|Navigation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>UWidget*<sp/>GetPrimaryFocusTarget()<sp/>const;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>UWidget*<sp/>GetPrimaryFocusTarget_Implementation()<sp/>const;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeOnAddedToFocusPath(const<sp/>FFocusEvent&amp;<sp/>InFocusEvent)<sp/>override;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeOnMouseEnter(const<sp/>FGeometry&amp;<sp/>InGeometry,<sp/>const<sp/>FPointerEvent&amp;<sp/>InMouseEvent)<sp/>override;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget.h"/>
+  </compounddef>
+</doxygen>

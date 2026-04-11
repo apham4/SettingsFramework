@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFFunctionLibrary" kind="class" language="C++" prot="public">
+    <compoundname>USFFunctionLibrary</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UBlueprintFunctionLibrary</basecompoundref>
+    <includes refid="SFFunctionLibrary_8h" local="yes">SFFunctionLibrary.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classUSFFunctionLibrary_1a62d4ee498fa8f43ac95bb4dd2d20a71b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> *</type>
+        <definition>static class USFSettingsSubsystem * USFFunctionLibrary::GetSettingsSubsystem</definition>
+        <argsstring>(const UObject *WorldContextObject)</argsstring>
+        <name>GetSettingsSubsystem</name>
+        <qualifiedname>USFFunctionLibrary::GetSettingsSubsystem</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> instance. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorldContextObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>World context object to get the world from. Can be any object that has a valid world, such as an actor, a component, a widget, etc. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFFunctionLibrary.h" line="27" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFFunctionLibrary_1a0741cee64e7a1059f2ec71bfecb51f40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ECommonInputType</type>
+        <definition>static ECommonInputType USFFunctionLibrary::GetCurrentInputMethod</definition>
+        <argsstring>(const UObject *WorldContextObject)</argsstring>
+        <name>GetCurrentInputMethod</name>
+        <qualifiedname>USFFunctionLibrary::GetCurrentInputMethod</qualifiedname>
+        <param>
+          <type>const UObject *</type>
+          <declname>WorldContextObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the current CommonUI input method (e.g., Gamepad, MouseAndKeyboard). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorldContextObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>World context object to get the world from. Can be any object that has a valid world, such as an actor, a component, a widget, etc. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The active ECommonInputType. Defaults to MouseAndKeyboard if unable to determine. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFFunctionLibrary.h" line="35" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility function library for the SettingsFramework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Utility function library for the SettingsFramework. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UBlueprintFunctionLibrary</label>
+      </node>
+      <node id="1">
+        <label>USFFunctionLibrary</label>
+        <link refid="classUSFFunctionLibrary"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UBlueprintFunctionLibrary</label>
+      </node>
+      <node id="1">
+        <label>USFFunctionLibrary</label>
+        <link refid="classUSFFunctionLibrary"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/SFFunctionLibrary.h" line="16" column="1" bodyfile="Source/SettingsFramework/Public/SFFunctionLibrary.h" bodystart="17" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classUSFFunctionLibrary_1a0741cee64e7a1059f2ec71bfecb51f40" prot="public" virt="non-virtual"><scope>USFFunctionLibrary</scope><name>GetCurrentInputMethod</name></member>
+      <member refid="classUSFFunctionLibrary_1a62d4ee498fa8f43ac95bb4dd2d20a71b" prot="public" virt="non-virtual"><scope>USFFunctionLibrary</scope><name>GetSettingsSubsystem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
