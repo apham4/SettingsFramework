@@ -140,6 +140,19 @@ This should be implemented in the Blueprint that controls the specific setting's
 
 ## 5 - Setting up Runtime Dynamic Options
 
+It is not always possible to specify selectable options at design time for discrete settings. For example, the **Resolution** setting should be populated with values supported by the monitor, and the **Audio Output Device** setting should be populated with a list of connected audio devices. This is where dynamic options come in. The following guide shows the process for evaluating and populating the options for the **Resolution** setting.
+
+* Make a Blueprint of type `USFSettingOptionSource` and name it `ResolutionOptionSource`.
+* In this Blueprint, override the function `Get Available Options`. This function should return an array of selectable options as `SFSettingOption` structs, which contains a localized `Display Name` and an underlying `SFSettingValue`, which can be of any defined data type. For `ResolutionOptionSource`, we retrieve the list of supported fullscreen resolutions and construct setting options from them. The script can be seen below:
+
+[[ Screenshot of ResolutionOptionSource::GetAvailableOptions script. ]]
+
+* Additionally, override the function `Get Default Value`. This function should return the `SFSettingValue` that corresponds to the setting option that the user should revert to upon hitting **Revert to Default**. The `ResolutionOptionSource` example returns the largest available resolution as the default value.
+
+[[ Screenshot of ResolutionOptionSource::GetDefaultValue script. ]]
+
+* Remember to mention calling RefreshOptions and GetSettingOptions manually.
+
 ---
 
 ## 6 - Setting up Common UI and Enhanced Input for Navigation and Keybind Widget
