@@ -1,54 +1,63 @@
-This guide provides step-by-step instructions on how to set up a Blueprint-only project once you have installed the plugin.
+# Settings Framework Plugin: Setup Guide
 
-Blueprint-only demo project download: [link].
+This guide provides step-by-step instructions on how to set up a Blueprint-only project after installing the plugin. 
 
-## 1 - Defining Settings and Categories
+You can reference the [Blueprint-only demo project download](https://drive.google.com/file/d/156jxQw5HtAuOoWHPHGP7tj9XtrXvDl1e/view?usp=sharing) as you work. Download the Settings Framework plugin from Fab and copy its contents to `BPDemo/Plugins/SettingsFramework` to make the project functional. The plugin's contents include the following:
 
-* To define a setting, in the Content Browser, right-click > **Miscellaneous** > **Data Asset**. Select between `SF Bool Setting`, `SF Discrete Setting`, `SF Keybind Setting`, or `SF Scalar Setting` based on your needs. All settings have some common fields, such as Setting Tag, Display Name, Description, etc. while each setting type also has type-sepcific fields to customize them. For example, the `SF Scalar Setting` data asset allows you to set the min value, max value, and the step size. All fields have tooltips detailing their functionalities.
-* Notably, `SF Discrete Setting` (typically shown as a dropdown or a rotator button) allows for either static options defined at design time or dynamic options. 
-    * If `Use Dynamic Options` is False, you can specify values by filling the `Static Options` array.
-    * If `Use Dynamic Options` is True, you have to specify an Option Source class (runtime object for generating options) and a collection of `Determinant Setting Tags` (settings whose value changes would trigger an options refresh).
-    * Their underlying data type (specified by  `Value Wrapper Class` field) can be either Gameplay Tag (`SFSettingValue_Tag`), which works better for pre-defined static options, or strings (`SFSettingValue_String`), which works better for options generated at runtime.
-    * Further details about dynamic options are available in a section below.
+* Folders: `Binaries`, `Content`, `Resources`, `Source`.
+* Files: `SettingsFramework.uplugin`, `README.md`.
+
+---
+
+## 1. Defining Settings and Categories
+
+* To define a setting, navigate to the Content Browser, right-click, and select **Miscellaneous** > **Data Asset**. Choose between `SF Bool Setting`, `SF Discrete Setting`, `SF Keybind Setting`, or `SF Scalar Setting` based on your project's needs. 
+* All settings share common fields, such as Setting Tag, Display Name, and Description. 
+* Each setting type also includes type-specific fields for further customization. For example, the `SF Scalar Setting` data asset allows you to define the min value, max value, and step size. Tooltips are available on all fields to detail their functionalities.
+* The `SF Discrete Setting` (typically displayed as a dropdown or rotator button) supports either static options defined at design time or dynamic options:
+    * If `Use Dynamic Options` is set to **False**, specify your values by populating the `Static Options` array.
+    * If `Use Dynamic Options` is set to **True**, you must specify an Option Source class (a runtime object used to generate options) and a collection of `Determinant Setting Tags` (settings that, when changed, trigger an options refresh).
+    * The underlying data type for discrete settings is specified by the `Value Wrapper Class` field. Use Gameplay Tags (`SFSettingValue_Tag`) for pre-defined static options, or strings (`SFSettingValue_String`) for options generated at runtime.
+    * *Note: Further details about dynamic options are available in Section 6.*
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_discrete_setting.jpg" alt="A Discrete Setting with static options." style="display: block; margin: 0 auto;">
   <figcaption>A Discrete Setting with static options.</figcaption>
 </figure>
 
-* To define a category, In the Content Browser, right-click > **Miscellaneous** > **Data Asset** and select `SF Setting Category`. Similar to setting definitions, a category has an indentifying Category Tag, and a Display Name.
-* The `Category Type` field has 2 options: Branch or Leaf. 
-    * A Branch category contains other sub-categories. 
-    * A Leaf category contains setting definitions. You can specify Setting Groups, which are purely presentational groupings with a display name. You can also just add all your setting definitions in the `Settings` array if you do not want to use groups. In this case, setting entries are displayed all in the same group.
+* To define a category, right-click in the Content Browser, select **Miscellaneous** > **Data Asset**, and choose `SF Setting Category`. Similar to settings, a category requires an identifying Category Tag and a Display Name.
+* The `Category Type` field offers two options:
+    * **Branch:** A category that contains other sub-categories.
+    * **Leaf:** A category that contains setting definitions. Within a Leaf, you can specify Setting Groups, which are presentational groupings with display names. Alternatively, you can add all setting definitions directly to the `Settings` array to display them together in a single group.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_leaf_category.jpg" alt="A Leaf category with setting groups." style="display: block; margin: 0 auto;">
   <figcaption>A Leaf category with setting groups.</figcaption>
 </figure>
 
-* Lastly, to tie it all together, you need to specify a Settings Registry. In the Content Browser, right-click > **Miscellaneous** > **Data Asset** and select `SF Settings Registry`. The registry contains all your root categories. At initialization, the Settings Subsystem will traverse the categories down to the leaf level, gathering all setting definitions and load them asynchronously. In `WBP_SettingsScreen`, root categories are displayed as major tabs, and their subcategories are displayed as minor tabs.
-* In order for the Settings Subsystem to find your Registry, go to **Edit** > **Project Settings** > **Settings Framework** and assign your registry asset to the `Settings Registry` field.
+* To finalize your configuration, create a Settings Registry. In the Content Browser, right-click, select **Miscellaneous** > **Data Asset**, and choose `SF Settings Registry`. 
+* Add all root categories to this registry. At initialization, the Settings Subsystem traverses these categories down to the leaf level to gather and asynchronously load all setting definitions. In `WBP_SettingsScreen`, root categories appear as major tabs, and their subcategories appear as minor tabs.
+* To link the registry to the Settings Subsystem, navigate to **Edit** > **Project Settings** > **Settings Framework** and assign your new registry asset to the `Settings Registry` field. 
     * You may need to press **Set As Default** to prevent values from being reset between Editor sessions.
-* Now your setting definitions are all set.
 
 ---
 
-## 2 - Displaying the Settings Screen UI on Viewport
+## 2. Displaying the Settings Screen UI on the Viewport
 
-If you have an existing project using Common UI, you'll need to push `WBP_SettingsScreen` onto your `CommonActivatableWidgetStack` and activate it (either automatically by Common UI or through calling `ActivateWidget` manually). If you are starting with a blank projects, here are the steps to set it up:
+If you are using an existing project with Common UI, push `WBP_SettingsScreen` onto your `CommonActivatableWidgetStack` and activate it (either automatically via Common UI or by manually calling `ActivateWidget`). For a blank project, follow these steps:
 
-* Make a widget Blueprint of type `CommonUserWidget` and name it `WBP_HUD`. This will be added to our viewport and act as the main container for widgets in our UI.
-* In the `WBP_HUD`, add a `CommonActivatableWidgetStack`. Make it a variable and name it `Widget Stack`.
-* Make a Blueprint of type `PlayerController` and name it `BP_PlayerController`. On Begin Play, set up some script to add `WBP_HUD` to the viewport and push `WBP_SettingsScreen` to its widget stack. Normally you would push `WBP_SettingsScreen` when the player performs an action to bring up the settings screen, but for the sake of simplicity, we'll set it up right at Begin Play since it is the only screen in this project.
+* Create a widget Blueprint of type `CommonUserWidget` and name it `WBP_HUD`. This will be added to the viewport to act as the main UI container.
+* Open `WBP_HUD`, add a `CommonActivatableWidgetStack`, make it a variable, and name it `Widget Stack`.
+* Create a Blueprint of type `PlayerController` and name it `BP_PlayerController`. On the `Begin Play` event, configure a script to add `WBP_HUD` to the viewport and push `WBP_SettingsScreen` to its widget stack. *(Note: In a full game, this screen is usually pushed via player action, but it is executed on Begin Play here for simplicity)*.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_script_add_widget.jpg" alt="Adding WBP_HUD and WBP_SettingsScreen to Viewport in BP_PlayerController." style="display: block; margin: 0 auto;">
   <figcaption>Adding WBP_HUD and WBP_SettingsScreen to Viewport in BP_PlayerController.</figcaption>
 </figure>
 
-* Make a Blueprint of type `GameModeBase` and name it `BP_GameMode`. In its Details panel, assign our new `BP_PlayerController` as the new player controller class.
-* We can use this new game mode active by making it the game mode of a specific level, or the default gamemode of the project. Go to **Edit > Project > Maps & Modes** and set the `Default Gamemode` to our `BP_GameMode`.
-* For `WBP_SettingsScreen` to work correctly, we have to specify which component widgets it should use. Go to **Edit** > **Project Settings** > **Settings Framework** and assign the following:
+* Create a Blueprint of type `GameModeBase` and name it `BP_GameMode`. In the Details panel, assign `BP_PlayerController` as the player controller class.
+* Navigate to **Edit** > **Project Settings** > **Maps & Modes** and set the `Default Gamemode` to `BP_GameMode`.
+* To ensure `WBP_SettingsScreen` functions correctly, you must specify its component widgets. Go to **Edit** > **Project Settings** > **Settings Framework** and assign the following:
     * Root Tab Button Class: `WBP_MajorTabButton`
     * Branch Tab Button Class: `WBP_MinorTabButton`
     * Branch Tab Content Class: `WBP_CategoryTab_Branch`
@@ -60,13 +69,7 @@ If you have an existing project using Common UI, you'll need to push `WBP_Settin
         * `SFSettingDefinition_Key` -> `WBP_SettingEntry_Keybind`
         * `SFSettingDefinition_Scalar` -> `WBP_SettingEntry_Slider`
     * You may need to press **Set As Default** to prevent values from being reset between Editor sessions.
-
-<figure style="text-align: center;">
-  <img src="../../img/sbs_developer_settings.jpg" alt="Configured Developer Settings in Project Settings." style="display: block; margin: 0 auto;">
-  <figcaption>Configured Developer Settings in Project Settings.</figcaption>
-</figure>
-
-* Now when we start the game, we'll see the settings screen, with all settings populated.
+* Start the game to verify that the settings screen is visible and populated with your settings.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_runtime_populated.jpg" alt="Widget populated with settings." style="display: block; margin: 0 auto;">
@@ -75,27 +78,56 @@ If you have an existing project using Common UI, you'll need to push `WBP_Settin
 
 ---
 
-## 3 - Setting up Visibility and Editability Conditions
+## 3. Configuring Common UI and Enhanced Input
 
-Settings can be configured to update their states dynamically at runtime through the `Visibility Conditions` and `Editability Conditions` fields in their definition data assets. In this guide's example, **Texture Quality** should only be user-editable if **Graphics Preset** is set to Custom.
+Common UI and Enhanced Input must be configured to enable gamepad navigation and the keybind widget. 
 
-* Make a Blueprint of type `SFSettingCondition` and name it `GraphicsPresetCustom`.
-* In this Blueprint, override the function `IsConditionMet`. This function should return True if the condition is met, and False otherwise. The following is the example script for checking if **Graphics Preset** is set to Custom:
+* Navigate to **Edit** > **Project Settings** > **Game** > **Common Input Settings** and set `Enable Enhanced Input Support` to **True**. Restart the Editor when prompted.
+* In the Content Browser, right-click and select **Input** > **Input Action** to create an Input Action Blueprint named `IA_UI_Confirm`. Create a second one named `IA_UI_Back`. These act as the primary yes/no actions.
+* Create a Blueprint of type `CommonUIInputData` named `BP_InputData`. In its Details panel, assign `IA_UI_Confirm` to the `Enhanced Input Click Action` field and `IA_UI_Back` to the `Enhanced Input Back Action` field.
+* Return to **Edit** > **Project Settings** > **Game** > **Common Input Settings** and assign `BP_InputData` to the `Input Data` field.
+* *(Optional)* On the same screen, set up controller data assets under **Platform Input** > **Windows** (or target platform) > **Default** > **Controller Data**. This assigns input keys to icons, allowing Common UI to display button prompts.
+* Go to **Edit** > **Project Settings** > **Engine** > **General Settings** and change the `Game Viewport Client Class` to `CommonGameViewportClient`.
+* In the Content Browser, right-click, select **Input** > **Input Mapping Context**, and name it `IMC_DefaultUI`. 
+* Open the IMC and add your yes/no actions (`IA_UI_Confirm`, `IA_UI_Back`) to the **Default Key Mappings** > **Mappings**. Also add the input actions included with the plugin (`IA_UI_PrevTab_Major`, `IA_UI_NextTab_Major`, `IA_UI_PrevTab_Minor`, `IA_UI_NextTab_Minor`, `IA_UI_Save`, `IA_UI_Revert`, `IA_UI_ResetToDefault`) and assign your preferred input keys.
+
+<figure style="text-align: center;">
+  <img src="../../img/sbs_imc.jpg" alt="Input Mapping Context populated." style="display: block; margin: 0 auto;">
+  <figcaption>Input Mapping Context populated.</figcaption>
+</figure>
+
+* Navigate to **Edit** > **Project Settings** > **Engine** > **Enhanced Input** and add `IMC_DefaultUI` to the `Default Mapping Contexts`. *(Note: In a full game, IMCs are typically activated/deactivated at runtime depending on context, but it is added as the only Default Mapping Context here for simplicity)*
+* Start the game. Input keys will now successfully perform actions, and UI action prompts will appear if controller data assets were configured.
+
+<figure style="text-align: center;">
+  <img src="../../img/sbs_runtime_prompts.jpg" alt="Settings screen with functional navigation." style="display: block; margin: 0 auto;">
+  <figcaption>Settings screen with functional navigation.</figcaption>
+</figure>
+
+---
+
+## 4. Setting up Visibility and Editability Conditions
+
+Setting widgets can update their states dynamically during runtime using the `Visibility Conditions` and `Editability Conditions` fields within their data assets. In this example, the **Texture Quality** setting is only editable when the **Graphics Preset** is set to "Custom".
+
+* Create a Blueprint of type `SFSettingCondition` and name it `GraphicsPresetCustom`.
+* Override the `IsConditionMet` function. Script this function to return **True** if the Graphics Preset is Custom, and **False** otherwise. 
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_setting_condition.jpg" alt="Condition check for Graphics Preset being set to Custom." style="display: block; margin: 0 auto;">
   <figcaption>Condition check for Graphics Preset being set to Custom.</figcaption>
 </figure>
 
-* After saving this condition Blueprint, we assign it to the appropriate setting definition data asset (`EA_TextureQuality` for the **Texture Quality** setting).
-* Add an element to the `Editability Conditions` field, and assign the newly created `GraphicsPresetCustom` Blueprint to it. This is the collection of conditions evaluated to determine a setting's editability. The setting is disabled if any condition in the collection returns False. Similarly, the setting is hidden if any condition in the `Visibility Conditions` collection returns False.
+* Save the condition Blueprint and assign it to the `EA_TextureQuality` setting definition data asset.
+* Add a new element to the `Editability Conditions` field and assign the `GraphicsPresetCustom` Blueprint. 
+* *Note: A setting is disabled if any condition in its `Editability Conditions` returns False. Similarly, a setting is hidden if any condition in its `Visibility Conditions` collection returns False.*
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_setting_condition_assigned.jpg" alt="The setting condition assigned in a setting data asset." style="display: block; margin: 0 auto;">
   <figcaption>The setting condition assigned in a setting data asset.</figcaption>
 </figure>
 
-* Now when we start the game, we'll see that **Texture Quality** is disabled when **Graphics Preset** is set to Low/Medium/High and only becomes customizable if it is set to Custom.
+* Start the game. **Texture Quality** will remain disabled on Low, Medium, and High presets, and will only unlock when the preset is changed to Custom.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_setting_condition_runtime.jpg" alt="Texture Quality is disabled when Graphics Preset is set to High." style="display: block; margin: 0 auto;">
@@ -104,20 +136,19 @@ Settings can be configured to update their states dynamically at runtime through
 
 ---
 
-## 4 - Setting up Reactive Settings
+## 5. Configuring Reactive Settings
 
-In the previous section, we successfully disable (or hide) the **Texture Quality** setting when **Graphics Preset** is not set to Custom. However, when **Graphics Preset** is set to values such as Low/Medium/High, we also want **Texture Quality** to update to match. This can be done through the Settings Subsystem's API functions.
+Building on the previous section, you may want **Texture Quality** to automatically update its value to match the chosen **Graphics Preset** when set to Low, Medium, or High. This relies on the Settings Subsystem's API. 
 
-This should be implemented in the Blueprint that controls the specific setting's logic. The following steps were implemented in the Player Controller Blueprint for simplicity.
-
-* At `Begin Play` or initialization, bind to the Settings Subsystem's `On Setting Value Changed` with a handler function. Optionally, call the handler function directly with the value of the determinant setting (**Graphics Preset** in this case)'s value to make sure the logic runs with its initial value.
+* Open the Blueprint that controls your setting's logic (in this case, the Player Controller).
+* On the `Begin Play` event, bind a handler function to the Settings Subsystem's `On Setting Value Changed` delegate. You can immediately call the handler directly with the determinant setting's value to ensure logic executes on initialization.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_reactive_beginplay.jpg" alt="Binding to Setting Value Changed at Begin Play." style="display: block; margin: 0 auto;">
   <figcaption>Binding to Setting Value Changed at Begin Play.</figcaption>
 </figure>
 
-* In the handler function, set up a script that updates **Texture Quality** according to **Graphics Preset**'s value if it is not set to Custom. Save the Blueprint. The example handler logic is shown in the following screenshot:
+* Inside the handler function, create a script that forces the **Texture Quality** value to match the **Graphics Preset** value (provided the preset is not Custom). 
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_reactive_handler.jpg" alt="Handler function logic to set reactive settings." style="display: block; margin: 0 auto;">
@@ -129,7 +160,7 @@ This should be implemented in the Blueprint that controls the specific setting's
   <figcaption>Helper function to check if Graphics Preset is set to Custom.</figcaption>
 </figure>
 
-* Now when we start the game, we'll see that **Texture Quality** is updated according to **Graphics Preset**'s value when it is set to Low/Medium/High.
+* Start the game. **Texture Quality** will now automatically mirror the **Graphics Preset** when it is set to Low, Medium, or High.
 
 <figure style="text-align: center;">
   <img src="../../img/sbs_reactive_runtime.jpg" alt="Texture Quality is set according to Graphics Preset's value." style="display: block; margin: 0 auto;">
@@ -138,44 +169,30 @@ This should be implemented in the Blueprint that controls the specific setting's
 
 ---
 
-## 5 - Setting up Runtime Dynamic Options
+## 6. Configuring Runtime Dynamic Options
 
-It is not always possible to specify selectable options at design time for discrete settings. For example, the **Resolution** setting should be populated with values supported by the monitor, and the **Audio Output Device** setting should be populated with a list of connected audio devices. This is where dynamic options come in. The following guide shows the process for evaluating and populating the options for the **Resolution** setting.
+Static options are not always viable for discrete settings. For instance, a **Resolution** setting must query the monitor's supported formats, and an **Audio Output Device** setting must list connected hardware. The following steps show the process for evaluating and populating the options for the **Resolution** setting.
 
-* Make a Blueprint of type `USFSettingOptionSource` and name it `ResolutionOptionSource`.
-* In this Blueprint, override the function `Get Available Options`. This function should return an array of selectable options as `SFSettingOption` structs, which contains a localized `Display Name` and an underlying `SFSettingValue`, which can be of any defined data type. For `ResolutionOptionSource`, we retrieve the list of supported fullscreen resolutions and construct setting options from them. The script can be seen below:
-
-[[ Screenshot of ResolutionOptionSource::GetAvailableOptions script. ]]
-
-* Additionally, override the function `Get Default Value`. This function should return the `SFSettingValue` that corresponds to the setting option that the user should revert to upon hitting **Revert to Default**. The `ResolutionOptionSource` example returns the largest available resolution as the default value.
-
-[[ Screenshot of ResolutionOptionSource::GetDefaultValue script. ]]
-
-* Remember to mention calling RefreshOptions and GetSettingOptions manually.
-
----
-
-## 6 - Setting up Common UI and Enhanced Input for Navigation and Keybind Widget
-
-Common UI with Enhanced Input must be set up for the keybind widget and the built-in gamepad navigation to work. Here are the steps I took to set them up:
-
-* Go to **Edit > Project Settings > Game > Common Input Settings** and set `Enable Enhanced Input Support` to True. Restart the Editor when prompted.
-* In the Content Browser, right-click > **Input** > **Input Action** to make an Input Action Blueprint and name it `IA_UI_Confirm`. Make another one and name it `IA_UI_Back`. These are our basic yes/no actions.
-* Make a Blueprint of type `CommonUIInputData` and name it `BP_InputData`. In its Details panel, set `Enhanced Input Click Action` to the new `IA_UI_Confirm` and `Enhanced Input Back Action` to `IA_UI_Back`.
-* Go to **Edit > Project Settings > Game > Common Input Settings** and set `Input Data` to the new `BP_InputData`.
-* Optionally, on the same screen, you can set up controller data assets in **Platform Input > Windows** (or your platform of choice) **> Default > Controller Data**. Controller Data helps you assign input key values to icons, which Common UI will use to display prompts for input action on the UI.
-* Go to **Edit > Project Settings > Engine > General Settings** and set `Game Viewport Client Class` to `CommonGameViewportClient`.
-* In the Content Browser, right-click > **Input** > **Input Mapping Context** to make an Input Mapping Context (IMC) and name it `IMC_DefaultUI`. In this Blueprint, add to the **Default Key Mappings** > **Mappings** the yes/no input actions from before (`IA_UI_Confirm` and `IA_UI_Back`) as well as the input actions that came with the plugin (`IA_UI_PrevTab_Major`, `IA_UI_NextTab_Major`, `IA_UI_PrevTab_Minor`, `IA_UI_NextTab_Minor`, `IA_UI_Save`, `IA_UI_Revert`, `IA_UI_ResetToDefault`). Assign your desired input keys to them.
+* Create a Blueprint of type `USFSettingOptionSource` and name it `ResolutionOptionSource`.
+* Override the `Get Available Options` function. This function should return an array of `SFSettingOption` structs representing selectable options (containing a localized `Display Name` and an underlying `SFSettingValue`). The example script below retrieves supported fullscreen resolutions:
 
 <figure style="text-align: center;">
-  <img src="../../img/sbs_imc.jpg" alt="Input Mapping Context populated." style="display: block; margin: 0 auto;">
-  <figcaption>Input Mapping Context populated.</figcaption>
+  <img src="../../img/sbs_dynamic_getavailableoptions.jpg" alt="The script for ResolutionOptionSource::GetAvailableOptions." style="display: block; margin: 0 auto;">
+  <figcaption>The script for ResolutionOptionSource::GetAvailableOptions.</figcaption>
 </figure>
 
-* When using Enhanced Input, we usually want to activate/deactivate IMCs at runtime (for example, switching between gameplay and UI mappings). However, in this project, we only have the UI screen, so we'll make it the default IMC. Go to **Edit > Project Settings > Engine > Enhanced Input** and add the new `IMC_DefaultUI` to `Default Mapping Contexts`.
-* Now when we start the game, our assigned input keys should work to perform actions and action prompts should appear if controller data assets are set up.
+* Override the `Get Default Value` function. This determines what `SFSettingValue` the setting reverts to when the user selects **Revert to Default**. For resolutions, this should generally return the largest available option.
 
 <figure style="text-align: center;">
-  <img src="../../img/sbs_runtime_prompts.jpg" alt="Settings screen with functional navigation." style="display: block; margin: 0 auto;">
-  <figcaption>Settings screen with functional navigation.</figcaption>
+  <img src="../../img/sbs_dynamic_getdefaultvalue.jpg" alt="The script for ResolutionOptionSource::GetDefaultValue." style="display: block; margin: 0 auto;">
+  <figcaption>The script for ResolutionOptionSource::GetDefaultValue.</figcaption>
+</figure>
+
+* Open the Resolution setting definition asset and assign the `ResolutionOptionSource` Blueprint to the `Option Source` field. During initialization, the subsystem will now use this class to evaluate available options.
+* You can also assign Gameplay Tags to the `Determinant Setting Tags` field. When settings corresponding to these tags are altered, a dynamic option refresh is triggered by the `WBP_SettingEntry_Rotator` widget.
+* To trigger refreshes manually or via custom logic, call `Refresh Options` from the rotator entry widget. Alternatively, retrieve the setting definition asset via Gameplay Tag, cast it to `SFSettingDefinition_Discrete`, and call `Get Setting Options`. This returns a freshly evaluated array of selectable options.
+
+<figure style="text-align: center;">
+  <img src="../../img/sbs_dynamic_getsettingoptions.jpg" alt="Evaluate and get dynamic options at any time using the setting definition." style="display: block; margin: 0 auto;">
+  <figcaption>Evaluate and get dynamic options at any time using the setting definition.</figcaption>
 </figure>
