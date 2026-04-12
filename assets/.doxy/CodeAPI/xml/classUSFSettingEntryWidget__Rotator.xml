@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingEntryWidget__Rotator" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingEntryWidget_Rotator</compoundname>
+    <basecompoundref refid="classUSFSettingEntryWidget" prot="public" virt="non-virtual">USFSettingEntryWidget</basecompoundref>
+    <includes refid="SFSettingEntryWidget__Rotator_8h" local="yes">UI/SettingEntries/SFSettingEntryWidget_Rotator.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingEntryWidget__Rotator_1ad14791ca7cd7ae9a8f7e35cf93b34817" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCommonRotator &gt;</type>
+        <definition>TObjectPtr&lt;class UCommonRotator&gt; USFSettingEntryWidget_Rotator::RotatorWidget</definition>
+        <argsstring></argsstring>
+        <name>RotatorWidget</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::RotatorWidget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The rotator widget representing the discrete setting value in the UI. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="56" column="12" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingEntryWidget__Rotator_1a49787e63c1e86a63cf8d9e6b253a6236" prot="protected" static="no" mutable="no">
+        <type>TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt;</type>
+        <definition>TArray&lt;struct FSFSettingOption&gt; USFSettingEntryWidget_Rotator::Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The transient list of options currently displayed by the rotator widget. This is to keep track of the full <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> data structs since the rotator widget only stores the display text and index int. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="63" column="8" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1a3ff5063a7678ebefc7940d01e1a01805" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget_Rotator::RefreshOptions</definition>
+        <argsstring>()</argsstring>
+        <name>RefreshOptions</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::RefreshOptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Re-evaluate and repopulate the available options. Intended for discrete settings with dynamic options at runtime. <simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="27" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1a1d104a625b18ba532ec5d945a97dd78c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget_Rotator::InitializeSettingEntry</definition>
+        <argsstring>(const class USFSettingDefinition *InSettingDefinition) override</argsstring>
+        <name>InitializeSettingEntry</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::InitializeSettingEntry</qualifiedname>
+        <reimplements refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2">InitializeSettingEntry</reimplements>
+        <param>
+          <type>const class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+          <declname>InSettingDefinition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Initializes the data and display of this setting entry widget based on the assigned setting definition asset. Subclasses can override this function to hook up any setting type-specific logic or display elements, but should call the parent implementation to ensure the base functionality is executed (e.g., binding to setting value change events from the subsystem). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InSettingDefinition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting definition asset represented by this widget.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="33" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1a57a629efdfeb40a46f5a043d027f41fe" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget_Rotator::UpdateVisualValue_Implementation</definition>
+        <argsstring>(const class USFSettingValue *NewValue) override</argsstring>
+        <name>UpdateVisualValue_Implementation</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::UpdateVisualValue_Implementation</qualifiedname>
+        <reimplements refid="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33">UpdateVisualValue_Implementation</reimplements>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Native implementation of UpdateVisualValue, can be optionally overridden by C++ subclasses to handle setting value change events from the subsystem.</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="38" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1a62ccc7ea71f980af1a87eafbb4fa6d56" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget_Rotator::CheckForDeterminantSettings</definition>
+        <argsstring>(const FGameplayTag &amp;ChangedSettingTag, class USFSettingValue *NewValue)</argsstring>
+        <name>CheckForDeterminantSettings</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::CheckForDeterminantSettings</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>ChangedSettingTag</declname>
+        </param>
+        <param>
+          <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Intended for discrete settings with dynamic options at runtime. Refresh the available options when there is a value change from a determinant setting (specified in this discrete setting&apos;s definition asset). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="49" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1ac68bf1f17bccd831095513cc2b208b6d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingEntryWidget_Rotator::PopulateOptions</definition>
+        <argsstring>(const TArray&lt; struct FSFSettingOption &gt; &amp;SettingOptions)</argsstring>
+        <name>PopulateOptions</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::PopulateOptions</qualifiedname>
+        <param>
+          <type>const TArray&lt; struct <ref refid="structFSFSettingOption" kindref="compound">FSFSettingOption</ref> &gt; &amp;</type>
+          <declname>SettingOptions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Populate the rotator widget with the provided list of setting options. This will also update the internal Options array to keep track of the full data for each option. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingOptions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of setting options to populate the rotator widget with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="71" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Rotator_1a346038a00edcce909c03c1049b643779" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingEntryWidget_Rotator::SelectOptionByValue</definition>
+        <argsstring>(const class USFSettingValue *Value)</argsstring>
+        <name>SelectOptionByValue</name>
+        <qualifiedname>USFSettingEntryWidget_Rotator::SelectOptionByValue</qualifiedname>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the selected option in the rotator widget based on the provided setting value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting value to match against the available options to select the appropriate one in the rotator widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if a matching option was found and selected, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="78" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for a setting entry widget for a discrete setting, represented as a rotator in the UI. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for a setting entry widget for a discrete setting, represented as a rotator in the UI.</para>
+<para>The widget blueprint implementing this class should be assigned as a value to the SettingEntryWidgetClasses map with the discrete setting definition class (<ref refid="classUSFSettingDefinition__Discrete" kindref="compound">USFSettingDefinition_Discrete</ref>) as the key in the Developer Settings at Project Settings &gt; Plugins &gt; SettingsFramework. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="2">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget_Rotator</label>
+        <link refid="classUSFSettingEntryWidget__Rotator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="2">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget_Rotator</label>
+        <link refid="classUSFSettingEntryWidget__Rotator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" line="17" column="1" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Rotator.h" bodystart="18" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>BP_InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a62ccc7ea71f980af1a87eafbb4fa6d56" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>CheckForDeterminantSettings</name></member>
+      <member refid="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>GetSettingDefinition</name></member>
+      <member refid="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>GetSettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a1d104a625b18ba532ec5d945a97dd78c" prot="protected" virt="virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>OnSettingFocused</name></member>
+      <member refid="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>OnUserChangedValue</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a49787e63c1e86a63cf8d9e6b253a6236" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>Options</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1ac68bf1f17bccd831095513cc2b208b6d" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>PopulateOptions</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a3ff5063a7678ebefc7940d01e1a01805" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>RefreshOptions</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1ad14791ca7cd7ae9a8f7e35cf93b34817" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>RotatorWidget</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a346038a00edcce909c03c1049b643779" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>SelectOptionByValue</name></member>
+      <member refid="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>SettingLabel</name></member>
+      <member refid="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>UpdateVisualValue</name></member>
+      <member refid="classUSFSettingEntryWidget__Rotator_1a57a629efdfeb40a46f5a043d027f41fe" prot="protected" virt="virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>UpdateVisualValue_Implementation</name></member>
+      <member refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Rotator</scope><name>UpdateWidgetState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

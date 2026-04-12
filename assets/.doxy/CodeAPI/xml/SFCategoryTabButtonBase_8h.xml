@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFCategoryTabButtonBase_8h" kind="file" language="C++">
+    <compoundname>SFCategoryTabButtonBase.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">CommonButtonBase.h</includes>
+    <includes local="yes">SFCategoryTabButtonBase.generated.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h</label>
+        <link refid="SFCategoryTabButtonBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CommonButtonBase.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="4">
+        <label>SFCategoryTabButtonBase.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFCategoryTabButtonBase" prot="public">USFCategoryTabButtonBase</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonButtonBase.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFCategoryTabButtonBase.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType,<sp/>Blueprintable)</highlight></codeline>
+<codeline lineno="17" refid="classUSFCategoryTabButtonBase" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFCategoryTabButtonBase" kindref="compound">USFCategoryTabButtonBase</ref><sp/>:<sp/>public<sp/>UCommonButtonBase</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintNativeEvent,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFCategoryTabButtonBase&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28" refid="classUSFCategoryTabButtonBase_1a4591e90ef3c6d9ee31b86c7071e6ac4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>SetCategoryData(const<sp/>class<sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*<sp/>InCategory);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classUSFCategoryTabButtonBase_1ad4634d245f2e96fdd69552ab84d1ede6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetCategoryData_Implementation(const<sp/>class<sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*<sp/>InCategory)<sp/>{};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h"/>
+  </compounddef>
+</doxygen>

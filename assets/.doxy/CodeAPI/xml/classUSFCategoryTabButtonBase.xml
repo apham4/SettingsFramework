@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFCategoryTabButtonBase" kind="class" language="C++" prot="public">
+    <compoundname>USFCategoryTabButtonBase</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UCommonButtonBase</basecompoundref>
+    <includes refid="SFCategoryTabButtonBase_8h" local="yes">UI/Components/SFCategoryTabButtonBase.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFCategoryTabButtonBase_1a4591e90ef3c6d9ee31b86c7071e6ac4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFCategoryTabButtonBase::SetCategoryData</definition>
+        <argsstring>(const class USFSettingCategory *InCategory)</argsstring>
+        <name>SetCategoryData</name>
+        <qualifiedname>USFCategoryTabButtonBase::SetCategoryData</qualifiedname>
+        <param>
+          <type>const class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> *</type>
+          <declname>InCategory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the tab button&apos;s display provided the setting category it represents. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InCategory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting category represented by this tab button. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintNativeEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h" line="28" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFCategoryTabButtonBase_1ad4634d245f2e96fdd69552ab84d1ede6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFCategoryTabButtonBase::SetCategoryData_Implementation</definition>
+        <argsstring>(const class USFSettingCategory *InCategory)</argsstring>
+        <name>SetCategoryData_Implementation</name>
+        <qualifiedname>USFCategoryTabButtonBase::SetCategoryData_Implementation</qualifiedname>
+        <param>
+          <type>const class <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> *</type>
+          <declname>InCategory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Native implementation of SetCategoryData. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h" line="33" column="14" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base widget class for tab buttons used in the CategoryTabList of <ref refid="classUSFSettingsScreen" kindref="compound">USFSettingsScreen</ref> and <ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Base widget class for tab buttons used in the CategoryTabList of <ref refid="classUSFSettingsScreen" kindref="compound">USFSettingsScreen</ref> and <ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref>. The widget blueprints implementing this class should be assigned to the RootTabButtonClass and BranchTabButtonClass in the Developer Settings at Project Settings &gt; Plugins &gt; SettingsFramework. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UCommonButtonBase</label>
+      </node>
+      <node id="1">
+        <label>USFCategoryTabButtonBase</label>
+        <link refid="classUSFCategoryTabButtonBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UCommonButtonBase</label>
+      </node>
+      <node id="1">
+        <label>USFCategoryTabButtonBase</label>
+        <link refid="classUSFCategoryTabButtonBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h" line="17" column="1" bodyfile="Source/SettingsFramework/Public/UI/Components/SFCategoryTabButtonBase.h" bodystart="18" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classUSFCategoryTabButtonBase_1a4591e90ef3c6d9ee31b86c7071e6ac4b" prot="public" virt="non-virtual"><scope>USFCategoryTabButtonBase</scope><name>SetCategoryData</name></member>
+      <member refid="classUSFCategoryTabButtonBase_1ad4634d245f2e96fdd69552ab84d1ede6" prot="public" virt="virtual"><scope>USFCategoryTabButtonBase</scope><name>SetCategoryData_Implementation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

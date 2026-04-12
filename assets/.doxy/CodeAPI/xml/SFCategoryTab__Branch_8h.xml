@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFCategoryTab__Branch_8h" kind="file" language="C++">
+    <compoundname>SFCategoryTab_Branch.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">CommonActivatableWidget.h</includes>
+    <includes refid="SFCategoryTabBase_8h" local="yes">UI/Components/SFCategoryTabBase.h</includes>
+    <includes local="yes">SFCategoryTab_Branch.generated.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Core/SFCoreTypes.h</label>
+        <link refid="SFCoreTypes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>UI/Components/SFCategoryTabBase.h</label>
+        <link refid="SFCategoryTabBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h</label>
+        <link refid="SFCategoryTab__Branch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CommonActivatableWidget.h</label>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="6">
+        <label>Framework/Commands/InputChord.h</label>
+      </node>
+      <node id="7">
+        <label>InputCoreTypes.h</label>
+      </node>
+      <node id="9">
+        <label>SFCategoryTabBase.generated.h</label>
+      </node>
+      <node id="10">
+        <label>SFCategoryTab_Branch.generated.h</label>
+      </node>
+      <node id="8">
+        <label>SFCoreTypes.generated.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFCategoryTab__Branch" prot="public">USFCategoryTab_Branch</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonActivatableWidget.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SFCategoryTabBase_8h" kindref="compound">UI/Components/SFCategoryTabBase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFCategoryTab_Branch.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">UCLASS(Abstract,<sp/>BlueprintType,<sp/>Blueprintable)</highlight></codeline>
+<codeline lineno="20" refid="classUSFCategoryTab__Branch" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFCategoryTab__Branch" kindref="compound">USFCategoryTab_Branch</ref><sp/>:<sp/>public<sp/><ref refid="classUSFCategoryTabBase" kindref="compound">USFCategoryTabBase</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFCategoryTab__Branch_1a0403ce94a1c743f782ee75601537c6d7" kindref="member">InitializeCategoryDisplay</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NativeOnInitialized()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>HandleSwitcherActiveIndexChanged(UWidget*<sp/>ContentWidget,<sp/>int32<sp/>Index);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleSubCategorySettingFocused(const<sp/>struct<sp/>FGameplayTag&amp;<sp/>SettingTag);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bInitialized;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Tab<sp/>Navigation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFCategoryTab_Branch|Tab<sp/>Navigation&quot;</highlight><highlight class="normal">,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="52" refid="classUSFCategoryTab__Branch_1a4b3a5d9a62f779ebaa0c1094b4092215" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonTabListWidgetBase&gt;<sp/>SubCategoryTabList;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintReadOnly,<sp/>Category<sp/>=<sp/>&quot;SFCategoryTab_Branch|Tab<sp/>Navigation&quot;,<sp/>meta<sp/>=<sp/>(BindWidget))</highlight></codeline>
+<codeline lineno="59" refid="classUSFCategoryTab__Branch_1ad6e73fde06f5ef91ef09294a9904a381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/>UCommonActivatableWidgetSwitcher&gt;<sp/>TabContentSwitcher;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>CommonUI<sp/>Navigation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>UWidget*<sp/>NativeGetDesiredFocusTarget()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFCategoryTab_Branch.h"/>
+  </compounddef>
+</doxygen>

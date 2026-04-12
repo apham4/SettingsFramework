@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2040f41784c4464894ecea1e6ef2879a" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/SaveGame</compoundname>
+    <innerfile refid="SFSaveGame_8h">SFSaveGame.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/SaveGame/"/>
+  </compounddef>
+</doxygen>

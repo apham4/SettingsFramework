@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_c0d111a2beff4c46a32685df6daadb0f" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/UI</compoundname>
+    <innerdir refid="dir_d359c2365a038846f780cd493464dc51">Source/SettingsFramework/Public/UI/Components</innerdir>
+    <innerdir refid="dir_ee82e1fcdef3b55cd27efecd9a182f3f">Source/SettingsFramework/Public/UI/SettingEntries</innerdir>
+    <innerfile refid="SFSettingsScreen_8h">SFSettingsScreen.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/UI/"/>
+  </compounddef>
+</doxygen>

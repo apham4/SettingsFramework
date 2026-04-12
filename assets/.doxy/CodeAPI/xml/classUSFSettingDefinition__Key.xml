@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingDefinition__Key" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingDefinition_Key</compoundname>
+    <basecompoundref refid="classUSFSettingDefinition" prot="public" virt="non-virtual">USFSettingDefinition</basecompoundref>
+    <includes refid="SFSettingDefinition_8h" local="yes">Definitions/SFSettingDefinition.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingDefinition__Key_1affac6aa1292e2a6d89772708502f6759" prot="public" static="no" mutable="no">
+        <type>FName</type>
+        <definition>FName USFSettingDefinition_Key::KBMPrimaryName</definition>
+        <argsstring></argsstring>
+        <name>KBMPrimaryName</name>
+        <qualifiedname>USFSettingDefinition_Key::KBMPrimaryName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The identifier for the primary KBM keybind in the Input Mapping Context. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="246" column="7" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Key_1ae26d25014ad149771a647e1ab0cfec2c" prot="public" static="no" mutable="no">
+        <type>FName</type>
+        <definition>FName USFSettingDefinition_Key::KBMSecondaryName</definition>
+        <argsstring></argsstring>
+        <name>KBMSecondaryName</name>
+        <qualifiedname>USFSettingDefinition_Key::KBMSecondaryName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The identifier for the secondary KBM keybind in the Input Mapping Context. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="253" column="7" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Key_1a6437819a787f4ec1e7743e7ac45e670e" prot="public" static="no" mutable="no">
+        <type>FName</type>
+        <definition>FName USFSettingDefinition_Key::GamepadName</definition>
+        <argsstring></argsstring>
+        <name>GamepadName</name>
+        <qualifiedname>USFSettingDefinition_Key::GamepadName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The identifier for the gamepad keybind in the Input Mapping Context. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> <computeroutput>BlueprintReadOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="260" column="7" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingDefinition__Key_1acb2c4278b74e572ab71a07b4fa640a9e" prot="public" static="no" mutable="no">
+        <type>FGameplayTagContainer</type>
+        <definition>FGameplayTagContainer USFSettingDefinition_Key::CollisionChannels</definition>
+        <argsstring></argsstring>
+        <name>CollisionChannels</name>
+        <qualifiedname>USFSettingDefinition_Key::CollisionChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channels identified by Gameplay Tags for collision checking. Only settings that share at least one channel will trigger collision warnings. Useful for categorizing keybinds into different groups such as &quot;Global&quot;, &quot;Combat&quot;, &quot;UI&quot;, etc., so that only keybinds in the same group will trigger collision warnings. <simplesect kind="note"><para><computeroutput>EditDefaultsOnly</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="268" column="23" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingDefinition__Key_1a5e12788d85fa2b170f50c9853a76100b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>TSubclassOf&lt; <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt;</type>
+        <definition>virtual TSubclassOf&lt; USFSettingValue &gt; USFSettingDefinition_Key::GetValueClass</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetValueClass</name>
+        <qualifiedname>USFSettingDefinition_Key::GetValueClass</qualifiedname>
+        <reimplements refid="classUSFSettingDefinition_1a27eded3a13d9793791571cd6124dcee4">GetValueClass</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Get the USFSettingValue-derived class of the value this setting uses. <simplesect kind="return"><para>The USFSettingValue-derived class of the value this setting uses.</para>
+</simplesect>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="274" column="21" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="274" bodyend="277"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Setting definition for setting keybind for an action. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Setting definition for setting keybind for an action.</para>
+<para>Blueprint display name: SF Keybind Setting. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Key</label>
+        <link refid="classUSFSettingDefinition__Key"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UDataAsset</label>
+      </node>
+      <node id="2">
+        <label>USFSettingDefinition</label>
+        <link refid="classUSFSettingDefinition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingDefinition_Key</label>
+        <link refid="classUSFSettingDefinition__Key"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" line="236" column="1" bodyfile="Source/SettingsFramework/Public/Definitions/SFSettingDefinition.h" bodystart="237" bodyend="278"/>
+    <listofallmembers>
+      <member refid="classUSFSettingDefinition_1a5c5236bbd304e72f9157624bb2616ff1" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>bRevertToDefaultOnDisable</name></member>
+      <member refid="classUSFSettingDefinition__Key_1acb2c4278b74e572ab71a07b4fa640a9e" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>CollisionChannels</name></member>
+      <member refid="classUSFSettingDefinition_1aabb9eff3fef5f1c3f1e6f3c4a2411324" prot="protected" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>DefaultValue</name></member>
+      <member refid="classUSFSettingDefinition_1a06797d42e05a2fd775cf2de7199d0504" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>Description</name></member>
+      <member refid="classUSFSettingDefinition_1aaee9e00677afd6076b316cf345b5b799" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>DisplayName</name></member>
+      <member refid="classUSFSettingDefinition_1ab80502499ecc8ea71304cc5a85096241" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>EditabilityConditions</name></member>
+      <member refid="classUSFSettingDefinition__Key_1a6437819a787f4ec1e7743e7ac45e670e" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>GamepadName</name></member>
+      <member refid="classUSFSettingDefinition_1a00ead9833c334c437cd2c3c842e77d97" prot="public" virt="virtual"><scope>USFSettingDefinition_Key</scope><name>GetDefaultValue</name></member>
+      <member refid="classUSFSettingDefinition__Key_1a5e12788d85fa2b170f50c9853a76100b" prot="public" virt="virtual"><scope>USFSettingDefinition_Key</scope><name>GetValueClass</name></member>
+      <member refid="classUSFSettingDefinition__Key_1affac6aa1292e2a6d89772708502f6759" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>KBMPrimaryName</name></member>
+      <member refid="classUSFSettingDefinition__Key_1ae26d25014ad149771a647e1ab0cfec2c" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>KBMSecondaryName</name></member>
+      <member refid="classUSFSettingDefinition_1ada8935284ed7e3d9bdafb9afbba02f26" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingDefinition_1aeabc1ee0b6502a4b06de8e0b952d901b" prot="public" virt="non-virtual"><scope>USFSettingDefinition_Key</scope><name>VisibilityConditions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

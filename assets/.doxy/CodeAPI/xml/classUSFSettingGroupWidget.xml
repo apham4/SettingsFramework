@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingGroupWidget" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingGroupWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UCommonUserWidget</basecompoundref>
+    <includes refid="SFSettingGroupWidget_8h" local="yes">UI/Components/SFSettingGroupWidget.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingGroupWidget_1ad807eb28084455aacf0fae3a6d2348f1" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UPanelWidget &gt;</type>
+        <definition>TObjectPtr&lt;class UPanelWidget&gt; USFSettingGroupWidget::SettingEntryContainer</definition>
+        <argsstring></argsstring>
+        <name>SettingEntryContainer</name>
+        <qualifiedname>USFSettingGroupWidget::SettingEntryContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The container widget for setting entries within this group. Setting entry widgets are added to this container when initializing the display of a leaf category tab. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="57" column="12" bodyfile="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingGroupWidget_1a3c40867ee59e7e0fa5fb3ccdc13bae1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingGroupWidget::DisplaySettingGroupInfo</definition>
+        <argsstring>(const struct FSFSettingGroup &amp;SettingGroup)</argsstring>
+        <name>DisplaySettingGroupInfo</name>
+        <qualifiedname>USFSettingGroupWidget::DisplaySettingGroupInfo</qualifiedname>
+        <param>
+          <type>const struct <ref refid="structFSFSettingGroup" kindref="compound">FSFSettingGroup</ref> &amp;</type>
+          <declname>SettingGroup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display the metadata of the associated setting group. If the given struct is empty, clear the display. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The struct containing the metadata of the associated setting group. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintImplementableEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingGroupWidget_1a0f9c49900ee7b470b1d7ffa9e7879d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingGroupWidget::AddSettingEntry</definition>
+        <argsstring>(class USFSettingEntryWidget *EntryWidget)</argsstring>
+        <name>AddSettingEntry</name>
+        <qualifiedname>USFSettingGroupWidget::AddSettingEntry</qualifiedname>
+        <param>
+          <type>class <ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref> *</type>
+          <declname>EntryWidget</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add an initialized setting entry widget to be displayed in this group. This is called by <ref refid="classUSFCategoryTab__Leaf" kindref="compound">USFCategoryTab_Leaf</ref> when initializing the display of its setting entries. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>EntryWidget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initialized setting entry widget to be added to this group. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="35" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingGroupWidget_1a919b67e222cc12984bb16f41974e3957" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref> *</type>
+        <definition>class USFSettingEntryWidget * USFSettingGroupWidget::GetFirstValidSettingEntry</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFirstValidSettingEntry</name>
+        <qualifiedname>USFSettingGroupWidget::GetFirstValidSettingEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the first setting entry widget in this group that is valid for navigation (visible and enabled). Used for setting initial focus when displaying a leaf category tab. <simplesect kind="return"><para>The first setting entry widget in this group that is valid for navigation, nullptr if none is found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="41" column="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingGroupWidget_1a9458bcdaaf8181e1ef2af404d17967ce" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingGroupWidget::OnSettingEntryAdded</definition>
+        <argsstring>(class UPanelSlot *EntryAsPanelSlot, class USFSettingEntryWidget *EntryAsSettingWidget)</argsstring>
+        <name>OnSettingEntryAdded</name>
+        <qualifiedname>USFSettingGroupWidget::OnSettingEntryAdded</qualifiedname>
+        <param>
+          <type>class UPanelSlot *</type>
+          <declname>EntryAsPanelSlot</declname>
+        </param>
+        <param>
+          <type>class <ref refid="classUSFSettingEntryWidget" kindref="compound">USFSettingEntryWidget</ref> *</type>
+          <declname>EntryAsSettingWidget</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a setting entry widget is added to SettingEntryContainer. To be implemented in Blueprint to add any additional styling like padding and such. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>EntryAsPanelSlot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The added setting entry widget as a panel slot, used for styling. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EntryAsSettingWidget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The added setting entry widget as a setting entry widget, used for any additional logic that may be needed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintImplementableEvent</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="51" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for the widget displaying a setting group. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for the widget displaying a setting group.</para>
+<para>The widget blueprint implementing this class should be assigned to the SettingGroupWidgetClass in the Developer Settings at Project Settings &gt; Plugins &gt; SettingsFramework. <simplesect kind="note"><para><computeroutput>Abstract</computeroutput> <computeroutput>BlueprintType</computeroutput> <computeroutput>Blueprintable</computeroutput> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingGroupWidget</label>
+        <link refid="classUSFSettingGroupWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="1">
+        <label>USFSettingGroupWidget</label>
+        <link refid="classUSFSettingGroupWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" line="18" column="1" bodyfile="Source/SettingsFramework/Public/UI/Components/SFSettingGroupWidget.h" bodystart="19" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classUSFSettingGroupWidget_1a0f9c49900ee7b470b1d7ffa9e7879d5c" prot="public" virt="non-virtual"><scope>USFSettingGroupWidget</scope><name>AddSettingEntry</name></member>
+      <member refid="classUSFSettingGroupWidget_1a3c40867ee59e7e0fa5fb3ccdc13bae1d" prot="public" virt="non-virtual"><scope>USFSettingGroupWidget</scope><name>DisplaySettingGroupInfo</name></member>
+      <member refid="classUSFSettingGroupWidget_1a919b67e222cc12984bb16f41974e3957" prot="public" virt="non-virtual"><scope>USFSettingGroupWidget</scope><name>GetFirstValidSettingEntry</name></member>
+      <member refid="classUSFSettingGroupWidget_1a9458bcdaaf8181e1ef2af404d17967ce" prot="protected" virt="non-virtual"><scope>USFSettingGroupWidget</scope><name>OnSettingEntryAdded</name></member>
+      <member refid="classUSFSettingGroupWidget_1ad807eb28084455aacf0fae3a6d2348f1" prot="protected" virt="non-virtual"><scope>USFSettingGroupWidget</scope><name>SettingEntryContainer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

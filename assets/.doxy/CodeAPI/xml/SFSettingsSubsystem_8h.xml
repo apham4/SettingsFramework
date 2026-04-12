@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="SFSettingsSubsystem_8h" kind="file" language="C++">
+    <compoundname>SFSettingsSubsystem.h</compoundname>
+    <includes local="yes">CoreMinimal.h</includes>
+    <includes local="yes">Subsystems/GameInstanceSubsystem.h</includes>
+    <includes local="yes">GameplayTagContainer.h</includes>
+    <includes local="yes">SFSettingsSubsystem.generated.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Source/SettingsFramework/Public/SFSettingsSubsystem.h</label>
+        <link refid="SFSettingsSubsystem_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CoreMinimal.h</label>
+      </node>
+      <node id="4">
+        <label>GameplayTagContainer.h</label>
+      </node>
+      <node id="5">
+        <label>SFSettingsSubsystem.generated.h</label>
+      </node>
+      <node id="3">
+        <label>Subsystems/GameInstanceSubsystem.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classUSFSettingsSubsystem" prot="public">USFSettingsSubsystem</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="SFSettingsSubsystem_8h_1a39384747fe7d5ea2e05d2cc216983532" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</definition>
+        <argsstring>(FOnSFSettingChanged, const FGameplayTag &amp;, SettingTag, class USFSettingValue *, NewValue)</argsstring>
+        <name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</name>
+        <param>
+          <type>FOnSFSettingChanged</type>
+        </param>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+        </param>
+        <param>
+          <type>SettingTag</type>
+        </param>
+        <param>
+          <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        </param>
+        <param>
+          <type>NewValue</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="10" column="1" declfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" declline="10" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="SFSettingsSubsystem_8h_1a57caaf8ef2e7cc4a6319047e5e92450c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</definition>
+        <argsstring>(FOnSFSettingSaved, const FGameplayTag &amp;, SettingTag, class USFSettingValue *, SavedValue)</argsstring>
+        <name>DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</name>
+        <param>
+          <type>FOnSFSettingSaved</type>
+        </param>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+        </param>
+        <param>
+          <type>SettingTag</type>
+        </param>
+        <param>
+          <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        </param>
+        <param>
+          <type>SavedValue</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="11" column="1" declfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" declline="11" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="SFSettingsSubsystem_8h_1a771370550de7f6d6e47a5e50cba3583a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECLARE_DYNAMIC_MULTICAST_DELEGATE</definition>
+        <argsstring>(FOnSFSettingsInitialized)</argsstring>
+        <name>DECLARE_DYNAMIC_MULTICAST_DELEGATE</name>
+        <param>
+          <type>FOnSFSettingsInitialized</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="12" column="1" declfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" declline="12" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2026<sp/>Anh<sp/>Pham.<sp/>All<sp/>Rights<sp/>Reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CoreMinimal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Subsystems/GameInstanceSubsystem.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameplayTagContainer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFSettingsSubsystem.generated.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="SFSettingsSubsystem_8h_1a39384747fe7d5ea2e05d2cc216983532" refkind="member"><highlight class="normal"><ref refid="SFSettingsSubsystem_8h_1a39384747fe7d5ea2e05d2cc216983532" kindref="member">DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</ref>(FOnSFSettingChanged,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FGameplayTag&amp;,<sp/>SettingTag,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*,<sp/>NewValue);</highlight></codeline>
+<codeline lineno="11" refid="SFSettingsSubsystem_8h_1a57caaf8ef2e7cc4a6319047e5e92450c" refkind="member"><highlight class="normal"><ref refid="SFSettingsSubsystem_8h_1a39384747fe7d5ea2e05d2cc216983532" kindref="member">DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams</ref>(FOnSFSettingSaved,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FGameplayTag&amp;,<sp/>SettingTag,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*,<sp/>SavedValue);</highlight></codeline>
+<codeline lineno="12" refid="SFSettingsSubsystem_8h_1a771370550de7f6d6e47a5e50cba3583a" refkind="member"><highlight class="normal"><ref refid="SFSettingsSubsystem_8h_1a771370550de7f6d6e47a5e50cba3583a" kindref="member">DECLARE_DYNAMIC_MULTICAST_DELEGATE</ref>(FOnSFSettingsInitialized);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">UCLASS(BlueprintType)</highlight></codeline>
+<codeline lineno="31" refid="classUSFSettingsSubsystem" refkind="compound"><highlight class="normal">class<sp/>SETTINGSFRAMEWORK_API<sp/><ref refid="classUSFSettingsSubsystem" kindref="compound">USFSettingsSubsystem</ref><sp/>:<sp/>public<sp/>UGameInstanceSubsystem</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>GENERATED_BODY()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|Initialization&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="43" refid="classUSFSettingsSubsystem_1a8b5c457bdee862d4cccc9dbe7937b302" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>IsInitialized()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bIsInitialized;<sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Initialize(FSubsystemCollectionBase&amp;<sp/>Collection)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnSettingsRegistryLoaded(TSoftObjectPtr&lt;class<sp/>USFSettingsRegistry&gt;<sp/>SettingsRegistrySoftPtr);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterCategory(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*<sp/>Category);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterSetting(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>Definition);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintAssignable,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|Initialization&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60" refid="classUSFSettingsSubsystem_1ab4c7ef86dca5892e8590745802087c2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FOnSFSettingsInitialized<sp/>OnSettingsInitialized;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bIsInitialized<sp/>=<sp/>false;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Setting<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|Setting<sp/>Data&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="76" refid="classUSFSettingsSubsystem_1a0304c6a24961281e5e292221c7634783" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TArray&lt;<ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref>*&gt;<sp/>GetRootCategories()<sp/>const;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|Setting<sp/>Data&quot;)</highlight></codeline>
+<codeline lineno="85" refid="classUSFSettingsSubsystem_1a7178d3d952bd36ac98b89da7d8e6cf8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>*<sp/>GetSettingDefinition(const<sp/>FGameplayTag&amp;<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|Setting<sp/>Data&quot;)</highlight></codeline>
+<codeline lineno="94" refid="classUSFSettingsSubsystem_1aecd59360c84d567b6dca0211370d5964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref>*<sp/>GetDynamicOptionSource(const<sp/>FGameplayTag&amp;<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="102" refid="classUSFSettingsSubsystem_1a0d4330f3e0ebfccf94b6b7bb3dbbe671" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TMap&lt;FGameplayTag,<sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref>&gt;&gt;<sp/>DynamicOptionSources;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Settings<sp/>State<sp/>Management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|State<sp/>Management&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="114" refid="classUSFSettingsSubsystem_1a91d001a2f90995da56e83d582953b799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetSettingValue(const<sp/>FGameplayTag<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="123" refid="classUSFSettingsSubsystem_1a09b818d00dcfa4b22d3fee2263d36820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetSavedSettingValue(const<sp/>FGameplayTag<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="132" refid="classUSFSettingsSubsystem_1a07cc2985567599bf6b70b55ed9886e5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>GetDefaultSettingValue(const<sp/>FGameplayTag<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="140" refid="classUSFSettingsSubsystem_1a147b4792b3ccfbdfdaf53be39abd1a9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetSettingValue(const<sp/>FGameplayTag<sp/>SettingTag,<sp/>const<sp/>class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>*<sp/>NewValue);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="149" refid="classUSFSettingsSubsystem_1a84f59b6e922a15309e6e177897224fa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsSettingDirty(const<sp/>FGameplayTag<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="157" refid="classUSFSettingsSubsystem_1a0bd8332ba0cb4b491047a28324129eed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AreAnySettingsDirty()<sp/>const;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="166" refid="classUSFSettingsSubsystem_1aef52e5da8c1a38291850029948d258ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RevertSetting(const<sp/>FGameplayTag<sp/>SettingTag);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="175" refid="classUSFSettingsSubsystem_1a1439b511c2d7d110bee077f396ff894b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ResetSettingToDefault(const<sp/>FGameplayTag<sp/>SettingTag);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="182" refid="classUSFSettingsSubsystem_1aa9a14b9a01b23df21a7475885019f898" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SaveSettings();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="189" refid="classUSFSettingsSubsystem_1a988cee74b6c5db875554d108cf14e78b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RevertSettings();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="196" refid="classUSFSettingsSubsystem_1ad8c7fcdac5e0204bcce77f092943d3aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ResetSettingsToDefault();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintAssignable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="204" refid="classUSFSettingsSubsystem_1aaf1902385551ef6b7cb395e19ec03850" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FOnSFSettingChanged<sp/>OnSettingValueChanged;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(BlueprintAssignable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|State<sp/>Management&quot;)</highlight></codeline>
+<codeline lineno="211" refid="classUSFSettingsSubsystem_1acce5484006756b6e4263680bdf5b97cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FOnSFSettingSaved<sp/>OnSettingValueSaved;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="219" refid="classUSFSettingsSubsystem_1adfd88e5e9e342f89b46853ca9e8a44fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingsRegistry" kindref="compound">USFSettingsRegistry</ref>&gt;<sp/>SettingsRegistry;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="226" refid="classUSFSettingsSubsystem_1a377be0d22173b5235e89cffb39e2c26c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TMap&lt;FGameplayTag,<sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref>&gt;&gt;<sp/>RegisteredSettings;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="233" refid="classUSFSettingsSubsystem_1ab557eb9059b1899ecb5bd22321c7fc84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TMap&lt;FGameplayTag,<sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;&gt;<sp/>CurrentValues;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>UPROPERTY(Transient)</highlight></codeline>
+<codeline lineno="240" refid="classUSFSettingsSubsystem_1a278e3ce6da1a97dbd40c6004e9cf7067" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TMap&lt;FGameplayTag,<sp/>TObjectPtr&lt;class<sp/><ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref>&gt;&gt;<sp/>SavedValues;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Condition<sp/>Checks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|Conditions&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="252" refid="classUSFSettingsSubsystem_1a15d08d2dd5d83d0dc48bb84fa87a11d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>IsSettingVisible(const<sp/>FGameplayTag&amp;<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|Conditions&quot;)</highlight></codeline>
+<codeline lineno="261" refid="classUSFSettingsSubsystem_1af54d98268dc191080b6ff96aa590c1b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsSettingEditable(const<sp/>FGameplayTag&amp;<sp/>SettingTag)<sp/>const;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateSettingDependencies();</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Recursion<sp/>guard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>int32<sp/>MaxUpdateDepth<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>int32<sp/>UpdateDepth<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Serialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="279" refid="classUSFSettingsSubsystem_1a3f194ed3ad0d7be45be0d04d021eca50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingsSubsystem_1a3f194ed3ad0d7be45be0d04d021eca50" kindref="member">LoadSettingsFromSaveGame</ref>();</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="classUSFSettingsSubsystem_1a173d4bbab8c434c30c98c098e3540a00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classUSFSettingsSubsystem_1a173d4bbab8c434c30c98c098e3540a00" kindref="member">SaveSettingsToSaveGame</ref>();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>FString<sp/>SaveGameSlotName<sp/>=<sp/>TEXT(</highlight><highlight class="stringliteral">&quot;SF_SaveSlot&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>Keybinding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintPure,<sp/>Category<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SFSettingsSubsystem|Keybinding&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="303" refid="classUSFSettingsSubsystem_1ae8dd7da59f9c8fed83a42df83f186942" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FGameplayTag<sp/>GetKeybindingCollision(const<sp/>struct<sp/>FKey<sp/>Key,<sp/>const<sp/>FGameplayTagContainer<sp/>CollisionChannels,<sp/>const<sp/>FGameplayTag<sp/>SettingTagToIgnore)<sp/>const;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>UFUNCTION(BlueprintCallable,<sp/>Category<sp/>=<sp/>&quot;SFSettingsSubsystem|Keybinding&quot;)</highlight></codeline>
+<codeline lineno="316" refid="classUSFSettingsSubsystem_1aaeb6a77a73e69b2bff2fcc33bd86a748" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>UpdateKeybinding(const<sp/>FGameplayTag<sp/>SettingTag,<sp/>struct<sp/><ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref>&amp;<sp/>NewValue,<sp/>const<sp/>enum<sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref><sp/>ResolutionPolicy);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal">protected:</highlight></codeline>
+<codeline lineno="329" refid="classUSFSettingsSubsystem_1a28a8b169b89325b0ef9cab1350912fe9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ResolveKeybindingCollision(const<sp/>FGameplayTag&amp;<sp/>SettingBeingUpdated,<sp/>const<sp/>struct<sp/>FKey&amp;<sp/>NewKey,<sp/>const<sp/>struct<sp/>FKey&amp;<sp/>OldKey,<sp/>const<sp/>FGameplayTagContainer&amp;<sp/>CollisionChannels,<sp/>const<sp/>enum<sp/><ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref>&amp;<sp/>ResolutionPolicy);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h"/>
+  </compounddef>
+</doxygen>

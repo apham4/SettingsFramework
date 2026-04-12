@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingEntryWidget__Checkbox" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingEntryWidget_Checkbox</compoundname>
+    <basecompoundref refid="classUSFSettingEntryWidget" prot="public" virt="non-virtual">USFSettingEntryWidget</basecompoundref>
+    <includes refid="SFSettingEntryWidget__Checkbox_8h" local="yes">UI/SettingEntries/SFSettingEntryWidget_Checkbox.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingEntryWidget__Checkbox_1ad626a571eaa80ab8c30216570648dde0" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class UCheckBox &gt;</type>
+        <definition>TObjectPtr&lt;class UCheckBox&gt; USFSettingEntryWidget_Checkbox::CheckboxWidget</definition>
+        <argsstring></argsstring>
+        <name>CheckboxWidget</name>
+        <qualifiedname>USFSettingEntryWidget_Checkbox::CheckboxWidget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The checkbox widget representing the boolean setting value in the UI. <simplesect kind="note"><para><computeroutput>BlueprintReadOnly</computeroutput> <computeroutput>BindWidget</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" line="42" column="12" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Checkbox_1a35a98e5e8e9f1b6a4c7df5eef7e329f6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget_Checkbox::InitializeSettingEntry</definition>
+        <argsstring>(const class USFSettingDefinition *InSettingDefinition) override</argsstring>
+        <name>InitializeSettingEntry</name>
+        <qualifiedname>USFSettingEntryWidget_Checkbox::InitializeSettingEntry</qualifiedname>
+        <reimplements refid="classUSFSettingEntryWidget_1a481de11f8f7498436b028a2a9c7b15c2">InitializeSettingEntry</reimplements>
+        <param>
+          <type>const class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+          <declname>InSettingDefinition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Initializes the data and display of this setting entry widget based on the assigned setting definition asset. Subclasses can override this function to hook up any setting type-specific logic or display elements, but should call the parent implementation to ensure the base functionality is executed (e.g., binding to setting value change events from the subsystem). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>InSettingDefinition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The setting definition asset represented by this widget.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" line="25" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingEntryWidget__Checkbox_1a77b01df242282a4634f65d32b094b84c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void USFSettingEntryWidget_Checkbox::UpdateVisualValue_Implementation</definition>
+        <argsstring>(const class USFSettingValue *NewValue) override</argsstring>
+        <name>UpdateVisualValue_Implementation</name>
+        <qualifiedname>USFSettingEntryWidget_Checkbox::UpdateVisualValue_Implementation</qualifiedname>
+        <reimplements refid="classUSFSettingEntryWidget_1a7ee0f315ed234308d04b84502e73aa33">UpdateVisualValue_Implementation</reimplements>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><para>Native implementation of UpdateVisualValue, can be optionally overridden by C++ subclasses to handle setting value change events from the subsystem.</para>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" line="30" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The native base class for a setting entry widget for a boolean setting, represented as a checkbox in the UI. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The native base class for a setting entry widget for a boolean setting, represented as a checkbox in the UI.</para>
+<para>The widget blueprint implementing this class should be assigned as a value to the SettingEntryWidgetClasses map with the boolean setting definition class (<ref refid="classUSFSettingDefinition__Bool" kindref="compound">USFSettingDefinition_Bool</ref>) as the key in the Developer Settings at Project Settings &gt; Plugins &gt; SettingsFramework. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="2">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget_Checkbox</label>
+        <link refid="classUSFSettingEntryWidget__Checkbox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>UCommonUserWidget</label>
+      </node>
+      <node id="2">
+        <label>USFSettingEntryWidget</label>
+        <link refid="classUSFSettingEntryWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>USFSettingEntryWidget_Checkbox</label>
+        <link refid="classUSFSettingEntryWidget__Checkbox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" line="17" column="1" bodyfile="Source/SettingsFramework/Public/UI/SettingEntries/SFSettingEntryWidget_Checkbox.h" bodystart="18" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classUSFSettingEntryWidget_1a0b842a7df19cecd9697e3ea09d793085" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>BP_InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget__Checkbox_1ad626a571eaa80ab8c30216570648dde0" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>CheckboxWidget</name></member>
+      <member refid="classUSFSettingEntryWidget_1a71217c25e8d835796fb0e2d482eb4dd8" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>GetSettingDefinition</name></member>
+      <member refid="classUSFSettingEntryWidget_1a6e6a4b1e3d442c76d223c126db218b22" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>GetSettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget__Checkbox_1a35a98e5e8e9f1b6a4c7df5eef7e329f6" prot="protected" virt="virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>InitializeSettingEntry</name></member>
+      <member refid="classUSFSettingEntryWidget_1aeabc94c6eb814e17289ce6795e0de17f" prot="public" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>OnSettingFocused</name></member>
+      <member refid="classUSFSettingEntryWidget_1abbedb4f74716b1f44bb791ba75520ad0" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>OnUserChangedValue</name></member>
+      <member refid="classUSFSettingEntryWidget_1ac51384895b7f6e923f3fe5fe67111df4" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>SettingLabel</name></member>
+      <member refid="classUSFSettingEntryWidget_1a910fc77b88005e479ed82b7689d4ca0b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>SettingTag</name></member>
+      <member refid="classUSFSettingEntryWidget_1aa84118e9b0f7402fd9acb0e12fd8ac3b" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>UpdateVisualValue</name></member>
+      <member refid="classUSFSettingEntryWidget__Checkbox_1a77b01df242282a4634f65d32b094b84c" prot="protected" virt="virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>UpdateVisualValue_Implementation</name></member>
+      <member refid="classUSFSettingEntryWidget_1ae20c1079986bc12671995a19c6fff6b7" prot="protected" virt="non-virtual"><scope>USFSettingEntryWidget_Checkbox</scope><name>UpdateWidgetState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

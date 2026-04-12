@@ -1,0 +1,899 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classUSFSettingsSubsystem" kind="class" language="C++" prot="public">
+    <compoundname>USFSettingsSubsystem</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UGameInstanceSubsystem</basecompoundref>
+    <includes refid="SFSettingsSubsystem_8h" local="yes">SFSettingsSubsystem.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1ab4c7ef86dca5892e8590745802087c2b" prot="public" static="no" mutable="no">
+        <type>FOnSFSettingsInitialized</type>
+        <definition>FOnSFSettingsInitialized USFSettingsSubsystem::OnSettingsInitialized</definition>
+        <argsstring></argsstring>
+        <name>OnSettingsInitialized</name>
+        <qualifiedname>USFSettingsSubsystem::OnSettingsInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event fired when the settings registry has finished loading and saved setting values have been loaded from disk, indicating that the subsystem is ready to be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="60" column="26" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1aaf1902385551ef6b7cb395e19ec03850" prot="public" static="no" mutable="no">
+        <type>FOnSFSettingChanged</type>
+        <definition>FOnSFSettingChanged USFSettingsSubsystem::OnSettingValueChanged</definition>
+        <argsstring></argsstring>
+        <name>OnSettingValueChanged</name>
+        <qualifiedname>USFSettingsSubsystem::OnSettingValueChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event fired when a setting&apos;s current active value is changed. <simplesect kind="note"><para><computeroutput>BlueprintAssignable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="204" column="21" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1acce5484006756b6e4263680bdf5b97cf" prot="public" static="no" mutable="no">
+        <type>FOnSFSettingSaved</type>
+        <definition>FOnSFSettingSaved USFSettingsSubsystem::OnSettingValueSaved</definition>
+        <argsstring></argsstring>
+        <name>OnSettingValueSaved</name>
+        <qualifiedname>USFSettingsSubsystem::OnSettingValueSaved</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event fired when a setting&apos;s current active value is saved to disk. <simplesect kind="note"><para><computeroutput>BlueprintAssignable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="211" column="19" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1a0d4330f3e0ebfccf94b6b7bb3dbbe671" prot="protected" static="no" mutable="no">
+        <type>TMap&lt; FGameplayTag, TObjectPtr&lt; class <ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref> &gt; &gt;</type>
+        <definition>TMap&lt;FGameplayTag, TObjectPtr&lt;class USFSettingOptionSource&gt; &gt; USFSettingsSubsystem::DynamicOptionSources</definition>
+        <argsstring></argsstring>
+        <name>DynamicOptionSources</name>
+        <qualifiedname>USFSettingsSubsystem::DynamicOptionSources</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The map of setting GameplayTag to setting setting option source object for registered discrete settings wtih dynamic options. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="102" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1adfd88e5e9e342f89b46853ca9e8a44fb" prot="protected" static="no" mutable="no">
+        <type>TObjectPtr&lt; class <ref refid="classUSFSettingsRegistry" kindref="compound">USFSettingsRegistry</ref> &gt;</type>
+        <definition>TObjectPtr&lt;class USFSettingsRegistry&gt; USFSettingsSubsystem::SettingsRegistry</definition>
+        <argsstring></argsstring>
+        <name>SettingsRegistry</name>
+        <qualifiedname>USFSettingsSubsystem::SettingsRegistry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transient pointer to the loaded settings registry asset. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="219" column="12" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1a377be0d22173b5235e89cffb39e2c26c" prot="protected" static="no" mutable="no">
+        <type>TMap&lt; FGameplayTag, TObjectPtr&lt; class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> &gt; &gt;</type>
+        <definition>TMap&lt;FGameplayTag, TObjectPtr&lt;class USFSettingDefinition&gt; &gt; USFSettingsSubsystem::RegisteredSettings</definition>
+        <argsstring></argsstring>
+        <name>RegisteredSettings</name>
+        <qualifiedname>USFSettingsSubsystem::RegisteredSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The map of setting GameplayTag to setting definition Data Asset for registered settings. Used for quick lookup of setting definitions at runtime. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="226" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1ab557eb9059b1899ecb5bd22321c7fc84" prot="protected" static="no" mutable="no">
+        <type>TMap&lt; FGameplayTag, TObjectPtr&lt; class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt; &gt;</type>
+        <definition>TMap&lt;FGameplayTag, TObjectPtr&lt;class USFSettingValue&gt; &gt; USFSettingsSubsystem::CurrentValues</definition>
+        <argsstring></argsstring>
+        <name>CurrentValues</name>
+        <qualifiedname>USFSettingsSubsystem::CurrentValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The map of setting GameplayTag to current active value for registered settings. Used for managing current setting values at runtime. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="233" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUSFSettingsSubsystem_1a278e3ce6da1a97dbd40c6004e9cf7067" prot="protected" static="no" mutable="no">
+        <type>TMap&lt; FGameplayTag, TObjectPtr&lt; class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> &gt; &gt;</type>
+        <definition>TMap&lt;FGameplayTag, TObjectPtr&lt;class USFSettingValue&gt; &gt; USFSettingsSubsystem::SavedValues</definition>
+        <argsstring></argsstring>
+        <name>SavedValues</name>
+        <qualifiedname>USFSettingsSubsystem::SavedValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The map of setting GameplayTag to saved value for registered settings. Used for managing saved setting values at runtime and for saving/loading settings to disk. <simplesect kind="note"><para><computeroutput>Transient</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="240" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a8b5c457bdee862d4cccc9dbe7937b302" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::IsInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>IsInitialized</name>
+        <qualifiedname>USFSettingsSubsystem::IsInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the settings registry has finished loading and saved setting values have been loaded from disk. <simplesect kind="return"><para>true if the subsystem is ready to be used, false if the settings registry is still loading or if there was an error during initialization. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="43" column="6" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a0304c6a24961281e5e292221c7634783" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>TArray&lt; <ref refid="classUSFSettingCategory" kindref="compound">USFSettingCategory</ref> * &gt;</type>
+        <definition>TArray&lt; USFSettingCategory * &gt; USFSettingsSubsystem::GetRootCategories</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRootCategories</name>
+        <qualifiedname>USFSettingsSubsystem::GetRootCategories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the collection of root categories. <simplesect kind="return"><para>An array of root categories. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="76" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a7178d3d952bd36ac98b89da7d8e6cf8e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingDefinition" kindref="compound">USFSettingDefinition</ref> *</type>
+        <definition>class USFSettingDefinition * USFSettingsSubsystem::GetSettingDefinition</definition>
+        <argsstring>(const FGameplayTag &amp;SettingTag) const</argsstring>
+        <name>GetSettingDefinition</name>
+        <qualifiedname>USFSettingsSubsystem::GetSettingDefinition</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the setting definition associated with the given setting Gameplay Tag <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The setting definition Data Asset associated with the given setting Gameplay Tag. Returns nullptr if the tag is not found or if the associated asset failed to load. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="85" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1aecd59360c84d567b6dca0211370d5964" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingOptionSource" kindref="compound">USFSettingOptionSource</ref> *</type>
+        <definition>class USFSettingOptionSource * USFSettingsSubsystem::GetDynamicOptionSource</definition>
+        <argsstring>(const FGameplayTag &amp;SettingTag) const</argsstring>
+        <name>GetDynamicOptionSource</name>
+        <qualifiedname>USFSettingsSubsystem::GetDynamicOptionSource</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the dynamic option source object associated with the given setting Gameplay Tag if it is a discrete setting with dynamic options. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The setting option source object associated with the given setting Gameplay Tag. Returns nullptr if invalid. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="94" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a91d001a2f90995da56e83d582953b799" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>class USFSettingValue * USFSettingsSubsystem::GetSettingValue</definition>
+        <argsstring>(const FGameplayTag SettingTag) const</argsstring>
+        <name>GetSettingValue</name>
+        <qualifiedname>USFSettingsSubsystem::GetSettingValue</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current active value of a setting associated with the given setting Gameplay Tag. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The current active value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no current value is found. Returns nullptr if the tag is not found or if the value is invalid. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="114" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a09b818d00dcfa4b22d3fee2263d36820" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>class USFSettingValue * USFSettingsSubsystem::GetSavedSettingValue</definition>
+        <argsstring>(const FGameplayTag SettingTag) const</argsstring>
+        <name>GetSavedSettingValue</name>
+        <qualifiedname>USFSettingsSubsystem::GetSavedSettingValue</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the saved value of a setting associated with the given setting Gameplay Tag. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The saved value of the setting associated with the given setting Gameplay Tag. Returns the default setting if no saved value is found. Returns nullptr if the tag is not found or if the value is invalid. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="123" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a07cc2985567599bf6b70b55ed9886e5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+        <definition>class USFSettingValue * USFSettingsSubsystem::GetDefaultSettingValue</definition>
+        <argsstring>(const FGameplayTag SettingTag) const</argsstring>
+        <name>GetDefaultSettingValue</name>
+        <qualifiedname>USFSettingsSubsystem::GetDefaultSettingValue</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the default value of a setting associated with the given setting Gameplay Tag. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The default value of the setting associated with the given setting Gameplay Tag. Returns nullptr if the tag is not found or if the value is invalid. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="132" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a147b4792b3ccfbdfdaf53be39abd1a9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::SetSettingValue</definition>
+        <argsstring>(const FGameplayTag SettingTag, const class USFSettingValue *NewValue)</argsstring>
+        <name>SetSettingValue</name>
+        <qualifiedname>USFSettingsSubsystem::SetSettingValue</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <param>
+          <type>const class <ref refid="classUSFSettingValue" kindref="compound">USFSettingValue</ref> *</type>
+          <declname>NewValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the current active value of a setting associated with the given setting Gameplay Tag. Does not save value to disk. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="140" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a84f59b6e922a15309e6e177897224fa8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::IsSettingDirty</definition>
+        <argsstring>(const FGameplayTag SettingTag) const</argsstring>
+        <name>IsSettingDirty</name>
+        <qualifiedname>USFSettingsSubsystem::IsSettingDirty</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the current active value of the setting associated with the given setting Gameplay Tag is different from its saved value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if they are different or if one of them is invalid, false if they are the same or if they are both invalid. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="149" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a0bd8332ba0cb4b491047a28324129eed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::AreAnySettingsDirty</definition>
+        <argsstring>() const</argsstring>
+        <name>AreAnySettingsDirty</name>
+        <qualifiedname>USFSettingsSubsystem::AreAnySettingsDirty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if any setting has its current active value different from its saved value. <simplesect kind="return"><para>true if there is at least one setting that is dirty, false if all settings are clean or if there are no registered settings. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="157" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1aef52e5da8c1a38291850029948d258ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::RevertSetting</definition>
+        <argsstring>(const FGameplayTag SettingTag)</argsstring>
+        <name>RevertSetting</name>
+        <qualifiedname>USFSettingsSubsystem::RevertSetting</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Discard current active value and revert to saved value for the setting associated with the given setting Gameplay Tag. Does not change saved value. Fires OnSettingValueChanged if the value was reverted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="166" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a1439b511c2d7d110bee077f396ff894b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::ResetSettingToDefault</definition>
+        <argsstring>(const FGameplayTag SettingTag)</argsstring>
+        <name>ResetSettingToDefault</name>
+        <qualifiedname>USFSettingsSubsystem::ResetSettingToDefault</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Discard current active value and reset to default value for the setting associated with the given setting Gameplay Tag. Does not change saved value. Fires OnSettingValueChanged if the value was reset. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="175" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1aa9a14b9a01b23df21a7475885019f898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::SaveSettings</definition>
+        <argsstring>()</argsstring>
+        <name>SaveSettings</name>
+        <qualifiedname>USFSettingsSubsystem::SaveSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save and serialize all current active setting values to disk, overwriting previous saved values. <simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="182" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a988cee74b6c5db875554d108cf14e78b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::RevertSettings</definition>
+        <argsstring>()</argsstring>
+        <name>RevertSettings</name>
+        <qualifiedname>USFSettingsSubsystem::RevertSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Discard the current active value and revert to saved value for all settings that have unsaved changes. Does not change saved values. <simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="189" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1ad8c7fcdac5e0204bcce77f092943d3aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::ResetSettingsToDefault</definition>
+        <argsstring>()</argsstring>
+        <name>ResetSettingsToDefault</name>
+        <qualifiedname>USFSettingsSubsystem::ResetSettingsToDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Discard the current active value and reset to default value for all settings. Does not change saved values. <simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="196" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a15d08d2dd5d83d0dc48bb84fa87a11d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::IsSettingVisible</definition>
+        <argsstring>(const FGameplayTag &amp;SettingTag) const</argsstring>
+        <name>IsSettingVisible</name>
+        <qualifiedname>USFSettingsSubsystem::IsSettingVisible</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if a setting associated with the given setting Gameplay Tag should be visible based on its visibility conditions defined in its setting definition. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the setting should be visible, false if it should be hidden or if the tag&apos;s setting is not found. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="252" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1af54d98268dc191080b6ff96aa590c1b3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::IsSettingEditable</definition>
+        <argsstring>(const FGameplayTag &amp;SettingTag) const</argsstring>
+        <name>IsSettingEditable</name>
+        <qualifiedname>USFSettingsSubsystem::IsSettingEditable</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>SettingTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if a setting associated with the given setting Gameplay Tag should be editable/enabled based on its editability conditions defined in its setting definition. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag associated with the setting. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the setting should be editable/enabled, false if it should be disabled or if the tag&apos;s setting is not found. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="261" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1ae8dd7da59f9c8fed83a42df83f186942" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>FGameplayTag</type>
+        <definition>FGameplayTag USFSettingsSubsystem::GetKeybindingCollision</definition>
+        <argsstring>(const struct FKey Key, const FGameplayTagContainer CollisionChannels, const FGameplayTag SettingTagToIgnore) const</argsstring>
+        <name>GetKeybindingCollision</name>
+        <qualifiedname>USFSettingsSubsystem::GetKeybindingCollision</qualifiedname>
+        <param>
+          <type>const struct FKey</type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type>const FGameplayTagContainer</type>
+          <declname>CollisionChannels</declname>
+        </param>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTagToIgnore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check for keybinding collisions with a given input key and collision channels, excluding a specific setting. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input key to check for collisions. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CollisionChannels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag container of collision channels to check against. Only settings that have at least one of these tags in their collision channels will be checked for collision. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SettingTagToIgnore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag of the setting to ignore during collision check. This is useful when updating a keybinding for a specific setting and you want to ignore collision with its current keybinding. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Gameplay Tag of the setting that has a colliding keybinding, or an empty tag if there are no collisions. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintPure</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="303" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1aaeb6a77a73e69b2bff2fcc33bd86a748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::UpdateKeybinding</definition>
+        <argsstring>(const FGameplayTag SettingTag, struct FSFKeybindValueData &amp;NewValue, const enum ESFKeybindCollisionResolution ResolutionPolicy)</argsstring>
+        <name>UpdateKeybinding</name>
+        <qualifiedname>USFSettingsSubsystem::UpdateKeybinding</qualifiedname>
+        <param>
+          <type>const FGameplayTag</type>
+          <declname>SettingTag</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structFSFKeybindValueData" kindref="compound">FSFKeybindValueData</ref> &amp;</type>
+          <declname>NewValue</declname>
+        </param>
+        <param>
+          <type>const enum <ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref></type>
+          <declname>ResolutionPolicy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update a keybinding for a setting with specific collision handling. If the new keybinding collides with existing keybindings based on the given collision channels, the collision will be resolved according to the specified resolution policy. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag of the setting to update the keybinding for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NewValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new keybinding value data to apply to the setting. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ResolutionPolicy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The policy to use for resolving keybinding collisions if the new keybinding collides with existing keybindings. <bold>AllowDuplicate</bold> means the new keybinding will be applied even if there is a collision. <bold>Overwrite</bold> means the existing conflicting keybind will be removed. <bold>Swap</bold> means the existing conflicting keybind will be changed to the new keybinding&apos;s old value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the keybinding was updated successfully, false if there was an error such as the setting tag not being found, the new value being invalid, or if collision resolution failed. </para>
+</simplesect>
+<simplesect kind="note"><para><computeroutput>BlueprintCallable</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="316" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a3f194ed3ad0d7be45be0d04d021eca50" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::LoadSettingsFromSaveGame</definition>
+        <argsstring>()</argsstring>
+        <name>LoadSettingsFromSaveGame</name>
+        <qualifiedname>USFSettingsSubsystem::LoadSettingsFromSaveGame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load saved setting values from disk and update CurrentValues and SavedValues maps accordingly. Called during initialization after settings registry is loaded. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="279" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a173d4bbab8c434c30c98c098e3540a00" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USFSettingsSubsystem::SaveSettingsToSaveGame</definition>
+        <argsstring>()</argsstring>
+        <name>SaveSettingsToSaveGame</name>
+        <qualifiedname>USFSettingsSubsystem::SaveSettingsToSaveGame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save current active setting values to disk and update SavedValues map accordingly. Called when SaveSettings is called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="284" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classUSFSettingsSubsystem_1a28a8b169b89325b0ef9cab1350912fe9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool USFSettingsSubsystem::ResolveKeybindingCollision</definition>
+        <argsstring>(const FGameplayTag &amp;SettingBeingUpdated, const struct FKey &amp;NewKey, const struct FKey &amp;OldKey, const FGameplayTagContainer &amp;CollisionChannels, const enum ESFKeybindCollisionResolution &amp;ResolutionPolicy)</argsstring>
+        <name>ResolveKeybindingCollision</name>
+        <qualifiedname>USFSettingsSubsystem::ResolveKeybindingCollision</qualifiedname>
+        <param>
+          <type>const FGameplayTag &amp;</type>
+          <declname>SettingBeingUpdated</declname>
+        </param>
+        <param>
+          <type>const struct FKey &amp;</type>
+          <declname>NewKey</declname>
+        </param>
+        <param>
+          <type>const struct FKey &amp;</type>
+          <declname>OldKey</declname>
+        </param>
+        <param>
+          <type>const FGameplayTagContainer &amp;</type>
+          <declname>CollisionChannels</declname>
+        </param>
+        <param>
+          <type>const enum <ref refid="SFCoreTypes_8h_1ae8a026fe6bf98e0492e526f7de833cba" kindref="member">ESFKeybindCollisionResolution</ref> &amp;</type>
+          <declname>ResolutionPolicy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check for keybinding collisions with a given new keybinding for a specific setting and resolve them according to the specified resolution policy. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SettingBeingUpdated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag of the setting that is being updated with the new keybinding. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NewKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new keybinding value that is being applied to the setting. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OldKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The old keybinding value that is being replaced by the new keybinding for the setting. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CollisionChannels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Gameplay Tag container of collision channels to check against. Only settings that have at least one of these tags in their collision channels will be checked for collision. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ResolutionPolicy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The policy to use for resolving keybinding collisions if the new keybinding collides with existing keybindings. <bold>AllowDuplicate</bold> means the new keybinding will be applied even if there is a collision. <bold>Overwrite</bold> means the existing conflicting keybind will be removed. <bold>Swap</bold> means the existing conflicting keybind will be changed to the new keybinding&apos;s old value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the collision was resolved successfully, false if resolution failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="329" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The subsystem that manages all settings data and logic at runtime. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This subsystem is responsible for managing all settings data and logic at runtime. This includes tasks such as:</para>
+<para><itemizedlist>
+<listitem><para>Asynchronously loads setting definitions and categories from the settings registry on initialization</para>
+</listitem><listitem><para>Manages current and saved setting values</para>
+</listitem><listitem><para>Checks conditions for settings&apos; visibility and editability</para>
+</listitem><listitem><para>Handles saving and loading settings to disk.</para>
+</listitem><listitem><para>Among other things. <simplesect kind="note"><para><computeroutput>BlueprintType</computeroutput> </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>UGameInstanceSubsystem</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsSubsystem</label>
+        <link refid="classUSFSettingsSubsystem"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>UGameInstanceSubsystem</label>
+      </node>
+      <node id="1">
+        <label>USFSettingsSubsystem</label>
+        <link refid="classUSFSettingsSubsystem"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Source/SettingsFramework/Public/SFSettingsSubsystem.h" line="31" column="1" bodyfile="Source/SettingsFramework/Public/SFSettingsSubsystem.h" bodystart="32" bodyend="331"/>
+    <listofallmembers>
+      <member refid="classUSFSettingsSubsystem_1a0bd8332ba0cb4b491047a28324129eed" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>AreAnySettingsDirty</name></member>
+      <member refid="classUSFSettingsSubsystem_1ab557eb9059b1899ecb5bd22321c7fc84" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>CurrentValues</name></member>
+      <member refid="classUSFSettingsSubsystem_1a0d4330f3e0ebfccf94b6b7bb3dbbe671" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>DynamicOptionSources</name></member>
+      <member refid="classUSFSettingsSubsystem_1a07cc2985567599bf6b70b55ed9886e5b" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetDefaultSettingValue</name></member>
+      <member refid="classUSFSettingsSubsystem_1aecd59360c84d567b6dca0211370d5964" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetDynamicOptionSource</name></member>
+      <member refid="classUSFSettingsSubsystem_1ae8dd7da59f9c8fed83a42df83f186942" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetKeybindingCollision</name></member>
+      <member refid="classUSFSettingsSubsystem_1a0304c6a24961281e5e292221c7634783" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetRootCategories</name></member>
+      <member refid="classUSFSettingsSubsystem_1a09b818d00dcfa4b22d3fee2263d36820" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetSavedSettingValue</name></member>
+      <member refid="classUSFSettingsSubsystem_1a7178d3d952bd36ac98b89da7d8e6cf8e" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetSettingDefinition</name></member>
+      <member refid="classUSFSettingsSubsystem_1a91d001a2f90995da56e83d582953b799" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>GetSettingValue</name></member>
+      <member refid="classUSFSettingsSubsystem_1a8b5c457bdee862d4cccc9dbe7937b302" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>IsInitialized</name></member>
+      <member refid="classUSFSettingsSubsystem_1a84f59b6e922a15309e6e177897224fa8" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>IsSettingDirty</name></member>
+      <member refid="classUSFSettingsSubsystem_1af54d98268dc191080b6ff96aa590c1b3" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>IsSettingEditable</name></member>
+      <member refid="classUSFSettingsSubsystem_1a15d08d2dd5d83d0dc48bb84fa87a11d8" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>IsSettingVisible</name></member>
+      <member refid="classUSFSettingsSubsystem_1a3f194ed3ad0d7be45be0d04d021eca50" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>LoadSettingsFromSaveGame</name></member>
+      <member refid="classUSFSettingsSubsystem_1ab4c7ef86dca5892e8590745802087c2b" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>OnSettingsInitialized</name></member>
+      <member refid="classUSFSettingsSubsystem_1aaf1902385551ef6b7cb395e19ec03850" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>OnSettingValueChanged</name></member>
+      <member refid="classUSFSettingsSubsystem_1acce5484006756b6e4263680bdf5b97cf" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>OnSettingValueSaved</name></member>
+      <member refid="classUSFSettingsSubsystem_1a377be0d22173b5235e89cffb39e2c26c" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>RegisteredSettings</name></member>
+      <member refid="classUSFSettingsSubsystem_1ad8c7fcdac5e0204bcce77f092943d3aa" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>ResetSettingsToDefault</name></member>
+      <member refid="classUSFSettingsSubsystem_1a1439b511c2d7d110bee077f396ff894b" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>ResetSettingToDefault</name></member>
+      <member refid="classUSFSettingsSubsystem_1a28a8b169b89325b0ef9cab1350912fe9" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>ResolveKeybindingCollision</name></member>
+      <member refid="classUSFSettingsSubsystem_1aef52e5da8c1a38291850029948d258ce" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>RevertSetting</name></member>
+      <member refid="classUSFSettingsSubsystem_1a988cee74b6c5db875554d108cf14e78b" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>RevertSettings</name></member>
+      <member refid="classUSFSettingsSubsystem_1a278e3ce6da1a97dbd40c6004e9cf7067" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>SavedValues</name></member>
+      <member refid="classUSFSettingsSubsystem_1aa9a14b9a01b23df21a7475885019f898" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>SaveSettings</name></member>
+      <member refid="classUSFSettingsSubsystem_1a173d4bbab8c434c30c98c098e3540a00" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>SaveSettingsToSaveGame</name></member>
+      <member refid="classUSFSettingsSubsystem_1a147b4792b3ccfbdfdaf53be39abd1a9d" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>SetSettingValue</name></member>
+      <member refid="classUSFSettingsSubsystem_1adfd88e5e9e342f89b46853ca9e8a44fb" prot="protected" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>SettingsRegistry</name></member>
+      <member refid="classUSFSettingsSubsystem_1aaeb6a77a73e69b2bff2fcc33bd86a748" prot="public" virt="non-virtual"><scope>USFSettingsSubsystem</scope><name>UpdateKeybinding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

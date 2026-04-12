@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_ee82e1fcdef3b55cd27efecd9a182f3f" kind="dir">
+    <compoundname>Source/SettingsFramework/Public/UI/SettingEntries</compoundname>
+    <innerfile refid="SFSettingEntryWidget_8h">SFSettingEntryWidget.h</innerfile>
+    <innerfile refid="SFSettingEntryWidget__Checkbox_8h">SFSettingEntryWidget_Checkbox.h</innerfile>
+    <innerfile refid="SFSettingEntryWidget__Keybind_8h">SFSettingEntryWidget_Keybind.h</innerfile>
+    <innerfile refid="SFSettingEntryWidget__Rotator_8h">SFSettingEntryWidget_Rotator.h</innerfile>
+    <innerfile refid="SFSettingEntryWidget__Slider_8h">SFSettingEntryWidget_Slider.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Source/SettingsFramework/Public/UI/SettingEntries/"/>
+  </compounddef>
+</doxygen>
